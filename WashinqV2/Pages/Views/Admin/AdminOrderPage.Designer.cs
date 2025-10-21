@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminOrderPage));
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
-            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.cuiPanel7 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel8 = new CuoreUI.Controls.cuiPanel();
+            this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.btnEdit = new CuoreUI.Controls.cuiButton();
             this.btnDelete = new CuoreUI.Controls.cuiButton();
             this.cuiPanel6 = new CuoreUI.Controls.cuiPanel();
@@ -53,10 +53,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.cuiButton1 = new CuoreUI.Controls.cuiButton();
+            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.cuiPanel1.SuspendLayout();
             this.cuiPanel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.cuiPanel7.SuspendLayout();
             this.cuiPanel8.SuspendLayout();
             this.cuiPanel6.SuspendLayout();
@@ -66,6 +65,7 @@
             this.cuiPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // cuiPanel1
@@ -99,18 +99,6 @@
             this.cuiPanel21.Size = new System.Drawing.Size(1254, 361);
             this.cuiPanel21.TabIndex = 13;
             // 
-            // dgvOrder
-            // 
-            this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrder.Location = new System.Drawing.Point(30, 30);
-            this.dgvOrder.Name = "dgvOrder";
-            this.dgvOrder.RowHeadersWidth = 51;
-            this.dgvOrder.RowTemplate.Height = 24;
-            this.dgvOrder.Size = new System.Drawing.Size(1194, 301);
-            this.dgvOrder.TabIndex = 1;
-            // 
             // cuiPanel7
             // 
             this.cuiPanel7.Controls.Add(this.cuiPanel8);
@@ -139,6 +127,45 @@
             this.cuiPanel8.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel8.Size = new System.Drawing.Size(573, 101);
             this.cuiPanel8.TabIndex = 18;
+            // 
+            // cuiButton1
+            // 
+            this.cuiButton1.BackColor = System.Drawing.Color.Transparent;
+            this.cuiButton1.CheckButton = false;
+            this.cuiButton1.Checked = false;
+            this.cuiButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.cuiButton1.Content = "Nyatakan Telah Diambil";
+            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cuiButton1.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuiButton1.ForeColor = System.Drawing.Color.White;
+            this.cuiButton1.HoverBackground = System.Drawing.Color.DodgerBlue;
+            this.cuiButton1.HoverForeColor = System.Drawing.Color.White;
+            this.cuiButton1.HoverImageTint = System.Drawing.Color.White;
+            this.cuiButton1.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.Image = null;
+            this.cuiButton1.ImageAutoCenter = true;
+            this.cuiButton1.ImageExpand = new System.Drawing.Point(0, 0);
+            this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
+            this.cuiButton1.Location = new System.Drawing.Point(31, 26);
+            this.cuiButton1.Name = "cuiButton1";
+            this.cuiButton1.NormalBackground = System.Drawing.Color.DodgerBlue;
+            this.cuiButton1.NormalForeColor = System.Drawing.Color.White;
+            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
+            this.cuiButton1.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.OutlineThickness = 1F;
+            this.cuiButton1.PressedBackground = System.Drawing.Color.Transparent;
+            this.cuiButton1.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.cuiButton1.PressedImageTint = System.Drawing.Color.White;
+            this.cuiButton1.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiButton1.Size = new System.Drawing.Size(254, 50);
+            this.cuiButton1.TabIndex = 18;
+            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
             // 
             // btnEdit
             // 
@@ -636,44 +663,17 @@
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // cuiButton1
+            // dgvOrder
             // 
-            this.cuiButton1.BackColor = System.Drawing.Color.Transparent;
-            this.cuiButton1.CheckButton = false;
-            this.cuiButton1.Checked = false;
-            this.cuiButton1.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.cuiButton1.CheckedImageTint = System.Drawing.Color.White;
-            this.cuiButton1.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiButton1.Content = "Nyatakan Telah Diambil";
-            this.cuiButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cuiButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cuiButton1.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cuiButton1.ForeColor = System.Drawing.Color.White;
-            this.cuiButton1.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.cuiButton1.HoverForeColor = System.Drawing.Color.White;
-            this.cuiButton1.HoverImageTint = System.Drawing.Color.White;
-            this.cuiButton1.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButton1.Image = null;
-            this.cuiButton1.ImageAutoCenter = true;
-            this.cuiButton1.ImageExpand = new System.Drawing.Point(0, 0);
-            this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton1.Location = new System.Drawing.Point(31, 26);
-            this.cuiButton1.Name = "cuiButton1";
-            this.cuiButton1.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.cuiButton1.NormalForeColor = System.Drawing.Color.White;
-            this.cuiButton1.NormalImageTint = System.Drawing.Color.White;
-            this.cuiButton1.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButton1.OutlineThickness = 1F;
-            this.cuiButton1.PressedBackground = System.Drawing.Color.Transparent;
-            this.cuiButton1.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.cuiButton1.PressedImageTint = System.Drawing.Color.White;
-            this.cuiButton1.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiButton1.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiButton1.Size = new System.Drawing.Size(254, 50);
-            this.cuiButton1.TabIndex = 18;
-            this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
+            this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrder.Location = new System.Drawing.Point(30, 30);
+            this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.RowHeadersWidth = 51;
+            this.dgvOrder.RowTemplate.Height = 24;
+            this.dgvOrder.Size = new System.Drawing.Size(1194, 301);
+            this.dgvOrder.TabIndex = 2;
             // 
             // AdminOrderPage
             // 
@@ -687,7 +687,6 @@
             this.Load += new System.EventHandler(this.AdminOrderPage_Load);
             this.cuiPanel1.ResumeLayout(false);
             this.cuiPanel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.cuiPanel7.ResumeLayout(false);
             this.cuiPanel8.ResumeLayout(false);
             this.cuiPanel6.ResumeLayout(false);
@@ -699,6 +698,7 @@
             this.cuiPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -728,7 +728,7 @@
         private CuoreUI.Controls.cuiButton btnEdit;
         private CuoreUI.Controls.cuiButton btnDelete;
         private CuoreUI.Controls.cuiPanel cuiPanel21;
-        private System.Windows.Forms.DataGridView dgvOrder;
         private CuoreUI.Controls.cuiButton cuiButton1;
+        private System.Windows.Forms.DataGridView dgvOrder;
     }
 }

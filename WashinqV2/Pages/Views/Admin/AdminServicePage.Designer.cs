@@ -43,7 +43,6 @@
             this.btnUser = new CuoreUI.Controls.cuiButton();
             this.btnDashboard = new CuoreUI.Controls.cuiButton();
             this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
-            this.dgvService = new System.Windows.Forms.DataGridView();
             this.cuiPanel7 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel6 = new CuoreUI.Controls.cuiPanel();
             this.btnEdit = new CuoreUI.Controls.cuiButton();
@@ -52,6 +51,7 @@
             this.btnAdd = new CuoreUI.Controls.cuiButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.dgvService = new System.Windows.Forms.DataGridView();
             this.cuiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -59,10 +59,10 @@
             this.cuiPanel4.SuspendLayout();
             this.cuiPanel3.SuspendLayout();
             this.cuiPanel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.cuiPanel7.SuspendLayout();
             this.cuiPanel6.SuspendLayout();
             this.cuiPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
             this.SuspendLayout();
             // 
             // cuiPanel1
@@ -416,18 +416,6 @@
             this.cuiPanel21.Size = new System.Drawing.Size(1254, 361);
             this.cuiPanel21.TabIndex = 10;
             // 
-            // dgvService
-            // 
-            this.dgvService.BackgroundColor = System.Drawing.Color.White;
-            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvService.Location = new System.Drawing.Point(30, 30);
-            this.dgvService.Name = "dgvService";
-            this.dgvService.RowHeadersWidth = 51;
-            this.dgvService.RowTemplate.Height = 24;
-            this.dgvService.Size = new System.Drawing.Size(1194, 301);
-            this.dgvService.TabIndex = 1;
-            // 
             // cuiPanel7
             // 
             this.cuiPanel7.Controls.Add(this.cuiPanel6);
@@ -615,6 +603,18 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Tambahkan, edit, atau hapus layanan laundry.";
             // 
+            // dgvService
+            // 
+            this.dgvService.BackgroundColor = System.Drawing.Color.White;
+            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvService.Location = new System.Drawing.Point(30, 30);
+            this.dgvService.Name = "dgvService";
+            this.dgvService.RowHeadersWidth = 51;
+            this.dgvService.RowTemplate.Height = 24;
+            this.dgvService.Size = new System.Drawing.Size(1194, 301);
+            this.dgvService.TabIndex = 2;
+            // 
             // AdminServicePage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -637,11 +637,11 @@
             this.cuiPanel4.ResumeLayout(false);
             this.cuiPanel3.ResumeLayout(false);
             this.cuiPanel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.cuiPanel7.ResumeLayout(false);
             this.cuiPanel6.ResumeLayout(false);
             this.cuiPanel5.ResumeLayout(false);
             this.cuiPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -662,7 +662,6 @@
         private CuoreUI.Controls.cuiButton btnUser;
         private CuoreUI.Controls.cuiButton btnDashboard;
         private CuoreUI.Controls.cuiPanel cuiPanel21;
-        private System.Windows.Forms.DataGridView dgvService;
         private CuoreUI.Controls.cuiPanel cuiPanel7;
         private CuoreUI.Controls.cuiPanel cuiPanel5;
         private CuoreUI.Controls.cuiButton btnAdd;
@@ -671,5 +670,6 @@
         private CuoreUI.Controls.cuiPanel cuiPanel6;
         private CuoreUI.Controls.cuiButton btnEdit;
         private CuoreUI.Controls.cuiButton btnDelete;
+        private System.Windows.Forms.DataGridView dgvService;
     }
 }

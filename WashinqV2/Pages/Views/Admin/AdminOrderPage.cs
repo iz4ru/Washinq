@@ -16,6 +16,7 @@ namespace WashinqV2.Pages.Views.Admin
         public AdminOrderPage()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public void LoadData()
@@ -111,8 +112,8 @@ namespace WashinqV2.Pages.Views.Admin
             cl5.HeaderText = "Total Harga";
             cl5.Name = "Total Harga";
             DataGridViewTextBoxColumn cl6 = new DataGridViewTextBoxColumn();
-            cl6.HeaderText = "Total Harga";
-            cl6.Name = "Total Harga";
+            cl6.HeaderText = "Dibayar";
+            cl6.Name = "Dibayar";
             DataGridViewTextBoxColumn cl7 = new DataGridViewTextBoxColumn();
             cl7.HeaderText = "Pembayaran";
             cl7.Name = "Pembayaran";

@@ -18,6 +18,7 @@ namespace WashinqV2.Pages.Views.Admin
         public AdminServicePage()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         public void LoadData()

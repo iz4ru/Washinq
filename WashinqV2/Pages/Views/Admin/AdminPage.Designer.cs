@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminPage));
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
+            this.label4 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
@@ -43,39 +44,38 @@
             this.btnDashboard = new CuoreUI.Controls.cuiButton();
             this.cuiPanel5 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel7 = new CuoreUI.Controls.cuiPanel();
+            this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.cuiPanel20 = new CuoreUI.Controls.cuiPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.cuiPanel8 = new CuoreUI.Controls.cuiPanel();
-            this.cuiPanel9 = new CuoreUI.Controls.cuiPanel();
-            this.cuiPanel10 = new CuoreUI.Controls.cuiPanel();
-            this.cuiPanel11 = new CuoreUI.Controls.cuiPanel();
-            this.cuiPanel6 = new CuoreUI.Controls.cuiPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cuiPanel12 = new CuoreUI.Controls.cuiPanel();
-            this.label11 = new System.Windows.Forms.Label();
             this.cuiPanel13 = new CuoreUI.Controls.cuiPanel();
             this.label14 = new System.Windows.Forms.Label();
             this.guna2PictureBox5 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cuiPanel14 = new CuoreUI.Controls.cuiPanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cuiPanel15 = new CuoreUI.Controls.cuiPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cuiPanel16 = new CuoreUI.Controls.cuiPanel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.cuiPanel17 = new CuoreUI.Controls.cuiPanel();
-            this.label7 = new System.Windows.Forms.Label();
+            this.cuiPanel12 = new CuoreUI.Controls.cuiPanel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cuiPanel9 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel18 = new CuoreUI.Controls.cuiPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2PictureBox3 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cuiPanel19 = new CuoreUI.Controls.cuiPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.cuiPanel20 = new CuoreUI.Controls.cuiPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
+            this.cuiPanel10 = new CuoreUI.Controls.cuiPanel();
+            this.cuiPanel16 = new CuoreUI.Controls.cuiPanel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.guna2PictureBox2 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.cuiPanel17 = new CuoreUI.Controls.cuiPanel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cuiPanel11 = new CuoreUI.Controls.cuiPanel();
+            this.cuiPanel14 = new CuoreUI.Controls.cuiPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
+            this.cuiPanel15 = new CuoreUI.Controls.cuiPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cuiPanel6 = new CuoreUI.Controls.cuiPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cuiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -84,27 +84,27 @@
             this.cuiPanel3.SuspendLayout();
             this.cuiPanel5.SuspendLayout();
             this.cuiPanel7.SuspendLayout();
+            this.cuiPanel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cuiPanel20.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.cuiPanel8.SuspendLayout();
-            this.cuiPanel9.SuspendLayout();
-            this.cuiPanel10.SuspendLayout();
-            this.cuiPanel11.SuspendLayout();
-            this.cuiPanel6.SuspendLayout();
-            this.cuiPanel12.SuspendLayout();
             this.cuiPanel13.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).BeginInit();
-            this.cuiPanel14.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
-            this.cuiPanel15.SuspendLayout();
-            this.cuiPanel16.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
-            this.cuiPanel17.SuspendLayout();
+            this.cuiPanel12.SuspendLayout();
+            this.cuiPanel9.SuspendLayout();
             this.cuiPanel18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).BeginInit();
             this.cuiPanel19.SuspendLayout();
-            this.cuiPanel20.SuspendLayout();
-            this.cuiPanel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.cuiPanel10.SuspendLayout();
+            this.cuiPanel16.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).BeginInit();
+            this.cuiPanel17.SuspendLayout();
+            this.cuiPanel11.SuspendLayout();
+            this.cuiPanel14.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
+            this.cuiPanel15.SuspendLayout();
+            this.cuiPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // cuiPanel1
@@ -121,6 +121,17 @@
             this.cuiPanel1.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel1.Size = new System.Drawing.Size(1348, 72);
             this.cuiPanel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(128, 19);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(163, 36);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Dashboard\r\n";
             // 
             // guna2CirclePictureBox2
             // 
@@ -462,6 +473,56 @@
             this.cuiPanel7.Size = new System.Drawing.Size(1254, 527);
             this.cuiPanel7.TabIndex = 8;
             // 
+            // cuiPanel21
+            // 
+            this.cuiPanel21.Controls.Add(this.dataGridView1);
+            this.cuiPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cuiPanel21.Location = new System.Drawing.Point(0, 311);
+            this.cuiPanel21.Name = "cuiPanel21";
+            this.cuiPanel21.OutlineThickness = 0F;
+            this.cuiPanel21.Padding = new System.Windows.Forms.Padding(30);
+            this.cuiPanel21.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel21.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel21.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel21.Size = new System.Drawing.Size(1254, 216);
+            this.cuiPanel21.TabIndex = 9;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(30, 30);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1194, 156);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // cuiPanel20
+            // 
+            this.cuiPanel20.Controls.Add(this.label10);
+            this.cuiPanel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel20.Location = new System.Drawing.Point(0, 243);
+            this.cuiPanel20.Name = "cuiPanel20";
+            this.cuiPanel20.OutlineThickness = 0F;
+            this.cuiPanel20.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel20.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel20.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel20.Size = new System.Drawing.Size(1254, 68);
+            this.cuiPanel20.TabIndex = 8;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(34, 15);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(199, 36);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Pesanan baru";
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
@@ -497,117 +558,6 @@
             this.cuiPanel8.Rounding = new System.Windows.Forms.Padding(8);
             this.cuiPanel8.Size = new System.Drawing.Size(278, 163);
             this.cuiPanel8.TabIndex = 1;
-            // 
-            // cuiPanel9
-            // 
-            this.cuiPanel9.Controls.Add(this.cuiPanel18);
-            this.cuiPanel9.Controls.Add(this.cuiPanel19);
-            this.cuiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel9.Location = new System.Drawing.Point(934, 40);
-            this.cuiPanel9.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel9.Name = "cuiPanel9";
-            this.cuiPanel9.OutlineThickness = 1F;
-            this.cuiPanel9.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel9.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.cuiPanel9.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel9.Size = new System.Drawing.Size(280, 163);
-            this.cuiPanel9.TabIndex = 2;
-            // 
-            // cuiPanel10
-            // 
-            this.cuiPanel10.Controls.Add(this.cuiPanel16);
-            this.cuiPanel10.Controls.Add(this.cuiPanel17);
-            this.cuiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel10.Location = new System.Drawing.Point(636, 40);
-            this.cuiPanel10.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel10.Name = "cuiPanel10";
-            this.cuiPanel10.OutlineThickness = 1F;
-            this.cuiPanel10.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel10.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.cuiPanel10.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel10.Size = new System.Drawing.Size(278, 163);
-            this.cuiPanel10.TabIndex = 3;
-            // 
-            // cuiPanel11
-            // 
-            this.cuiPanel11.Controls.Add(this.cuiPanel14);
-            this.cuiPanel11.Controls.Add(this.cuiPanel15);
-            this.cuiPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel11.Location = new System.Drawing.Point(338, 40);
-            this.cuiPanel11.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel11.Name = "cuiPanel11";
-            this.cuiPanel11.OutlineThickness = 1F;
-            this.cuiPanel11.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel11.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.cuiPanel11.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel11.Size = new System.Drawing.Size(278, 163);
-            this.cuiPanel11.TabIndex = 4;
-            // 
-            // cuiPanel6
-            // 
-            this.cuiPanel6.Controls.Add(this.label2);
-            this.cuiPanel6.Controls.Add(this.label3);
-            this.cuiPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel6.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel6.Name = "cuiPanel6";
-            this.cuiPanel6.OutlineThickness = 0F;
-            this.cuiPanel6.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel6.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel6.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel6.Size = new System.Drawing.Size(1254, 122);
-            this.cuiPanel6.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(34, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(497, 21);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Lihat ringkasan pesanan, pelanggan, dan kinerja layanan terkini.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 36);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Selamat datang kembali!";
-            // 
-            // cuiPanel12
-            // 
-            this.cuiPanel12.Controls.Add(this.label11);
-            this.cuiPanel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel12.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel12.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel12.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel12.Name = "cuiPanel12";
-            this.cuiPanel12.OutlineThickness = 1F;
-            this.cuiPanel12.Padding = new System.Windows.Forms.Padding(5);
-            this.cuiPanel12.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel12.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel12.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.cuiPanel12.Size = new System.Drawing.Size(278, 92);
-            this.cuiPanel12.TabIndex = 8;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label11.Location = new System.Drawing.Point(5, 5);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(106, 72);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "80";
             // 
             // cuiPanel13
             // 
@@ -650,145 +600,49 @@
             this.guna2PictureBox5.TabIndex = 0;
             this.guna2PictureBox5.TabStop = false;
             // 
-            // cuiPanel14
+            // cuiPanel12
             // 
-            this.cuiPanel14.Controls.Add(this.label1);
-            this.cuiPanel14.Controls.Add(this.guna2PictureBox1);
-            this.cuiPanel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel14.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel14.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel14.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel14.Name = "cuiPanel14";
-            this.cuiPanel14.OutlineThickness = 1F;
-            this.cuiPanel14.Padding = new System.Windows.Forms.Padding(5);
-            this.cuiPanel14.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel14.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel14.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.cuiPanel14.Size = new System.Drawing.Size(278, 80);
-            this.cuiPanel14.TabIndex = 11;
+            this.cuiPanel12.Controls.Add(this.label11);
+            this.cuiPanel12.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cuiPanel12.ForeColor = System.Drawing.Color.Transparent;
+            this.cuiPanel12.Location = new System.Drawing.Point(0, 71);
+            this.cuiPanel12.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel12.Name = "cuiPanel12";
+            this.cuiPanel12.OutlineThickness = 1F;
+            this.cuiPanel12.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel12.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel12.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel12.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
+            this.cuiPanel12.Size = new System.Drawing.Size(278, 92);
+            this.cuiPanel12.TabIndex = 8;
             // 
-            // label1
+            // label11
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(72, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 21);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Total Pesanan Selesai";
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label11.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label11.Location = new System.Drawing.Point(5, 5);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(106, 72);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "80";
             // 
-            // guna2PictureBox1
+            // cuiPanel9
             // 
-            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
-            this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 23);
-            this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 40);
-            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox1.TabIndex = 0;
-            this.guna2PictureBox1.TabStop = false;
-            // 
-            // cuiPanel15
-            // 
-            this.cuiPanel15.Controls.Add(this.label5);
-            this.cuiPanel15.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel15.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel15.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel15.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel15.Name = "cuiPanel15";
-            this.cuiPanel15.OutlineThickness = 1F;
-            this.cuiPanel15.Padding = new System.Windows.Forms.Padding(5);
-            this.cuiPanel15.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel15.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel15.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.cuiPanel15.Size = new System.Drawing.Size(278, 92);
-            this.cuiPanel15.TabIndex = 10;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label5.Location = new System.Drawing.Point(5, 5);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(91, 72);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "51";
-            // 
-            // cuiPanel16
-            // 
-            this.cuiPanel16.Controls.Add(this.label6);
-            this.cuiPanel16.Controls.Add(this.guna2PictureBox2);
-            this.cuiPanel16.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel16.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel16.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel16.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel16.Name = "cuiPanel16";
-            this.cuiPanel16.OutlineThickness = 1F;
-            this.cuiPanel16.Padding = new System.Windows.Forms.Padding(5);
-            this.cuiPanel16.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel16.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel16.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.cuiPanel16.Size = new System.Drawing.Size(278, 80);
-            this.cuiPanel16.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(72, 33);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 21);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Total Layanan";
-            // 
-            // guna2PictureBox2
-            // 
-            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
-            this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(17, 23);
-            this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2PictureBox2.TabIndex = 0;
-            this.guna2PictureBox2.TabStop = false;
-            // 
-            // cuiPanel17
-            // 
-            this.cuiPanel17.Controls.Add(this.label7);
-            this.cuiPanel17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel17.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel17.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel17.Margin = new System.Windows.Forms.Padding(10);
-            this.cuiPanel17.Name = "cuiPanel17";
-            this.cuiPanel17.OutlineThickness = 1F;
-            this.cuiPanel17.Padding = new System.Windows.Forms.Padding(5);
-            this.cuiPanel17.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel17.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel17.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.cuiPanel17.Size = new System.Drawing.Size(278, 92);
-            this.cuiPanel17.TabIndex = 10;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(5, 5);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 72);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "10";
+            this.cuiPanel9.Controls.Add(this.cuiPanel18);
+            this.cuiPanel9.Controls.Add(this.cuiPanel19);
+            this.cuiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cuiPanel9.Location = new System.Drawing.Point(934, 40);
+            this.cuiPanel9.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel9.Name = "cuiPanel9";
+            this.cuiPanel9.OutlineThickness = 1F;
+            this.cuiPanel9.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel9.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.cuiPanel9.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiPanel9.Size = new System.Drawing.Size(280, 163);
+            this.cuiPanel9.TabIndex = 2;
             // 
             // cuiPanel18
             // 
@@ -860,66 +714,212 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "5";
             // 
-            // cuiPanel20
+            // cuiPanel10
             // 
-            this.cuiPanel20.Controls.Add(this.label10);
-            this.cuiPanel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel20.Location = new System.Drawing.Point(0, 243);
-            this.cuiPanel20.Name = "cuiPanel20";
-            this.cuiPanel20.OutlineThickness = 0F;
-            this.cuiPanel20.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel20.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel20.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel20.Size = new System.Drawing.Size(1254, 68);
-            this.cuiPanel20.TabIndex = 8;
+            this.cuiPanel10.Controls.Add(this.cuiPanel16);
+            this.cuiPanel10.Controls.Add(this.cuiPanel17);
+            this.cuiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cuiPanel10.Location = new System.Drawing.Point(636, 40);
+            this.cuiPanel10.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel10.Name = "cuiPanel10";
+            this.cuiPanel10.OutlineThickness = 1F;
+            this.cuiPanel10.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel10.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.cuiPanel10.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiPanel10.Size = new System.Drawing.Size(278, 163);
+            this.cuiPanel10.TabIndex = 3;
             // 
-            // label10
+            // cuiPanel16
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 15);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(199, 36);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Pesanan baru";
+            this.cuiPanel16.Controls.Add(this.label6);
+            this.cuiPanel16.Controls.Add(this.guna2PictureBox2);
+            this.cuiPanel16.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel16.ForeColor = System.Drawing.Color.Transparent;
+            this.cuiPanel16.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel16.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel16.Name = "cuiPanel16";
+            this.cuiPanel16.OutlineThickness = 1F;
+            this.cuiPanel16.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel16.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel16.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel16.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.cuiPanel16.Size = new System.Drawing.Size(278, 80);
+            this.cuiPanel16.TabIndex = 11;
             // 
-            // cuiPanel21
+            // label6
             // 
-            this.cuiPanel21.Controls.Add(this.dataGridView1);
-            this.cuiPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel21.Location = new System.Drawing.Point(0, 311);
-            this.cuiPanel21.Name = "cuiPanel21";
-            this.cuiPanel21.OutlineThickness = 0F;
-            this.cuiPanel21.Padding = new System.Windows.Forms.Padding(30);
-            this.cuiPanel21.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel21.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel21.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel21.Size = new System.Drawing.Size(1254, 216);
-            this.cuiPanel21.TabIndex = 9;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(72, 33);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(118, 21);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Total Layanan";
             // 
-            // dataGridView1
+            // guna2PictureBox2
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(30, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1194, 156);
-            this.dataGridView1.TabIndex = 1;
+            this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
+            this.guna2PictureBox2.ImageRotate = 0F;
+            this.guna2PictureBox2.Location = new System.Drawing.Point(17, 23);
+            this.guna2PictureBox2.Name = "guna2PictureBox2";
+            this.guna2PictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox2.TabIndex = 0;
+            this.guna2PictureBox2.TabStop = false;
             // 
-            // label4
+            // cuiPanel17
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(128, 19);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 36);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Dashboard\r\n";
+            this.cuiPanel17.Controls.Add(this.label7);
+            this.cuiPanel17.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cuiPanel17.ForeColor = System.Drawing.Color.Transparent;
+            this.cuiPanel17.Location = new System.Drawing.Point(0, 71);
+            this.cuiPanel17.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel17.Name = "cuiPanel17";
+            this.cuiPanel17.OutlineThickness = 1F;
+            this.cuiPanel17.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel17.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel17.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel17.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
+            this.cuiPanel17.Size = new System.Drawing.Size(278, 92);
+            this.cuiPanel17.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label7.Location = new System.Drawing.Point(5, 5);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(95, 72);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "10";
+            // 
+            // cuiPanel11
+            // 
+            this.cuiPanel11.Controls.Add(this.cuiPanel14);
+            this.cuiPanel11.Controls.Add(this.cuiPanel15);
+            this.cuiPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cuiPanel11.Location = new System.Drawing.Point(338, 40);
+            this.cuiPanel11.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel11.Name = "cuiPanel11";
+            this.cuiPanel11.OutlineThickness = 1F;
+            this.cuiPanel11.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel11.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.cuiPanel11.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiPanel11.Size = new System.Drawing.Size(278, 163);
+            this.cuiPanel11.TabIndex = 4;
+            // 
+            // cuiPanel14
+            // 
+            this.cuiPanel14.Controls.Add(this.label1);
+            this.cuiPanel14.Controls.Add(this.guna2PictureBox1);
+            this.cuiPanel14.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel14.ForeColor = System.Drawing.Color.Transparent;
+            this.cuiPanel14.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel14.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel14.Name = "cuiPanel14";
+            this.cuiPanel14.OutlineThickness = 1F;
+            this.cuiPanel14.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel14.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel14.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel14.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
+            this.cuiPanel14.Size = new System.Drawing.Size(278, 80);
+            this.cuiPanel14.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(72, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(175, 21);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Total Pesanan Selesai";
+            // 
+            // guna2PictureBox1
+            // 
+            this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.ImageRotate = 0F;
+            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 23);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 0;
+            this.guna2PictureBox1.TabStop = false;
+            // 
+            // cuiPanel15
+            // 
+            this.cuiPanel15.Controls.Add(this.label5);
+            this.cuiPanel15.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cuiPanel15.ForeColor = System.Drawing.Color.Transparent;
+            this.cuiPanel15.Location = new System.Drawing.Point(0, 71);
+            this.cuiPanel15.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel15.Name = "cuiPanel15";
+            this.cuiPanel15.OutlineThickness = 1F;
+            this.cuiPanel15.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel15.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel15.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel15.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
+            this.cuiPanel15.Size = new System.Drawing.Size(278, 92);
+            this.cuiPanel15.TabIndex = 10;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.label5.Location = new System.Drawing.Point(5, 5);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 72);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "51";
+            // 
+            // cuiPanel6
+            // 
+            this.cuiPanel6.Controls.Add(this.label2);
+            this.cuiPanel6.Controls.Add(this.label3);
+            this.cuiPanel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel6.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel6.Name = "cuiPanel6";
+            this.cuiPanel6.OutlineThickness = 0F;
+            this.cuiPanel6.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel6.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel6.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel6.Size = new System.Drawing.Size(1254, 122);
+            this.cuiPanel6.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(34, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(497, 21);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Lihat ringkasan pesanan, pelanggan, dan kinerja layanan terkini.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(354, 36);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Selamat datang kembali!";
             // 
             // AdminPage
             // 
@@ -942,37 +942,37 @@
             this.cuiPanel3.ResumeLayout(false);
             this.cuiPanel5.ResumeLayout(false);
             this.cuiPanel7.ResumeLayout(false);
+            this.cuiPanel21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.cuiPanel20.ResumeLayout(false);
+            this.cuiPanel20.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.cuiPanel8.ResumeLayout(false);
-            this.cuiPanel9.ResumeLayout(false);
-            this.cuiPanel10.ResumeLayout(false);
-            this.cuiPanel11.ResumeLayout(false);
-            this.cuiPanel6.ResumeLayout(false);
-            this.cuiPanel6.PerformLayout();
-            this.cuiPanel12.ResumeLayout(false);
-            this.cuiPanel12.PerformLayout();
             this.cuiPanel13.ResumeLayout(false);
             this.cuiPanel13.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox5)).EndInit();
-            this.cuiPanel14.ResumeLayout(false);
-            this.cuiPanel14.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
-            this.cuiPanel15.ResumeLayout(false);
-            this.cuiPanel15.PerformLayout();
-            this.cuiPanel16.ResumeLayout(false);
-            this.cuiPanel16.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
-            this.cuiPanel17.ResumeLayout(false);
-            this.cuiPanel17.PerformLayout();
+            this.cuiPanel12.ResumeLayout(false);
+            this.cuiPanel12.PerformLayout();
+            this.cuiPanel9.ResumeLayout(false);
             this.cuiPanel18.ResumeLayout(false);
             this.cuiPanel18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox3)).EndInit();
             this.cuiPanel19.ResumeLayout(false);
             this.cuiPanel19.PerformLayout();
-            this.cuiPanel20.ResumeLayout(false);
-            this.cuiPanel20.PerformLayout();
-            this.cuiPanel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.cuiPanel10.ResumeLayout(false);
+            this.cuiPanel16.ResumeLayout(false);
+            this.cuiPanel16.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox2)).EndInit();
+            this.cuiPanel17.ResumeLayout(false);
+            this.cuiPanel17.PerformLayout();
+            this.cuiPanel11.ResumeLayout(false);
+            this.cuiPanel14.ResumeLayout(false);
+            this.cuiPanel14.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
+            this.cuiPanel15.ResumeLayout(false);
+            this.cuiPanel15.PerformLayout();
+            this.cuiPanel6.ResumeLayout(false);
+            this.cuiPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
