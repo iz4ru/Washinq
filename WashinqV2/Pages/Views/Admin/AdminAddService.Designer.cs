@@ -31,15 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAddService));
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
+            this.btnAdd = new CuoreUI.Controls.cuiButton();
+            this.tbDescription = new CuoreUI.Controls.cuiTextBox();
+            this.lbDescription = new System.Windows.Forms.Label();
+            this.tbPrice = new CuoreUI.Controls.cuiTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.tbService = new CuoreUI.Controls.cuiTextBox();
             this.lbService = new System.Windows.Forms.Label();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             this.llbBack = new System.Windows.Forms.LinkLabel();
-            this.tbPrice = new CuoreUI.Controls.cuiTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbDescription = new CuoreUI.Controls.cuiTextBox();
-            this.lbDescription = new System.Windows.Forms.Label();
-            this.btnAdd = new CuoreUI.Controls.cuiButton();
             this.cuiPanel1.SuspendLayout();
             this.cuiPanel3.SuspendLayout();
             this.cuiPanel2.SuspendLayout();
@@ -77,6 +77,128 @@
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel3.Size = new System.Drawing.Size(650, 664);
             this.cuiPanel3.TabIndex = 18;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.CheckButton = false;
+            this.btnAdd.Checked = false;
+            this.btnAdd.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAdd.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAdd.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.Content = "Tambahkan";
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverBackground = System.Drawing.Color.DodgerBlue;
+            this.btnAdd.HoverForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverImageTint = System.Drawing.Color.White;
+            this.btnAdd.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.Image = null;
+            this.btnAdd.ImageAutoCenter = true;
+            this.btnAdd.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAdd.Location = new System.Drawing.Point(220, 568);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.NormalBackground = System.Drawing.Color.DodgerBlue;
+            this.btnAdd.NormalForeColor = System.Drawing.Color.White;
+            this.btnAdd.NormalImageTint = System.Drawing.Color.White;
+            this.btnAdd.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.OutlineThickness = 1F;
+            this.btnAdd.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnAdd.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnAdd.PressedImageTint = System.Drawing.Color.White;
+            this.btnAdd.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnAdd.Size = new System.Drawing.Size(187, 50);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnAdd.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // tbDescription
+            // 
+            this.tbDescription.BackColor = System.Drawing.Color.Transparent;
+            this.tbDescription.BackgroundColor = System.Drawing.Color.White;
+            this.tbDescription.Content = "";
+            this.tbDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbDescription.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbDescription.FocusImageTint = System.Drawing.Color.White;
+            this.tbDescription.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbDescription.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescription.ForeColor = System.Drawing.Color.Black;
+            this.tbDescription.Image = null;
+            this.tbDescription.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbDescription.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbDescription.Location = new System.Drawing.Point(114, 278);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.tbDescription.Multiline = true;
+            this.tbDescription.Name = "tbDescription";
+            this.tbDescription.NormalImageTint = System.Drawing.Color.White;
+            this.tbDescription.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbDescription.Padding = new System.Windows.Forms.Padding(21, 6, 21, 6);
+            this.tbDescription.PasswordChar = false;
+            this.tbDescription.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbDescription.PlaceholderText = "";
+            this.tbDescription.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbDescription.Size = new System.Drawing.Size(400, 240);
+            this.tbDescription.TabIndex = 13;
+            this.tbDescription.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbDescription.UnderlinedStyle = true;
+            // 
+            // lbDescription
+            // 
+            this.lbDescription.AutoSize = true;
+            this.lbDescription.BackColor = System.Drawing.Color.Transparent;
+            this.lbDescription.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDescription.Location = new System.Drawing.Point(110, 253);
+            this.lbDescription.Name = "lbDescription";
+            this.lbDescription.Size = new System.Drawing.Size(79, 21);
+            this.lbDescription.TabIndex = 12;
+            this.lbDescription.Text = "Deskripsi";
+            // 
+            // tbPrice
+            // 
+            this.tbPrice.BackColor = System.Drawing.Color.Transparent;
+            this.tbPrice.BackgroundColor = System.Drawing.Color.White;
+            this.tbPrice.Content = "";
+            this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPrice.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbPrice.FocusImageTint = System.Drawing.Color.White;
+            this.tbPrice.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbPrice.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPrice.ForeColor = System.Drawing.Color.Black;
+            this.tbPrice.Image = null;
+            this.tbPrice.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbPrice.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbPrice.Location = new System.Drawing.Point(114, 176);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPrice.Multiline = false;
+            this.tbPrice.Name = "tbPrice";
+            this.tbPrice.NormalImageTint = System.Drawing.Color.White;
+            this.tbPrice.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbPrice.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbPrice.PasswordChar = false;
+            this.tbPrice.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbPrice.PlaceholderText = "";
+            this.tbPrice.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbPrice.Size = new System.Drawing.Size(400, 44);
+            this.tbPrice.TabIndex = 11;
+            this.tbPrice.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbPrice.UnderlinedStyle = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(110, 151);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 21);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "Harga per Kilogram";
             // 
             // tbService
             // 
@@ -146,128 +268,6 @@
             this.llbBack.Text = "Kembali";
             this.llbBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbBack_LinkClicked);
             // 
-            // tbPrice
-            // 
-            this.tbPrice.BackColor = System.Drawing.Color.Transparent;
-            this.tbPrice.BackgroundColor = System.Drawing.Color.White;
-            this.tbPrice.Content = "";
-            this.tbPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbPrice.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbPrice.FocusImageTint = System.Drawing.Color.White;
-            this.tbPrice.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbPrice.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrice.ForeColor = System.Drawing.Color.Black;
-            this.tbPrice.Image = null;
-            this.tbPrice.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbPrice.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbPrice.Location = new System.Drawing.Point(114, 176);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(4);
-            this.tbPrice.Multiline = false;
-            this.tbPrice.Name = "tbPrice";
-            this.tbPrice.NormalImageTint = System.Drawing.Color.White;
-            this.tbPrice.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbPrice.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbPrice.PasswordChar = false;
-            this.tbPrice.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbPrice.PlaceholderText = "";
-            this.tbPrice.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbPrice.Size = new System.Drawing.Size(400, 44);
-            this.tbPrice.TabIndex = 11;
-            this.tbPrice.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbPrice.UnderlinedStyle = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 21);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Harga per Kilogram";
-            // 
-            // tbDescription
-            // 
-            this.tbDescription.BackColor = System.Drawing.Color.Transparent;
-            this.tbDescription.BackgroundColor = System.Drawing.Color.White;
-            this.tbDescription.Content = "";
-            this.tbDescription.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbDescription.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbDescription.FocusImageTint = System.Drawing.Color.White;
-            this.tbDescription.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbDescription.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescription.ForeColor = System.Drawing.Color.Black;
-            this.tbDescription.Image = null;
-            this.tbDescription.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbDescription.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbDescription.Location = new System.Drawing.Point(114, 278);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.tbDescription.Multiline = true;
-            this.tbDescription.Name = "tbDescription";
-            this.tbDescription.NormalImageTint = System.Drawing.Color.White;
-            this.tbDescription.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbDescription.Padding = new System.Windows.Forms.Padding(21, 6, 21, 6);
-            this.tbDescription.PasswordChar = false;
-            this.tbDescription.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbDescription.PlaceholderText = "";
-            this.tbDescription.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbDescription.Size = new System.Drawing.Size(400, 240);
-            this.tbDescription.TabIndex = 13;
-            this.tbDescription.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbDescription.UnderlinedStyle = true;
-            // 
-            // lbDescription
-            // 
-            this.lbDescription.AutoSize = true;
-            this.lbDescription.BackColor = System.Drawing.Color.Transparent;
-            this.lbDescription.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescription.Location = new System.Drawing.Point(110, 253);
-            this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(79, 21);
-            this.lbDescription.TabIndex = 12;
-            this.lbDescription.Text = "Deskripsi";
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.CheckButton = false;
-            this.btnAdd.Checked = false;
-            this.btnAdd.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAdd.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAdd.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.Content = "Tambahkan";
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.HoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverImageTint = System.Drawing.Color.White;
-            this.btnAdd.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.Image = null;
-            this.btnAdd.ImageAutoCenter = true;
-            this.btnAdd.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAdd.Location = new System.Drawing.Point(220, 568);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.NormalForeColor = System.Drawing.Color.White;
-            this.btnAdd.NormalImageTint = System.Drawing.Color.White;
-            this.btnAdd.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.OutlineThickness = 1F;
-            this.btnAdd.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnAdd.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnAdd.PressedImageTint = System.Drawing.Color.White;
-            this.btnAdd.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnAdd.Size = new System.Drawing.Size(187, 50);
-            this.btnAdd.TabIndex = 16;
-            this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnAdd.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
             // AdminAddService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -276,6 +276,7 @@
             this.Controls.Add(this.cuiPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminAddService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washinq | Tambahkan Layanan Laundry";
             this.Load += new System.EventHandler(this.AdminAddService_Load);
             this.cuiPanel1.ResumeLayout(false);

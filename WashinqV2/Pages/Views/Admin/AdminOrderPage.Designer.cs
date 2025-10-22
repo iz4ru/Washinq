@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminOrderPage));
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
+            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.cuiPanel7 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel8 = new CuoreUI.Controls.cuiPanel();
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
-            this.btnEdit = new CuoreUI.Controls.cuiButton();
             this.btnDelete = new CuoreUI.Controls.cuiButton();
             this.cuiPanel6 = new CuoreUI.Controls.cuiPanel();
             this.btnAdd = new CuoreUI.Controls.cuiButton();
@@ -53,9 +53,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.cuiPanel1.SuspendLayout();
             this.cuiPanel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.cuiPanel7.SuspendLayout();
             this.cuiPanel8.SuspendLayout();
             this.cuiPanel6.SuspendLayout();
@@ -65,7 +65,6 @@
             this.cuiPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // cuiPanel1
@@ -99,6 +98,18 @@
             this.cuiPanel21.Size = new System.Drawing.Size(1254, 361);
             this.cuiPanel21.TabIndex = 13;
             // 
+            // dgvOrder
+            // 
+            this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
+            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOrder.Location = new System.Drawing.Point(30, 30);
+            this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.RowHeadersWidth = 51;
+            this.dgvOrder.RowTemplate.Height = 24;
+            this.dgvOrder.Size = new System.Drawing.Size(1194, 301);
+            this.dgvOrder.TabIndex = 2;
+            // 
             // cuiPanel7
             // 
             this.cuiPanel7.Controls.Add(this.cuiPanel8);
@@ -115,17 +126,16 @@
             // cuiPanel8
             // 
             this.cuiPanel8.Controls.Add(this.cuiButton1);
-            this.cuiPanel8.Controls.Add(this.btnEdit);
             this.cuiPanel8.Controls.Add(this.btnDelete);
             this.cuiPanel8.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cuiPanel8.Location = new System.Drawing.Point(681, 0);
+            this.cuiPanel8.Location = new System.Drawing.Point(793, 0);
             this.cuiPanel8.Name = "cuiPanel8";
             this.cuiPanel8.OutlineThickness = 0F;
             this.cuiPanel8.Padding = new System.Windows.Forms.Padding(30);
             this.cuiPanel8.PanelColor = System.Drawing.Color.White;
             this.cuiPanel8.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel8.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel8.Size = new System.Drawing.Size(573, 101);
+            this.cuiPanel8.Size = new System.Drawing.Size(461, 101);
             this.cuiPanel8.TabIndex = 18;
             // 
             // cuiButton1
@@ -167,46 +177,6 @@
             this.cuiButton1.TextAlignment = System.Drawing.StringAlignment.Center;
             this.cuiButton1.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.CheckButton = false;
-            this.btnEdit.Checked = false;
-            this.btnEdit.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnEdit.CheckedImageTint = System.Drawing.Color.White;
-            this.btnEdit.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEdit.Content = "Edit";
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEdit.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnEdit.HoverForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverImageTint = System.Drawing.Color.White;
-            this.btnEdit.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEdit.Image = null;
-            this.btnEdit.ImageAutoCenter = true;
-            this.btnEdit.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnEdit.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnEdit.Location = new System.Drawing.Point(304, 26);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnEdit.NormalForeColor = System.Drawing.Color.White;
-            this.btnEdit.NormalImageTint = System.Drawing.Color.White;
-            this.btnEdit.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEdit.OutlineThickness = 1F;
-            this.btnEdit.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnEdit.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnEdit.PressedImageTint = System.Drawing.Color.White;
-            this.btnEdit.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEdit.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnEdit.Size = new System.Drawing.Size(112, 50);
-            this.btnEdit.TabIndex = 17;
-            this.btnEdit.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnEdit.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
             // btnDelete
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Transparent;
@@ -229,7 +199,7 @@
             this.btnDelete.ImageAutoCenter = true;
             this.btnDelete.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnDelete.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDelete.Location = new System.Drawing.Point(431, 26);
+            this.btnDelete.Location = new System.Drawing.Point(317, 26);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.NormalBackground = System.Drawing.Color.Firebrick;
             this.btnDelete.NormalForeColor = System.Drawing.Color.White;
@@ -663,18 +633,6 @@
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // dgvOrder
-            // 
-            this.dgvOrder.BackgroundColor = System.Drawing.Color.White;
-            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrder.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOrder.Location = new System.Drawing.Point(30, 30);
-            this.dgvOrder.Name = "dgvOrder";
-            this.dgvOrder.RowHeadersWidth = 51;
-            this.dgvOrder.RowTemplate.Height = 24;
-            this.dgvOrder.Size = new System.Drawing.Size(1194, 301);
-            this.dgvOrder.TabIndex = 2;
-            // 
             // AdminOrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -687,6 +645,7 @@
             this.Load += new System.EventHandler(this.AdminOrderPage_Load);
             this.cuiPanel1.ResumeLayout(false);
             this.cuiPanel21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.cuiPanel7.ResumeLayout(false);
             this.cuiPanel8.ResumeLayout(false);
             this.cuiPanel6.ResumeLayout(false);
@@ -698,7 +657,6 @@
             this.cuiPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -725,7 +683,6 @@
         private System.Windows.Forms.Label label5;
         private CuoreUI.Controls.cuiPanel cuiPanel7;
         private CuoreUI.Controls.cuiPanel cuiPanel8;
-        private CuoreUI.Controls.cuiButton btnEdit;
         private CuoreUI.Controls.cuiButton btnDelete;
         private CuoreUI.Controls.cuiPanel cuiPanel21;
         private CuoreUI.Controls.cuiButton cuiButton1;

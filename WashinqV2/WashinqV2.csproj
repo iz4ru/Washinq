@@ -114,6 +114,12 @@
     <Compile Include="Pages\Auth\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminAddCustomer.Designer.cs">
+      <DependentUpon>AdminAddCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Admin\AdminAddOrder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,12 @@
     <Compile Include="Pages\Views\Admin\AdminServicePage.Designer.cs">
       <DependentUpon>AdminServicePage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminSuccessPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminSuccessPay.Designer.cs">
+      <DependentUpon>AdminSuccessPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Owner\OwnerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +178,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Pages\Auth\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminAddCustomer.resx">
+      <DependentUpon>AdminAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminAddOrder.resx">
       <DependentUpon>AdminAddOrder.cs</DependentUpon>
@@ -187,6 +202,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminServicePage.resx">
       <DependentUpon>AdminServicePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminSuccessPay.resx">
+      <DependentUpon>AdminSuccessPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerPage.resx">
       <DependentUpon>OwnerPage.cs</DependentUpon>

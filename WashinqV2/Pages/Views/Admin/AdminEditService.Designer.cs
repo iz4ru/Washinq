@@ -276,6 +276,7 @@
             this.Controls.Add(this.cuiPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminEditService";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washinq | Edit Layanan Laundry";
             this.Load += new System.EventHandler(this.AdminEditService_Load);
             this.cuiPanel1.ResumeLayout(false);

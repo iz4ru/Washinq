@@ -260,6 +260,7 @@
             this.Controls.Add(this.guna2HtmlLabel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "LoginPage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washinq | Login";
             this.Load += new System.EventHandler(this.LoginPage_Load);
             this.panelHeader.ResumeLayout(false);

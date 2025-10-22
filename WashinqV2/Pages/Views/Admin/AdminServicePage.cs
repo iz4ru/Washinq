@@ -204,7 +204,7 @@ namespace WashinqV2.Pages.Views.Admin
                 return;
             }
 
-            var result = MessageBox.Show("Apakah Anda yakin ingin mengahpus data yang dipilih?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            var result = MessageBox.Show("Apakah Anda yakin ingin menghapus data yang dipilih?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {

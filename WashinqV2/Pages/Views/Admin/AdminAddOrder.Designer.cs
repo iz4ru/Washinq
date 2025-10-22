@@ -31,22 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAddOrder));
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
-            this.cuiTextBox2 = new CuoreUI.Controls.cuiTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cuiTextBox1 = new CuoreUI.Controls.cuiTextBox();
-            this.lbTotalKg = new System.Windows.Forms.Label();
-            this.cuiComboBox1 = new CuoreUI.Controls.cuiComboBox();
-            this.btnAdd = new CuoreUI.Controls.cuiButton();
-            this.lbService = new System.Windows.Forms.Label();
-            this.tbService = new CuoreUI.Controls.cuiTextBox();
+            this.btnCancel = new CuoreUI.Controls.cuiButton();
             this.lbCustName = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbNotes = new CuoreUI.Controls.cuiTextBox();
+            this.lbNotes = new System.Windows.Forms.Label();
+            this.tbTotalKg = new CuoreUI.Controls.cuiTextBox();
+            this.lbTotalKg = new System.Windows.Forms.Label();
+            this.cbxService = new CuoreUI.Controls.cuiComboBox();
+            this.btnPay = new CuoreUI.Controls.cuiButton();
+            this.lbService = new System.Windows.Forms.Label();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
-            this.llbBack = new System.Windows.Forms.LinkLabel();
-            this.cuiTextBox3 = new CuoreUI.Controls.cuiTextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.cuiPanel1.SuspendLayout();
             this.cuiPanel3.SuspendLayout();
-            this.cuiPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // cuiPanel1
@@ -65,17 +62,16 @@
             // 
             // cuiPanel3
             // 
-            this.cuiPanel3.Controls.Add(this.cuiTextBox3);
-            this.cuiPanel3.Controls.Add(this.label2);
-            this.cuiPanel3.Controls.Add(this.cuiTextBox2);
-            this.cuiPanel3.Controls.Add(this.label1);
-            this.cuiPanel3.Controls.Add(this.cuiTextBox1);
-            this.cuiPanel3.Controls.Add(this.lbTotalKg);
-            this.cuiPanel3.Controls.Add(this.cuiComboBox1);
-            this.cuiPanel3.Controls.Add(this.btnAdd);
-            this.cuiPanel3.Controls.Add(this.lbService);
-            this.cuiPanel3.Controls.Add(this.tbService);
+            this.cuiPanel3.Controls.Add(this.btnCancel);
             this.cuiPanel3.Controls.Add(this.lbCustName);
+            this.cuiPanel3.Controls.Add(this.label1);
+            this.cuiPanel3.Controls.Add(this.tbNotes);
+            this.cuiPanel3.Controls.Add(this.lbNotes);
+            this.cuiPanel3.Controls.Add(this.tbTotalKg);
+            this.cuiPanel3.Controls.Add(this.lbTotalKg);
+            this.cuiPanel3.Controls.Add(this.cbxService);
+            this.cuiPanel3.Controls.Add(this.btnPay);
+            this.cuiPanel3.Controls.Add(this.lbService);
             this.cuiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cuiPanel3.Location = new System.Drawing.Point(0, 57);
             this.cuiPanel3.Name = "cuiPanel3";
@@ -84,210 +80,232 @@
             this.cuiPanel3.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel3.Size = new System.Drawing.Size(650, 664);
-            this.cuiPanel3.TabIndex = 19;
+            this.cuiPanel3.TabIndex = 20;
             // 
-            // cuiTextBox2
+            // btnCancel
             // 
-            this.cuiTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.cuiTextBox2.BackgroundColor = System.Drawing.Color.White;
-            this.cuiTextBox2.Content = "";
-            this.cuiTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cuiTextBox2.FocusBackgroundColor = System.Drawing.Color.White;
-            this.cuiTextBox2.FocusImageTint = System.Drawing.Color.White;
-            this.cuiTextBox2.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.cuiTextBox2.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cuiTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.cuiTextBox2.Image = null;
-            this.cuiTextBox2.ImageExpand = new System.Drawing.Point(0, 0);
-            this.cuiTextBox2.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiTextBox2.Location = new System.Drawing.Point(114, 177);
-            this.cuiTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.cuiTextBox2.Multiline = false;
-            this.cuiTextBox2.Name = "cuiTextBox2";
-            this.cuiTextBox2.NormalImageTint = System.Drawing.Color.White;
-            this.cuiTextBox2.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiTextBox2.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.cuiTextBox2.PasswordChar = false;
-            this.cuiTextBox2.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.cuiTextBox2.PlaceholderText = "";
-            this.cuiTextBox2.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiTextBox2.Size = new System.Drawing.Size(400, 44);
-            this.cuiTextBox2.TabIndex = 21;
-            this.cuiTextBox2.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox2.UnderlinedStyle = true;
+            this.btnCancel.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancel.CheckButton = false;
+            this.btnCancel.Checked = false;
+            this.btnCancel.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancel.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCancel.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCancel.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCancel.Content = "Batalkan";
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCancel.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.White;
+            this.btnCancel.HoverBackground = System.Drawing.Color.Firebrick;
+            this.btnCancel.HoverForeColor = System.Drawing.Color.White;
+            this.btnCancel.HoverImageTint = System.Drawing.Color.White;
+            this.btnCancel.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCancel.Image = null;
+            this.btnCancel.ImageAutoCenter = true;
+            this.btnCancel.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnCancel.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCancel.Location = new System.Drawing.Point(118, 571);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.NormalBackground = System.Drawing.Color.Firebrick;
+            this.btnCancel.NormalForeColor = System.Drawing.Color.White;
+            this.btnCancel.NormalImageTint = System.Drawing.Color.White;
+            this.btnCancel.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCancel.OutlineThickness = 1F;
+            this.btnCancel.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnCancel.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCancel.PressedImageTint = System.Drawing.Color.White;
+            this.btnCancel.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCancel.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnCancel.Size = new System.Drawing.Size(112, 50);
+            this.btnCancel.TabIndex = 24;
+            this.btnCancel.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnCancel.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // lbCustName
+            // 
+            this.lbCustName.AutoSize = true;
+            this.lbCustName.BackColor = System.Drawing.Color.Transparent;
+            this.lbCustName.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCustName.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbCustName.Location = new System.Drawing.Point(266, 37);
+            this.lbCustName.Name = "lbCustName";
+            this.lbCustName.Size = new System.Drawing.Size(0, 21);
+            this.lbCustName.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 152);
+            this.label1.Location = new System.Drawing.Point(114, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(129, 21);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Nomor Telepon";
+            this.label1.Size = new System.Drawing.Size(146, 21);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Nama Pelanggan:";
             // 
-            // cuiTextBox1
+            // tbNotes
             // 
-            this.cuiTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.cuiTextBox1.BackgroundColor = System.Drawing.Color.White;
-            this.cuiTextBox1.Content = "";
-            this.cuiTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cuiTextBox1.FocusBackgroundColor = System.Drawing.Color.White;
-            this.cuiTextBox1.FocusImageTint = System.Drawing.Color.White;
-            this.cuiTextBox1.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.cuiTextBox1.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cuiTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.cuiTextBox1.Image = null;
-            this.cuiTextBox1.ImageExpand = new System.Drawing.Point(0, 0);
-            this.cuiTextBox1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiTextBox1.Location = new System.Drawing.Point(114, 377);
-            this.cuiTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.cuiTextBox1.Multiline = false;
-            this.cuiTextBox1.Name = "cuiTextBox1";
-            this.cuiTextBox1.NormalImageTint = System.Drawing.Color.White;
-            this.cuiTextBox1.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiTextBox1.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.cuiTextBox1.PasswordChar = false;
-            this.cuiTextBox1.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.cuiTextBox1.PlaceholderText = "";
-            this.cuiTextBox1.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiTextBox1.Size = new System.Drawing.Size(400, 44);
-            this.cuiTextBox1.TabIndex = 19;
-            this.cuiTextBox1.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox1.UnderlinedStyle = true;
+            this.tbNotes.BackColor = System.Drawing.Color.Transparent;
+            this.tbNotes.BackgroundColor = System.Drawing.Color.White;
+            this.tbNotes.Content = "";
+            this.tbNotes.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbNotes.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbNotes.FocusImageTint = System.Drawing.Color.White;
+            this.tbNotes.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbNotes.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbNotes.ForeColor = System.Drawing.Color.Black;
+            this.tbNotes.Image = null;
+            this.tbNotes.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbNotes.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbNotes.Location = new System.Drawing.Point(118, 324);
+            this.tbNotes.Margin = new System.Windows.Forms.Padding(4);
+            this.tbNotes.Multiline = true;
+            this.tbNotes.Name = "tbNotes";
+            this.tbNotes.NormalImageTint = System.Drawing.Color.White;
+            this.tbNotes.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbNotes.Padding = new System.Windows.Forms.Padding(21, 6, 21, 6);
+            this.tbNotes.PasswordChar = false;
+            this.tbNotes.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbNotes.PlaceholderText = "";
+            this.tbNotes.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbNotes.Size = new System.Drawing.Size(400, 189);
+            this.tbNotes.TabIndex = 21;
+            this.tbNotes.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbNotes.UnderlinedStyle = true;
+            // 
+            // lbNotes
+            // 
+            this.lbNotes.AutoSize = true;
+            this.lbNotes.BackColor = System.Drawing.Color.Transparent;
+            this.lbNotes.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNotes.Location = new System.Drawing.Point(114, 299);
+            this.lbNotes.Name = "lbNotes";
+            this.lbNotes.Size = new System.Drawing.Size(73, 21);
+            this.lbNotes.TabIndex = 20;
+            this.lbNotes.Text = "Catatan";
+            // 
+            // tbTotalKg
+            // 
+            this.tbTotalKg.BackColor = System.Drawing.Color.Transparent;
+            this.tbTotalKg.BackgroundColor = System.Drawing.Color.White;
+            this.tbTotalKg.Content = "";
+            this.tbTotalKg.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTotalKg.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbTotalKg.FocusImageTint = System.Drawing.Color.White;
+            this.tbTotalKg.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbTotalKg.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalKg.ForeColor = System.Drawing.Color.Black;
+            this.tbTotalKg.Image = null;
+            this.tbTotalKg.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbTotalKg.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbTotalKg.Location = new System.Drawing.Point(118, 120);
+            this.tbTotalKg.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTotalKg.Multiline = false;
+            this.tbTotalKg.Name = "tbTotalKg";
+            this.tbTotalKg.NormalImageTint = System.Drawing.Color.White;
+            this.tbTotalKg.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbTotalKg.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbTotalKg.PasswordChar = false;
+            this.tbTotalKg.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbTotalKg.PlaceholderText = "";
+            this.tbTotalKg.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbTotalKg.Size = new System.Drawing.Size(400, 44);
+            this.tbTotalKg.TabIndex = 19;
+            this.tbTotalKg.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbTotalKg.UnderlinedStyle = true;
             // 
             // lbTotalKg
             // 
             this.lbTotalKg.AutoSize = true;
             this.lbTotalKg.BackColor = System.Drawing.Color.Transparent;
             this.lbTotalKg.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalKg.Location = new System.Drawing.Point(110, 352);
+            this.lbTotalKg.Location = new System.Drawing.Point(114, 95);
             this.lbTotalKg.Name = "lbTotalKg";
             this.lbTotalKg.Size = new System.Drawing.Size(122, 21);
             this.lbTotalKg.TabIndex = 18;
             this.lbTotalKg.Text = "Total Kilogram";
             // 
-            // cuiComboBox1
+            // cbxService
             // 
-            this.cuiComboBox1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cuiComboBox1.ButtonCursor = System.Windows.Forms.Cursors.Arrow;
-            this.cuiComboBox1.ButtonHoverBackground = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiComboBox1.ButtonHoverOutline = System.Drawing.Color.Empty;
-            this.cuiComboBox1.ButtonNormalBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiComboBox1.ButtonNormalOutline = System.Drawing.Color.Empty;
-            this.cuiComboBox1.ButtonPressedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.cuiComboBox1.ButtonPressedOutline = System.Drawing.Color.Empty;
-            this.cuiComboBox1.DropDownBackgroundColor = System.Drawing.Color.White;
-            this.cuiComboBox1.DropDownOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cuiComboBox1.ExpandArrowColor = System.Drawing.Color.Gray;
-            this.cuiComboBox1.ForeColor = System.Drawing.Color.Gray;
-            this.cuiComboBox1.Items = new string[0];
-            this.cuiComboBox1.Location = new System.Drawing.Point(114, 477);
-            this.cuiComboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cuiComboBox1.Name = "cuiComboBox1";
-            this.cuiComboBox1.NoSelectionDropdownText = "Empty";
-            this.cuiComboBox1.NoSelectionText = "None";
-            this.cuiComboBox1.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiComboBox1.OutlineThickness = 1F;
-            this.cuiComboBox1.Rounding = 8;
-            this.cuiComboBox1.Size = new System.Drawing.Size(400, 44);
-            this.cuiComboBox1.TabIndex = 17;
+            this.cbxService.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxService.ButtonCursor = System.Windows.Forms.Cursors.Arrow;
+            this.cbxService.ButtonHoverBackground = System.Drawing.Color.RoyalBlue;
+            this.cbxService.ButtonHoverOutline = System.Drawing.Color.Empty;
+            this.cbxService.ButtonNormalBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxService.ButtonNormalOutline = System.Drawing.Color.Empty;
+            this.cbxService.ButtonPressedBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxService.ButtonPressedOutline = System.Drawing.Color.Empty;
+            this.cbxService.DropDownBackgroundColor = System.Drawing.Color.White;
+            this.cbxService.DropDownOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxService.ExpandArrowColor = System.Drawing.Color.Gray;
+            this.cbxService.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxService.ForeColor = System.Drawing.Color.Gray;
+            this.cbxService.Items = new string[0];
+            this.cbxService.Location = new System.Drawing.Point(118, 220);
+            this.cbxService.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxService.Name = "cbxService";
+            this.cbxService.NoSelectionDropdownText = "Empty";
+            this.cbxService.NoSelectionText = "None";
+            this.cbxService.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cbxService.OutlineThickness = 1F;
+            this.cbxService.Rounding = 8;
+            this.cbxService.Size = new System.Drawing.Size(400, 44);
+            this.cbxService.TabIndex = 17;
             // 
-            // btnAdd
+            // btnPay
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.CheckButton = false;
-            this.btnAdd.Checked = false;
-            this.btnAdd.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAdd.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAdd.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.Content = "Bayar Sekarang";
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.HoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverImageTint = System.Drawing.Color.White;
-            this.btnAdd.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.Image = null;
-            this.btnAdd.ImageAutoCenter = true;
-            this.btnAdd.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAdd.Location = new System.Drawing.Point(220, 568);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.NormalForeColor = System.Drawing.Color.White;
-            this.btnAdd.NormalImageTint = System.Drawing.Color.White;
-            this.btnAdd.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.OutlineThickness = 1F;
-            this.btnAdd.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnAdd.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnAdd.PressedImageTint = System.Drawing.Color.White;
-            this.btnAdd.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnAdd.Size = new System.Drawing.Size(187, 50);
-            this.btnAdd.TabIndex = 16;
-            this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnAdd.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnPay.BackColor = System.Drawing.Color.Transparent;
+            this.btnPay.CheckButton = false;
+            this.btnPay.Checked = false;
+            this.btnPay.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnPay.CheckedForeColor = System.Drawing.Color.White;
+            this.btnPay.CheckedImageTint = System.Drawing.Color.White;
+            this.btnPay.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnPay.Content = "Lanjutkan";
+            this.btnPay.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPay.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnPay.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPay.ForeColor = System.Drawing.Color.White;
+            this.btnPay.HoverBackground = System.Drawing.Color.DodgerBlue;
+            this.btnPay.HoverForeColor = System.Drawing.Color.White;
+            this.btnPay.HoverImageTint = System.Drawing.Color.White;
+            this.btnPay.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnPay.Image = null;
+            this.btnPay.ImageAutoCenter = true;
+            this.btnPay.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnPay.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnPay.Location = new System.Drawing.Point(331, 571);
+            this.btnPay.Name = "btnPay";
+            this.btnPay.NormalBackground = System.Drawing.Color.DodgerBlue;
+            this.btnPay.NormalForeColor = System.Drawing.Color.White;
+            this.btnPay.NormalImageTint = System.Drawing.Color.White;
+            this.btnPay.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnPay.OutlineThickness = 1F;
+            this.btnPay.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnPay.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnPay.PressedImageTint = System.Drawing.Color.White;
+            this.btnPay.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnPay.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnPay.Size = new System.Drawing.Size(187, 50);
+            this.btnPay.TabIndex = 16;
+            this.btnPay.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnPay.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnPay.Click += new System.EventHandler(this.btnPay_Click);
             // 
             // lbService
             // 
             this.lbService.AutoSize = true;
             this.lbService.BackColor = System.Drawing.Color.Transparent;
             this.lbService.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbService.Location = new System.Drawing.Point(110, 452);
+            this.lbService.Location = new System.Drawing.Point(114, 195);
             this.lbService.Name = "lbService";
             this.lbService.Size = new System.Drawing.Size(119, 21);
             this.lbService.TabIndex = 10;
             this.lbService.Text = "Jenis Layanan";
             // 
-            // tbService
-            // 
-            this.tbService.BackColor = System.Drawing.Color.Transparent;
-            this.tbService.BackgroundColor = System.Drawing.Color.White;
-            this.tbService.Content = "";
-            this.tbService.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbService.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbService.FocusImageTint = System.Drawing.Color.White;
-            this.tbService.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbService.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbService.ForeColor = System.Drawing.Color.Black;
-            this.tbService.Image = null;
-            this.tbService.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbService.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbService.Location = new System.Drawing.Point(114, 82);
-            this.tbService.Margin = new System.Windows.Forms.Padding(4);
-            this.tbService.Multiline = false;
-            this.tbService.Name = "tbService";
-            this.tbService.NormalImageTint = System.Drawing.Color.White;
-            this.tbService.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbService.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbService.PasswordChar = false;
-            this.tbService.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbService.PlaceholderText = "";
-            this.tbService.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbService.Size = new System.Drawing.Size(400, 44);
-            this.tbService.TabIndex = 9;
-            this.tbService.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbService.UnderlinedStyle = true;
-            // 
-            // lbCustName
-            // 
-            this.lbCustName.AutoSize = true;
-            this.lbCustName.BackColor = System.Drawing.Color.Transparent;
-            this.lbCustName.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCustName.Location = new System.Drawing.Point(110, 57);
-            this.lbCustName.Name = "lbCustName";
-            this.lbCustName.Size = new System.Drawing.Size(141, 21);
-            this.lbCustName.TabIndex = 8;
-            this.lbCustName.Text = "Nama Pelanggan";
-            // 
             // cuiPanel2
             // 
-            this.cuiPanel2.Controls.Add(this.llbBack);
             this.cuiPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel2.Location = new System.Drawing.Point(0, 0);
             this.cuiPanel2.Name = "cuiPanel2";
@@ -296,61 +314,7 @@
             this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel2.Size = new System.Drawing.Size(650, 57);
-            this.cuiPanel2.TabIndex = 18;
-            // 
-            // llbBack
-            // 
-            this.llbBack.AutoSize = true;
-            this.llbBack.BackColor = System.Drawing.Color.Transparent;
-            this.llbBack.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold);
-            this.llbBack.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.llbBack.Location = new System.Drawing.Point(17, 19);
-            this.llbBack.Name = "llbBack";
-            this.llbBack.Size = new System.Drawing.Size(72, 21);
-            this.llbBack.TabIndex = 16;
-            this.llbBack.TabStop = true;
-            this.llbBack.Text = "Kembali";
-            // 
-            // cuiTextBox3
-            // 
-            this.cuiTextBox3.BackColor = System.Drawing.Color.Transparent;
-            this.cuiTextBox3.BackgroundColor = System.Drawing.Color.White;
-            this.cuiTextBox3.Content = "";
-            this.cuiTextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.cuiTextBox3.FocusBackgroundColor = System.Drawing.Color.White;
-            this.cuiTextBox3.FocusImageTint = System.Drawing.Color.White;
-            this.cuiTextBox3.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.cuiTextBox3.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cuiTextBox3.ForeColor = System.Drawing.Color.Black;
-            this.cuiTextBox3.Image = null;
-            this.cuiTextBox3.ImageExpand = new System.Drawing.Point(0, 0);
-            this.cuiTextBox3.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiTextBox3.Location = new System.Drawing.Point(114, 275);
-            this.cuiTextBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.cuiTextBox3.Multiline = false;
-            this.cuiTextBox3.Name = "cuiTextBox3";
-            this.cuiTextBox3.NormalImageTint = System.Drawing.Color.White;
-            this.cuiTextBox3.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cuiTextBox3.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.cuiTextBox3.PasswordChar = false;
-            this.cuiTextBox3.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.cuiTextBox3.PlaceholderText = "";
-            this.cuiTextBox3.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiTextBox3.Size = new System.Drawing.Size(400, 44);
-            this.cuiTextBox3.TabIndex = 23;
-            this.cuiTextBox3.TextOffset = new System.Drawing.Size(0, 0);
-            this.cuiTextBox3.UnderlinedStyle = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(110, 250);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 21);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Alamat";
+            this.cuiPanel2.TabIndex = 19;
             // 
             // AdminAddOrder
             // 
@@ -360,12 +324,12 @@
             this.Controls.Add(this.cuiPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminAddOrder";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washinq | Tambahkan Order";
+            this.Load += new System.EventHandler(this.AdminAddOrder_Load);
             this.cuiPanel1.ResumeLayout(false);
             this.cuiPanel3.ResumeLayout(false);
             this.cuiPanel3.PerformLayout();
-            this.cuiPanel2.ResumeLayout(false);
-            this.cuiPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -374,18 +338,16 @@
 
         private CuoreUI.Controls.cuiPanel cuiPanel1;
         private CuoreUI.Controls.cuiPanel cuiPanel2;
-        private System.Windows.Forms.LinkLabel llbBack;
         private CuoreUI.Controls.cuiPanel cuiPanel3;
-        private CuoreUI.Controls.cuiButton btnAdd;
-        private System.Windows.Forms.Label lbService;
-        private CuoreUI.Controls.cuiTextBox tbService;
-        private System.Windows.Forms.Label lbCustName;
-        private CuoreUI.Controls.cuiComboBox cuiComboBox1;
-        private CuoreUI.Controls.cuiTextBox cuiTextBox1;
+        private CuoreUI.Controls.cuiTextBox tbTotalKg;
         private System.Windows.Forms.Label lbTotalKg;
-        private CuoreUI.Controls.cuiTextBox cuiTextBox2;
+        private CuoreUI.Controls.cuiComboBox cbxService;
+        private CuoreUI.Controls.cuiButton btnPay;
+        private System.Windows.Forms.Label lbService;
+        private System.Windows.Forms.Label lbCustName;
         private System.Windows.Forms.Label label1;
-        private CuoreUI.Controls.cuiTextBox cuiTextBox3;
-        private System.Windows.Forms.Label label2;
+        private CuoreUI.Controls.cuiTextBox tbNotes;
+        private System.Windows.Forms.Label lbNotes;
+        private CuoreUI.Controls.cuiButton btnCancel;
     }
 }

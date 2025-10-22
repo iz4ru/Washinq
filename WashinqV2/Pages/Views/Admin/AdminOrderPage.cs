@@ -168,7 +168,7 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminAddOrder form = new AdminAddOrder();
+            AdminAddCustomer form = new AdminAddCustomer();
             form.ShowDialog();
         }
 
