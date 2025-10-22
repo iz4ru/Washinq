@@ -172,15 +172,161 @@ namespace WashinqV2.Pages.Views.Admin
             form.ShowDialog();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
+            // Cek apakah ada baris yang dipilih
+            bool hasSelected = false;
+            List<int> selectedOrderIds = new List<int>();
 
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                if (row.Cells["Pilih Aksi"].Value != null &&
+                    Convert.ToBoolean(row.Cells["Pilih Aksi"].Value) == true)
+                {
+                    hasSelected = true;
+                    int orderId = Convert.ToInt32(row.Cells["id"].Value);
+
+                    // Cek apakah sudah diambil
+                    string takenAt = row.Cells["Diambil Pada"].Value.ToString();
+                    if (takenAt != "-")
+                    {
+                        MessageBox.Show("Order dengan ID " + orderId + " sudah diambil sebelumnya!",
+                            "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    selectedOrderIds.Add(orderId);
+                }
+            }
+
+            if (!hasSelected)
+            {
+                MessageBox.Show("Silakan pilih order yang ingin ditandai sebagai telah diambil!",
+                    "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Konfirmasi
+            var result = MessageBox.Show(
+                "Apakah Anda yakin ingin menandai " + selectedOrderIds.Count +
+                " order sebagai telah diambil?",
+                "Konfirmasi",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    using (var conn = Database.Database.GetConnection())
+                    {
+                        conn.Open();
+
+                        foreach (int orderId in selectedOrderIds)
+                        {
+                            string query = "UPDATE orders SET taken_at = @taken_at WHERE id = @id";
+                            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@taken_at", DateTime.Now);
+                                cmd.Parameters.AddWithValue("@id", orderId);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        conn.Close();
+                    }
+
+                    MessageBox.Show("Order berhasil ditandai sebagai telah diambil!",
+                        "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadData(); // Refresh data
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message,
+                        "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            // Cek apakah ada baris yang dipilih
+            bool hasSelected = false;
+            List<int> selectedOrderIds = new List<int>();
+            List<string> orderDetails = new List<string>();
 
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                if (row.Cells["Pilih Aksi"].Value != null &&
+                    Convert.ToBoolean(row.Cells["Pilih Aksi"].Value) == true)
+                {
+                    hasSelected = true;
+                    int orderId = Convert.ToInt32(row.Cells["id"].Value);
+                    string customerName = row.Cells["Pelanggan"].Value.ToString();
+
+                    selectedOrderIds.Add(orderId);
+                    orderDetails.Add("ID: " + orderId + " | Nama Customer: " + customerName);
+                }
+            }
+
+            if (!hasSelected)
+            {
+                MessageBox.Show("Silakan pilih order yang ingin dihapus!",
+                    "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Konfirmasi dengan detail
+            string detailMessage = "Order yang akan dihapus:\n\n" +
+                string.Join("\n", orderDetails) +
+                "\n\nApakah Anda yakin ingin menghapus " + selectedOrderIds.Count + " order ini?";
+
+            var result = MessageBox.Show(detailMessage,
+                "Konfirmasi Hapus",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                try
+                {
+                    using (var conn = Database.Database.GetConnection())
+                    {
+                        conn.Open();
+
+                        foreach (int orderId in selectedOrderIds)
+                        {
+                            string query = "DELETE FROM orders WHERE id = @id";
+                            using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                            {
+                                cmd.Parameters.AddWithValue("@id", orderId);
+                                cmd.ExecuteNonQuery();
+                            }
+                        }
+
+                        conn.Close();
+                    }
+
+                    MessageBox.Show("Order berhasil dihapus!",
+                        "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LoadData(); // Refresh data
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Gagal menghapus order: " + ex.Message +
+                        "\n\nPastikan tidak ada data terkait yang menghalangi penghapusan.",
+                        "Kesalahan Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan: " + ex.Message,
+                        "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
