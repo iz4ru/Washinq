@@ -9,20 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WashinqV2.Models;
+using WashinqV2.Pages.Views.Admin;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Cashier
 {
-    public partial class AdminAddOrder : Form
+    public partial class CashierAddOrder : Form
     {
         private int customerId;
-        public AdminAddOrder(int customerId)
+        public CashierAddOrder(int customerId)
         {
             InitializeComponent();
             this.ClientSize = new Size(480, 600);
             this.customerId = customerId;
         }
 
-        private void AdminAddOrder_Load(object sender, EventArgs e)
+        private void CashierAddOrder_Load(object sender, EventArgs e)
         {
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -124,7 +125,6 @@ namespace WashinqV2.Pages.Views.Admin
                 }
             }
 
-            // Hitung total
             decimal totalPrice = pricePerKg * totalKg;
 
             // Insert ke orders
@@ -166,6 +166,8 @@ namespace WashinqV2.Pages.Views.Admin
                     }
                 }
             }
+
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -207,6 +209,5 @@ namespace WashinqV2.Pages.Views.Admin
                 }
             }
         }
-
     }
 }

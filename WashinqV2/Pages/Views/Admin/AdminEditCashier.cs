@@ -23,6 +23,8 @@ namespace WashinqV2.Pages.Views.Admin
             InitializeComponent();
             this.ClientSize = new Size(800, 600);
             this.cashierId = id;
+            tbCashPassword.PasswordChar = true;
+            tbCashConfirmPw.PasswordChar = true;
         }
 
         private void AdminEditCashier_Load(object sender, EventArgs e)

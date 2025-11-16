@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,20 +8,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
-using WashinqV2.Models;
+using WashinqV2.Pages.Views.Admin;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Cashier
 {
-    public partial class AdminAddCustomer : Form
+    public partial class CashierAddCustomer : Form
     {
-        public AdminAddCustomer()
+        public CashierAddCustomer()
         {
             InitializeComponent();
             this.ClientSize = new Size(480, 600);
         }
 
-        private void AdminAddCustomer_Load(object sender, EventArgs e)
+        private void CashierAddCustomer_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -71,7 +71,7 @@ namespace WashinqV2.Pages.Views.Admin
                 var result = MessageBox.Show("Customer berhasil ditambahkan!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 if (result == DialogResult.OK)
                 {
-                    var addOrder = new AdminAddOrder(customerId);
+                    var addOrder = new CashierAddOrder(customerId);
                     addOrder.ShowDialog();
                     this.Close();
                 }

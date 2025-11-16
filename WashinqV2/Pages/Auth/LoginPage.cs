@@ -98,6 +98,16 @@ namespace WashinqV2
                                 this.Close();
                                 return;
                             }
+                            else if (UserSession.role == "cashier")
+                            {
+                                this.Hide();
+                                using (var cashierPage = new Pages.Views.Cashier.CashierPage())
+                                {
+                                    cashierPage.ShowDialog();
+                                }
+                                this.Close();
+                                return;
+                            }
                             else
                             {
                                 MessageBox.Show("Invalid Role", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);

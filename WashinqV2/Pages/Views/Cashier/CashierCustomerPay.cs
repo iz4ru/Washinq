@@ -7,14 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Pages.Views.Admin;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Cashier
 {
-    public partial class AdminCustomerPay : Form
+    public partial class CashierCustomerPay : Form
     {
         private int customerId;
         private decimal totalPrice;
-        public AdminCustomerPay(int customerId, decimal totalPrice)
+        public CashierCustomerPay(int customerId, decimal totalPrice)
         {
             InitializeComponent();
             this.customerId = customerId;
@@ -22,7 +23,7 @@ namespace WashinqV2.Pages.Views.Admin
             this.ClientSize = new Size(480, 600);
         }
 
-        private void AdminCustomerPay_Load(object sender, EventArgs e)
+        private void CashierCustomerPay_Load(object sender, EventArgs e)
         {
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
@@ -97,6 +98,5 @@ namespace WashinqV2.Pages.Views.Admin
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }

@@ -186,6 +186,42 @@
     <Compile Include="Pages\Views\Admin\AdminSuccessPay.Designer.cs">
       <DependentUpon>AdminSuccessPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierAddCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierAddCustomer.Designer.cs">
+      <DependentUpon>CashierAddCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierAddOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierAddOrder.Designer.cs">
+      <DependentUpon>CashierAddOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierCustomerPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierCustomerPay.Designer.cs">
+      <DependentUpon>CashierCustomerPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierOrderPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierOrderPage.Designer.cs">
+      <DependentUpon>CashierOrderPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierPage.Designer.cs">
+      <DependentUpon>CashierPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierSuccessPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierSuccessPay.Designer.cs">
+      <DependentUpon>CashierSuccessPay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Owner\OwnerPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +269,24 @@
     <EmbeddedResource Include="Pages\Views\Admin\AdminSuccessPay.resx">
       <DependentUpon>AdminSuccessPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierAddCustomer.resx">
+      <DependentUpon>CashierAddCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierAddOrder.resx">
+      <DependentUpon>CashierAddOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierCustomerPay.resx">
+      <DependentUpon>CashierCustomerPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierOrderPage.resx">
+      <DependentUpon>CashierOrderPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierPage.resx">
+      <DependentUpon>CashierPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierSuccessPay.resx">
+      <DependentUpon>CashierSuccessPay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerPage.resx">
       <DependentUpon>OwnerPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -259,8 +313,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Pages\Views\Cashier\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

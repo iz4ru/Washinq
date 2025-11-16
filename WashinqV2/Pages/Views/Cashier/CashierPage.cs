@@ -8,29 +8,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WashinqV2.Pages.Views.Admin;
+using WashinqV2.Pages.Views.Cashier;
 
-namespace WashinqV2.Pages.Views
+namespace WashinqV2.Pages.Views.Cashier
 {
-    public partial class AdminPage : Form
+    public partial class CashierPage : Form
     {
-        public AdminPage()
+        public CashierPage()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void AdminPage_Load(object sender, EventArgs e)
+        private void CashierPage_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
-
             LoadDashboardStatistics();
             LoadRecentOrders();
         }
 
         private void SetupDataGridView()
         {
-
+            // Setup DataGridView sama seperti AdminPage
             DataGridViewTextBoxColumn clid = new DataGridViewTextBoxColumn();
             clid.HeaderText = "ID";
             clid.Name = "id";
@@ -111,6 +110,7 @@ namespace WashinqV2.Pages.Views
                 {
                     conn.Open();
 
+                    // Total Pesanan
                     string queryTotalOrder = "SELECT COUNT(*) FROM orders";
                     using (MySqlCommand cmd = new MySqlCommand(queryTotalOrder, conn))
                     {
@@ -118,6 +118,7 @@ namespace WashinqV2.Pages.Views
                         lblTotalOrder.Text = totalOrder.ToString();
                     }
 
+                    // Total Pesanan Selesai
                     string queryCompletedOrder = "SELECT COUNT(*) FROM orders WHERE taken_at IS NOT NULL";
                     using (MySqlCommand cmd = new MySqlCommand(queryCompletedOrder, conn))
                     {
@@ -125,6 +126,7 @@ namespace WashinqV2.Pages.Views
                         lblPesananSelesai.Text = completedOrder.ToString();
                     }
 
+                    // Total Layanan
                     string queryTotalService = "SELECT COUNT(*) FROM services";
                     using (MySqlCommand cmd = new MySqlCommand(queryTotalService, conn))
                     {
@@ -132,11 +134,12 @@ namespace WashinqV2.Pages.Views
                         lblTotalLayanan.Text = totalService.ToString();
                     }
 
+                    // Total Pengguna
                     string queryTotalUsers = "SELECT COUNT(*) FROM users";
                     using (MySqlCommand cmd = new MySqlCommand(queryTotalUsers, conn))
                     {
-                        int totalUsers = Convert.ToInt32(cmd.ExecuteScalar());
-                        lblTotalKasir.Text = totalUsers.ToString();
+                        int totalCustomers = Convert.ToInt32(cmd.ExecuteScalar());
+                        lblTotalPengguna.Text = totalCustomers.ToString();
                     }
 
                     conn.Close();
@@ -160,6 +163,7 @@ namespace WashinqV2.Pages.Views
             {
                 using (var conn = Database.Database.GetConnection())
                 {
+                    // Query 10 order terbaru
                     string query = @"
                         SELECT 
                             o.id,
@@ -235,33 +239,17 @@ namespace WashinqV2.Pages.Views
             }
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCashier_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminCashierPage register = new AdminCashierPage();
-            register.ShowDialog();
-            this.Close();
-        }
-
         private void btnOrder_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminOrderPage register = new AdminOrderPage();
+            CashierOrderPage register = new CashierOrderPage();
             register.ShowDialog();
             this.Close();
         }
 
-        private void btnService_Click(object sender, EventArgs e)
+        private void btnProfile_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            AdminServicePage register = new AdminServicePage();
-            register.ShowDialog();
-            this.Close();
+            // TODO: Implementasi profile page jika ada
         }
     }
 }
