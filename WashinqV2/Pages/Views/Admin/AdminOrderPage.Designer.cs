@@ -47,7 +47,7 @@
             this.cuiPanel5 = new CuoreUI.Controls.cuiPanel();
             this.btnService = new CuoreUI.Controls.cuiButton();
             this.btnOrder = new CuoreUI.Controls.cuiButton();
-            this.btnUser = new CuoreUI.Controls.cuiButton();
+            this.btnCashier = new CuoreUI.Controls.cuiButton();
             this.btnDashboard = new CuoreUI.Controls.cuiButton();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -422,7 +422,7 @@
             // 
             this.cuiPanel5.Controls.Add(this.btnService);
             this.cuiPanel5.Controls.Add(this.btnOrder);
-            this.cuiPanel5.Controls.Add(this.btnUser);
+            this.cuiPanel5.Controls.Add(this.btnCashier);
             this.cuiPanel5.Controls.Add(this.btnDashboard);
             this.cuiPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel5.Location = new System.Drawing.Point(0, 0);
@@ -516,46 +516,46 @@
             this.btnOrder.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnOrder.TextOffset = new System.Drawing.Point(0, 0);
             // 
-            // btnUser
+            // btnCashier
             // 
-            this.btnUser.BackColor = System.Drawing.Color.Transparent;
-            this.btnUser.CheckButton = false;
-            this.btnUser.Checked = false;
-            this.btnUser.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnUser.CheckedForeColor = System.Drawing.Color.White;
-            this.btnUser.CheckedImageTint = System.Drawing.Color.White;
-            this.btnUser.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnUser.Content = "";
-            this.btnUser.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUser.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.btnUser.ForeColor = System.Drawing.Color.Black;
-            this.btnUser.HoverBackground = System.Drawing.Color.White;
-            this.btnUser.HoverForeColor = System.Drawing.Color.Black;
-            this.btnUser.HoverImageTint = System.Drawing.Color.White;
-            this.btnUser.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnUser.Image = ((System.Drawing.Image)(resources.GetObject("btnUser.Image")));
-            this.btnUser.ImageAutoCenter = true;
-            this.btnUser.ImageExpand = new System.Drawing.Point(8, 8);
-            this.btnUser.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnUser.Location = new System.Drawing.Point(18, 116);
-            this.btnUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnUser.Name = "btnUser";
-            this.btnUser.NormalBackground = System.Drawing.Color.White;
-            this.btnUser.NormalForeColor = System.Drawing.Color.Black;
-            this.btnUser.NormalImageTint = System.Drawing.Color.White;
-            this.btnUser.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnUser.OutlineThickness = 1F;
-            this.btnUser.PressedBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnUser.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnUser.PressedImageTint = System.Drawing.Color.White;
-            this.btnUser.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnUser.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnUser.Size = new System.Drawing.Size(70, 69);
-            this.btnUser.TabIndex = 1;
-            this.btnUser.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnUser.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnUser.Click += new System.EventHandler(this.btnUser_Click);
+            this.btnCashier.BackColor = System.Drawing.Color.Transparent;
+            this.btnCashier.CheckButton = false;
+            this.btnCashier.Checked = false;
+            this.btnCashier.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCashier.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCashier.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCashier.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCashier.Content = "";
+            this.btnCashier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCashier.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCashier.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnCashier.ForeColor = System.Drawing.Color.Black;
+            this.btnCashier.HoverBackground = System.Drawing.Color.White;
+            this.btnCashier.HoverForeColor = System.Drawing.Color.Black;
+            this.btnCashier.HoverImageTint = System.Drawing.Color.White;
+            this.btnCashier.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCashier.Image = ((System.Drawing.Image)(resources.GetObject("btnCashier.Image")));
+            this.btnCashier.ImageAutoCenter = true;
+            this.btnCashier.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnCashier.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCashier.Location = new System.Drawing.Point(18, 116);
+            this.btnCashier.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCashier.Name = "btnCashier";
+            this.btnCashier.NormalBackground = System.Drawing.Color.White;
+            this.btnCashier.NormalForeColor = System.Drawing.Color.Black;
+            this.btnCashier.NormalImageTint = System.Drawing.Color.White;
+            this.btnCashier.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCashier.OutlineThickness = 1F;
+            this.btnCashier.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnCashier.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCashier.PressedImageTint = System.Drawing.Color.White;
+            this.btnCashier.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCashier.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnCashier.Size = new System.Drawing.Size(70, 69);
+            this.btnCashier.TabIndex = 1;
+            this.btnCashier.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnCashier.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCashier.Click += new System.EventHandler(this.btnCashier_Click);
             // 
             // btnDashboard
             // 
@@ -698,7 +698,7 @@
         private CuoreUI.Controls.cuiPanel cuiPanel5;
         private CuoreUI.Controls.cuiButton btnService;
         private CuoreUI.Controls.cuiButton btnOrder;
-        private CuoreUI.Controls.cuiButton btnUser;
+        private CuoreUI.Controls.cuiButton btnCashier;
         private CuoreUI.Controls.cuiButton btnDashboard;
         private CuoreUI.Controls.cuiPanel cuiPanel6;
         private CuoreUI.Controls.cuiButton btnAdd;

@@ -114,6 +114,12 @@
     <Compile Include="Pages\Auth\LoginPage.Designer.cs">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminAddCashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminAddCashier.Designer.cs">
+      <DependentUpon>AdminAddCashier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Admin\AdminAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,11 +138,23 @@
     <Compile Include="Pages\Views\Admin\AdminAddService.Designer.cs">
       <DependentUpon>AdminAddService.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminCashierPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminCashierPage.Designer.cs">
+      <DependentUpon>AdminCashierPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Admin\AdminCustomerPay.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\Views\Admin\AdminCustomerPay.Designer.cs">
       <DependentUpon>AdminCustomerPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminEditCashier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminEditCashier.Designer.cs">
+      <DependentUpon>AdminEditCashier.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\Admin\AdminEditService.cs">
       <SubType>Form</SubType>
@@ -179,6 +197,9 @@
     <EmbeddedResource Include="Pages\Auth\LoginPage.resx">
       <DependentUpon>LoginPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminAddCashier.resx">
+      <DependentUpon>AdminAddCashier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminAddCustomer.resx">
       <DependentUpon>AdminAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,8 +209,14 @@
     <EmbeddedResource Include="Pages\Views\Admin\AdminAddService.resx">
       <DependentUpon>AdminAddService.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminCashierPage.resx">
+      <DependentUpon>AdminCashierPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminCustomerPay.resx">
       <DependentUpon>AdminCustomerPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminEditCashier.resx">
+      <DependentUpon>AdminEditCashier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminEditService.resx">
       <DependentUpon>AdminEditService.cs</DependentUpon>

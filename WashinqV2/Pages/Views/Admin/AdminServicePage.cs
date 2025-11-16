@@ -272,9 +272,12 @@ namespace WashinqV2.Pages.Views.Admin
             this.Close();
         }
 
-        private void btnUser_Click(object sender, EventArgs e)
+        private void btnCashier_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            AdminCashierPage register = new AdminCashierPage();
+            register.ShowDialog();
+            this.Close();
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
