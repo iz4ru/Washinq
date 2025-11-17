@@ -27,7 +27,7 @@ namespace WashinqV2.Pages.Views.Admin
             this.Close();
         }
 
-        private void btnTambahkan_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbCashName.Content))
             {

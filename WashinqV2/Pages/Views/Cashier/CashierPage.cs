@@ -251,5 +251,11 @@ namespace WashinqV2.Pages.Views.Cashier
         {
             // TODO: Implementasi profile page jika ada
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            CashierAddCustomer form = new CashierAddCustomer();
+            form.ShowDialog();
+        }
     }
 }

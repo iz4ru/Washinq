@@ -41,8 +41,6 @@
             this.btnOrder = new CuoreUI.Controls.cuiButton();
             this.btnDashboard = new CuoreUI.Controls.cuiButton();
             this.cuiPanel6 = new CuoreUI.Controls.cuiPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.cuiPanel5 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
             this.dgvBeranda = new System.Windows.Forms.DataGridView();
@@ -73,6 +71,11 @@
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.cuiPanel15 = new CuoreUI.Controls.cuiPanel();
             this.lblPesananSelesai = new System.Windows.Forms.Label();
+            this.cuiPanel7 = new CuoreUI.Controls.cuiPanel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cuiPanel22 = new CuoreUI.Controls.cuiPanel();
+            this.btnAdd = new CuoreUI.Controls.cuiButton();
             this.cuiPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
@@ -101,6 +104,8 @@
             this.cuiPanel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.cuiPanel15.SuspendLayout();
+            this.cuiPanel7.SuspendLayout();
+            this.cuiPanel22.SuspendLayout();
             this.SuspendLayout();
             // 
             // cuiPanel1
@@ -369,8 +374,8 @@
             // 
             // cuiPanel6
             // 
-            this.cuiPanel6.Controls.Add(this.label2);
-            this.cuiPanel6.Controls.Add(this.label3);
+            this.cuiPanel6.Controls.Add(this.cuiPanel22);
+            this.cuiPanel6.Controls.Add(this.cuiPanel7);
             this.cuiPanel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel6.Location = new System.Drawing.Point(94, 71);
             this.cuiPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -381,29 +386,6 @@
             this.cuiPanel6.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel6.Size = new System.Drawing.Size(1254, 122);
             this.cuiPanel6.TabIndex = 8;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(34, 71);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(484, 21);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Lakukan transaksi pembelian atau lihat transaksi berlangsung.";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(32, 28);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 36);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Selamat datang kembali!";
             // 
             // cuiPanel5
             // 
@@ -831,6 +813,96 @@
             this.lblPesananSelesai.TabIndex = 7;
             this.lblPesananSelesai.Text = "51";
             // 
+            // cuiPanel7
+            // 
+            this.cuiPanel7.Controls.Add(this.label2);
+            this.cuiPanel7.Controls.Add(this.label3);
+            this.cuiPanel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cuiPanel7.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel7.Name = "cuiPanel7";
+            this.cuiPanel7.OutlineThickness = 1F;
+            this.cuiPanel7.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel7.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel7.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel7.Size = new System.Drawing.Size(559, 122);
+            this.cuiPanel7.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(38, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(484, 21);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Lakukan transaksi pembelian atau lihat transaksi berlangsung.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(36, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(354, 36);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Selamat datang kembali!";
+            // 
+            // cuiPanel22
+            // 
+            this.cuiPanel22.Controls.Add(this.btnAdd);
+            this.cuiPanel22.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cuiPanel22.Location = new System.Drawing.Point(990, 0);
+            this.cuiPanel22.Name = "cuiPanel22";
+            this.cuiPanel22.OutlineThickness = 1F;
+            this.cuiPanel22.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel22.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel22.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel22.Size = new System.Drawing.Size(264, 122);
+            this.cuiPanel22.TabIndex = 9;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.CheckButton = false;
+            this.btnAdd.Checked = false;
+            this.btnAdd.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
+            this.btnAdd.CheckedImageTint = System.Drawing.Color.White;
+            this.btnAdd.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnAdd.Content = "Tambah Order";
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnAdd.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverBackground = System.Drawing.Color.DodgerBlue;
+            this.btnAdd.HoverForeColor = System.Drawing.Color.White;
+            this.btnAdd.HoverImageTint = System.Drawing.Color.White;
+            this.btnAdd.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.Image = null;
+            this.btnAdd.ImageAutoCenter = true;
+            this.btnAdd.ImageExpand = new System.Drawing.Point(0, 0);
+            this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnAdd.Location = new System.Drawing.Point(32, 36);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.NormalBackground = System.Drawing.Color.DodgerBlue;
+            this.btnAdd.NormalForeColor = System.Drawing.Color.White;
+            this.btnAdd.NormalImageTint = System.Drawing.Color.White;
+            this.btnAdd.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.OutlineThickness = 1F;
+            this.btnAdd.PressedBackground = System.Drawing.Color.Transparent;
+            this.btnAdd.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnAdd.PressedImageTint = System.Drawing.Color.White;
+            this.btnAdd.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnAdd.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnAdd.Size = new System.Drawing.Size(200, 50);
+            this.btnAdd.TabIndex = 17;
+            this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnAdd.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // CashierPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -853,7 +925,6 @@
             this.cuiPanel4.ResumeLayout(false);
             this.cuiPanel3.ResumeLayout(false);
             this.cuiPanel6.ResumeLayout(false);
-            this.cuiPanel6.PerformLayout();
             this.cuiPanel5.ResumeLayout(false);
             this.cuiPanel21.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBeranda)).EndInit();
@@ -884,6 +955,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.cuiPanel15.ResumeLayout(false);
             this.cuiPanel15.PerformLayout();
+            this.cuiPanel7.ResumeLayout(false);
+            this.cuiPanel7.PerformLayout();
+            this.cuiPanel22.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -902,8 +976,6 @@
         private CuoreUI.Controls.cuiButton btnOrder;
         private CuoreUI.Controls.cuiButton btnDashboard;
         private CuoreUI.Controls.cuiPanel cuiPanel6;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private CuoreUI.Controls.cuiPanel cuiPanel5;
         private CuoreUI.Controls.cuiPanel cuiPanel21;
         private System.Windows.Forms.DataGridView dgvBeranda;
@@ -934,5 +1006,10 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private CuoreUI.Controls.cuiPanel cuiPanel15;
         private System.Windows.Forms.Label lblPesananSelesai;
+        private CuoreUI.Controls.cuiPanel cuiPanel22;
+        private CuoreUI.Controls.cuiPanel cuiPanel7;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private CuoreUI.Controls.cuiButton btnAdd;
     }
 }

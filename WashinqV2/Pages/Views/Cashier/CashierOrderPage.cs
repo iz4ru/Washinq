@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,18 @@ namespace WashinqV2.Pages.Views.Cashier
 {
     public partial class CashierOrderPage : Form
     {
+        private int selectedOrderId;
+        private string selectedUserName;
+        private string selectedCustomerName;
+        private string selectedServiceName;
+        private string selectedTotalKg;
+        private string selectedTotalPrice;
+        private string selectedPaid;
+        private string selectedPayment;
+        private string selectedSubmittedAt;
+        private string selectedTakenAt;
+        private string spareChange;
+
         public CashierOrderPage()
         {
             InitializeComponent();
@@ -347,6 +360,163 @@ namespace WashinqV2.Pages.Views.Cashier
             CashierPage register = new CashierPage();
             register.ShowDialog();
             this.Close();
+        }
+
+        private void btnPrint_Click(object sender, EventArgs e)
+        {
+            bool hasSelected = false;
+            DataGridViewRow selectedRow = null;
+
+            // Cek baris mana yang pilih aksi nya dicentang
+            foreach (DataGridViewRow row in dgvOrder.Rows)
+            {
+                if (row.Cells["Pilih Aksi"].Value != null &&
+                    Convert.ToBoolean(row.Cells["Pilih Aksi"].Value) == true)
+                {
+                    if (hasSelected)
+                    {
+                        MessageBox.Show("Pilih hanya 1 order yang ingin dicetak",
+                            "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    hasSelected = true;
+                    selectedRow = row;
+                }
+            }
+
+            if (!hasSelected)
+            {
+                MessageBox.Show("Silakan pilih 1 order yang ingin dicetak struk",
+                    "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                selectedOrderId = Convert.ToInt32(selectedRow.Cells["id"].Value);
+                selectedUserName = selectedRow.Cells["Dilayani Oleh"].Value?.ToString() ?? "-";
+                selectedCustomerName = selectedRow.Cells["Pelanggan"].Value?.ToString() ?? "-";
+                selectedServiceName = selectedRow.Cells["Jenis Layanan"].Value?.ToString() ?? "-";
+                selectedTotalKg = selectedRow.Cells["Total Kilogram"].Value?.ToString() ?? "0";
+                selectedTotalPrice = selectedRow.Cells["Total Harga"].Value?.ToString() ?? "0";
+                selectedPaid = selectedRow.Cells["Dibayar"].Value?.ToString() ?? "0";
+                selectedPayment = selectedRow.Cells["Pembayaran"].Value?.ToString() ?? "-";
+                selectedSubmittedAt = selectedRow.Cells["Diproses Pada"].Value?.ToString() ?? "-";
+                selectedTakenAt = selectedRow.Cells["Diambil Pada"].Value?.ToString() ?? "-";
+
+                // Hitung kembalian - Bersihkan "Rp " dan titik pemisah ribuan
+                decimal totalPrice = 0;
+                decimal paid = 0;
+
+                string cleanTotalPrice = selectedRow.Cells["Total Harga"].Value?.ToString()
+                    .Replace("Rp ", "").Replace(".", "") ?? "0";
+                string cleanPaid = selectedRow.Cells["Dibayar"].Value?.ToString()
+                    .Replace("Rp ", "").Replace(".", "") ?? "0";
+
+                decimal.TryParse(cleanTotalPrice, out totalPrice);
+                decimal.TryParse(cleanPaid, out paid);
+
+                spareChange = (paid - totalPrice).ToString("N0");
+
+                // SET UKURAN KERTAS DI SINI, BUKAN DI PrintPage!
+                printReceipt.DefaultPageSettings.PaperSize = new PaperSize("Struk", 302, 1000);
+
+                PrintPreviewDialog preview = new PrintPreviewDialog();
+                preview.Document = printReceipt;
+                preview.Width = 400;
+                preview.Height = 600;
+
+                preview.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error saat mencetak struk: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void printReceipt_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            // HAPUS BARIS INI - JANGAN SET PAPERSIZE DI SINI
+            // e.PageSettings.PaperSize = new PaperSize("Struk", paperWidth, paperHeight);
+
+            int paperWidth = 302;  // 80mm printer
+            int marginLeft = 10;
+            int posY = 10;
+            int lineHeight = 20;
+
+            // Font lebih kecil biar pas di struk mini
+            Font font = new Font("Cascadia Code", 8);
+            Font titleFont = new Font("Cascadia Code", 10, FontStyle.Bold);
+            Font smallFont = new Font("Cascadia Code", 7);
+
+            // Title - Center aligned
+            string title = "WASHINQ";
+            SizeF titleSize = e.Graphics.MeasureString(title, titleFont);
+            float titleX = (paperWidth - titleSize.Width) / 2;
+            e.Graphics.DrawString(title, titleFont, Brushes.Black, titleX, posY);
+            posY += 30;
+
+            // Garis pemisah
+            e.Graphics.DrawString("===============================================", smallFont, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            // Data order
+            e.Graphics.DrawString("ID Order: #" + selectedOrderId, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Kasir: @" + selectedUserName, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Pelanggan:", font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+            e.Graphics.DrawString("  " + selectedCustomerName, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Layanan:", font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+            e.Graphics.DrawString("  " + selectedServiceName, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            // Garis pemisah
+            e.Graphics.DrawString("-----------------------------------------------", smallFont, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Berat: " + selectedTotalKg, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Harga: " + selectedTotalPrice, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Dibayar: " + selectedPaid, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Kembalian: Rp " + spareChange, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Metode: " + selectedPayment, font, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            // Garis pemisah
+            e.Graphics.DrawString("-----------------------------------------------", smallFont, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Masuk: " + selectedSubmittedAt, smallFont, Brushes.Black, marginLeft, posY);
+            posY += lineHeight;
+
+            e.Graphics.DrawString("Diambil: " + selectedTakenAt, smallFont, Brushes.Black, marginLeft, posY);
+            posY += lineHeight + 10;
+
+            // Footer - Center aligned
+            string footer = "Terima Kasih";
+            SizeF footerSize = e.Graphics.MeasureString(footer, font);
+            float footerX = (paperWidth - footerSize.Width) / 2;
+            e.Graphics.DrawString(footer, font, Brushes.Black, footerX, posY);
+            posY += lineHeight;
+
+            // Garis penutup
+            e.Graphics.DrawString("===============================================", smallFont, Brushes.Black, marginLeft, posY);
         }
     }
 }
