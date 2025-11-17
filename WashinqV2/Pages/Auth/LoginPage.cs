@@ -58,68 +58,79 @@ namespace WashinqV2
                 return;
             }
 
-            using (var conn = Database.Database.GetConnection())
+            try
             {
-                conn.Open();
-
-                string query = "SELECT * FROM users WHERE username = @username AND password = @password";
-                using (var cmd = new MySqlCommand(query, conn))
+                using (var conn = Database.Database.GetConnection())
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", hashedPassword);
+                    conn.Open();
 
-                    using (var reader = cmd.ExecuteReader())
+                    string query = "SELECT * FROM users WHERE username = @username AND password = @password";
+                    using (var cmd = new MySqlCommand(query, conn))
                     {
-                        if (reader.Read())
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", hashedPassword);
+
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            UserSession.id = Convert.ToInt16(reader["id"]);
-                            UserSession.username = reader["username"].ToString();
-                            UserSession.role = reader["role"].ToString();
+                            if (reader.Read())
+                            {
+                                UserSession.id = Convert.ToInt16(reader["id"]);
+                                UserSession.username = reader["username"].ToString();
+                                UserSession.role = reader["role"].ToString();
 
-                            MessageBox.Show("Login berhasil!", "Success", MessageBoxButtons.OK);
+                                MessageBox.Show("Login berhasil!", "Success", MessageBoxButtons.OK);
 
-                            if (UserSession.role == "admin")
-                            {
-                                this.Hide();
-                                using (var adminPage = new Pages.Views.AdminPage())
+                                if (UserSession.role == "admin")
                                 {
-                                    adminPage.ShowDialog();
+                                    this.Hide();
+                                    using (var adminPage = new Pages.Views.AdminPage())
+                                    {
+                                        adminPage.ShowDialog();
+                                    }
+                                    this.Close();
+                                    return;
                                 }
-                                this.Close();
-                                return;
-                            }
-                            else if (UserSession.role == "owner")
-                            {
-                                this.Hide();
-                                using (var ownerPage = new Pages.Views.OwnerPage())
+                                else if (UserSession.role == "owner")
                                 {
-                                    ownerPage.ShowDialog();
+                                    this.Hide();
+                                    using (var ownerPage = new Pages.Views.OwnerPage())
+                                    {
+                                        ownerPage.ShowDialog();
+                                    }
+                                    this.Close();
+                                    return;
                                 }
-                                this.Close();
-                                return;
-                            }
-                            else if (UserSession.role == "cashier")
-                            {
-                                this.Hide();
-                                using (var cashierPage = new Pages.Views.Cashier.CashierPage())
+                                else if (UserSession.role == "cashier")
                                 {
-                                    cashierPage.ShowDialog();
+                                    this.Hide();
+                                    using (var cashierPage = new Pages.Views.Cashier.CashierPage())
+                                    {
+                                        cashierPage.ShowDialog();
+                                    }
+                                    this.Close();
+                                    return;
                                 }
-                                this.Close();
-                                return;
+                                else
+                                {
+                                    MessageBox.Show("Invalid Role", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Invalid Role", "Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                MessageBox.Show("Username atau password invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
                             }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Username atau password invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
                         }
                     }
                 }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show("Tidak dapat terhubung ke server. Pastikan MySQL aktif.", "Koneksi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Terjadi error tak terduga.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
