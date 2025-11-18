@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
 {
@@ -313,6 +314,12 @@ namespace WashinqV2.Pages.Views.Admin
                 LoginPage.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            AdminEditProfile form = new AdminEditProfile(UserSession.id);
+            form.ShowDialog();
         }
     }
 }

@@ -188,6 +188,7 @@
             this.btnProfile.TabIndex = 4;
             this.btnProfile.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnProfile.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnLogout
             // 

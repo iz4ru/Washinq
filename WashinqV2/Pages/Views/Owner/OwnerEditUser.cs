@@ -32,12 +32,6 @@ namespace WashinqV2.Pages.Views.Owner
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
-
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            // Disable close button
-            this.ControlBox = false;
 
             // Setup ComboBox role
             cbxRole.Items = new string[] { "admin", "kasir" };

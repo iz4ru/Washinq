@@ -9,7 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Models;
 using WashinqV2.Pages.Views.Admin;
+using WashinqV2.Pages.Views.Owner;
 
 namespace WashinqV2.Pages.Views.Cashier
 {
@@ -517,6 +519,12 @@ namespace WashinqV2.Pages.Views.Cashier
 
             // Garis penutup
             e.Graphics.DrawString("===============================================", smallFont, Brushes.Black, marginLeft, posY);
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            CashierEditProfile form = new CashierEditProfile(UserSession.id);
+            form.ShowDialog();
         }
     }
 }

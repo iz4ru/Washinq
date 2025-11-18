@@ -185,6 +185,7 @@
             this.btnProfile.TabIndex = 4;
             this.btnProfile.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnProfile.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnLogout
             // 
@@ -500,7 +501,7 @@
             this.cuiPanel8.Location = new System.Drawing.Point(927, 0);
             this.cuiPanel8.Name = "cuiPanel8";
             this.cuiPanel8.OutlineThickness = 0F;
-            this.cuiPanel8.Padding = new System.Windows.Forms.Padding(30, 30, 30, 30);
+            this.cuiPanel8.Padding = new System.Windows.Forms.Padding(30);
             this.cuiPanel8.PanelColor = System.Drawing.Color.White;
             this.cuiPanel8.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel8.Rounding = new System.Windows.Forms.Padding(0);
@@ -594,7 +595,7 @@
             this.cuiPanel21.Location = new System.Drawing.Point(94, 259);
             this.cuiPanel21.Name = "cuiPanel21";
             this.cuiPanel21.OutlineThickness = 0F;
-            this.cuiPanel21.Padding = new System.Windows.Forms.Padding(30, 30, 30, 30);
+            this.cuiPanel21.Padding = new System.Windows.Forms.Padding(30);
             this.cuiPanel21.PanelColor = System.Drawing.Color.White;
             this.cuiPanel21.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel21.Rounding = new System.Windows.Forms.Padding(0);

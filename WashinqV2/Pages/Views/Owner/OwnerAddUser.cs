@@ -19,6 +19,7 @@ namespace WashinqV2.Pages.Views.Owner
         {
             InitializeComponent();
             this.ClientSize = new Size(800, 600);
+
             tbUserPassword.PasswordChar = true;
             tbUserConfirmPw.PasswordChar = true;
         }
@@ -28,12 +29,6 @@ namespace WashinqV2.Pages.Views.Owner
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
-
-            this.StartPosition = FormStartPosition.CenterScreen;
-
-            // Disable close button
-            this.ControlBox = false;
 
             cbxRole.Items = new string[] { "admin", "kasir" };
         }

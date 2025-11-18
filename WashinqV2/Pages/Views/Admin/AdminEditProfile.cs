@@ -9,34 +9,37 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
 {
-    public partial class AdminEditCashier : Form
+    public partial class AdminEditProfile : Form
     {
-        private int cashierId;
+        private int userId;
         private string originalUsername;
         private string originalEmail;
 
-        public AdminEditCashier(int id)
+        public AdminEditProfile(int userId)
         {
             InitializeComponent();
             this.ClientSize = new Size(800, 600);
-            this.cashierId = id;
-            tbCashPassword.PasswordChar = true;
-            tbCashConfirmPw.PasswordChar = true;
+            this.userId = userId;
+
+            tbPassword.PasswordChar = true;
+            tbConfirmPw.PasswordChar = true;
         }
 
-        private void AdminEditCashier_Load(object sender, EventArgs e)
+        private void AdminEditProfile_Load(object sender, EventArgs e)
         {
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
 
-            LoadCashierData();
+            // ✅ Load data user berdasarkan userId dari session
+            LoadUserData();
         }
 
-        private void LoadCashierData()
+        private void LoadUserData()
         {
             try
             {
@@ -44,32 +47,33 @@ namespace WashinqV2.Pages.Views.Admin
                 {
                     string query = @"SELECT name, username, email, phone, address 
                                    FROM users 
-                                   WHERE id = @id AND role = 'cashier'";
+                                   WHERE id = @id";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@id", cashierId);
+                        cmd.Parameters.AddWithValue("@id", userId);
 
                         conn.Open();
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             if (reader.Read())
                             {
-                                tbCashName.Content = reader["name"].ToString();
-                                tbCashUsername.Content = reader["username"].ToString();
-                                tbCashEmail.Content = reader["email"].ToString();
-                                tbCashPhone.Content = reader["phone"] == DBNull.Value ? "" : reader["phone"].ToString();
-                                tbCashAddress.Content = reader["address"] == DBNull.Value ? "" : reader["address"].ToString();
+                                tbName.Content = reader["name"].ToString();
+                                tbUsername.Content = reader["username"].ToString();
+                                tbEmail.Content = reader["email"].ToString();
+                                tbPhone.Content = reader["phone"] == DBNull.Value ? "" : reader["phone"].ToString();
+                                tbAddress.Content = reader["address"] == DBNull.Value ? "" : reader["address"].ToString();
 
                                 originalUsername = reader["username"].ToString();
                                 originalEmail = reader["email"].ToString();
 
-                                tbCashPassword.Content = string.Empty;
-                                tbCashConfirmPw.Content = string.Empty;
+                                // Clear password fields
+                                tbPassword.Content = string.Empty;
+                                tbConfirmPw.Content = string.Empty;
                             }
                             else
                             {
-                                MessageBox.Show("Data kasir tidak ditemukan!",
+                                MessageBox.Show("Data user tidak ditemukan!",
                                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 this.Close();
                             }
@@ -92,76 +96,65 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
-        private void llbBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbCashName.Content))
+            // ✅ Validasi dan update profile
+            if (string.IsNullOrWhiteSpace(tbName.Content))
             {
-                MessageBox.Show("Nama Kasir tidak boleh kosong!",
+                MessageBox.Show("Nama tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashName.Focus();
+                tbName.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbCashUsername.Content))
+            if (string.IsNullOrWhiteSpace(tbUsername.Content))
             {
                 MessageBox.Show("Username tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashUsername.Focus();
+                tbUsername.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbCashEmail.Content))
+            if (string.IsNullOrWhiteSpace(tbEmail.Content))
             {
                 MessageBox.Show("Email tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashEmail.Focus();
+                tbEmail.Focus();
                 return;
             }
 
-            if (!IsValidEmail(tbCashEmail.Content))
+            if (!IsValidEmail(tbEmail.Content))
             {
                 MessageBox.Show("Format email tidak valid!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashEmail.Focus();
+                tbEmail.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbCashPhone.Content))
-            {
-                MessageBox.Show("Nomor Telepon tidak boleh kosong!",
-                    "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashPhone.Focus();
-                return;
-            }
-
+            // Cek apakah password diisi (optional)
             bool updatePassword = false;
             string hashedPassword = null;
 
-            if (!string.IsNullOrWhiteSpace(tbCashPassword.Content))
+            if (!string.IsNullOrWhiteSpace(tbPassword.Content))
             {
-                if (tbCashPassword.Content.Length < 6)
+                if (tbPassword.Content.Length < 6)
                 {
                     MessageBox.Show("Password minimal 6 karakter!",
                         "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tbCashPassword.Focus();
+                    tbPassword.Focus();
                     return;
                 }
 
-                if (tbCashPassword.Content != tbCashConfirmPw.Content)
+                if (tbPassword.Content != tbConfirmPw.Content)
                 {
                     MessageBox.Show("Password dan Konfirmasi Password tidak sama!",
                         "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    tbCashConfirmPw.Focus();
+                    tbConfirmPw.Focus();
                     return;
                 }
 
                 updatePassword = true;
-                hashedPassword = HashPassword(tbCashPassword.Content);
+                hashedPassword = HashPassword(tbPassword.Content);
             }
 
             try
@@ -170,44 +163,47 @@ namespace WashinqV2.Pages.Views.Admin
                 {
                     conn.Open();
 
-                    if (tbCashUsername.Content.Trim() != originalUsername)
+                    // Cek username sudah ada atau belum (kecuali username sendiri)
+                    if (tbUsername.Content.Trim() != originalUsername)
                     {
                         string checkUsername = "SELECT COUNT(*) FROM users WHERE username = @username AND id != @id";
                         using (MySqlCommand cmdCheck = new MySqlCommand(checkUsername, conn))
                         {
-                            cmdCheck.Parameters.AddWithValue("@username", tbCashUsername.Content.Trim());
-                            cmdCheck.Parameters.AddWithValue("@id", cashierId);
+                            cmdCheck.Parameters.AddWithValue("@username", tbUsername.Content.Trim());
+                            cmdCheck.Parameters.AddWithValue("@id", userId);
                             int userCount = Convert.ToInt32(cmdCheck.ExecuteScalar());
 
                             if (userCount > 0)
                             {
                                 MessageBox.Show("Username sudah digunakan, silakan gunakan username lain!",
                                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                tbCashUsername.Focus();
+                                tbUsername.Focus();
                                 return;
                             }
                         }
                     }
 
-                    if (tbCashEmail.Content.Trim() != originalEmail)
+                    // Cek email sudah ada atau belum (kecuali email sendiri)
+                    if (tbEmail.Content.Trim() != originalEmail)
                     {
                         string checkEmail = "SELECT COUNT(*) FROM users WHERE email = @email AND id != @id";
                         using (MySqlCommand cmdCheck = new MySqlCommand(checkEmail, conn))
                         {
-                            cmdCheck.Parameters.AddWithValue("@email", tbCashEmail.Content.Trim());
-                            cmdCheck.Parameters.AddWithValue("@id", cashierId);
+                            cmdCheck.Parameters.AddWithValue("@email", tbEmail.Content.Trim());
+                            cmdCheck.Parameters.AddWithValue("@id", userId);
                             int emailCount = Convert.ToInt32(cmdCheck.ExecuteScalar());
 
                             if (emailCount > 0)
                             {
                                 MessageBox.Show("Email sudah digunakan, silakan gunakan email lain!",
                                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                tbCashEmail.Focus();
+                                tbEmail.Focus();
                                 return;
                             }
                         }
                     }
 
+                    // Update query
                     string query;
                     if (updatePassword)
                     {
@@ -215,10 +211,10 @@ namespace WashinqV2.Pages.Views.Admin
                                 name = @name, 
                                 username = @username, 
                                 email = @email, 
+                                phone = @phone,
                                 address = @address, 
-                                phone = @phone, 
                                 password = @password 
-                                WHERE id = @id AND role = 'cashier'";
+                                WHERE id = @id";
                     }
                     else
                     {
@@ -226,20 +222,21 @@ namespace WashinqV2.Pages.Views.Admin
                                 name = @name, 
                                 username = @username, 
                                 email = @email, 
-                                address = @address, 
-                                phone = @phone 
-                                WHERE id = @id AND role = 'cashier'";
+                                phone = @phone,
+                                address = @address 
+                                WHERE id = @id";
                     }
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@name", tbCashName.Content.Trim());
-                        cmd.Parameters.AddWithValue("@username", tbCashUsername.Content.Trim());
-                        cmd.Parameters.AddWithValue("@email", tbCashEmail.Content.Trim());
+                        cmd.Parameters.AddWithValue("@name", tbName.Content.Trim());
+                        cmd.Parameters.AddWithValue("@username", tbUsername.Content.Trim());
+                        cmd.Parameters.AddWithValue("@email", tbEmail.Content.Trim());
+                        cmd.Parameters.AddWithValue("@phone",
+                            string.IsNullOrWhiteSpace(tbPhone.Content) ? null : tbPhone.Content.Trim());
                         cmd.Parameters.AddWithValue("@address",
-                            string.IsNullOrWhiteSpace(tbCashAddress.Content) ? null : tbCashAddress.Content.Trim());
-                        cmd.Parameters.AddWithValue("@phone", tbCashPhone.Content.Trim());
-                        cmd.Parameters.AddWithValue("@id", cashierId);
+                            string.IsNullOrWhiteSpace(tbAddress.Content) ? null : tbAddress.Content.Trim());
+                        cmd.Parameters.AddWithValue("@id", userId);
 
                         if (updatePassword)
                         {
@@ -250,7 +247,10 @@ namespace WashinqV2.Pages.Views.Admin
 
                         if (result > 0)
                         {
-                            MessageBox.Show("Data kasir berhasil diupdate!",
+                            // ✅ Update UserSession jika username berubah
+                            UserSession.username = tbUsername.Content.Trim();
+
+                            MessageBox.Show("Profile berhasil diupdate!",
                                 "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.DialogResult = DialogResult.OK;
@@ -258,7 +258,7 @@ namespace WashinqV2.Pages.Views.Admin
                         }
                         else
                         {
-                            MessageBox.Show("Gagal mengupdate data kasir!",
+                            MessageBox.Show("Gagal mengupdate profile!",
                                 "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -305,15 +305,20 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
+        private void llbBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
+
         private void chkShowPassword1_CheckedChanged(object sender, EventArgs e)
         {
             if (chkShowPassword1.Checked)
             {
-                tbCashPassword.PasswordChar = false;
+                tbPassword.PasswordChar = false;
             }
             else
             {
-                tbCashPassword.PasswordChar = true;
+                tbPassword.PasswordChar = true;
             }
         }
 
@@ -321,11 +326,11 @@ namespace WashinqV2.Pages.Views.Admin
         {
             if (chkShowPassword2.Checked)
             {
-                tbCashConfirmPw.PasswordChar = false;
+                tbConfirmPw.PasswordChar = false;
             }
             else
             {
-                tbCashConfirmPw.PasswordChar = true;
+                tbConfirmPw.PasswordChar = true;
             }
         }
     }

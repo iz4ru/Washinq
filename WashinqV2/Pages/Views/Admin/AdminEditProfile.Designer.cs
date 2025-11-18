@@ -1,6 +1,6 @@
-﻿namespace WashinqV2.Pages.Views.Owner
+﻿namespace WashinqV2.Pages.Views.Admin
 {
-    partial class OwnerEditUser
+    partial class AdminEditProfile
     {
         /// <summary>
         /// Required designer variable.
@@ -28,27 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OwnerEditUser));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminEditProfile));
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbxRole = new CuoreUI.Controls.cuiComboBox();
             this.cuiButton1 = new CuoreUI.Controls.cuiButton();
             this.chkShowPassword2 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkShowPassword1 = new Guna.UI2.WinForms.Guna2CheckBox();
-            this.tbUserConfirmPw = new CuoreUI.Controls.cuiTextBox();
+            this.tbConfirmPw = new CuoreUI.Controls.cuiTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.tbUserPassword = new CuoreUI.Controls.cuiTextBox();
+            this.tbPassword = new CuoreUI.Controls.cuiTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.tbUserEmail = new CuoreUI.Controls.cuiTextBox();
+            this.tbEmail = new CuoreUI.Controls.cuiTextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.tbUserUsername = new CuoreUI.Controls.cuiTextBox();
+            this.tbUsername = new CuoreUI.Controls.cuiTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbUserAddress = new CuoreUI.Controls.cuiTextBox();
+            this.tbAddress = new CuoreUI.Controls.cuiTextBox();
             this.lbAddress = new System.Windows.Forms.Label();
-            this.tbUserPhone = new CuoreUI.Controls.cuiTextBox();
+            this.tbPhone = new CuoreUI.Controls.cuiTextBox();
             this.lbPhone = new System.Windows.Forms.Label();
             this.btnConfirm = new CuoreUI.Controls.cuiButton();
-            this.tbUserName = new CuoreUI.Controls.cuiTextBox();
+            this.tbName = new CuoreUI.Controls.cuiTextBox();
             this.lbCashName = new System.Windows.Forms.Label();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             this.llbBack = new System.Windows.Forms.LinkLabel();
@@ -58,25 +56,23 @@
             // 
             // cuiPanel3
             // 
-            this.cuiPanel3.Controls.Add(this.label5);
-            this.cuiPanel3.Controls.Add(this.cbxRole);
             this.cuiPanel3.Controls.Add(this.cuiButton1);
             this.cuiPanel3.Controls.Add(this.chkShowPassword2);
             this.cuiPanel3.Controls.Add(this.chkShowPassword1);
-            this.cuiPanel3.Controls.Add(this.tbUserConfirmPw);
+            this.cuiPanel3.Controls.Add(this.tbConfirmPw);
             this.cuiPanel3.Controls.Add(this.label3);
-            this.cuiPanel3.Controls.Add(this.tbUserPassword);
+            this.cuiPanel3.Controls.Add(this.tbPassword);
             this.cuiPanel3.Controls.Add(this.label4);
-            this.cuiPanel3.Controls.Add(this.tbUserEmail);
+            this.cuiPanel3.Controls.Add(this.tbEmail);
             this.cuiPanel3.Controls.Add(this.label1);
-            this.cuiPanel3.Controls.Add(this.tbUserUsername);
+            this.cuiPanel3.Controls.Add(this.tbUsername);
             this.cuiPanel3.Controls.Add(this.label2);
-            this.cuiPanel3.Controls.Add(this.tbUserAddress);
+            this.cuiPanel3.Controls.Add(this.tbAddress);
             this.cuiPanel3.Controls.Add(this.lbAddress);
-            this.cuiPanel3.Controls.Add(this.tbUserPhone);
+            this.cuiPanel3.Controls.Add(this.tbPhone);
             this.cuiPanel3.Controls.Add(this.lbPhone);
             this.cuiPanel3.Controls.Add(this.btnConfirm);
-            this.cuiPanel3.Controls.Add(this.tbUserName);
+            this.cuiPanel3.Controls.Add(this.tbName);
             this.cuiPanel3.Controls.Add(this.lbCashName);
             this.cuiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cuiPanel3.Location = new System.Drawing.Point(0, 57);
@@ -86,45 +82,7 @@
             this.cuiPanel3.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel3.Size = new System.Drawing.Size(1096, 664);
-            this.cuiPanel3.TabIndex = 23;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(556, 357);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 21);
-            this.label5.TabIndex = 37;
-            this.label5.Text = "Pilih Role";
-            // 
-            // cbxRole
-            // 
-            this.cbxRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxRole.ButtonCursor = System.Windows.Forms.Cursors.Arrow;
-            this.cbxRole.ButtonHoverBackground = System.Drawing.Color.RoyalBlue;
-            this.cbxRole.ButtonHoverOutline = System.Drawing.Color.Empty;
-            this.cbxRole.ButtonNormalBackground = System.Drawing.Color.DodgerBlue;
-            this.cbxRole.ButtonNormalOutline = System.Drawing.Color.Empty;
-            this.cbxRole.ButtonPressedBackground = System.Drawing.Color.DodgerBlue;
-            this.cbxRole.ButtonPressedOutline = System.Drawing.Color.Empty;
-            this.cbxRole.DropDownBackgroundColor = System.Drawing.Color.White;
-            this.cbxRole.DropDownOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxRole.ExpandArrowColor = System.Drawing.Color.Gray;
-            this.cbxRole.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxRole.ForeColor = System.Drawing.Color.Gray;
-            this.cbxRole.Items = new string[0];
-            this.cbxRole.Location = new System.Drawing.Point(560, 382);
-            this.cbxRole.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxRole.Name = "cbxRole";
-            this.cbxRole.NoSelectionDropdownText = "Empty";
-            this.cbxRole.NoSelectionText = "None";
-            this.cbxRole.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cbxRole.OutlineThickness = 1F;
-            this.cbxRole.Rounding = 8;
-            this.cbxRole.Size = new System.Drawing.Size(400, 44);
-            this.cbxRole.TabIndex = 36;
+            this.cuiPanel3.TabIndex = 29;
             // 
             // cuiButton1
             // 
@@ -147,7 +105,7 @@
             this.cuiButton1.ImageAutoCenter = true;
             this.cuiButton1.ImageExpand = new System.Drawing.Point(0, 0);
             this.cuiButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.cuiButton1.Location = new System.Drawing.Point(560, 454);
+            this.cuiButton1.Location = new System.Drawing.Point(560, 382);
             this.cuiButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cuiButton1.Name = "cuiButton1";
             this.cuiButton1.NormalBackground = System.Drawing.Color.White;
@@ -203,35 +161,35 @@
             this.chkShowPassword1.UncheckedState.BorderThickness = 0;
             this.chkShowPassword1.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             // 
-            // tbUserConfirmPw
+            // tbConfirmPw
             // 
-            this.tbUserConfirmPw.BackColor = System.Drawing.Color.Transparent;
-            this.tbUserConfirmPw.BackgroundColor = System.Drawing.Color.White;
-            this.tbUserConfirmPw.Content = "";
-            this.tbUserConfirmPw.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserConfirmPw.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbUserConfirmPw.FocusImageTint = System.Drawing.Color.White;
-            this.tbUserConfirmPw.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbUserConfirmPw.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserConfirmPw.ForeColor = System.Drawing.Color.Black;
-            this.tbUserConfirmPw.Image = null;
-            this.tbUserConfirmPw.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbUserConfirmPw.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbUserConfirmPw.Location = new System.Drawing.Point(560, 267);
-            this.tbUserConfirmPw.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserConfirmPw.Multiline = false;
-            this.tbUserConfirmPw.Name = "tbUserConfirmPw";
-            this.tbUserConfirmPw.NormalImageTint = System.Drawing.Color.White;
-            this.tbUserConfirmPw.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbUserConfirmPw.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbUserConfirmPw.PasswordChar = false;
-            this.tbUserConfirmPw.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbUserConfirmPw.PlaceholderText = "";
-            this.tbUserConfirmPw.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbUserConfirmPw.Size = new System.Drawing.Size(400, 44);
-            this.tbUserConfirmPw.TabIndex = 31;
-            this.tbUserConfirmPw.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbUserConfirmPw.UnderlinedStyle = true;
+            this.tbConfirmPw.BackColor = System.Drawing.Color.Transparent;
+            this.tbConfirmPw.BackgroundColor = System.Drawing.Color.White;
+            this.tbConfirmPw.Content = "";
+            this.tbConfirmPw.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbConfirmPw.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbConfirmPw.FocusImageTint = System.Drawing.Color.White;
+            this.tbConfirmPw.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbConfirmPw.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbConfirmPw.ForeColor = System.Drawing.Color.Black;
+            this.tbConfirmPw.Image = null;
+            this.tbConfirmPw.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbConfirmPw.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbConfirmPw.Location = new System.Drawing.Point(560, 267);
+            this.tbConfirmPw.Margin = new System.Windows.Forms.Padding(4);
+            this.tbConfirmPw.Multiline = false;
+            this.tbConfirmPw.Name = "tbConfirmPw";
+            this.tbConfirmPw.NormalImageTint = System.Drawing.Color.White;
+            this.tbConfirmPw.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbConfirmPw.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbConfirmPw.PasswordChar = false;
+            this.tbConfirmPw.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbConfirmPw.PlaceholderText = "";
+            this.tbConfirmPw.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbConfirmPw.Size = new System.Drawing.Size(400, 44);
+            this.tbConfirmPw.TabIndex = 31;
+            this.tbConfirmPw.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbConfirmPw.UnderlinedStyle = true;
             // 
             // label3
             // 
@@ -244,35 +202,35 @@
             this.label3.TabIndex = 30;
             this.label3.Text = "Konfirmasi Password";
             // 
-            // tbUserPassword
+            // tbPassword
             // 
-            this.tbUserPassword.BackColor = System.Drawing.Color.Transparent;
-            this.tbUserPassword.BackgroundColor = System.Drawing.Color.White;
-            this.tbUserPassword.Content = "";
-            this.tbUserPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserPassword.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbUserPassword.FocusImageTint = System.Drawing.Color.White;
-            this.tbUserPassword.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbUserPassword.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserPassword.ForeColor = System.Drawing.Color.Black;
-            this.tbUserPassword.Image = null;
-            this.tbUserPassword.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbUserPassword.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbUserPassword.Location = new System.Drawing.Point(117, 267);
-            this.tbUserPassword.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserPassword.Multiline = false;
-            this.tbUserPassword.Name = "tbUserPassword";
-            this.tbUserPassword.NormalImageTint = System.Drawing.Color.White;
-            this.tbUserPassword.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbUserPassword.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbUserPassword.PasswordChar = false;
-            this.tbUserPassword.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbUserPassword.PlaceholderText = "";
-            this.tbUserPassword.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbUserPassword.Size = new System.Drawing.Size(400, 44);
-            this.tbUserPassword.TabIndex = 29;
-            this.tbUserPassword.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbUserPassword.UnderlinedStyle = true;
+            this.tbPassword.BackColor = System.Drawing.Color.Transparent;
+            this.tbPassword.BackgroundColor = System.Drawing.Color.White;
+            this.tbPassword.Content = "";
+            this.tbPassword.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPassword.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbPassword.FocusImageTint = System.Drawing.Color.White;
+            this.tbPassword.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbPassword.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPassword.ForeColor = System.Drawing.Color.Black;
+            this.tbPassword.Image = null;
+            this.tbPassword.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbPassword.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbPassword.Location = new System.Drawing.Point(117, 267);
+            this.tbPassword.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPassword.Multiline = false;
+            this.tbPassword.Name = "tbPassword";
+            this.tbPassword.NormalImageTint = System.Drawing.Color.White;
+            this.tbPassword.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbPassword.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbPassword.PasswordChar = false;
+            this.tbPassword.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbPassword.PlaceholderText = "";
+            this.tbPassword.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbPassword.Size = new System.Drawing.Size(400, 44);
+            this.tbPassword.TabIndex = 29;
+            this.tbPassword.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbPassword.UnderlinedStyle = true;
             // 
             // label4
             // 
@@ -285,35 +243,35 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Password";
             // 
-            // tbUserEmail
+            // tbEmail
             // 
-            this.tbUserEmail.BackColor = System.Drawing.Color.Transparent;
-            this.tbUserEmail.BackgroundColor = System.Drawing.Color.White;
-            this.tbUserEmail.Content = "";
-            this.tbUserEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserEmail.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbUserEmail.FocusImageTint = System.Drawing.Color.White;
-            this.tbUserEmail.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbUserEmail.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserEmail.ForeColor = System.Drawing.Color.Black;
-            this.tbUserEmail.Image = null;
-            this.tbUserEmail.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbUserEmail.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbUserEmail.Location = new System.Drawing.Point(560, 171);
-            this.tbUserEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserEmail.Multiline = false;
-            this.tbUserEmail.Name = "tbUserEmail";
-            this.tbUserEmail.NormalImageTint = System.Drawing.Color.White;
-            this.tbUserEmail.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbUserEmail.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbUserEmail.PasswordChar = false;
-            this.tbUserEmail.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbUserEmail.PlaceholderText = "";
-            this.tbUserEmail.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbUserEmail.Size = new System.Drawing.Size(400, 44);
-            this.tbUserEmail.TabIndex = 27;
-            this.tbUserEmail.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbUserEmail.UnderlinedStyle = true;
+            this.tbEmail.BackColor = System.Drawing.Color.Transparent;
+            this.tbEmail.BackgroundColor = System.Drawing.Color.White;
+            this.tbEmail.Content = "";
+            this.tbEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbEmail.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbEmail.FocusImageTint = System.Drawing.Color.White;
+            this.tbEmail.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbEmail.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.ForeColor = System.Drawing.Color.Black;
+            this.tbEmail.Image = null;
+            this.tbEmail.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbEmail.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbEmail.Location = new System.Drawing.Point(560, 171);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.tbEmail.Multiline = false;
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.NormalImageTint = System.Drawing.Color.White;
+            this.tbEmail.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbEmail.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbEmail.PasswordChar = false;
+            this.tbEmail.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbEmail.PlaceholderText = "";
+            this.tbEmail.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbEmail.Size = new System.Drawing.Size(400, 44);
+            this.tbEmail.TabIndex = 27;
+            this.tbEmail.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbEmail.UnderlinedStyle = true;
             // 
             // label1
             // 
@@ -326,35 +284,35 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Email";
             // 
-            // tbUserUsername
+            // tbUsername
             // 
-            this.tbUserUsername.BackColor = System.Drawing.Color.Transparent;
-            this.tbUserUsername.BackgroundColor = System.Drawing.Color.White;
-            this.tbUserUsername.Content = "";
-            this.tbUserUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserUsername.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbUserUsername.FocusImageTint = System.Drawing.Color.White;
-            this.tbUserUsername.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbUserUsername.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserUsername.ForeColor = System.Drawing.Color.Black;
-            this.tbUserUsername.Image = null;
-            this.tbUserUsername.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbUserUsername.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbUserUsername.Location = new System.Drawing.Point(560, 79);
-            this.tbUserUsername.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserUsername.Multiline = false;
-            this.tbUserUsername.Name = "tbUserUsername";
-            this.tbUserUsername.NormalImageTint = System.Drawing.Color.White;
-            this.tbUserUsername.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbUserUsername.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbUserUsername.PasswordChar = false;
-            this.tbUserUsername.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbUserUsername.PlaceholderText = "";
-            this.tbUserUsername.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbUserUsername.Size = new System.Drawing.Size(400, 44);
-            this.tbUserUsername.TabIndex = 25;
-            this.tbUserUsername.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbUserUsername.UnderlinedStyle = true;
+            this.tbUsername.BackColor = System.Drawing.Color.Transparent;
+            this.tbUsername.BackgroundColor = System.Drawing.Color.White;
+            this.tbUsername.Content = "";
+            this.tbUsername.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbUsername.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbUsername.FocusImageTint = System.Drawing.Color.White;
+            this.tbUsername.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbUsername.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbUsername.ForeColor = System.Drawing.Color.Black;
+            this.tbUsername.Image = null;
+            this.tbUsername.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbUsername.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbUsername.Location = new System.Drawing.Point(560, 79);
+            this.tbUsername.Margin = new System.Windows.Forms.Padding(4);
+            this.tbUsername.Multiline = false;
+            this.tbUsername.Name = "tbUsername";
+            this.tbUsername.NormalImageTint = System.Drawing.Color.White;
+            this.tbUsername.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbUsername.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbUsername.PasswordChar = false;
+            this.tbUsername.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbUsername.PlaceholderText = "";
+            this.tbUsername.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbUsername.Size = new System.Drawing.Size(400, 44);
+            this.tbUsername.TabIndex = 25;
+            this.tbUsername.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbUsername.UnderlinedStyle = true;
             // 
             // label2
             // 
@@ -367,35 +325,35 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Username";
             // 
-            // tbUserAddress
+            // tbAddress
             // 
-            this.tbUserAddress.BackColor = System.Drawing.Color.Transparent;
-            this.tbUserAddress.BackgroundColor = System.Drawing.Color.White;
-            this.tbUserAddress.Content = "";
-            this.tbUserAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserAddress.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbUserAddress.FocusImageTint = System.Drawing.Color.White;
-            this.tbUserAddress.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbUserAddress.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserAddress.ForeColor = System.Drawing.Color.Black;
-            this.tbUserAddress.Image = null;
-            this.tbUserAddress.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbUserAddress.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbUserAddress.Location = new System.Drawing.Point(117, 382);
-            this.tbUserAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserAddress.Multiline = true;
-            this.tbUserAddress.Name = "tbUserAddress";
-            this.tbUserAddress.NormalImageTint = System.Drawing.Color.White;
-            this.tbUserAddress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbUserAddress.Padding = new System.Windows.Forms.Padding(21, 6, 21, 6);
-            this.tbUserAddress.PasswordChar = false;
-            this.tbUserAddress.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbUserAddress.PlaceholderText = "";
-            this.tbUserAddress.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbUserAddress.Size = new System.Drawing.Size(400, 162);
-            this.tbUserAddress.TabIndex = 23;
-            this.tbUserAddress.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbUserAddress.UnderlinedStyle = true;
+            this.tbAddress.BackColor = System.Drawing.Color.Transparent;
+            this.tbAddress.BackgroundColor = System.Drawing.Color.White;
+            this.tbAddress.Content = "";
+            this.tbAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbAddress.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbAddress.FocusImageTint = System.Drawing.Color.White;
+            this.tbAddress.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbAddress.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbAddress.ForeColor = System.Drawing.Color.Black;
+            this.tbAddress.Image = null;
+            this.tbAddress.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbAddress.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbAddress.Location = new System.Drawing.Point(117, 382);
+            this.tbAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.tbAddress.Multiline = true;
+            this.tbAddress.Name = "tbAddress";
+            this.tbAddress.NormalImageTint = System.Drawing.Color.White;
+            this.tbAddress.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbAddress.Padding = new System.Windows.Forms.Padding(21, 6, 21, 6);
+            this.tbAddress.PasswordChar = false;
+            this.tbAddress.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbAddress.PlaceholderText = "";
+            this.tbAddress.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbAddress.Size = new System.Drawing.Size(400, 162);
+            this.tbAddress.TabIndex = 23;
+            this.tbAddress.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbAddress.UnderlinedStyle = true;
             // 
             // lbAddress
             // 
@@ -408,35 +366,35 @@
             this.lbAddress.TabIndex = 22;
             this.lbAddress.Text = "Alamat";
             // 
-            // tbUserPhone
+            // tbPhone
             // 
-            this.tbUserPhone.BackColor = System.Drawing.Color.Transparent;
-            this.tbUserPhone.BackgroundColor = System.Drawing.Color.White;
-            this.tbUserPhone.Content = "";
-            this.tbUserPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserPhone.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbUserPhone.FocusImageTint = System.Drawing.Color.White;
-            this.tbUserPhone.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbUserPhone.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserPhone.ForeColor = System.Drawing.Color.Black;
-            this.tbUserPhone.Image = null;
-            this.tbUserPhone.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbUserPhone.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbUserPhone.Location = new System.Drawing.Point(117, 171);
-            this.tbUserPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserPhone.Multiline = false;
-            this.tbUserPhone.Name = "tbUserPhone";
-            this.tbUserPhone.NormalImageTint = System.Drawing.Color.White;
-            this.tbUserPhone.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbUserPhone.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbUserPhone.PasswordChar = false;
-            this.tbUserPhone.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbUserPhone.PlaceholderText = "";
-            this.tbUserPhone.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbUserPhone.Size = new System.Drawing.Size(400, 44);
-            this.tbUserPhone.TabIndex = 21;
-            this.tbUserPhone.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbUserPhone.UnderlinedStyle = true;
+            this.tbPhone.BackColor = System.Drawing.Color.Transparent;
+            this.tbPhone.BackgroundColor = System.Drawing.Color.White;
+            this.tbPhone.Content = "";
+            this.tbPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbPhone.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbPhone.FocusImageTint = System.Drawing.Color.White;
+            this.tbPhone.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbPhone.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbPhone.ForeColor = System.Drawing.Color.Black;
+            this.tbPhone.Image = null;
+            this.tbPhone.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbPhone.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbPhone.Location = new System.Drawing.Point(117, 171);
+            this.tbPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPhone.Multiline = false;
+            this.tbPhone.Name = "tbPhone";
+            this.tbPhone.NormalImageTint = System.Drawing.Color.White;
+            this.tbPhone.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbPhone.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbPhone.PasswordChar = false;
+            this.tbPhone.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbPhone.PlaceholderText = "";
+            this.tbPhone.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbPhone.Size = new System.Drawing.Size(400, 44);
+            this.tbPhone.TabIndex = 21;
+            this.tbPhone.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbPhone.UnderlinedStyle = true;
             // 
             // lbPhone
             // 
@@ -489,35 +447,35 @@
             this.btnConfirm.TextOffset = new System.Drawing.Point(0, 0);
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
-            // tbUserName
+            // tbName
             // 
-            this.tbUserName.BackColor = System.Drawing.Color.Transparent;
-            this.tbUserName.BackgroundColor = System.Drawing.Color.White;
-            this.tbUserName.Content = "";
-            this.tbUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbUserName.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbUserName.FocusImageTint = System.Drawing.Color.White;
-            this.tbUserName.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbUserName.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbUserName.ForeColor = System.Drawing.Color.Black;
-            this.tbUserName.Image = null;
-            this.tbUserName.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbUserName.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbUserName.Location = new System.Drawing.Point(117, 79);
-            this.tbUserName.Margin = new System.Windows.Forms.Padding(4);
-            this.tbUserName.Multiline = false;
-            this.tbUserName.Name = "tbUserName";
-            this.tbUserName.NormalImageTint = System.Drawing.Color.White;
-            this.tbUserName.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbUserName.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbUserName.PasswordChar = false;
-            this.tbUserName.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbUserName.PlaceholderText = "";
-            this.tbUserName.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbUserName.Size = new System.Drawing.Size(400, 44);
-            this.tbUserName.TabIndex = 9;
-            this.tbUserName.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbUserName.UnderlinedStyle = true;
+            this.tbName.BackColor = System.Drawing.Color.Transparent;
+            this.tbName.BackgroundColor = System.Drawing.Color.White;
+            this.tbName.Content = "";
+            this.tbName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbName.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbName.FocusImageTint = System.Drawing.Color.White;
+            this.tbName.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbName.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbName.ForeColor = System.Drawing.Color.Black;
+            this.tbName.Image = null;
+            this.tbName.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbName.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbName.Location = new System.Drawing.Point(117, 79);
+            this.tbName.Margin = new System.Windows.Forms.Padding(4);
+            this.tbName.Multiline = false;
+            this.tbName.Name = "tbName";
+            this.tbName.NormalImageTint = System.Drawing.Color.White;
+            this.tbName.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbName.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbName.PasswordChar = false;
+            this.tbName.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbName.PlaceholderText = "";
+            this.tbName.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbName.Size = new System.Drawing.Size(400, 44);
+            this.tbName.TabIndex = 9;
+            this.tbName.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbName.UnderlinedStyle = true;
             // 
             // lbCashName
             // 
@@ -541,7 +499,7 @@
             this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel2.Size = new System.Drawing.Size(1096, 57);
-            this.cuiPanel2.TabIndex = 22;
+            this.cuiPanel2.TabIndex = 28;
             // 
             // llbBack
             // 
@@ -557,7 +515,7 @@
             this.llbBack.Text = "Kembali";
             this.llbBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbBack_LinkClicked);
             // 
-            // OwnerEditUser
+            // AdminEditProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -565,10 +523,10 @@
             this.Controls.Add(this.cuiPanel3);
             this.Controls.Add(this.cuiPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "OwnerEditUser";
+            this.Name = "AdminEditProfile";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Washinq | Edit Data User";
-            this.Load += new System.EventHandler(this.OwnerEditUser_Load);
+            this.Text = "Washinq | Edit Profil";
+            this.Load += new System.EventHandler(this.AdminEditProfile_Load);
             this.cuiPanel3.ResumeLayout(false);
             this.cuiPanel3.PerformLayout();
             this.cuiPanel2.ResumeLayout(false);
@@ -583,24 +541,22 @@
         private CuoreUI.Controls.cuiButton cuiButton1;
         private Guna.UI2.WinForms.Guna2CheckBox chkShowPassword2;
         private Guna.UI2.WinForms.Guna2CheckBox chkShowPassword1;
-        private CuoreUI.Controls.cuiTextBox tbUserConfirmPw;
+        private CuoreUI.Controls.cuiTextBox tbConfirmPw;
         private System.Windows.Forms.Label label3;
-        private CuoreUI.Controls.cuiTextBox tbUserPassword;
+        private CuoreUI.Controls.cuiTextBox tbPassword;
         private System.Windows.Forms.Label label4;
-        private CuoreUI.Controls.cuiTextBox tbUserEmail;
+        private CuoreUI.Controls.cuiTextBox tbEmail;
         private System.Windows.Forms.Label label1;
-        private CuoreUI.Controls.cuiTextBox tbUserUsername;
+        private CuoreUI.Controls.cuiTextBox tbUsername;
         private System.Windows.Forms.Label label2;
-        private CuoreUI.Controls.cuiTextBox tbUserAddress;
+        private CuoreUI.Controls.cuiTextBox tbAddress;
         private System.Windows.Forms.Label lbAddress;
-        private CuoreUI.Controls.cuiTextBox tbUserPhone;
+        private CuoreUI.Controls.cuiTextBox tbPhone;
         private System.Windows.Forms.Label lbPhone;
         private CuoreUI.Controls.cuiButton btnConfirm;
-        private CuoreUI.Controls.cuiTextBox tbUserName;
+        private CuoreUI.Controls.cuiTextBox tbName;
         private System.Windows.Forms.Label lbCashName;
         private CuoreUI.Controls.cuiPanel cuiPanel2;
         private System.Windows.Forms.LinkLabel llbBack;
-        private System.Windows.Forms.Label label5;
-        private CuoreUI.Controls.cuiComboBox cbxRole;
     }
 }

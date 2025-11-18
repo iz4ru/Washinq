@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Models;
+using WashinqV2.Pages.Views.Owner;
 
 namespace WashinqV2.Pages.Views.Cashier
 {
@@ -248,7 +250,8 @@ namespace WashinqV2.Pages.Views.Cashier
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-            // TODO: Implementasi profile page jika ada
+            CashierEditProfile form = new CashierEditProfile(UserSession.id);
+            form.ShowDialog();
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -256,5 +259,6 @@ namespace WashinqV2.Pages.Views.Cashier
             CashierAddCustomer form = new CashierAddCustomer();
             form.ShowDialog();
         }
+
     }
 }

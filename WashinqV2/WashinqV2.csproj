@@ -36,8 +36,23 @@
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <HintPath>..\packages\BouncyCastle.Cryptography.2.5.1\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
     </Reference>
+    <Reference Include="ClosedXML, Version=0.105.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.0.105.0\lib\netstandard2.0\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\ClosedXML.Parser.2.0.0\lib\netstandard2.0\ClosedXML.Parser.dll</HintPath>
+    </Reference>
     <Reference Include="CuoreUI, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CuoreUI.Winforms.2025.9.19.1\lib\net472\CuoreUI.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.3.1.1\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.Framework.3.1.1\lib\net46\DocumentFormat.OpenXml.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.1.0\lib\net20\ExcelNumberFormat.dll</HintPath>
     </Reference>
     <Reference Include="Google.Protobuf, Version=3.30.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.30.0\lib\net45\Google.Protobuf.dll</HintPath>
@@ -57,8 +72,17 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
     <Reference Include="MySql.Data, Version=9.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.9.4.0\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL">
+      <HintPath>..\packages\RBush.Signed.4.0.0\lib\net47\RBush.dll</HintPath>
+    </Reference>
+    <Reference Include="SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL">
+      <HintPath>..\packages\SixLabors.Fonts.1.0.0\lib\netstandard2.0\SixLabors.Fonts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -101,6 +125,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
     <Reference Include="ZstdSharp, Version=0.8.5.0, Culture=neutral, PublicKeyToken=8d151af33a4ad5cf, processorArchitecture=MSIL">
       <HintPath>..\packages\ZstdSharp.Port.0.8.5\lib\net462\ZstdSharp.dll</HintPath>
     </Reference>
@@ -156,6 +181,12 @@
     <Compile Include="Pages\Views\Admin\AdminEditCashier.Designer.cs">
       <DependentUpon>AdminEditCashier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminEditProfile.Designer.cs">
+      <DependentUpon>AdminEditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Admin\AdminEditService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +235,12 @@
     <Compile Include="Pages\Views\Cashier\CashierCustomerPay.Designer.cs">
       <DependentUpon>CashierCustomerPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierEditProfile.Designer.cs">
+      <DependentUpon>CashierEditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Cashier\CashierOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,11 +259,29 @@
     <Compile Include="Pages\Views\Cashier\CashierSuccessPay.Designer.cs">
       <DependentUpon>CashierSuccessPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerAddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerAddService.Designer.cs">
+      <DependentUpon>OwnerAddService.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Owner\OwnerAddUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\Views\Owner\OwnerAddUser.Designer.cs">
       <DependentUpon>OwnerAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditProfile.Designer.cs">
+      <DependentUpon>OwnerEditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditService.Designer.cs">
+      <DependentUpon>OwnerEditService.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\Owner\OwnerEditUser.cs">
       <SubType>Form</SubType>
@@ -284,6 +339,9 @@
     <EmbeddedResource Include="Pages\Views\Admin\AdminEditCashier.resx">
       <DependentUpon>AdminEditCashier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminEditProfile.resx">
+      <DependentUpon>AdminEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminEditService.resx">
       <DependentUpon>AdminEditService.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +366,9 @@
     <EmbeddedResource Include="Pages\Views\Cashier\CashierCustomerPay.resx">
       <DependentUpon>CashierCustomerPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierEditProfile.resx">
+      <DependentUpon>CashierEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Cashier\CashierOrderPage.resx">
       <DependentUpon>CashierOrderPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,14 +378,29 @@
     <EmbeddedResource Include="Pages\Views\Cashier\CashierSuccessPay.resx">
       <DependentUpon>CashierSuccessPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerAddService.resx">
+      <DependentUpon>OwnerAddService.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerAddUser.resx">
       <DependentUpon>OwnerAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerEditProfile.resx">
+      <DependentUpon>OwnerEditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerEditService.resx">
+      <DependentUpon>OwnerEditService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerEditUser.resx">
       <DependentUpon>OwnerEditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerPage.resx">
       <DependentUpon>OwnerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerReportPage.resx">
+      <DependentUpon>OwnerReportPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerServicePage.resx">
+      <DependentUpon>OwnerServicePage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerUserPage.resx">
       <DependentUpon>OwnerUserPage.cs</DependentUpon>

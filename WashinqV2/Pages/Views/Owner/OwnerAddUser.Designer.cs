@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OwnerAddUser));
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbxRole = new CuoreUI.Controls.cuiComboBox();
             this.chkShowPassword2 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.chkShowPassword1 = new Guna.UI2.WinForms.Guna2CheckBox();
             this.tbUserConfirmPw = new CuoreUI.Controls.cuiTextBox();
@@ -49,8 +51,6 @@
             this.lbCashName = new System.Windows.Forms.Label();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             this.llbBack = new System.Windows.Forms.LinkLabel();
-            this.cbxRole = new CuoreUI.Controls.cuiComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.cuiPanel3.SuspendLayout();
             this.cuiPanel2.SuspendLayout();
             this.SuspendLayout();
@@ -85,6 +85,44 @@
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel3.Size = new System.Drawing.Size(1096, 664);
             this.cuiPanel3.TabIndex = 25;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(556, 357);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(80, 21);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Pilih Role";
+            // 
+            // cbxRole
+            // 
+            this.cbxRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxRole.ButtonCursor = System.Windows.Forms.Cursors.Arrow;
+            this.cbxRole.ButtonHoverBackground = System.Drawing.Color.RoyalBlue;
+            this.cbxRole.ButtonHoverOutline = System.Drawing.Color.Empty;
+            this.cbxRole.ButtonNormalBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxRole.ButtonNormalOutline = System.Drawing.Color.Empty;
+            this.cbxRole.ButtonPressedBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxRole.ButtonPressedOutline = System.Drawing.Color.Empty;
+            this.cbxRole.DropDownBackgroundColor = System.Drawing.Color.White;
+            this.cbxRole.DropDownOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxRole.ExpandArrowColor = System.Drawing.Color.Gray;
+            this.cbxRole.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxRole.ForeColor = System.Drawing.Color.Gray;
+            this.cbxRole.Items = new string[0];
+            this.cbxRole.Location = new System.Drawing.Point(560, 382);
+            this.cbxRole.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxRole.Name = "cbxRole";
+            this.cbxRole.NoSelectionDropdownText = "Empty";
+            this.cbxRole.NoSelectionText = "None";
+            this.cbxRole.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cbxRole.OutlineThickness = 1F;
+            this.cbxRole.Rounding = 8;
+            this.cbxRole.Size = new System.Drawing.Size(400, 44);
+            this.cbxRole.TabIndex = 34;
             // 
             // chkShowPassword2
             // 
@@ -478,44 +516,6 @@
             this.llbBack.Text = "Kembali";
             this.llbBack.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbBack_LinkClicked);
             // 
-            // cbxRole
-            // 
-            this.cbxRole.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxRole.ButtonCursor = System.Windows.Forms.Cursors.Arrow;
-            this.cbxRole.ButtonHoverBackground = System.Drawing.Color.RoyalBlue;
-            this.cbxRole.ButtonHoverOutline = System.Drawing.Color.Empty;
-            this.cbxRole.ButtonNormalBackground = System.Drawing.Color.DodgerBlue;
-            this.cbxRole.ButtonNormalOutline = System.Drawing.Color.Empty;
-            this.cbxRole.ButtonPressedBackground = System.Drawing.Color.DodgerBlue;
-            this.cbxRole.ButtonPressedOutline = System.Drawing.Color.Empty;
-            this.cbxRole.DropDownBackgroundColor = System.Drawing.Color.White;
-            this.cbxRole.DropDownOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cbxRole.ExpandArrowColor = System.Drawing.Color.Gray;
-            this.cbxRole.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbxRole.ForeColor = System.Drawing.Color.Gray;
-            this.cbxRole.Items = new string[0];
-            this.cbxRole.Location = new System.Drawing.Point(560, 382);
-            this.cbxRole.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxRole.Name = "cbxRole";
-            this.cbxRole.NoSelectionDropdownText = "Empty";
-            this.cbxRole.NoSelectionText = "None";
-            this.cbxRole.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cbxRole.OutlineThickness = 1F;
-            this.cbxRole.Rounding = 8;
-            this.cbxRole.Size = new System.Drawing.Size(400, 44);
-            this.cbxRole.TabIndex = 34;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(556, 357);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 21);
-            this.label5.TabIndex = 35;
-            this.label5.Text = "Pilih Role";
-            // 
             // OwnerAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -525,6 +525,7 @@
             this.Controls.Add(this.cuiPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "OwnerAddUser";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washinq | Tambahkan Data Pengguna";
             this.Load += new System.EventHandler(this.OwnerAddUser_Load);
             this.cuiPanel3.ResumeLayout(false);

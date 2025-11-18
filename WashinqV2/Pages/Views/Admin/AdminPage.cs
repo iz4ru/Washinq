@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
 {
@@ -235,7 +236,8 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-
+            AdminEditProfile form = new AdminEditProfile(UserSession.id);
+            form.ShowDialog();
         }
 
         private void btnCashier_Click(object sender, EventArgs e)

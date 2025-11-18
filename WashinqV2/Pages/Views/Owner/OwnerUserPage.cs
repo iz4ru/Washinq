@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WashinqV2.Pages.Views.Admin;
+using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Owner
 {
@@ -319,6 +319,12 @@ namespace WashinqV2.Pages.Views.Owner
                 LoginPage.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OwnerEditProfile form = new OwnerEditProfile(UserSession.id);
+            form.ShowDialog();
         }
     }
 }

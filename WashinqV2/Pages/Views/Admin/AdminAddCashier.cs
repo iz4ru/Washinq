@@ -25,8 +25,8 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void AdminAddCashier_Load(object sender, EventArgs e)
         {
+            // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
         }
 

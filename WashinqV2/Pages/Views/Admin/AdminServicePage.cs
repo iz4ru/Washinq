@@ -261,7 +261,8 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
-
+            AdminEditProfile form = new AdminEditProfile(UserSession.id);
+            form.ShowDialog();
         }
 
         private void btnDashboard_Click(object sender, EventArgs e)

@@ -12,6 +12,10 @@ namespace WashinqV2.Models
         public static string username { get; set; }
         public static string password { get; set; }
         public static string role { get; set; }
+        public static string name { get; set; }
+        public static string email { get; set; }
+        public static string phone { get; set; }
+        public static string address { get; set; }
 
     }
 }
