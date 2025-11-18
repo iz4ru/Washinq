@@ -9,25 +9,33 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Owner
 {
-    public partial class AdminAddCashier : Form
+    public partial class OwnerAddUser : Form
     {
-        public AdminAddCashier()
+        public OwnerAddUser()
         {
             InitializeComponent();
             this.ClientSize = new Size(800, 600);
-
-            tbCashPassword.PasswordChar = true;
-            tbCashConfirmPw.PasswordChar = true;
+            tbUserPassword.PasswordChar = true;
+            tbUserConfirmPw.PasswordChar = true;
         }
 
-        private void AdminAddCashier_Load(object sender, EventArgs e)
+        private void OwnerAddUser_Load(object sender, EventArgs e)
         {
+            // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
-            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
+
+            this.StartPosition = FormStartPosition.CenterScreen;
+
+            // Disable close button
+            this.ControlBox = false;
+
+            cbxRole.Items = new string[] { "admin", "kasir" };
         }
 
         private void llbBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -37,138 +45,161 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbCashName.Content))
+            // Validasi input
+            if (string.IsNullOrWhiteSpace(tbUserName.Content))
             {
-                MessageBox.Show("Nama Kasir tidak boleh kosong!",
+                MessageBox.Show("Nama tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashName.Focus();
+                tbUserName.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbCashUsername.Content))
+            if (string.IsNullOrWhiteSpace(tbUserUsername.Content))
             {
                 MessageBox.Show("Username tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashUsername.Focus();
+                tbUserUsername.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbCashEmail.Content))
+            if (string.IsNullOrWhiteSpace(tbUserEmail.Content))
             {
                 MessageBox.Show("Email tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashEmail.Focus();
+                tbUserEmail.Focus();
                 return;
             }
 
-            if (!IsValidEmail(tbCashEmail.Content))
+            // Validasi format email
+            if (!IsValidEmail(tbUserEmail.Content))
             {
                 MessageBox.Show("Format email tidak valid!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashEmail.Focus();
+                tbUserEmail.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbCashPhone.Content))
+            if (string.IsNullOrWhiteSpace(tbUserPhone.Content))
             {
                 MessageBox.Show("Nomor Telepon tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashPhone.Focus();
+                tbUserPhone.Focus();
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(tbCashPassword.Content))
+            if (string.IsNullOrWhiteSpace(tbUserPassword.Content))
             {
                 MessageBox.Show("Password tidak boleh kosong!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashPassword.Focus();
+                tbUserPassword.Focus();
                 return;
             }
 
-            if (tbCashPassword.Content.Length < 6)
+            if (tbUserPassword.Content.Length < 6)
             {
                 MessageBox.Show("Password minimal 6 karakter!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashPassword.Focus();
+                tbUserPassword.Focus();
                 return;
             }
 
-            if (tbCashPassword.Content != tbCashConfirmPw.Content)
+            if (tbUserPassword.Content != tbUserConfirmPw.Content)
             {
                 MessageBox.Show("Password dan Konfirmasi Password tidak sama!",
                     "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                tbCashConfirmPw.Focus();
+                tbUserConfirmPw.Focus();
                 return;
             }
 
+            // Validasi role
+            if (cbxRole.SelectedIndex == -1)
+            {
+                MessageBox.Show("Silakan pilih role (Admin atau Kasir)!",
+                    "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cbxRole.Focus();
+                return;
+            }
+
+            // Proses insert ke database
             try
             {
                 using (var conn = Database.Database.GetConnection())
                 {
                     conn.Open();
 
+                    // Cek username sudah ada atau belum
                     string checkUsername = "SELECT COUNT(*) FROM users WHERE username = @username";
                     using (MySqlCommand cmdCheck = new MySqlCommand(checkUsername, conn))
                     {
-                        cmdCheck.Parameters.AddWithValue("@username", tbCashUsername.Content.Trim());
+                        cmdCheck.Parameters.AddWithValue("@username", tbUserUsername.Content.Trim());
                         int userCount = Convert.ToInt32(cmdCheck.ExecuteScalar());
 
                         if (userCount > 0)
                         {
                             MessageBox.Show("Username sudah digunakan, silakan gunakan username lain!",
                                 "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            tbCashUsername.Focus();
+                            tbUserUsername.Focus();
                             return;
                         }
                     }
 
+                    // Cek email sudah ada atau belum
                     string checkEmail = "SELECT COUNT(*) FROM users WHERE email = @email";
                     using (MySqlCommand cmdCheck = new MySqlCommand(checkEmail, conn))
                     {
-                        cmdCheck.Parameters.AddWithValue("@email", tbCashEmail.Content.Trim());
+                        cmdCheck.Parameters.AddWithValue("@email", tbUserEmail.Content.Trim());
                         int emailCount = Convert.ToInt32(cmdCheck.ExecuteScalar());
 
                         if (emailCount > 0)
                         {
                             MessageBox.Show("Email sudah digunakan, silakan gunakan email lain!",
                                 "Validasi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            tbCashEmail.Focus();
+                            tbUserEmail.Focus();
                             return;
                         }
                     }
 
-                    string hashedPassword = HashPassword(tbCashPassword.Content);
+                    // Hash password dengan SHA256
+                    string hashedPassword = HashPassword(tbUserPassword.Content);
 
+                    // Convert role dari display name ke database value
+                    string selectedRole = cbxRole.SelectedItem.ToString();
+                    string roleValue = selectedRole == "Admin" ? "admin" : "cashier";
+
+                    // Insert data user dengan role yang dipilih
                     string query = @"INSERT INTO users 
                         (name, username, email, address, phone, role, password) 
                         VALUES 
-                        (@name, @username, @email, @address, @phone, 'cashier', @password)";
+                        (@name, @username, @email, @address, @phone, @role, @password)";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@name", tbCashName.Content.Trim());
-                        cmd.Parameters.AddWithValue("@username", tbCashUsername.Content.Trim());
-                        cmd.Parameters.AddWithValue("@email", tbCashEmail.Content.Trim());
+                        cmd.Parameters.AddWithValue("@name", tbUserName.Content.Trim());
+                        cmd.Parameters.AddWithValue("@username", tbUserUsername.Content.Trim());
+                        cmd.Parameters.AddWithValue("@email", tbUserEmail.Content.Trim());
                         cmd.Parameters.AddWithValue("@address",
-                            string.IsNullOrWhiteSpace(tbCashAddress.Content) ? null : tbCashAddress.Content.Trim());
-                        cmd.Parameters.AddWithValue("@phone", tbCashPhone.Content.Trim());
+                            string.IsNullOrWhiteSpace(tbUserAddress.Content) ? null : tbUserAddress.Content.Trim());
+                        cmd.Parameters.AddWithValue("@phone", tbUserPhone.Content.Trim());
+                        cmd.Parameters.AddWithValue("@role", roleValue);
                         cmd.Parameters.AddWithValue("@password", hashedPassword);
 
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
                         {
-                            MessageBox.Show("Kasir berhasil ditambahkan!",
+                            MessageBox.Show($"{selectedRole} berhasil ditambahkan!",
                                 "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                            // Clear form
                             ClearForm();
 
+                            // Close dialog
                             this.DialogResult = DialogResult.OK;
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Gagal menambahkan kasir!",
+                            MessageBox.Show("Gagal menambahkan user!",
                                 "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -188,6 +219,7 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
+        // Method untuk hash password dengan SHA256
         private string HashPassword(string password)
         {
             using (SHA256 sha256 = SHA256.Create())
@@ -202,6 +234,7 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
+        // Method untuk validasi format email
         private bool IsValidEmail(string email)
         {
             try
@@ -215,28 +248,31 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
+        // Method untuk clear form
         private void ClearForm()
         {
-            tbCashName.Content = string.Empty;
-            tbCashUsername.Content = string.Empty;
-            tbCashEmail.Content = string.Empty;
-            tbCashPhone.Content = string.Empty;
-            tbCashPassword.Content = string.Empty;
-            tbCashConfirmPw.Content = string.Empty;
-            tbCashAddress.Content = string.Empty;
+            tbUserName.Content = string.Empty;
+            tbUserUsername.Content = string.Empty;
+            tbUserEmail.Content = string.Empty;
+            tbUserPhone.Content = string.Empty;
+            tbUserPassword.Content = string.Empty;
+            tbUserConfirmPw.Content = string.Empty;
+            tbUserAddress.Content = string.Empty;
             chkShowPassword1.Checked = false;
             chkShowPassword2.Checked = false;
         }
 
+
+        // Event untuk show/hide password
         private void chkShowPassword1_CheckedChanged(object sender, EventArgs e)
         {
             if (chkShowPassword1.Checked)
             {
-                tbCashPassword.PasswordChar = false; 
+                tbUserPassword.PasswordChar = false;
             }
             else
             {
-                tbCashPassword.PasswordChar = true; 
+                tbUserPassword.PasswordChar = true;
             }
         }
 
@@ -244,11 +280,11 @@ namespace WashinqV2.Pages.Views.Admin
         {
             if (chkShowPassword2.Checked)
             {
-                tbCashConfirmPw.PasswordChar = false; 
+                tbUserConfirmPw.PasswordChar = false;
             }
             else
             {
-                tbCashConfirmPw.PasswordChar = true; 
+                tbUserConfirmPw.PasswordChar = true;
             }
         }
     }

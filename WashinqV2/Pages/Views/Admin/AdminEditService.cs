@@ -47,6 +47,7 @@ namespace WashinqV2.Pages.Views.Admin
 
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
         }
 

@@ -164,7 +164,7 @@
             this.tbCashConfirmPw.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbCashConfirmPw.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbCashConfirmPw.Location = new System.Drawing.Point(560, 267);
-            this.tbCashConfirmPw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCashConfirmPw.Margin = new System.Windows.Forms.Padding(4);
             this.tbCashConfirmPw.Multiline = false;
             this.tbCashConfirmPw.Name = "tbCashConfirmPw";
             this.tbCashConfirmPw.NormalImageTint = System.Drawing.Color.White;
@@ -205,7 +205,7 @@
             this.tbCashPassword.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbCashPassword.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbCashPassword.Location = new System.Drawing.Point(117, 267);
-            this.tbCashPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCashPassword.Margin = new System.Windows.Forms.Padding(4);
             this.tbCashPassword.Multiline = false;
             this.tbCashPassword.Name = "tbCashPassword";
             this.tbCashPassword.NormalImageTint = System.Drawing.Color.White;
@@ -246,7 +246,7 @@
             this.tbCashEmail.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbCashEmail.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbCashEmail.Location = new System.Drawing.Point(560, 171);
-            this.tbCashEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCashEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbCashEmail.Multiline = false;
             this.tbCashEmail.Name = "tbCashEmail";
             this.tbCashEmail.NormalImageTint = System.Drawing.Color.White;
@@ -287,7 +287,7 @@
             this.tbCashUsername.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbCashUsername.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbCashUsername.Location = new System.Drawing.Point(560, 79);
-            this.tbCashUsername.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCashUsername.Margin = new System.Windows.Forms.Padding(4);
             this.tbCashUsername.Multiline = false;
             this.tbCashUsername.Name = "tbCashUsername";
             this.tbCashUsername.NormalImageTint = System.Drawing.Color.White;
@@ -328,7 +328,7 @@
             this.tbCashAddress.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbCashAddress.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbCashAddress.Location = new System.Drawing.Point(117, 382);
-            this.tbCashAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCashAddress.Margin = new System.Windows.Forms.Padding(4);
             this.tbCashAddress.Multiline = true;
             this.tbCashAddress.Name = "tbCashAddress";
             this.tbCashAddress.NormalImageTint = System.Drawing.Color.White;
@@ -369,7 +369,7 @@
             this.tbCashPhone.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbCashPhone.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbCashPhone.Location = new System.Drawing.Point(117, 171);
-            this.tbCashPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCashPhone.Margin = new System.Windows.Forms.Padding(4);
             this.tbCashPhone.Multiline = false;
             this.tbCashPhone.Name = "tbCashPhone";
             this.tbCashPhone.NormalImageTint = System.Drawing.Color.White;
@@ -450,7 +450,7 @@
             this.tbCashName.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbCashName.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbCashName.Location = new System.Drawing.Point(117, 79);
-            this.tbCashName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCashName.Margin = new System.Windows.Forms.Padding(4);
             this.tbCashName.Multiline = false;
             this.tbCashName.Name = "tbCashName";
             this.tbCashName.NormalImageTint = System.Drawing.Color.White;
@@ -488,6 +488,7 @@
             this.Name = "AdminAddCashier";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washinq | Tambahkan Data Kasir";
+            this.Load += new System.EventHandler(this.AdminAddCashier_Load);
             this.cuiPanel2.ResumeLayout(false);
             this.cuiPanel2.PerformLayout();
             this.cuiPanel3.ResumeLayout(false);

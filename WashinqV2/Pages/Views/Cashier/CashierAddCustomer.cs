@@ -23,6 +23,7 @@ namespace WashinqV2.Pages.Views.Cashier
         private void CashierAddCustomer_Load(object sender, EventArgs e)
         {
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
         }
 

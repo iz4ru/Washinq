@@ -222,11 +222,41 @@
     <Compile Include="Pages\Views\Cashier\CashierSuccessPay.Designer.cs">
       <DependentUpon>CashierSuccessPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerAddUser.Designer.cs">
+      <DependentUpon>OwnerAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditUser.Designer.cs">
+      <DependentUpon>OwnerEditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Owner\OwnerPage.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Pages\Views\Owner\OwnerPage.Designer.cs">
       <DependentUpon>OwnerPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerReportPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerReportPage.Designer.cs">
+      <DependentUpon>OwnerReportPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerServicePage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerServicePage.Designer.cs">
+      <DependentUpon>OwnerServicePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerUserPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerUserPage.Designer.cs">
+      <DependentUpon>OwnerUserPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -287,8 +317,17 @@
     <EmbeddedResource Include="Pages\Views\Cashier\CashierSuccessPay.resx">
       <DependentUpon>CashierSuccessPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerAddUser.resx">
+      <DependentUpon>OwnerAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerEditUser.resx">
+      <DependentUpon>OwnerEditUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerPage.resx">
       <DependentUpon>OwnerPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerUserPage.resx">
+      <DependentUpon>OwnerUserPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

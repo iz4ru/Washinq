@@ -30,6 +30,8 @@ namespace WashinqV2.Pages.Views.Cashier
             this.MaximizeBox = false;
             this.MinimizeBox = false;
 
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             // Disable close button
             this.ControlBox = false;
 

@@ -8,7 +8,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WashinqV2.Pages.Views.Cashier;
 
 namespace WashinqV2.Pages.Views.Cashier
 {

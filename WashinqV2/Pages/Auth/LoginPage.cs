@@ -10,6 +10,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WashinqV2.Models;
+using WashinqV2.Pages.Views.Owner;
+using WashinqV2.Pages.Views.Admin;
+using WashinqV2.Pages.Views.Cashier;
 
 namespace WashinqV2
 {
@@ -18,7 +21,6 @@ namespace WashinqV2
         public LoginPage()
         {
             InitializeComponent();
-
             tbPassword.PasswordChar = true; // Pastikan password disembunyikan di awal
         }
 
@@ -83,7 +85,7 @@ namespace WashinqV2
                                 if (UserSession.role == "admin")
                                 {
                                     this.Hide();
-                                    using (var adminPage = new Pages.Views.AdminPage())
+                                    using (var adminPage = new AdminPage())
                                     {
                                         adminPage.ShowDialog();
                                     }
@@ -93,7 +95,7 @@ namespace WashinqV2
                                 else if (UserSession.role == "owner")
                                 {
                                     this.Hide();
-                                    using (var ownerPage = new Pages.Views.OwnerPage())
+                                    using (var ownerPage = new OwnerPage())
                                     {
                                         ownerPage.ShowDialog();
                                     }
@@ -103,7 +105,7 @@ namespace WashinqV2
                                 else if (UserSession.role == "cashier")
                                 {
                                     this.Hide();
-                                    using (var cashierPage = new Pages.Views.Cashier.CashierPage())
+                                    using (var cashierPage = new CashierPage())
                                     {
                                         cashierPage.ShowDialog();
                                     }

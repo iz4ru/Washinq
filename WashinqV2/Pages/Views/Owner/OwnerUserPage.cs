@@ -5,22 +5,22 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Pages.Views.Admin;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Owner
 {
-    public partial class AdminCashierPage : Form
+    public partial class OwnerUserPage : Form
     {
-        public AdminCashierPage()
+        public OwnerUserPage()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void AdminCashierPage_Load(object sender, EventArgs e)
+        private void OwnerUserPage_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
             LoadData();
@@ -28,7 +28,7 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void SetupDataGridView()
         {
-            dgvCashier.Columns.Clear();
+            dgvUser.Columns.Clear();
 
             DataGridViewTextBoxColumn clId = new DataGridViewTextBoxColumn();
             clId.HeaderText = "ID";
@@ -41,8 +41,8 @@ namespace WashinqV2.Pages.Views.Admin
             clNo.ReadOnly = true;
 
             DataGridViewTextBoxColumn clName = new DataGridViewTextBoxColumn();
-            clName.HeaderText = "Nama Kasir";
-            clName.Name = "Nama Kasir";
+            clName.HeaderText = "Nama Pengguna";
+            clName.Name = "Nama Pengguna";
             clName.ReadOnly = true;
 
             DataGridViewTextBoxColumn clUsername = new DataGridViewTextBoxColumn();
@@ -54,6 +54,11 @@ namespace WashinqV2.Pages.Views.Admin
             clEmail.HeaderText = "Email";
             clEmail.Name = "Email";
             clEmail.ReadOnly = true;
+
+            DataGridViewTextBoxColumn clRole = new DataGridViewTextBoxColumn();
+            clRole.HeaderText = "Role";
+            clRole.Name = "Role";
+            clRole.ReadOnly = true;
 
             DataGridViewTextBoxColumn clPhone = new DataGridViewTextBoxColumn();
             clPhone.HeaderText = "Nomor Telepon";
@@ -74,18 +79,19 @@ namespace WashinqV2.Pages.Views.Admin
             clCheckbox.HeaderText = "Pilih Aksi";
             clCheckbox.Name = "Pilih Aksi";
 
-            dgvCashier.Columns.Add(clId);
-            dgvCashier.Columns.Add(clNo);
-            dgvCashier.Columns.Add(clName);
-            dgvCashier.Columns.Add(clUsername);
-            dgvCashier.Columns.Add(clEmail);
-            dgvCashier.Columns.Add(clPhone);
-            dgvCashier.Columns.Add(clAddress);
-            dgvCashier.Columns.Add(clCreatedAt);
-            dgvCashier.Columns.Add(clCheckbox);
+            dgvUser.Columns.Add(clId);
+            dgvUser.Columns.Add(clNo);
+            dgvUser.Columns.Add(clName);
+            dgvUser.Columns.Add(clUsername);
+            dgvUser.Columns.Add(clEmail);
+            dgvUser.Columns.Add(clRole);
+            dgvUser.Columns.Add(clPhone);
+            dgvUser.Columns.Add(clAddress);
+            dgvUser.Columns.Add(clCreatedAt);
+            dgvUser.Columns.Add(clCheckbox);
 
-            dgvCashier.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvCashier.AllowUserToAddRows = false;
+            dgvUser.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUser.AllowUserToAddRows = false;
         }
 
         public void LoadData()
@@ -95,9 +101,9 @@ namespace WashinqV2.Pages.Views.Admin
                 using (var conn = Database.Database.GetConnection())
                 {
                     string query = @"SELECT 
-                id, name, username, email, phone, address, created_at 
+                id, name, username, email, role, phone, address, created_at 
                 FROM users 
-                WHERE role = 'cashier' 
+                WHERE role IN ('cashier', 'admin') 
                 ORDER BY id DESC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -106,16 +112,17 @@ namespace WashinqV2.Pages.Views.Admin
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             int i = 1;
-                            dgvCashier.Rows.Clear();
+                            dgvUser.Rows.Clear();
 
                             while (reader.Read())
                             {
-                                dgvCashier.Rows.Add(
+                                dgvUser.Rows.Add(
                                     reader["id"],
                                     i++,
                                     reader["name"],
                                     reader["username"],
                                     reader["email"],
+                                    reader["role"],
                                     reader["phone"] == DBNull.Value ? "-" : reader["phone"].ToString(),
                                     reader["address"] == DBNull.Value ? "-" : reader["address"].ToString(),
                                     Convert.ToDateTime(reader["created_at"]).ToString("dd MMM yyyy HH:mm"),
@@ -141,7 +148,7 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminAddCashier form = new AdminAddCashier();
+            OwnerAddUser form = new OwnerAddUser();
             if (form.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
@@ -151,74 +158,73 @@ namespace WashinqV2.Pages.Views.Admin
         private void btnEdit_Click(object sender, EventArgs e)
         {
             bool hasSelected = false;
-            int selectedCashierId = 0;
-            string selectedCashierName = "";
+            int selectedUserId = 0;
+            string selectedUserName = "";
 
-            for (int i = 0; i < dgvCashier.Rows.Count; i++)
+            for (int i = 0; i < dgvUser.Rows.Count; i++)
             {
-                DataGridViewRow row = dgvCashier.Rows[i];
+                DataGridViewRow row = dgvUser.Rows[i];
                 if (row.Cells["Pilih Aksi"].Value != null &&
                     Convert.ToBoolean(row.Cells["Pilih Aksi"].Value) == true)
                 {
                     if (hasSelected)
                     {
-                        MessageBox.Show("Silakan pilih hanya satu kasir untuk diedit!",
+                        MessageBox.Show("Silakan pilih hanya satu pengguna untuk diedit!",
                             "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
 
                     hasSelected = true;
-                    selectedCashierId = Convert.ToInt32(row.Cells["id"].Value);
-                    selectedCashierName = row.Cells["Nama Kasir"].Value.ToString();
+                    selectedUserId = Convert.ToInt32(row.Cells["id"].Value);
+                    selectedUserName = row.Cells["Nama Pengguna"].Value.ToString();
                 }
             }
 
             if (!hasSelected)
             {
-                MessageBox.Show("Silakan pilih kasir yang ingin diedit dengan mencentang checkbox!",
+                MessageBox.Show("Silakan pilih pengguna yang ingin diedit dengan mencentang checkbox!",
                     "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            AdminEditCashier editForm = new AdminEditCashier(selectedCashierId);
+            OwnerEditUser editForm = new OwnerEditUser(selectedUserId);
             if (editForm.ShowDialog() == DialogResult.OK)
             {
                 LoadData();
             }
         }
 
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            List<int> selectedCashierIds = new List<int>();
-            List<string> selectedCashierDetails = new List<string>();
+            List<int> selectedUserIds = new List<int>();
+            List<string> selectedUserDetails = new List<string>();
 
-            foreach (DataGridViewRow row in dgvCashier.Rows)
+            foreach (DataGridViewRow row in dgvUser.Rows)
             {
                 if (row.Cells["Pilih Aksi"].Value != null &&
                     Convert.ToBoolean(row.Cells["Pilih Aksi"].Value) == true)
                 {
-                    int cashierId = Convert.ToInt32(row.Cells["id"].Value);
-                    string cashierName = row.Cells["Nama Kasir"].Value.ToString();
+                    int userId = Convert.ToInt32(row.Cells["id"].Value);
+                    string name = row.Cells["Nama Pengguna"].Value.ToString();
                     string username = row.Cells["Username"].Value.ToString();
 
-                    selectedCashierIds.Add(cashierId);
-                    selectedCashierDetails.Add($"- {cashierName} ({username})");
+                    selectedUserIds.Add(userId);
+                    selectedUserDetails.Add($"- {name} ({username})");
                 }
             }
 
-            if (selectedCashierIds.Count == 0)
+            if (selectedUserIds.Count == 0)
             {
-                MessageBox.Show("Silakan pilih kasir yang ingin dihapus dengan mencentang checkbox!",
+                MessageBox.Show("Silakan pilih pengguna yang ingin dihapus dengan mencentang checkbox!",
                     "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string detailMessage = "Kasir yang akan dihapus:\n\n" +
-                string.Join("\n", selectedCashierDetails) +
-                $"\n\nTotal: {selectedCashierIds.Count} kasir\n\n" +
-                "Apakah Anda yakin ingin menghapus data kasir ini?\n" +
-                "Data kasir dan semua order terkait akan dihapus!";
+            string detailMessage = "Pengguna yang akan dihapus:\n\n" +
+                string.Join("\n", selectedUserDetails) +
+                $"\n\nTotal: {selectedUserIds.Count} pengguna\n\n" +
+                "Apakah Anda yakin ingin menghapus data pengguna ini?\n" +
+                "Data pengguna dan semua order terkait akan dihapus!";
 
             var result = MessageBox.Show(detailMessage,
                 "Konfirmasi Hapus",
@@ -236,12 +242,12 @@ namespace WashinqV2.Pages.Views.Admin
                     {
                         conn.Open();
 
-                        foreach (int cashierId in selectedCashierIds)
+                        foreach (int userId in selectedUserIds)
                         {
-                            string query = "DELETE FROM users WHERE id = @id AND role = 'cashier'";
+                            string query = "DELETE FROM users WHERE id = @id";
                             using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
-                                cmd.Parameters.AddWithValue("@id", cashierId);
+                                cmd.Parameters.AddWithValue("@id", userId);
                                 int rowsAffected = cmd.ExecuteNonQuery();
 
                                 if (rowsAffected > 0)
@@ -254,9 +260,9 @@ namespace WashinqV2.Pages.Views.Admin
                         conn.Close();
                     }
 
-                    string resultMessage = $"Berhasil menghapus {successCount} kasir";
+                    string resultMessage = $"Berhasil menghapus {successCount} pengguna";
                     if (failCount > 0)
-                        resultMessage += $"\nGagal menghapus {failCount} kasir";
+                        resultMessage += $"\nGagal menghapus {failCount} pengguna";
 
                     MessageBox.Show(resultMessage,
                         "Hasil Penghapusan", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -265,8 +271,8 @@ namespace WashinqV2.Pages.Views.Admin
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show("Gagal menghapus kasir: " + ex.Message +
-                        "\n\nPastikan tidak ada order yang terkait dengan kasir ini.",
+                    MessageBox.Show("Gagal menghapus pengguna: " + ex.Message +
+                        "\n\nPastikan tidak ada order yang terkait dengan pengguna ini.",
                         "Kesalahan Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
@@ -280,15 +286,15 @@ namespace WashinqV2.Pages.Views.Admin
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminPage register = new AdminPage();
+            OwnerPage register = new OwnerPage();
             register.ShowDialog();
             this.Close();
         }
 
-        private void btnOrder_Click(object sender, EventArgs e)
+        private void btnReport_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminOrderPage register = new AdminOrderPage();
+            OwnerReportPage register = new OwnerReportPage();
             register.ShowDialog();
             this.Close();
         }
@@ -296,7 +302,7 @@ namespace WashinqV2.Pages.Views.Admin
         private void btnService_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminServicePage register = new AdminServicePage();
+            OwnerServicePage register = new OwnerServicePage();
             register.ShowDialog();
             this.Close();
         }

@@ -32,6 +32,8 @@ namespace WashinqV2.Pages.Views.Admin
             // Disable close button
             this.ControlBox = false;
 
+            this.StartPosition = FormStartPosition.CenterScreen;
+
             //LoadCustomerInfo(customerId);
             LoadService();
             LoadCustomerInfo(customerId);

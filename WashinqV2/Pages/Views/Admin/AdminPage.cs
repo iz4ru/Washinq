@@ -8,9 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WashinqV2.Pages.Views.Admin;
 
-namespace WashinqV2.Pages.Views
+namespace WashinqV2.Pages.Views.Admin
 {
     public partial class AdminPage : Form
     {
@@ -23,7 +22,6 @@ namespace WashinqV2.Pages.Views
         private void AdminPage_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
-
             LoadDashboardStatistics();
             LoadRecentOrders();
         }
