@@ -223,7 +223,7 @@
             this.lbTotalKg.Name = "lbTotalKg";
             this.lbTotalKg.Size = new System.Drawing.Size(147, 26);
             this.lbTotalKg.TabIndex = 18;
-            this.lbTotalKg.Text = "Total Kilogram";
+            this.lbTotalKg.Text = "Total Kuantitas";
             // 
             // cbxService
             // 

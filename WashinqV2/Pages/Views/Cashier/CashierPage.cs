@@ -57,8 +57,8 @@ namespace WashinqV2.Pages.Views.Cashier
             cl3.ReadOnly = true;
 
             DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
-            cl4.HeaderText = "Total Kilogram";
-            cl4.Name = "Total Kilogram";
+            cl4.HeaderText = "Total Kuantitas";
+            cl4.Name = "Total Kuantitas";
             cl4.ReadOnly = true;
 
             DataGridViewTextBoxColumn cl5 = new DataGridViewTextBoxColumn();
@@ -171,7 +171,7 @@ namespace WashinqV2.Pages.Views.Cashier
                             u.name AS user_name,
                             c.name AS customer_name,
                             s.name AS service_name,
-                            o.total_kg,
+                            o.total_qty,
                             o.total_price,
                             o.paid,
                             o.payment,
@@ -200,7 +200,7 @@ namespace WashinqV2.Pages.Views.Cashier
                                     reader["user_name"],
                                     reader["customer_name"],
                                     reader["service_name"],
-                                    Convert.ToDouble(reader["total_kg"]).ToString("N1") + " kg",
+                                    Convert.ToDouble(reader["total_qty"]).ToString("N1") + " kg",
                                     "Rp " + Convert.ToInt32(reader["total_price"]).ToString("N0"),
                                     "Rp " + Convert.ToInt32(reader["paid"]).ToString("N0"),
                                     reader["payment"],

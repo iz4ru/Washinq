@@ -106,7 +106,7 @@ namespace WashinqV2.Pages.Views.Cashier
             int serviceId = 0;
             using (var conn = Database.Database.GetConnection())
             {
-                string queryService = "SELECT id, price_per_kg FROM services WHERE name = @name LIMIT 1";
+                string queryService = "SELECT id, price FROM services WHERE name = @name LIMIT 1";
                 using (var cmd = new MySqlCommand(queryService, conn))
                 {
                     cmd.Parameters.AddWithValue("@name", serviceName);
@@ -116,7 +116,7 @@ namespace WashinqV2.Pages.Views.Cashier
                         if (reader.Read())
                         {
                             serviceId = Convert.ToInt32(reader["id"]);
-                            pricePerKg = Convert.ToDecimal(reader["price_per_kg"]);
+                            pricePerKg = Convert.ToDecimal(reader["price"]);
                         }
                         else
                         {
@@ -134,7 +134,7 @@ namespace WashinqV2.Pages.Views.Cashier
             {
                 string insertQuery = @"
         INSERT INTO orders 
-        (user_id, customer_id, service_id, total_kg, total_price, paid, payment, notes, submitted_at, taken_at)
+        (user_id, customer_id, service_id, total_qty, total_price, paid, payment, notes, submitted_at, taken_at)
         VALUES 
         (@userId, @customerId, @serviceId, @totalKg, @totalPrice, @paid, @payment, @notes, @submittedAt, @takenAt)
     ";

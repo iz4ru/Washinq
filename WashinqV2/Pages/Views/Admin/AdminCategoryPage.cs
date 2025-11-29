@@ -7,15 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Guna.UI2.WinForms.Suite;
 using MySql.Data.MySqlClient;
 using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
 {
-    public partial class AdminServicePage : Form
+    public partial class AdminCategoryPage : Form
     {
-        public AdminServicePage()
+        public AdminCategoryPage()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
@@ -27,34 +26,22 @@ namespace WashinqV2.Pages.Views.Admin
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = @"
-                SELECT 
-                    s.id,
-                    s.name,
-                    c.name AS type_name,
-                    s.price,
-                    s.description
-                FROM services s
-                JOIN categories c ON s.category_id = c.id
-                ORDER BY id DESC";
-
+                    string query = "SELECT id, name, unit_type FROM categories ORDER BY id DESC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
-                    { 
+                    {
                         conn.Open();
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             int i = 1;
-                            dgvService.Rows.Clear();
+                            dgvCategory.Rows.Clear();
 
                             while (reader.Read())
                             {
-                                dgvService.Rows.Add(
+                                dgvCategory.Rows.Add(
                                     reader["id"],
                                     i++,
                                     reader["name"],
-                                    reader["type_name"],
-                                    "Rp " + Convert.ToInt32(reader["price"]).ToString("N0"),
-                                    reader["description"]);
+                                    reader["unit_type"]);
                             }
                         }
                         conn.Close();
@@ -75,7 +62,7 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
-        private void AdminServicePage_Load(object sender, EventArgs e)
+        private void AdminCategoryPage_Load(object sender, EventArgs e)
         {
             DataGridViewTextBoxColumn clid = new DataGridViewTextBoxColumn();
             clid.HeaderText = "ID";
@@ -89,28 +76,20 @@ namespace WashinqV2.Pages.Views.Admin
             cl1.HeaderText = "Nama";
             cl1.Name = "Nama";
             DataGridViewTextBoxColumn cl2 = new DataGridViewTextBoxColumn();
-            cl2.HeaderText = "Tipe";
-            cl2.Name = "Tipe";
-            DataGridViewTextBoxColumn cl3 = new DataGridViewTextBoxColumn();
-            cl3.HeaderText = "Harga per Kilogram";
-            cl3.Name = "Harga per Kilogram";
-            DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
-            cl4.HeaderText = "Deskripsi";
-            cl4.Name = "Deskripsi";
-            DataGridViewCheckBoxColumn cl5 = new DataGridViewCheckBoxColumn();
-            cl5.HeaderText = "Pilih Aksi";
-            cl5.Name = "Pilih Aksi";
+            cl2.HeaderText = "Jenis Unit";
+            cl2.Name = "Jenis Unit";
+            DataGridViewCheckBoxColumn cl3 = new DataGridViewCheckBoxColumn();
+            cl3.HeaderText = "Pilih Aksi";
+            cl3.Name = "Pilih Aksi";
 
-            dgvService.Columns.Add(clid);
-            dgvService.Columns.Add(clnum);
-            dgvService.Columns.Add(cl1);
-            dgvService.Columns.Add(cl2);
-            dgvService.Columns.Add(cl3);
-            dgvService.Columns.Add(cl4);
-            dgvService.Columns.Add(cl5);
+            dgvCategory.Columns.Add(clid);
+            dgvCategory.Columns.Add(clnum);
+            dgvCategory.Columns.Add(cl1);
+            dgvCategory.Columns.Add(cl2);
+            dgvCategory.Columns.Add(cl3);
 
-            dgvService.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvService.AllowUserToAddRows = false;
+            dgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCategory.AllowUserToAddRows = false;
 
             LoadData();
 
@@ -137,14 +116,14 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            AdminAddService form = new AdminAddService(this, 0);
+            AdminAddCategory form = new AdminAddCategory(this);
             form.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             // Pilih baris yang dicentang pada DataGridView
-            var selectedRows = dgvService.Rows
+            var selectedRows = dgvCategory.Rows
                 .Cast<DataGridViewRow>()
                 .Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value))
                 .ToList();
@@ -160,32 +139,28 @@ namespace WashinqV2.Pages.Views.Admin
 
             // Ambil data dari data grid view
             int id = Convert.ToInt32(selectedRow.Cells["id"].Value);
-            string serviceName = selectedRow.Cells["Nama"].Value.ToString();
-            string hargaText = selectedRow.Cells["Harga per Kilogram"].Value.ToString().Replace("Rp", "").Replace(".", "").Trim();
-            int price = Convert.ToInt32(hargaText);
-            string description = selectedRow.Cells["Deskripsi"].Value.ToString();
+            string categoryName = selectedRow.Cells["Nama"].Value.ToString();
+            string unitType = selectedRow.Cells["Jenis Unit"].Value.ToString();
 
-            var AdminEditService = new AdminEditService(id, serviceName, price, description, this);
+            var AdminEditCategory = new AdminEditCategory(id, categoryName, unitType, this);
 
-            if (AdminEditService.ShowDialog() == DialogResult.OK)
+            if (AdminEditCategory.ShowDialog() == DialogResult.OK)
             {
-                selectedRow.Cells["Nama"].Value = AdminEditService.ServiceName;
-                selectedRow.Cells["Harga per Kilogram"].Value = AdminEditService.Price;
-                selectedRow.Cells["Deskripsi"].Value = AdminEditService.Description;
+                selectedRow.Cells["Nama"].Value = AdminEditCategory.CategoryName;
+                selectedRow.Cells["Harga per Kilogram"].Value = AdminEditCategory.UnitType;
 
                 try
                 {
                     using (var conn = Database.Database.GetConnection())
                     {
-                        string query = "UPDATE services SET name = @name, price = @price, description = @description WHERE id = @id";
+                        string query = "UPDATE categories SET name = @name, unit_type = @unit_type WHERE id = @id";
 
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
                             // Benerin syntax AddWithValue
                             cmd.Parameters.AddWithValue("@id", id);
-                            cmd.Parameters.AddWithValue("@name", AdminEditService.ServiceName);
-                            cmd.Parameters.AddWithValue("@price", AdminEditService.Price);
-                            cmd.Parameters.AddWithValue("@description", AdminEditService.Description);
+                            cmd.Parameters.AddWithValue("@name", AdminEditCategory.CategoryName);
+                            cmd.Parameters.AddWithValue("@unit_type", AdminEditCategory.UnitType);
 
                             conn.Open();
                             cmd.ExecuteNonQuery();
@@ -211,7 +186,7 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selectedRows = dgvService.Rows.Cast<DataGridViewRow>().Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value)).ToList();
+            var selectedRows = dgvCategory.Rows.Cast<DataGridViewRow>().Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value)).ToList();
 
             if (selectedRows.Count == 0)
             {
@@ -231,7 +206,7 @@ namespace WashinqV2.Pages.Views.Admin
                     {
                         using (var conn = Database.Database.GetConnection())
                         {
-                            string query = "DELETE FROM services WHERE id =  @id";
+                            string query = "DELETE FROM categories WHERE id =  @id";
 
                             using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
@@ -242,7 +217,7 @@ namespace WashinqV2.Pages.Views.Admin
                                 conn.Close();
                             }
                         }
-                        dgvService.Rows.Remove(row);
+                        dgvCategory.Rows.Remove(row);
                     }
                     catch (MySqlException ex) // Menangkap kesalahan MySQL
                     {
@@ -304,10 +279,10 @@ namespace WashinqV2.Pages.Views.Admin
             this.Close();
         }
 
-        private void btnCategory_Click(object sender, EventArgs e)
+        private void btnService_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminCategoryPage register = new AdminCategoryPage();
+            AdminServicePage register = new AdminServicePage();
             register.ShowDialog();
             this.Close();
         }

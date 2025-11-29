@@ -36,12 +36,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbNotes = new CuoreUI.Controls.cuiTextBox();
             this.lbNotes = new System.Windows.Forms.Label();
-            this.tbTotalKg = new CuoreUI.Controls.cuiTextBox();
+            this.tbTotalQty = new CuoreUI.Controls.cuiTextBox();
             this.lbTotalKg = new System.Windows.Forms.Label();
             this.cbxService = new CuoreUI.Controls.cuiComboBox();
             this.btnPay = new CuoreUI.Controls.cuiButton();
             this.lbService = new System.Windows.Forms.Label();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
+            this.cbxCategory = new CuoreUI.Controls.cuiComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbTotalPrice = new System.Windows.Forms.Label();
+            this.lbUnitType = new System.Windows.Forms.Label();
             this.cuiPanel1.SuspendLayout();
             this.cuiPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -62,12 +67,17 @@
             // 
             // cuiPanel3
             // 
+            this.cuiPanel3.Controls.Add(this.lbUnitType);
+            this.cuiPanel3.Controls.Add(this.lbTotalPrice);
+            this.cuiPanel3.Controls.Add(this.label3);
+            this.cuiPanel3.Controls.Add(this.cbxCategory);
+            this.cuiPanel3.Controls.Add(this.label2);
             this.cuiPanel3.Controls.Add(this.btnCancel);
             this.cuiPanel3.Controls.Add(this.lbCustName);
             this.cuiPanel3.Controls.Add(this.label1);
             this.cuiPanel3.Controls.Add(this.tbNotes);
             this.cuiPanel3.Controls.Add(this.lbNotes);
-            this.cuiPanel3.Controls.Add(this.tbTotalKg);
+            this.cuiPanel3.Controls.Add(this.tbTotalQty);
             this.cuiPanel3.Controls.Add(this.lbTotalKg);
             this.cuiPanel3.Controls.Add(this.cbxService);
             this.cuiPanel3.Controls.Add(this.btnPay);
@@ -158,7 +168,7 @@
             this.tbNotes.Image = null;
             this.tbNotes.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbNotes.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbNotes.Location = new System.Drawing.Point(118, 324);
+            this.tbNotes.Location = new System.Drawing.Point(118, 395);
             this.tbNotes.Margin = new System.Windows.Forms.Padding(4);
             this.tbNotes.Multiline = true;
             this.tbNotes.Name = "tbNotes";
@@ -169,7 +179,7 @@
             this.tbNotes.PlaceholderColor = System.Drawing.SystemColors.WindowText;
             this.tbNotes.PlaceholderText = "";
             this.tbNotes.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbNotes.Size = new System.Drawing.Size(400, 189);
+            this.tbNotes.Size = new System.Drawing.Size(400, 84);
             this.tbNotes.TabIndex = 21;
             this.tbNotes.TextOffset = new System.Drawing.Size(0, 0);
             this.tbNotes.UnderlinedStyle = true;
@@ -179,52 +189,52 @@
             this.lbNotes.AutoSize = true;
             this.lbNotes.BackColor = System.Drawing.Color.Transparent;
             this.lbNotes.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNotes.Location = new System.Drawing.Point(114, 299);
+            this.lbNotes.Location = new System.Drawing.Point(114, 370);
             this.lbNotes.Name = "lbNotes";
             this.lbNotes.Size = new System.Drawing.Size(73, 21);
             this.lbNotes.TabIndex = 20;
             this.lbNotes.Text = "Catatan";
             // 
-            // tbTotalKg
+            // tbTotalQty
             // 
-            this.tbTotalKg.BackColor = System.Drawing.Color.Transparent;
-            this.tbTotalKg.BackgroundColor = System.Drawing.Color.White;
-            this.tbTotalKg.Content = "";
-            this.tbTotalKg.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbTotalKg.FocusBackgroundColor = System.Drawing.Color.White;
-            this.tbTotalKg.FocusImageTint = System.Drawing.Color.White;
-            this.tbTotalKg.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
-            this.tbTotalKg.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTotalKg.ForeColor = System.Drawing.Color.Black;
-            this.tbTotalKg.Image = null;
-            this.tbTotalKg.ImageExpand = new System.Drawing.Point(0, 0);
-            this.tbTotalKg.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbTotalKg.Location = new System.Drawing.Point(118, 120);
-            this.tbTotalKg.Margin = new System.Windows.Forms.Padding(4);
-            this.tbTotalKg.Multiline = false;
-            this.tbTotalKg.Name = "tbTotalKg";
-            this.tbTotalKg.NormalImageTint = System.Drawing.Color.White;
-            this.tbTotalKg.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbTotalKg.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
-            this.tbTotalKg.PasswordChar = false;
-            this.tbTotalKg.PlaceholderColor = System.Drawing.SystemColors.WindowText;
-            this.tbTotalKg.PlaceholderText = "";
-            this.tbTotalKg.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbTotalKg.Size = new System.Drawing.Size(400, 44);
-            this.tbTotalKg.TabIndex = 19;
-            this.tbTotalKg.TextOffset = new System.Drawing.Size(0, 0);
-            this.tbTotalKg.UnderlinedStyle = true;
+            this.tbTotalQty.BackColor = System.Drawing.Color.Transparent;
+            this.tbTotalQty.BackgroundColor = System.Drawing.Color.White;
+            this.tbTotalQty.Content = "";
+            this.tbTotalQty.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbTotalQty.FocusBackgroundColor = System.Drawing.Color.White;
+            this.tbTotalQty.FocusImageTint = System.Drawing.Color.White;
+            this.tbTotalQty.FocusOutlineColor = System.Drawing.Color.DodgerBlue;
+            this.tbTotalQty.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbTotalQty.ForeColor = System.Drawing.Color.Black;
+            this.tbTotalQty.Image = null;
+            this.tbTotalQty.ImageExpand = new System.Drawing.Point(0, 0);
+            this.tbTotalQty.ImageOffset = new System.Drawing.Point(0, 0);
+            this.tbTotalQty.Location = new System.Drawing.Point(118, 298);
+            this.tbTotalQty.Margin = new System.Windows.Forms.Padding(4);
+            this.tbTotalQty.Multiline = false;
+            this.tbTotalQty.Name = "tbTotalQty";
+            this.tbTotalQty.NormalImageTint = System.Drawing.Color.White;
+            this.tbTotalQty.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.tbTotalQty.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbTotalQty.PasswordChar = false;
+            this.tbTotalQty.PlaceholderColor = System.Drawing.SystemColors.WindowText;
+            this.tbTotalQty.PlaceholderText = "";
+            this.tbTotalQty.Rounding = new System.Windows.Forms.Padding(8);
+            this.tbTotalQty.Size = new System.Drawing.Size(400, 44);
+            this.tbTotalQty.TabIndex = 19;
+            this.tbTotalQty.TextOffset = new System.Drawing.Size(0, 0);
+            this.tbTotalQty.UnderlinedStyle = true;
             // 
             // lbTotalKg
             // 
             this.lbTotalKg.AutoSize = true;
             this.lbTotalKg.BackColor = System.Drawing.Color.Transparent;
             this.lbTotalKg.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalKg.Location = new System.Drawing.Point(114, 95);
+            this.lbTotalKg.Location = new System.Drawing.Point(114, 273);
             this.lbTotalKg.Name = "lbTotalKg";
-            this.lbTotalKg.Size = new System.Drawing.Size(122, 21);
+            this.lbTotalKg.Size = new System.Drawing.Size(133, 21);
             this.lbTotalKg.TabIndex = 18;
-            this.lbTotalKg.Text = "Total Kilogram";
+            this.lbTotalKg.Text = "Total Kuantitas:";
             // 
             // cbxService
             // 
@@ -242,7 +252,7 @@
             this.cbxService.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxService.ForeColor = System.Drawing.Color.Gray;
             this.cbxService.Items = new string[0];
-            this.cbxService.Location = new System.Drawing.Point(118, 220);
+            this.cbxService.Location = new System.Drawing.Point(118, 205);
             this.cbxService.Margin = new System.Windows.Forms.Padding(4);
             this.cbxService.Name = "cbxService";
             this.cbxService.NoSelectionDropdownText = "Empty";
@@ -252,6 +262,7 @@
             this.cbxService.Rounding = 8;
             this.cbxService.Size = new System.Drawing.Size(400, 44);
             this.cbxService.TabIndex = 17;
+            this.cbxService.SelectedIndexChanged += new System.EventHandler(this.cbxService_SelectedIndexChanged);
             // 
             // btnPay
             // 
@@ -298,7 +309,7 @@
             this.lbService.AutoSize = true;
             this.lbService.BackColor = System.Drawing.Color.Transparent;
             this.lbService.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbService.Location = new System.Drawing.Point(114, 195);
+            this.lbService.Location = new System.Drawing.Point(114, 180);
             this.lbService.Name = "lbService";
             this.lbService.Size = new System.Drawing.Size(119, 21);
             this.lbService.TabIndex = 10;
@@ -315,6 +326,80 @@
             this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel2.Size = new System.Drawing.Size(650, 57);
             this.cuiPanel2.TabIndex = 19;
+            // 
+            // cbxCategory
+            // 
+            this.cbxCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxCategory.ButtonCursor = System.Windows.Forms.Cursors.Arrow;
+            this.cbxCategory.ButtonHoverBackground = System.Drawing.Color.RoyalBlue;
+            this.cbxCategory.ButtonHoverOutline = System.Drawing.Color.Empty;
+            this.cbxCategory.ButtonNormalBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxCategory.ButtonNormalOutline = System.Drawing.Color.Empty;
+            this.cbxCategory.ButtonPressedBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxCategory.ButtonPressedOutline = System.Drawing.Color.Empty;
+            this.cbxCategory.DropDownBackgroundColor = System.Drawing.Color.White;
+            this.cbxCategory.DropDownOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxCategory.ExpandArrowColor = System.Drawing.Color.Gray;
+            this.cbxCategory.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategory.ForeColor = System.Drawing.Color.Gray;
+            this.cbxCategory.Items = new string[0];
+            this.cbxCategory.Location = new System.Drawing.Point(118, 114);
+            this.cbxCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxCategory.Name = "cbxCategory";
+            this.cbxCategory.NoSelectionDropdownText = "Empty";
+            this.cbxCategory.NoSelectionText = "None";
+            this.cbxCategory.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cbxCategory.OutlineThickness = 1F;
+            this.cbxCategory.Rounding = 8;
+            this.cbxCategory.Size = new System.Drawing.Size(400, 44);
+            this.cbxCategory.TabIndex = 26;
+            this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(114, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 21);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Tipe";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(114, 509);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(105, 21);
+            this.label3.TabIndex = 27;
+            this.label3.Text = "Total Harga:";
+            // 
+            // lbTotalPrice
+            // 
+            this.lbTotalPrice.AutoSize = true;
+            this.lbTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lbTotalPrice.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalPrice.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbTotalPrice.Location = new System.Drawing.Point(225, 509);
+            this.lbTotalPrice.Name = "lbTotalPrice";
+            this.lbTotalPrice.Size = new System.Drawing.Size(31, 21);
+            this.lbTotalPrice.TabIndex = 28;
+            this.lbTotalPrice.Text = "Rp";
+            // 
+            // lbUnitType
+            // 
+            this.lbUnitType.AutoSize = true;
+            this.lbUnitType.BackColor = System.Drawing.Color.Transparent;
+            this.lbUnitType.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUnitType.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbUnitType.Location = new System.Drawing.Point(253, 273);
+            this.lbUnitType.Name = "lbUnitType";
+            this.lbUnitType.Size = new System.Drawing.Size(49, 21);
+            this.lbUnitType.TabIndex = 29;
+            this.lbUnitType.Text = "none";
             // 
             // AdminAddOrder
             // 
@@ -339,7 +424,7 @@
         private CuoreUI.Controls.cuiPanel cuiPanel1;
         private CuoreUI.Controls.cuiPanel cuiPanel2;
         private CuoreUI.Controls.cuiPanel cuiPanel3;
-        private CuoreUI.Controls.cuiTextBox tbTotalKg;
+        private CuoreUI.Controls.cuiTextBox tbTotalQty;
         private System.Windows.Forms.Label lbTotalKg;
         private CuoreUI.Controls.cuiComboBox cbxService;
         private CuoreUI.Controls.cuiButton btnPay;
@@ -349,5 +434,10 @@
         private CuoreUI.Controls.cuiTextBox tbNotes;
         private System.Windows.Forms.Label lbNotes;
         private CuoreUI.Controls.cuiButton btnCancel;
+        private CuoreUI.Controls.cuiComboBox cbxCategory;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbTotalPrice;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbUnitType;
     }
 }

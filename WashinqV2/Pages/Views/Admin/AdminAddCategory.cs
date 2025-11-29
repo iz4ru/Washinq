@@ -9,63 +9,47 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WashinqV2.Pages.Views.Owner
+namespace WashinqV2.Pages.Views.Admin
 {
-    public partial class OwnerAddService : Form
+    public partial class AdminAddCategory : Form
     {
-        private OwnerServicePage parentForm;
+        private AdminCategoryPage parentForm;
 
-        public OwnerAddService(OwnerServicePage parent)
+        public AdminAddCategory(AdminCategoryPage parent)
         {
             InitializeComponent();
             parentForm = parent;
         }
 
-        private void OwnerAddService_Load(object sender, EventArgs e)
+        private void AdminAddCategory_Load(object sender, EventArgs e)
         {
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
-
-            // Tambah event biar tbPrice cuma bisa angka
-            tbPrice.KeyPress += TbPrice_KeyPress;
-        }
-
-        private void TbPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Hanya izinkan angka dan tombol kontrol seperti Backspace
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-                MessageBox.Show("Kolom harga hanya boleh angka!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbService.Content) ||
-                string.IsNullOrWhiteSpace(tbPrice.Content) ||
-                string.IsNullOrWhiteSpace(tbDescription.Content))
+            if (string.IsNullOrWhiteSpace(tbCategory.Content) ||
+                string.IsNullOrWhiteSpace(tbUnitType.Content))
             {
                 MessageBox.Show("Semua field harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            string serviceName = tbService.Content;
-            string price = tbPrice.Content;
-            string description = tbDescription.Content;
+            string categoryName = tbCategory.Content;
+            string unitType = tbUnitType.Content;
 
             try
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = "INSERT INTO services (name, price, description) VALUES (@name,  @price, @description)";
+                    string query = "INSERT INTO categories (name, unit_type) VALUES (@name, @unit_type)";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@name", serviceName);
-                        cmd.Parameters.AddWithValue("@price", price);
-                        cmd.Parameters.AddWithValue("@description", description);
+                        cmd.Parameters.AddWithValue("@name", categoryName);
+                        cmd.Parameters.AddWithValue("@unit_type", unitType);
 
                         conn.Open();
                         cmd.ExecuteNonQuery();

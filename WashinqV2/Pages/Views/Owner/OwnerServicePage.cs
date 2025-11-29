@@ -26,7 +26,7 @@ namespace WashinqV2.Pages.Views.Owner
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = "SELECT id, name, price_per_kg, description FROM services ORDER BY id DESC";
+                    string query = "SELECT id, name, price, description FROM services ORDER BY id DESC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         conn.Open();
@@ -41,7 +41,7 @@ namespace WashinqV2.Pages.Views.Owner
                                     reader["id"],
                                     i++,
                                     reader["name"],
-                                    "Rp " + Convert.ToInt32(reader["price_per_kg"]).ToString("N0"),
+                                    "Rp " + Convert.ToInt32(reader["price"]).ToString("N0"),
                                     reader["description"]);
                             }
                         }
@@ -161,14 +161,14 @@ namespace WashinqV2.Pages.Views.Owner
                 {
                     using (var conn = Database.Database.GetConnection())
                     {
-                        string query = "UPDATE services SET name = @name, price_per_kg = @price_per_kg, description = @description WHERE id = @id";
+                        string query = "UPDATE services SET name = @name, price = @price, description = @description WHERE id = @id";
 
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
                             // Benerin syntax AddWithValue
                             cmd.Parameters.AddWithValue("@id", id);
                             cmd.Parameters.AddWithValue("@name", OwnerEditService.ServiceName);
-                            cmd.Parameters.AddWithValue("@price_per_kg", OwnerEditService.Price);
+                            cmd.Parameters.AddWithValue("@price", OwnerEditService.Price);
                             cmd.Parameters.AddWithValue("@description", OwnerEditService.Description);
 
                             conn.Open();

@@ -74,12 +74,12 @@ namespace WashinqV2.Pages.Views.Owner
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = "UPDATE services SET name = @name, price_per_kg = @price_per_kg, description = @description WHERE id = @id";
+                    string query = "UPDATE services SET name = @name, price = @price, description = @description WHERE id = @id";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@name", ServiceName);
-                        cmd.Parameters.AddWithValue("@price_per_kg", Price);
+                        cmd.Parameters.AddWithValue("@price", Price);
                         cmd.Parameters.AddWithValue("@description", Description);
                         cmd.Parameters.AddWithValue("@id", ID);
 

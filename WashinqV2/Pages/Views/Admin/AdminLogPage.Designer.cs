@@ -1,6 +1,6 @@
 ﻿namespace WashinqV2.Pages.Views.Admin
 {
-    partial class AdminServicePage
+    partial class AdminLogPage
     {
         /// <summary>
         /// Required designer variable.
@@ -28,59 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminServicePage));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminLogPage));
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
+            this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
+            this.cuiPanel4 = new CuoreUI.Controls.cuiPanel();
             this.btnLog = new CuoreUI.Controls.cuiButton();
             this.btnCategory = new CuoreUI.Controls.cuiButton();
             this.btnService = new CuoreUI.Controls.cuiButton();
             this.btnOrder = new CuoreUI.Controls.cuiButton();
             this.btnCashier = new CuoreUI.Controls.cuiButton();
             this.btnDashboard = new CuoreUI.Controls.cuiButton();
-            this.cuiPanel4 = new CuoreUI.Controls.cuiPanel();
+            this.cuiPanel5 = new CuoreUI.Controls.cuiPanel();
             this.btnProfile = new CuoreUI.Controls.cuiButton();
             this.btnLogout = new CuoreUI.Controls.cuiButton();
-            this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
-            this.dgvService = new System.Windows.Forms.DataGridView();
-            this.cuiPanel7 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel6 = new CuoreUI.Controls.cuiPanel();
-            this.btnEdit = new CuoreUI.Controls.cuiButton();
-            this.btnDelete = new CuoreUI.Controls.cuiButton();
-            this.cuiPanel5 = new CuoreUI.Controls.cuiPanel();
-            this.btnAdd = new CuoreUI.Controls.cuiButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
+            this.dgvLog = new System.Windows.Forms.DataGridView();
             this.cuiPanel1.SuspendLayout();
+            this.cuiPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            this.cuiPanel2.SuspendLayout();
             this.cuiPanel3.SuspendLayout();
             this.cuiPanel4.SuspendLayout();
-            this.cuiPanel21.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).BeginInit();
-            this.cuiPanel7.SuspendLayout();
-            this.cuiPanel6.SuspendLayout();
             this.cuiPanel5.SuspendLayout();
+            this.cuiPanel6.SuspendLayout();
+            this.cuiPanel21.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
             this.SuspendLayout();
             // 
             // cuiPanel1
             // 
-            this.cuiPanel1.Controls.Add(this.label4);
-            this.cuiPanel1.Controls.Add(this.guna2CirclePictureBox2);
-            this.cuiPanel1.Controls.Add(this.guna2CirclePictureBox1);
-            this.cuiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel1.Controls.Add(this.cuiPanel21);
+            this.cuiPanel1.Controls.Add(this.cuiPanel6);
+            this.cuiPanel1.Controls.Add(this.cuiPanel3);
+            this.cuiPanel1.Controls.Add(this.cuiPanel2);
+            this.cuiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cuiPanel1.Location = new System.Drawing.Point(0, 0);
             this.cuiPanel1.Name = "cuiPanel1";
             this.cuiPanel1.OutlineThickness = 1F;
             this.cuiPanel1.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel1.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel1.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel1.Size = new System.Drawing.Size(1348, 72);
-            this.cuiPanel1.TabIndex = 4;
+            this.cuiPanel1.PanelOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cuiPanel1.Rounding = new System.Windows.Forms.Padding(8);
+            this.cuiPanel1.Size = new System.Drawing.Size(1348, 721);
+            this.cuiPanel1.TabIndex = 0;
+            // 
+            // cuiPanel2
+            // 
+            this.cuiPanel2.Controls.Add(this.label4);
+            this.cuiPanel2.Controls.Add(this.guna2CirclePictureBox2);
+            this.cuiPanel2.Controls.Add(this.guna2CirclePictureBox1);
+            this.cuiPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel2.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel2.Name = "cuiPanel2";
+            this.cuiPanel2.OutlineThickness = 1F;
+            this.cuiPanel2.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel2.Size = new System.Drawing.Size(1348, 72);
+            this.cuiPanel2.TabIndex = 1;
             // 
             // label4
             // 
@@ -89,9 +100,9 @@
             this.label4.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(128, 19);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(249, 36);
+            this.label4.Size = new System.Drawing.Size(194, 36);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Layanan Laundry";
+            this.label4.Text = "Log Aktivitas";
             // 
             // guna2CirclePictureBox2
             // 
@@ -121,37 +132,37 @@
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
-            // cuiPanel2
-            // 
-            this.cuiPanel2.Controls.Add(this.cuiPanel3);
-            this.cuiPanel2.Controls.Add(this.cuiPanel4);
-            this.cuiPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cuiPanel2.Location = new System.Drawing.Point(0, 72);
-            this.cuiPanel2.Name = "cuiPanel2";
-            this.cuiPanel2.OutlineThickness = 1F;
-            this.cuiPanel2.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel2.Size = new System.Drawing.Size(94, 649);
-            this.cuiPanel2.TabIndex = 5;
-            // 
             // cuiPanel3
             // 
-            this.cuiPanel3.Controls.Add(this.btnLog);
-            this.cuiPanel3.Controls.Add(this.btnCategory);
-            this.cuiPanel3.Controls.Add(this.btnService);
-            this.cuiPanel3.Controls.Add(this.btnOrder);
-            this.cuiPanel3.Controls.Add(this.btnCashier);
-            this.cuiPanel3.Controls.Add(this.btnDashboard);
-            this.cuiPanel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel3.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel3.Controls.Add(this.cuiPanel4);
+            this.cuiPanel3.Controls.Add(this.cuiPanel5);
+            this.cuiPanel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cuiPanel3.Location = new System.Drawing.Point(0, 72);
             this.cuiPanel3.Name = "cuiPanel3";
             this.cuiPanel3.OutlineThickness = 1F;
             this.cuiPanel3.PanelColor = System.Drawing.Color.White;
             this.cuiPanel3.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel3.Size = new System.Drawing.Size(94, 459);
-            this.cuiPanel3.TabIndex = 6;
+            this.cuiPanel3.Size = new System.Drawing.Size(94, 649);
+            this.cuiPanel3.TabIndex = 2;
+            // 
+            // cuiPanel4
+            // 
+            this.cuiPanel4.Controls.Add(this.btnLog);
+            this.cuiPanel4.Controls.Add(this.btnCategory);
+            this.cuiPanel4.Controls.Add(this.btnService);
+            this.cuiPanel4.Controls.Add(this.btnOrder);
+            this.cuiPanel4.Controls.Add(this.btnCashier);
+            this.cuiPanel4.Controls.Add(this.btnDashboard);
+            this.cuiPanel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel4.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel4.Name = "cuiPanel4";
+            this.cuiPanel4.OutlineThickness = 1F;
+            this.cuiPanel4.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel4.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel4.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel4.Size = new System.Drawing.Size(94, 459);
+            this.cuiPanel4.TabIndex = 6;
             // 
             // btnLog
             // 
@@ -191,7 +202,6 @@
             this.btnLog.TabIndex = 5;
             this.btnLog.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnLog.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // btnCategory
             // 
@@ -271,6 +281,7 @@
             this.btnService.TabIndex = 3;
             this.btnService.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnService.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnService.Click += new System.EventHandler(this.btnService_Click);
             // 
             // btnOrder
             // 
@@ -392,19 +403,19 @@
             this.btnDashboard.TextOffset = new System.Drawing.Point(0, 0);
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             // 
-            // cuiPanel4
+            // cuiPanel5
             // 
-            this.cuiPanel4.Controls.Add(this.btnProfile);
-            this.cuiPanel4.Controls.Add(this.btnLogout);
-            this.cuiPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel4.Location = new System.Drawing.Point(0, 477);
-            this.cuiPanel4.Name = "cuiPanel4";
-            this.cuiPanel4.OutlineThickness = 1F;
-            this.cuiPanel4.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel4.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel4.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel4.Size = new System.Drawing.Size(94, 172);
-            this.cuiPanel4.TabIndex = 5;
+            this.cuiPanel5.Controls.Add(this.btnProfile);
+            this.cuiPanel5.Controls.Add(this.btnLogout);
+            this.cuiPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cuiPanel5.Location = new System.Drawing.Point(0, 477);
+            this.cuiPanel5.Name = "cuiPanel5";
+            this.cuiPanel5.OutlineThickness = 1F;
+            this.cuiPanel5.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel5.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel5.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel5.Size = new System.Drawing.Size(94, 172);
+            this.cuiPanel5.TabIndex = 5;
             // 
             // btnProfile
             // 
@@ -486,246 +497,91 @@
             this.btnLogout.TextOffset = new System.Drawing.Point(0, 0);
             this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
+            // cuiPanel6
+            // 
+            this.cuiPanel6.Controls.Add(this.label2);
+            this.cuiPanel6.Controls.Add(this.label3);
+            this.cuiPanel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cuiPanel6.Location = new System.Drawing.Point(94, 72);
+            this.cuiPanel6.Name = "cuiPanel6";
+            this.cuiPanel6.OutlineThickness = 0F;
+            this.cuiPanel6.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel6.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel6.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel6.Size = new System.Drawing.Size(1254, 122);
+            this.cuiPanel6.TabIndex = 8;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.DimGray;
+            this.label2.Location = new System.Drawing.Point(34, 71);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(407, 21);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Lihat semua aksi yang sudah terekam dalam sistem.";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(32, 29);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(262, 36);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Lihat log aktivitas.";
+            // 
             // cuiPanel21
             // 
-            this.cuiPanel21.Controls.Add(this.dgvService);
+            this.cuiPanel21.Controls.Add(this.dgvLog);
             this.cuiPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel21.Location = new System.Drawing.Point(94, 259);
+            this.cuiPanel21.Location = new System.Drawing.Point(94, 194);
             this.cuiPanel21.Name = "cuiPanel21";
             this.cuiPanel21.OutlineThickness = 0F;
             this.cuiPanel21.Padding = new System.Windows.Forms.Padding(30);
             this.cuiPanel21.PanelColor = System.Drawing.Color.White;
             this.cuiPanel21.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel21.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel21.Size = new System.Drawing.Size(1254, 361);
+            this.cuiPanel21.Size = new System.Drawing.Size(1254, 527);
             this.cuiPanel21.TabIndex = 10;
             // 
-            // dgvService
+            // dgvLog
             // 
-            this.dgvService.BackgroundColor = System.Drawing.Color.White;
-            this.dgvService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvService.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvService.Location = new System.Drawing.Point(30, 30);
-            this.dgvService.Name = "dgvService";
-            this.dgvService.RowHeadersWidth = 51;
-            this.dgvService.RowTemplate.Height = 24;
-            this.dgvService.Size = new System.Drawing.Size(1194, 301);
-            this.dgvService.TabIndex = 2;
+            this.dgvLog.BackgroundColor = System.Drawing.Color.White;
+            this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLog.Location = new System.Drawing.Point(30, 30);
+            this.dgvLog.Name = "dgvLog";
+            this.dgvLog.RowHeadersWidth = 51;
+            this.dgvLog.RowTemplate.Height = 24;
+            this.dgvLog.Size = new System.Drawing.Size(1194, 467);
+            this.dgvLog.TabIndex = 1;
             // 
-            // cuiPanel7
-            // 
-            this.cuiPanel7.Controls.Add(this.cuiPanel6);
-            this.cuiPanel7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel7.Location = new System.Drawing.Point(94, 620);
-            this.cuiPanel7.Name = "cuiPanel7";
-            this.cuiPanel7.OutlineThickness = 0F;
-            this.cuiPanel7.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel7.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel7.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel7.Size = new System.Drawing.Size(1254, 101);
-            this.cuiPanel7.TabIndex = 11;
-            // 
-            // cuiPanel6
-            // 
-            this.cuiPanel6.Controls.Add(this.btnEdit);
-            this.cuiPanel6.Controls.Add(this.btnDelete);
-            this.cuiPanel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cuiPanel6.Location = new System.Drawing.Point(949, 0);
-            this.cuiPanel6.Name = "cuiPanel6";
-            this.cuiPanel6.OutlineThickness = 0F;
-            this.cuiPanel6.Padding = new System.Windows.Forms.Padding(30);
-            this.cuiPanel6.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel6.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel6.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel6.Size = new System.Drawing.Size(305, 101);
-            this.cuiPanel6.TabIndex = 18;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
-            this.btnEdit.CheckButton = false;
-            this.btnEdit.Checked = false;
-            this.btnEdit.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEdit.CheckedForeColor = System.Drawing.Color.White;
-            this.btnEdit.CheckedImageTint = System.Drawing.Color.White;
-            this.btnEdit.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnEdit.Content = "Edit";
-            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEdit.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnEdit.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnEdit.HoverForeColor = System.Drawing.Color.White;
-            this.btnEdit.HoverImageTint = System.Drawing.Color.White;
-            this.btnEdit.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEdit.Image = null;
-            this.btnEdit.ImageAutoCenter = true;
-            this.btnEdit.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnEdit.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnEdit.Location = new System.Drawing.Point(34, 25);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnEdit.NormalForeColor = System.Drawing.Color.White;
-            this.btnEdit.NormalImageTint = System.Drawing.Color.White;
-            this.btnEdit.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEdit.OutlineThickness = 1F;
-            this.btnEdit.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnEdit.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnEdit.PressedImageTint = System.Drawing.Color.White;
-            this.btnEdit.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnEdit.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnEdit.Size = new System.Drawing.Size(112, 50);
-            this.btnEdit.TabIndex = 17;
-            this.btnEdit.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnEdit.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
-            this.btnDelete.CheckButton = false;
-            this.btnDelete.Checked = false;
-            this.btnDelete.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnDelete.CheckedForeColor = System.Drawing.Color.White;
-            this.btnDelete.CheckedImageTint = System.Drawing.Color.White;
-            this.btnDelete.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnDelete.Content = "Hapus";
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnDelete.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverBackground = System.Drawing.Color.Firebrick;
-            this.btnDelete.HoverForeColor = System.Drawing.Color.White;
-            this.btnDelete.HoverImageTint = System.Drawing.Color.White;
-            this.btnDelete.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.Image = null;
-            this.btnDelete.ImageAutoCenter = true;
-            this.btnDelete.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnDelete.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDelete.Location = new System.Drawing.Point(161, 25);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.NormalBackground = System.Drawing.Color.Firebrick;
-            this.btnDelete.NormalForeColor = System.Drawing.Color.White;
-            this.btnDelete.NormalImageTint = System.Drawing.Color.White;
-            this.btnDelete.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.OutlineThickness = 1F;
-            this.btnDelete.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnDelete.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnDelete.PressedImageTint = System.Drawing.Color.White;
-            this.btnDelete.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnDelete.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnDelete.Size = new System.Drawing.Size(112, 50);
-            this.btnDelete.TabIndex = 16;
-            this.btnDelete.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnDelete.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // cuiPanel5
-            // 
-            this.cuiPanel5.Controls.Add(this.btnAdd);
-            this.cuiPanel5.Controls.Add(this.label1);
-            this.cuiPanel5.Controls.Add(this.label5);
-            this.cuiPanel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel5.Location = new System.Drawing.Point(94, 72);
-            this.cuiPanel5.Name = "cuiPanel5";
-            this.cuiPanel5.OutlineThickness = 1F;
-            this.cuiPanel5.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel5.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel5.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel5.Size = new System.Drawing.Size(1254, 187);
-            this.cuiPanel5.TabIndex = 6;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.CheckButton = false;
-            this.btnAdd.Checked = false;
-            this.btnAdd.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.CheckedForeColor = System.Drawing.Color.White;
-            this.btnAdd.CheckedImageTint = System.Drawing.Color.White;
-            this.btnAdd.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnAdd.Content = "Tambah Layanan";
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnAdd.Font = new System.Drawing.Font("Figtree", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverBackground = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.HoverForeColor = System.Drawing.Color.White;
-            this.btnAdd.HoverImageTint = System.Drawing.Color.White;
-            this.btnAdd.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.Image = null;
-            this.btnAdd.ImageAutoCenter = true;
-            this.btnAdd.ImageExpand = new System.Drawing.Point(0, 0);
-            this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAdd.Location = new System.Drawing.Point(39, 111);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.NormalBackground = System.Drawing.Color.DodgerBlue;
-            this.btnAdd.NormalForeColor = System.Drawing.Color.White;
-            this.btnAdd.NormalImageTint = System.Drawing.Color.White;
-            this.btnAdd.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.OutlineThickness = 1F;
-            this.btnAdd.PressedBackground = System.Drawing.Color.Transparent;
-            this.btnAdd.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnAdd.PressedImageTint = System.Drawing.Color.White;
-            this.btnAdd.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnAdd.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnAdd.Size = new System.Drawing.Size(200, 50);
-            this.btnAdd.TabIndex = 15;
-            this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnAdd.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(36, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1000, 21);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Kelola daftar layanan yang tersedia di sistem laundry. Ubah harga, tambah layanan" +
-    " baru, atau hapus yang sudah tidak digunakan.";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(634, 36);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Tambahkan, edit, atau hapus layanan laundry.";
-            // 
-            // AdminServicePage
+            // AdminLogPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 721);
-            this.Controls.Add(this.cuiPanel21);
-            this.Controls.Add(this.cuiPanel7);
-            this.Controls.Add(this.cuiPanel5);
-            this.Controls.Add(this.cuiPanel2);
             this.Controls.Add(this.cuiPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AdminServicePage";
-            this.Text = "Washinq | Layanan Laundry";
-            this.Load += new System.EventHandler(this.AdminServicePage_Load);
+            this.Name = "AdminLogPage";
+            this.Text = "Washinq | Log Aktivitas";
+            this.Load += new System.EventHandler(this.AdminLogPage_Load);
             this.cuiPanel1.ResumeLayout(false);
-            this.cuiPanel1.PerformLayout();
+            this.cuiPanel2.ResumeLayout(false);
+            this.cuiPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            this.cuiPanel2.ResumeLayout(false);
             this.cuiPanel3.ResumeLayout(false);
             this.cuiPanel4.ResumeLayout(false);
-            this.cuiPanel21.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvService)).EndInit();
-            this.cuiPanel7.ResumeLayout(false);
-            this.cuiPanel6.ResumeLayout(false);
             this.cuiPanel5.ResumeLayout(false);
-            this.cuiPanel5.PerformLayout();
+            this.cuiPanel6.ResumeLayout(false);
+            this.cuiPanel6.PerformLayout();
+            this.cuiPanel21.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -733,29 +589,25 @@
         #endregion
 
         private CuoreUI.Controls.cuiPanel cuiPanel1;
+        private CuoreUI.Controls.cuiPanel cuiPanel2;
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private CuoreUI.Controls.cuiPanel cuiPanel2;
-        private CuoreUI.Controls.cuiPanel cuiPanel4;
-        private CuoreUI.Controls.cuiButton btnProfile;
-        private CuoreUI.Controls.cuiButton btnLogout;
-        private CuoreUI.Controls.cuiPanel cuiPanel21;
-        private CuoreUI.Controls.cuiPanel cuiPanel7;
-        private CuoreUI.Controls.cuiPanel cuiPanel5;
-        private CuoreUI.Controls.cuiButton btnAdd;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label5;
-        private CuoreUI.Controls.cuiPanel cuiPanel6;
-        private CuoreUI.Controls.cuiButton btnEdit;
-        private CuoreUI.Controls.cuiButton btnDelete;
-        private System.Windows.Forms.DataGridView dgvService;
         private CuoreUI.Controls.cuiPanel cuiPanel3;
+        private CuoreUI.Controls.cuiPanel cuiPanel4;
         private CuoreUI.Controls.cuiButton btnLog;
         private CuoreUI.Controls.cuiButton btnCategory;
         private CuoreUI.Controls.cuiButton btnService;
         private CuoreUI.Controls.cuiButton btnOrder;
         private CuoreUI.Controls.cuiButton btnCashier;
         private CuoreUI.Controls.cuiButton btnDashboard;
+        private CuoreUI.Controls.cuiPanel cuiPanel5;
+        private CuoreUI.Controls.cuiButton btnProfile;
+        private CuoreUI.Controls.cuiButton btnLogout;
+        private CuoreUI.Controls.cuiPanel cuiPanel6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private CuoreUI.Controls.cuiPanel cuiPanel21;
+        private System.Windows.Forms.DataGridView dgvLog;
     }
 }

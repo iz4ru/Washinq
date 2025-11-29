@@ -317,9 +317,25 @@ namespace WashinqV2.Pages.Views.Admin
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
-        {
+        {   
             AdminEditProfile form = new AdminEditProfile(UserSession.id);
             form.ShowDialog();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminCategoryPage register = new AdminCategoryPage();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogPage register = new AdminLogPage();
+            register.ShowDialog();
+            this.Close();
         }
     }
 }

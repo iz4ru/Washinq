@@ -1,51 +1,42 @@
-﻿using Guna.UI2.WinForms.Suite;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
 {
-    public partial class AdminEditService : Form
+    public partial class AdminEditCategory : Form
     {
         public int ID { get; set; }
-        public string ServiceName { get; set; }
-        public int Price { get; set; }
-        public string Description { get; set; }
+        public string CategoryName { get; set; }
+        public string UnitType { get; set; }
 
-        private AdminServicePage parentForm;
-        public AdminEditService(int id, string serviceName, int price, string description, AdminServicePage parent)
+        private AdminCategoryPage parentForm;
+
+        public AdminEditCategory(int id, string categoryName, string unitType, AdminCategoryPage parentForm)
         {
             InitializeComponent();
-
             ID = id;
-            ServiceName = serviceName;
-            Price = price;
-            Description = description;
+            CategoryName = categoryName;
+            UnitType = unitType;
 
-            // Value awal untuk text box
-            tbService.Content = serviceName;
-            tbPrice.Content = price.ToString();
-            tbDescription.Content = description;
+            tbCategory.Content = categoryName;
+            tbUnitType.Content = unitType;
 
-            parentForm = parent;
+            this.parentForm = parentForm;
         }
 
-        private void AdminEditService_Load(object sender, EventArgs e)
+        private void AdminEditCategory_Load(object sender, EventArgs e)
         {
-            tbService.Content = ServiceName;
-            tbPrice.Content = Price.ToString();
-            tbDescription.Content = Description;
+            tbCategory.Content = CategoryName;
+            tbUnitType.Content = UnitType;
 
-            // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
@@ -53,36 +44,26 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbService.Content) ||
-                string.IsNullOrWhiteSpace(tbPrice.Content) ||
-                string.IsNullOrWhiteSpace(tbDescription.Content))
+            if (string.IsNullOrWhiteSpace(tbCategory.Content) ||
+                string.IsNullOrWhiteSpace(tbUnitType.Content))
             {
                 MessageBox.Show("Semua field harus diisi!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            // Validasi input harga agar hanya angka
-            if (!int.TryParse(tbPrice.Content, out int validPrice))
-            {
-                MessageBox.Show("Harga harus berupa angka!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            ServiceName = tbService.Content;
-            Price = validPrice;
-            Description = tbDescription.Content;
+            CategoryName = tbCategory.Content;
+            UnitType = tbUnitType.Content;
 
             try
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = "UPDATE services SET name = @name, price = @price, description = @description WHERE id = @id";
+                    string query = "UPDATE categories SET name = @name, unit_type = @unit_type WHERE id = @id";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@name", ServiceName);
-                        cmd.Parameters.AddWithValue("@price", Price);
-                        cmd.Parameters.AddWithValue("@description", Description);
+                        cmd.Parameters.AddWithValue("@name", CategoryName);
+                        cmd.Parameters.AddWithValue("@unit_type", UnitType);
                         cmd.Parameters.AddWithValue("@id", ID);
 
                         conn.Open();
@@ -113,6 +94,5 @@ namespace WashinqV2.Pages.Views.Admin
         {
             this.Close();
         }
-
     }
 }

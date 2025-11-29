@@ -47,7 +47,7 @@ namespace WashinqV2.Pages.Views.Cashier
                     u.name AS user_name,
                     c.name AS customer_name,
                     s.name AS service_name,
-                    o.total_kg,
+                    o.total_qty,
                     o.total_price,
                     o.paid,
                     o.payment,
@@ -75,7 +75,7 @@ namespace WashinqV2.Pages.Views.Cashier
                                     reader["user_name"],
                                     reader["customer_name"],
                                     reader["service_name"],
-                                   Convert.ToInt32(reader["total_kg"]).ToString("N0") + " kg",
+                                   Convert.ToInt32(reader["total_qty"]).ToString("N0") + " kg",
                                     "Rp " + Convert.ToInt32(reader["total_price"]).ToString("N0"),
                                     "Rp " + Convert.ToInt32(reader["paid"]).ToString("N0"),
                                     reader["payment"],
@@ -122,8 +122,8 @@ namespace WashinqV2.Pages.Views.Cashier
             cl3.HeaderText = "Jenis Layanan";
             cl3.Name = "Jenis Layanan";
             DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
-            cl4.HeaderText = "Total Kilogram";
-            cl4.Name = "Total Kilogram";
+            cl4.HeaderText = "Total Kuantitas";
+            cl4.Name = "Total Kuantitas";
             DataGridViewTextBoxColumn cl5 = new DataGridViewTextBoxColumn();
             cl5.HeaderText = "Total Harga";
             cl5.Name = "Total Harga";
@@ -400,7 +400,7 @@ namespace WashinqV2.Pages.Views.Cashier
                 selectedUserName = selectedRow.Cells["Dilayani Oleh"].Value?.ToString() ?? "-";
                 selectedCustomerName = selectedRow.Cells["Pelanggan"].Value?.ToString() ?? "-";
                 selectedServiceName = selectedRow.Cells["Jenis Layanan"].Value?.ToString() ?? "-";
-                selectedTotalKg = selectedRow.Cells["Total Kilogram"].Value?.ToString() ?? "0";
+                selectedTotalKg = selectedRow.Cells["Total Kuantitas"].Value?.ToString() ?? "0";
                 selectedTotalPrice = selectedRow.Cells["Total Harga"].Value?.ToString() ?? "0";
                 selectedPaid = selectedRow.Cells["Dibayar"].Value?.ToString() ?? "0";
                 selectedPayment = selectedRow.Cells["Pembayaran"].Value?.ToString() ?? "-";

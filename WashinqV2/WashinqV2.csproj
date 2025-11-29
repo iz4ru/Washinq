@@ -145,6 +145,12 @@
     <Compile Include="Pages\Views\Admin\AdminAddCashier.Designer.cs">
       <DependentUpon>AdminAddCashier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminAddCategory.Designer.cs">
+      <DependentUpon>AdminAddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Admin\AdminAddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,12 @@
     <Compile Include="Pages\Views\Admin\AdminCashierPage.Designer.cs">
       <DependentUpon>AdminCashierPage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminCategoryPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminCategoryPage.Designer.cs">
+      <DependentUpon>AdminCategoryPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Admin\AdminCustomerPay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,12 @@
     <Compile Include="Pages\Views\Admin\AdminEditCashier.Designer.cs">
       <DependentUpon>AdminEditCashier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Admin\AdminEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminEditCategory.Designer.cs">
+      <DependentUpon>AdminEditCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Admin\AdminEditProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +210,12 @@
     </Compile>
     <Compile Include="Pages\Views\Admin\AdminEditService.Designer.cs">
       <DependentUpon>AdminEditService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminLogPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Admin\AdminLogPage.Designer.cs">
+      <DependentUpon>AdminLogPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\Admin\AdminOrderPage.cs">
       <SubType>Form</SubType>
@@ -321,6 +345,9 @@
     <EmbeddedResource Include="Pages\Views\Admin\AdminAddCashier.resx">
       <DependentUpon>AdminAddCashier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminAddCategory.resx">
+      <DependentUpon>AdminAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminAddCustomer.resx">
       <DependentUpon>AdminAddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,17 +360,26 @@
     <EmbeddedResource Include="Pages\Views\Admin\AdminCashierPage.resx">
       <DependentUpon>AdminCashierPage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminCategoryPage.resx">
+      <DependentUpon>AdminCategoryPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminCustomerPay.resx">
       <DependentUpon>AdminCustomerPay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminEditCashier.resx">
       <DependentUpon>AdminEditCashier.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminEditCategory.resx">
+      <DependentUpon>AdminEditCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminEditProfile.resx">
       <DependentUpon>AdminEditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminEditService.resx">
       <DependentUpon>AdminEditService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Admin\AdminLogPage.resx">
+      <DependentUpon>AdminLogPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Admin\AdminOrderPage.resx">
       <DependentUpon>AdminOrderPage.cs</DependentUpon>

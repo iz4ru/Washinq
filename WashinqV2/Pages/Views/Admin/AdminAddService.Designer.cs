@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminAddService));
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
+            this.lbUnitType = new System.Windows.Forms.Label();
+            this.cbxCategory = new CuoreUI.Controls.cuiComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btnAdd = new CuoreUI.Controls.cuiButton();
             this.tbDescription = new CuoreUI.Controls.cuiTextBox();
             this.lbDescription = new System.Windows.Forms.Label();
@@ -61,6 +64,9 @@
             // 
             // cuiPanel3
             // 
+            this.cuiPanel3.Controls.Add(this.lbUnitType);
+            this.cuiPanel3.Controls.Add(this.cbxCategory);
+            this.cuiPanel3.Controls.Add(this.label2);
             this.cuiPanel3.Controls.Add(this.btnAdd);
             this.cuiPanel3.Controls.Add(this.tbDescription);
             this.cuiPanel3.Controls.Add(this.lbDescription);
@@ -77,6 +83,57 @@
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
             this.cuiPanel3.Size = new System.Drawing.Size(650, 664);
             this.cuiPanel3.TabIndex = 18;
+            // 
+            // lbUnitType
+            // 
+            this.lbUnitType.AutoSize = true;
+            this.lbUnitType.BackColor = System.Drawing.Color.Transparent;
+            this.lbUnitType.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbUnitType.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.lbUnitType.Location = new System.Drawing.Point(202, 240);
+            this.lbUnitType.Name = "lbUnitType";
+            this.lbUnitType.Size = new System.Drawing.Size(49, 21);
+            this.lbUnitType.TabIndex = 19;
+            this.lbUnitType.Text = "none";
+            // 
+            // cbxCategory
+            // 
+            this.cbxCategory.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxCategory.ButtonCursor = System.Windows.Forms.Cursors.Arrow;
+            this.cbxCategory.ButtonHoverBackground = System.Drawing.Color.RoyalBlue;
+            this.cbxCategory.ButtonHoverOutline = System.Drawing.Color.Empty;
+            this.cbxCategory.ButtonNormalBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxCategory.ButtonNormalOutline = System.Drawing.Color.Empty;
+            this.cbxCategory.ButtonPressedBackground = System.Drawing.Color.DodgerBlue;
+            this.cbxCategory.ButtonPressedOutline = System.Drawing.Color.Empty;
+            this.cbxCategory.DropDownBackgroundColor = System.Drawing.Color.White;
+            this.cbxCategory.DropDownOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cbxCategory.ExpandArrowColor = System.Drawing.Color.Gray;
+            this.cbxCategory.Font = new System.Drawing.Font("Figtree", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxCategory.ForeColor = System.Drawing.Color.Gray;
+            this.cbxCategory.Items = new string[0];
+            this.cbxCategory.Location = new System.Drawing.Point(114, 170);
+            this.cbxCategory.Margin = new System.Windows.Forms.Padding(4);
+            this.cbxCategory.Name = "cbxCategory";
+            this.cbxCategory.NoSelectionDropdownText = "Empty";
+            this.cbxCategory.NoSelectionText = "None";
+            this.cbxCategory.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.cbxCategory.OutlineThickness = 1F;
+            this.cbxCategory.Rounding = 8;
+            this.cbxCategory.Size = new System.Drawing.Size(400, 44);
+            this.cbxCategory.TabIndex = 18;
+            this.cbxCategory.SelectedIndexChanged += new System.EventHandler(this.cbxCategory_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(110, 145);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 21);
+            this.label2.TabIndex = 17;
+            this.label2.Text = "Tipe";
             // 
             // btnAdd
             // 
@@ -132,7 +189,7 @@
             this.tbDescription.Image = null;
             this.tbDescription.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbDescription.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbDescription.Location = new System.Drawing.Point(114, 278);
+            this.tbDescription.Location = new System.Drawing.Point(114, 359);
             this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
@@ -143,7 +200,7 @@
             this.tbDescription.PlaceholderColor = System.Drawing.SystemColors.WindowText;
             this.tbDescription.PlaceholderText = "";
             this.tbDescription.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbDescription.Size = new System.Drawing.Size(400, 240);
+            this.tbDescription.Size = new System.Drawing.Size(400, 159);
             this.tbDescription.TabIndex = 13;
             this.tbDescription.TextOffset = new System.Drawing.Size(0, 0);
             this.tbDescription.UnderlinedStyle = true;
@@ -153,7 +210,7 @@
             this.lbDescription.AutoSize = true;
             this.lbDescription.BackColor = System.Drawing.Color.Transparent;
             this.lbDescription.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescription.Location = new System.Drawing.Point(110, 253);
+            this.lbDescription.Location = new System.Drawing.Point(110, 334);
             this.lbDescription.Name = "lbDescription";
             this.lbDescription.Size = new System.Drawing.Size(79, 21);
             this.lbDescription.TabIndex = 12;
@@ -173,7 +230,7 @@
             this.tbPrice.Image = null;
             this.tbPrice.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbPrice.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbPrice.Location = new System.Drawing.Point(114, 176);
+            this.tbPrice.Location = new System.Drawing.Point(114, 265);
             this.tbPrice.Margin = new System.Windows.Forms.Padding(4);
             this.tbPrice.Multiline = false;
             this.tbPrice.Name = "tbPrice";
@@ -194,11 +251,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 151);
+            this.label1.Location = new System.Drawing.Point(110, 240);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 21);
+            this.label1.Size = new System.Drawing.Size(91, 21);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Harga per Kilogram";
+            this.label1.Text = "Harga per:";
             // 
             // tbService
             // 
@@ -301,5 +358,8 @@
         private CuoreUI.Controls.cuiTextBox tbPrice;
         private System.Windows.Forms.Label label1;
         private CuoreUI.Controls.cuiButton btnAdd;
+        private System.Windows.Forms.Label label2;
+        private CuoreUI.Controls.cuiComboBox cbxCategory;
+        private System.Windows.Forms.Label lbUnitType;
     }
 }

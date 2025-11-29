@@ -34,14 +34,16 @@
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.cuiPanel2 = new CuoreUI.Controls.cuiPanel();
-            this.cuiPanel4 = new CuoreUI.Controls.cuiPanel();
-            this.btnProfile = new CuoreUI.Controls.cuiButton();
-            this.btnLogout = new CuoreUI.Controls.cuiButton();
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
+            this.btnLog = new CuoreUI.Controls.cuiButton();
+            this.btnCategory = new CuoreUI.Controls.cuiButton();
             this.btnService = new CuoreUI.Controls.cuiButton();
             this.btnOrder = new CuoreUI.Controls.cuiButton();
             this.btnCashier = new CuoreUI.Controls.cuiButton();
             this.btnDashboard = new CuoreUI.Controls.cuiButton();
+            this.cuiPanel4 = new CuoreUI.Controls.cuiPanel();
+            this.btnProfile = new CuoreUI.Controls.cuiButton();
+            this.btnLogout = new CuoreUI.Controls.cuiButton();
             this.cuiPanel5 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel7 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel21 = new CuoreUI.Controls.cuiPanel();
@@ -80,8 +82,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.cuiPanel2.SuspendLayout();
-            this.cuiPanel4.SuspendLayout();
             this.cuiPanel3.SuspendLayout();
+            this.cuiPanel4.SuspendLayout();
             this.cuiPanel5.SuspendLayout();
             this.cuiPanel7.SuspendLayout();
             this.cuiPanel21.SuspendLayout();
@@ -163,8 +165,8 @@
             // 
             // cuiPanel2
             // 
-            this.cuiPanel2.Controls.Add(this.cuiPanel4);
             this.cuiPanel2.Controls.Add(this.cuiPanel3);
+            this.cuiPanel2.Controls.Add(this.cuiPanel4);
             this.cuiPanel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.cuiPanel2.Location = new System.Drawing.Point(0, 72);
             this.cuiPanel2.Name = "cuiPanel2";
@@ -175,102 +177,10 @@
             this.cuiPanel2.Size = new System.Drawing.Size(94, 649);
             this.cuiPanel2.TabIndex = 1;
             // 
-            // cuiPanel4
-            // 
-            this.cuiPanel4.Controls.Add(this.btnProfile);
-            this.cuiPanel4.Controls.Add(this.btnLogout);
-            this.cuiPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel4.Location = new System.Drawing.Point(0, 477);
-            this.cuiPanel4.Name = "cuiPanel4";
-            this.cuiPanel4.OutlineThickness = 1F;
-            this.cuiPanel4.PanelColor = System.Drawing.Color.White;
-            this.cuiPanel4.PanelOutlineColor = System.Drawing.Color.Transparent;
-            this.cuiPanel4.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel4.Size = new System.Drawing.Size(94, 172);
-            this.cuiPanel4.TabIndex = 5;
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
-            this.btnProfile.CheckButton = false;
-            this.btnProfile.Checked = false;
-            this.btnProfile.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnProfile.CheckedForeColor = System.Drawing.Color.White;
-            this.btnProfile.CheckedImageTint = System.Drawing.Color.White;
-            this.btnProfile.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnProfile.Content = "";
-            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.btnProfile.ForeColor = System.Drawing.Color.Black;
-            this.btnProfile.HoverBackground = System.Drawing.Color.White;
-            this.btnProfile.HoverForeColor = System.Drawing.Color.Black;
-            this.btnProfile.HoverImageTint = System.Drawing.Color.White;
-            this.btnProfile.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
-            this.btnProfile.ImageAutoCenter = true;
-            this.btnProfile.ImageExpand = new System.Drawing.Point(8, 8);
-            this.btnProfile.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnProfile.Location = new System.Drawing.Point(16, 23);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.NormalBackground = System.Drawing.Color.White;
-            this.btnProfile.NormalForeColor = System.Drawing.Color.Black;
-            this.btnProfile.NormalImageTint = System.Drawing.Color.White;
-            this.btnProfile.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnProfile.OutlineThickness = 1F;
-            this.btnProfile.PressedBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnProfile.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnProfile.PressedImageTint = System.Drawing.Color.White;
-            this.btnProfile.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnProfile.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnProfile.Size = new System.Drawing.Size(62, 55);
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnProfile.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
-            // 
-            // btnLogout
-            // 
-            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
-            this.btnLogout.CheckButton = false;
-            this.btnLogout.Checked = false;
-            this.btnLogout.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnLogout.CheckedForeColor = System.Drawing.Color.White;
-            this.btnLogout.CheckedImageTint = System.Drawing.Color.White;
-            this.btnLogout.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
-            this.btnLogout.Content = "";
-            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.btnLogout.ForeColor = System.Drawing.Color.Black;
-            this.btnLogout.HoverBackground = System.Drawing.Color.White;
-            this.btnLogout.HoverForeColor = System.Drawing.Color.Black;
-            this.btnLogout.HoverImageTint = System.Drawing.Color.White;
-            this.btnLogout.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
-            this.btnLogout.ImageAutoCenter = true;
-            this.btnLogout.ImageExpand = new System.Drawing.Point(8, 8);
-            this.btnLogout.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLogout.Location = new System.Drawing.Point(16, 95);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.NormalBackground = System.Drawing.Color.White;
-            this.btnLogout.NormalForeColor = System.Drawing.Color.Black;
-            this.btnLogout.NormalImageTint = System.Drawing.Color.White;
-            this.btnLogout.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnLogout.OutlineThickness = 1F;
-            this.btnLogout.PressedBackground = System.Drawing.Color.WhiteSmoke;
-            this.btnLogout.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
-            this.btnLogout.PressedImageTint = System.Drawing.Color.White;
-            this.btnLogout.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnLogout.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnLogout.Size = new System.Drawing.Size(62, 55);
-            this.btnLogout.TabIndex = 4;
-            this.btnLogout.TextAlignment = System.Drawing.StringAlignment.Center;
-            this.btnLogout.TextOffset = new System.Drawing.Point(0, 0);
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
-            // 
             // cuiPanel3
             // 
+            this.cuiPanel3.Controls.Add(this.btnLog);
+            this.cuiPanel3.Controls.Add(this.btnCategory);
             this.cuiPanel3.Controls.Add(this.btnService);
             this.cuiPanel3.Controls.Add(this.btnOrder);
             this.cuiPanel3.Controls.Add(this.btnCashier);
@@ -282,8 +192,88 @@
             this.cuiPanel3.PanelColor = System.Drawing.Color.White;
             this.cuiPanel3.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel3.Size = new System.Drawing.Size(94, 316);
-            this.cuiPanel3.TabIndex = 5;
+            this.cuiPanel3.Size = new System.Drawing.Size(94, 459);
+            this.cuiPanel3.TabIndex = 6;
+            // 
+            // btnLog
+            // 
+            this.btnLog.BackColor = System.Drawing.Color.Transparent;
+            this.btnLog.CheckButton = false;
+            this.btnLog.Checked = false;
+            this.btnLog.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLog.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLog.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLog.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLog.Content = "";
+            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLog.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnLog.ForeColor = System.Drawing.Color.Black;
+            this.btnLog.HoverBackground = System.Drawing.Color.White;
+            this.btnLog.HoverForeColor = System.Drawing.Color.Black;
+            this.btnLog.HoverImageTint = System.Drawing.Color.White;
+            this.btnLog.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.Image = ((System.Drawing.Image)(resources.GetObject("btnLog.Image")));
+            this.btnLog.ImageAutoCenter = true;
+            this.btnLog.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnLog.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLog.Location = new System.Drawing.Point(16, 384);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.NormalBackground = System.Drawing.Color.White;
+            this.btnLog.NormalForeColor = System.Drawing.Color.Black;
+            this.btnLog.NormalImageTint = System.Drawing.Color.White;
+            this.btnLog.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.OutlineThickness = 1F;
+            this.btnLog.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnLog.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnLog.PressedImageTint = System.Drawing.Color.White;
+            this.btnLog.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnLog.Size = new System.Drawing.Size(62, 55);
+            this.btnLog.TabIndex = 5;
+            this.btnLog.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLog.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
+            // 
+            // btnCategory
+            // 
+            this.btnCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategory.CheckButton = false;
+            this.btnCategory.Checked = false;
+            this.btnCategory.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCategory.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCategory.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCategory.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCategory.Content = "";
+            this.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCategory.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnCategory.ForeColor = System.Drawing.Color.Black;
+            this.btnCategory.HoverBackground = System.Drawing.Color.White;
+            this.btnCategory.HoverForeColor = System.Drawing.Color.Black;
+            this.btnCategory.HoverImageTint = System.Drawing.Color.White;
+            this.btnCategory.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
+            this.btnCategory.ImageAutoCenter = true;
+            this.btnCategory.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnCategory.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCategory.Location = new System.Drawing.Point(16, 240);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.NormalBackground = System.Drawing.Color.White;
+            this.btnCategory.NormalForeColor = System.Drawing.Color.Black;
+            this.btnCategory.NormalImageTint = System.Drawing.Color.White;
+            this.btnCategory.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCategory.OutlineThickness = 1F;
+            this.btnCategory.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnCategory.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCategory.PressedImageTint = System.Drawing.Color.White;
+            this.btnCategory.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCategory.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnCategory.Size = new System.Drawing.Size(62, 55);
+            this.btnCategory.TabIndex = 4;
+            this.btnCategory.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnCategory.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
             // 
             // btnService
             // 
@@ -307,7 +297,7 @@
             this.btnService.ImageAutoCenter = true;
             this.btnService.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnService.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnService.Location = new System.Drawing.Point(16, 241);
+            this.btnService.Location = new System.Drawing.Point(16, 312);
             this.btnService.Name = "btnService";
             this.btnService.NormalBackground = System.Drawing.Color.White;
             this.btnService.NormalForeColor = System.Drawing.Color.Black;
@@ -443,6 +433,100 @@
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnDashboard.TextOffset = new System.Drawing.Point(0, 0);
+            // 
+            // cuiPanel4
+            // 
+            this.cuiPanel4.Controls.Add(this.btnProfile);
+            this.cuiPanel4.Controls.Add(this.btnLogout);
+            this.cuiPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.cuiPanel4.Location = new System.Drawing.Point(0, 477);
+            this.cuiPanel4.Name = "cuiPanel4";
+            this.cuiPanel4.OutlineThickness = 1F;
+            this.cuiPanel4.PanelColor = System.Drawing.Color.White;
+            this.cuiPanel4.PanelOutlineColor = System.Drawing.Color.Transparent;
+            this.cuiPanel4.Rounding = new System.Windows.Forms.Padding(0);
+            this.cuiPanel4.Size = new System.Drawing.Size(94, 172);
+            this.cuiPanel4.TabIndex = 5;
+            // 
+            // btnProfile
+            // 
+            this.btnProfile.BackColor = System.Drawing.Color.Transparent;
+            this.btnProfile.CheckButton = false;
+            this.btnProfile.Checked = false;
+            this.btnProfile.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnProfile.CheckedForeColor = System.Drawing.Color.White;
+            this.btnProfile.CheckedImageTint = System.Drawing.Color.White;
+            this.btnProfile.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnProfile.Content = "";
+            this.btnProfile.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnProfile.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnProfile.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnProfile.ForeColor = System.Drawing.Color.Black;
+            this.btnProfile.HoverBackground = System.Drawing.Color.White;
+            this.btnProfile.HoverForeColor = System.Drawing.Color.Black;
+            this.btnProfile.HoverImageTint = System.Drawing.Color.White;
+            this.btnProfile.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnProfile.Image = ((System.Drawing.Image)(resources.GetObject("btnProfile.Image")));
+            this.btnProfile.ImageAutoCenter = true;
+            this.btnProfile.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnProfile.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnProfile.Location = new System.Drawing.Point(16, 23);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.NormalBackground = System.Drawing.Color.White;
+            this.btnProfile.NormalForeColor = System.Drawing.Color.Black;
+            this.btnProfile.NormalImageTint = System.Drawing.Color.White;
+            this.btnProfile.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnProfile.OutlineThickness = 1F;
+            this.btnProfile.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnProfile.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnProfile.PressedImageTint = System.Drawing.Color.White;
+            this.btnProfile.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnProfile.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnProfile.Size = new System.Drawing.Size(62, 55);
+            this.btnProfile.TabIndex = 4;
+            this.btnProfile.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnProfile.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            // 
+            // btnLogout
+            // 
+            this.btnLogout.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogout.CheckButton = false;
+            this.btnLogout.Checked = false;
+            this.btnLogout.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLogout.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLogout.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLogout.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLogout.Content = "";
+            this.btnLogout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogout.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnLogout.ForeColor = System.Drawing.Color.Black;
+            this.btnLogout.HoverBackground = System.Drawing.Color.White;
+            this.btnLogout.HoverForeColor = System.Drawing.Color.Black;
+            this.btnLogout.HoverImageTint = System.Drawing.Color.White;
+            this.btnLogout.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLogout.Image = ((System.Drawing.Image)(resources.GetObject("btnLogout.Image")));
+            this.btnLogout.ImageAutoCenter = true;
+            this.btnLogout.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnLogout.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLogout.Location = new System.Drawing.Point(16, 95);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.NormalBackground = System.Drawing.Color.White;
+            this.btnLogout.NormalForeColor = System.Drawing.Color.Black;
+            this.btnLogout.NormalImageTint = System.Drawing.Color.White;
+            this.btnLogout.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLogout.OutlineThickness = 1F;
+            this.btnLogout.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnLogout.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnLogout.PressedImageTint = System.Drawing.Color.White;
+            this.btnLogout.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLogout.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnLogout.Size = new System.Drawing.Size(62, 55);
+            this.btnLogout.TabIndex = 4;
+            this.btnLogout.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLogout.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // cuiPanel5
             // 
@@ -938,8 +1022,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.cuiPanel2.ResumeLayout(false);
-            this.cuiPanel4.ResumeLayout(false);
             this.cuiPanel3.ResumeLayout(false);
+            this.cuiPanel4.ResumeLayout(false);
             this.cuiPanel5.ResumeLayout(false);
             this.cuiPanel7.ResumeLayout(false);
             this.cuiPanel21.ResumeLayout(false);
@@ -983,11 +1067,6 @@
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
         private CuoreUI.Controls.cuiPanel cuiPanel2;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
-        private CuoreUI.Controls.cuiPanel cuiPanel3;
-        private CuoreUI.Controls.cuiButton btnService;
-        private CuoreUI.Controls.cuiButton btnOrder;
-        private CuoreUI.Controls.cuiButton btnCashier;
-        private CuoreUI.Controls.cuiButton btnDashboard;
         private CuoreUI.Controls.cuiPanel cuiPanel4;
         private CuoreUI.Controls.cuiButton btnProfile;
         private CuoreUI.Controls.cuiButton btnLogout;
@@ -1026,5 +1105,12 @@
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private CuoreUI.Controls.cuiPanel cuiPanel15;
         private System.Windows.Forms.Label lblPesananSelesai;
+        private CuoreUI.Controls.cuiPanel cuiPanel3;
+        private CuoreUI.Controls.cuiButton btnLog;
+        private CuoreUI.Controls.cuiButton btnCategory;
+        private CuoreUI.Controls.cuiButton btnService;
+        private CuoreUI.Controls.cuiButton btnOrder;
+        private CuoreUI.Controls.cuiButton btnCashier;
+        private CuoreUI.Controls.cuiButton btnDashboard;
     }
 }

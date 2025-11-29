@@ -19,7 +19,7 @@ namespace WashinqV2.Pages.Views.Admin
         private string selectedUserName;
         private string selectedCustomerName;
         private string selectedServiceName;
-        private string selectedTotalKg;
+        private string selectedTotalQty;
         private string selectedTotalPrice;
         private string selectedPaid;
         private string selectedPayment;
@@ -40,22 +40,24 @@ namespace WashinqV2.Pages.Views.Admin
                 using (var conn = Database.Database.GetConnection())
                 {
                     string query = @"
-                SELECT 
-                    o.id,
-                    u.name AS user_name,
-                    c.name AS customer_name,
-                    s.name AS service_name,
-                    o.total_kg,
-                    o.total_price,
-                    o.paid,
-                    o.payment,
-                    o.submitted_at,
-                    o.taken_at
-                FROM orders o
-                JOIN users u ON o.user_id = u.id
-                JOIN customers c ON o.customer_id = c.id
-                JOIN services s ON o.service_id = s.id
-                ORDER BY o.id DESC";
+            SELECT 
+                o.id,
+                u.name AS user_name,
+                c.name AS customer_name,
+                s.name AS service_name,
+                o.total_qty,
+                o.total_price,
+                o.paid,
+                o.payment,
+                o.submitted_at,
+                o.taken_at,
+                cat.unit_type
+            FROM orders o
+            JOIN users u ON o.user_id = u.id
+            JOIN customers c ON o.customer_id = c.id
+            JOIN services s ON o.service_id = s.id
+            JOIN categories cat ON s.category_id = cat.id
+            ORDER BY o.id DESC";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
@@ -73,12 +75,14 @@ namespace WashinqV2.Pages.Views.Admin
                                     reader["user_name"],
                                     reader["customer_name"],
                                     reader["service_name"],
-                                   Convert.ToInt32(reader["total_kg"]).ToString("N0") + " kg",
-                                    "Rp " + Convert.ToInt32(reader["total_price"]).ToString("N0"),
-                                    "Rp " + Convert.ToInt32(reader["paid"]).ToString("N0"),
+                                    Convert.ToDecimal(reader["total_qty"]).ToString("N2") + " " + reader["unit_type"],
+                                    "Rp " + Convert.ToDecimal(reader["total_price"]).ToString("N0"),
+                                    "Rp " + Convert.ToDecimal(reader["paid"]).ToString("N0"),
                                     reader["payment"],
                                     Convert.ToDateTime(reader["submitted_at"]).ToString("dd MMM yyyy HH:mm"),
-                                    reader["taken_at"] == DBNull.Value ? "-" : Convert.ToDateTime(reader["taken_at"]).ToString("dd MMM yyyy HH:mm")
+                                    reader["taken_at"] == DBNull.Value
+                                        ? "-"
+                                        : Convert.ToDateTime(reader["taken_at"]).ToString("dd MMM yyyy HH:mm")
                                 );
                             }
                         }
@@ -106,37 +110,48 @@ namespace WashinqV2.Pages.Views.Admin
             clid.HeaderText = "ID";
             clid.Name = "id";
             clid.Visible = false;
+
             DataGridViewTextBoxColumn clnum = new DataGridViewTextBoxColumn();
             clnum.HeaderText = "No";
             clnum.Name = "Nomor";
             clnum.ReadOnly = true;
+
             DataGridViewTextBoxColumn cl1 = new DataGridViewTextBoxColumn();
             cl1.HeaderText = "Dilayani Oleh";
             cl1.Name = "Dilayani Oleh";
+
             DataGridViewTextBoxColumn cl2 = new DataGridViewTextBoxColumn();
             cl2.HeaderText = "Pelanggan";
             cl2.Name = "Pelanggan";
+
             DataGridViewTextBoxColumn cl3 = new DataGridViewTextBoxColumn();
             cl3.HeaderText = "Jenis Layanan";
             cl3.Name = "Jenis Layanan";
+
             DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
-            cl4.HeaderText = "Total Kilogram";
-            cl4.Name = "Total Kilogram";
+            cl4.HeaderText = "Total Kuantitas";
+            cl4.Name = "Total Kuantitas";
+
             DataGridViewTextBoxColumn cl5 = new DataGridViewTextBoxColumn();
             cl5.HeaderText = "Total Harga";
             cl5.Name = "Total Harga";
+
             DataGridViewTextBoxColumn cl6 = new DataGridViewTextBoxColumn();
             cl6.HeaderText = "Dibayar";
             cl6.Name = "Dibayar";
+
             DataGridViewTextBoxColumn cl7 = new DataGridViewTextBoxColumn();
             cl7.HeaderText = "Pembayaran";
             cl7.Name = "Pembayaran";
+
             DataGridViewTextBoxColumn cl8 = new DataGridViewTextBoxColumn();
             cl8.HeaderText = "Diproses Pada";
             cl8.Name = "Diproses Pada";
+
             DataGridViewTextBoxColumn cl9 = new DataGridViewTextBoxColumn();
             cl9.HeaderText = "Diambil Pada";
             cl9.Name = "Diambil Pada";
+
             DataGridViewCheckBoxColumn cl10 = new DataGridViewCheckBoxColumn();
             cl10.HeaderText = "Pilih Aksi";
             cl10.Name = "Pilih Aksi";
@@ -166,17 +181,17 @@ namespace WashinqV2.Pages.Views.Admin
                     conn.Open();
                 }
             }
-            catch (MySqlException ex) // Menangkap kesalahan MySQL
+            catch (MySqlException ex)
             {
                 MessageBox.Show("Koneksi ke database gagal: " + ex.Message, "Kesalahan Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit(); // Menutup aplikasi jika tidak dapat terhubung
-                return; // Keluar dari metode jika koneksi gagal
+                Application.Exit();
+                return;
             }
-            catch (Exception ex) // Menangkap kesalahan umum lainnya
+            catch (Exception ex)
             {
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Application.Exit(); // Menutup aplikasi jika terjadi kesalahan
-                return; // Keluar dari metode jika terjadi kesalahan
+                Application.Exit();
+                return;
             }
         }
 
@@ -188,7 +203,6 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // Cek apakah ada baris yang dipilih
             bool hasSelected = false;
             List<int> selectedOrderIds = new List<int>();
 
@@ -200,7 +214,6 @@ namespace WashinqV2.Pages.Views.Admin
                     hasSelected = true;
                     int orderId = Convert.ToInt32(row.Cells["id"].Value);
 
-                    // Cek apakah sudah diambil
                     string takenAt = row.Cells["Diambil Pada"].Value.ToString();
                     if (takenAt != "-")
                     {
@@ -220,7 +233,6 @@ namespace WashinqV2.Pages.Views.Admin
                 return;
             }
 
-            // Konfirmasi
             var result = MessageBox.Show(
                 "Apakah Anda yakin ingin menandai " + selectedOrderIds.Count +
                 " order sebagai telah diambil?",
@@ -253,7 +265,7 @@ namespace WashinqV2.Pages.Views.Admin
                     MessageBox.Show("Order berhasil ditandai sebagai telah diambil!",
                         "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    LoadData(); // Refresh data
+                    LoadData();
                 }
                 catch (Exception ex)
                 {
@@ -265,7 +277,6 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            // Cek apakah ada baris yang dipilih
             bool hasSelected = false;
             List<int> selectedOrderIds = new List<int>();
             List<string> orderDetails = new List<string>();
@@ -291,7 +302,6 @@ namespace WashinqV2.Pages.Views.Admin
                 return;
             }
 
-            // Konfirmasi dengan detail
             string detailMessage = "Order yang akan dihapus:\n\n" +
                 string.Join("\n", orderDetails) +
                 "\n\nApakah Anda yakin ingin menghapus " + selectedOrderIds.Count + " order ini?";
@@ -325,7 +335,7 @@ namespace WashinqV2.Pages.Views.Admin
                     MessageBox.Show("Order berhasil dihapus!",
                         "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    LoadData(); // Refresh data
+                    LoadData();
                 }
                 catch (MySqlException ex)
                 {
@@ -341,16 +351,14 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
-
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            // Konfirmasi logout
             var result = MessageBox.Show("Apakah Anda yakin ingin logout?", "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
             {
-                this.Hide(); // Menutup form dashboard
+                this.Hide();
                 LoginPage LoginPage = new LoginPage();
-                LoginPage.ShowDialog(); // Menampilkan form login
+                LoginPage.ShowDialog();
                 this.Close();
             }
         }
@@ -390,7 +398,6 @@ namespace WashinqV2.Pages.Views.Admin
             bool hasSelected = false;
             DataGridViewRow selectedRow = null;
 
-            // Cek baris mana yang pilih aksi nya dicentang
             foreach (DataGridViewRow row in dgvOrder.Rows)
             {
                 if (row.Cells["Pilih Aksi"].Value != null &&
@@ -421,14 +428,13 @@ namespace WashinqV2.Pages.Views.Admin
                 selectedUserName = selectedRow.Cells["Dilayani Oleh"].Value?.ToString() ?? "-";
                 selectedCustomerName = selectedRow.Cells["Pelanggan"].Value?.ToString() ?? "-";
                 selectedServiceName = selectedRow.Cells["Jenis Layanan"].Value?.ToString() ?? "-";
-                selectedTotalKg = selectedRow.Cells["Total Kilogram"].Value?.ToString() ?? "0";
+                selectedTotalQty = selectedRow.Cells["Total Kuantitas"].Value?.ToString() ?? "0";
                 selectedTotalPrice = selectedRow.Cells["Total Harga"].Value?.ToString() ?? "0";
                 selectedPaid = selectedRow.Cells["Dibayar"].Value?.ToString() ?? "0";
                 selectedPayment = selectedRow.Cells["Pembayaran"].Value?.ToString() ?? "-";
                 selectedSubmittedAt = selectedRow.Cells["Diproses Pada"].Value?.ToString() ?? "-";
                 selectedTakenAt = selectedRow.Cells["Diambil Pada"].Value?.ToString() ?? "-";
 
-                // Hitung kembalian - Bersihkan "Rp " dan titik pemisah ribuan
                 decimal totalPrice = 0;
                 decimal paid = 0;
 
@@ -442,7 +448,6 @@ namespace WashinqV2.Pages.Views.Admin
 
                 spareChange = (paid - totalPrice).ToString("N0");
 
-                // SET UKURAN KERTAS DI SINI, BUKAN DI PrintPage!
                 printReceipt.DefaultPageSettings.PaperSize = new PaperSize("Struk", 302, 1000);
 
                 PrintPreviewDialog preview = new PrintPreviewDialog();
@@ -459,33 +464,26 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
-        private void printReceipt_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void printReceipt_PrintPage(object sender, PrintPageEventArgs e)
         {
-            // HAPUS BARIS INI - JANGAN SET PAPERSIZE DI SINI
-            // e.PageSettings.PaperSize = new PaperSize("Struk", paperWidth, paperHeight);
-
-            int paperWidth = 302;  // 80mm printer
+            int paperWidth = 302;
             int marginLeft = 10;
             int posY = 10;
             int lineHeight = 20;
 
-            // Font lebih kecil biar pas di struk mini
             Font font = new Font("Cascadia Code", 8);
             Font titleFont = new Font("Cascadia Code", 10, FontStyle.Bold);
             Font smallFont = new Font("Cascadia Code", 7);
 
-            // Title - Center aligned
             string title = "WASHINQ";
             SizeF titleSize = e.Graphics.MeasureString(title, titleFont);
             float titleX = (paperWidth - titleSize.Width) / 2;
             e.Graphics.DrawString(title, titleFont, Brushes.Black, titleX, posY);
             posY += 30;
 
-            // Garis pemisah
             e.Graphics.DrawString("===============================================", smallFont, Brushes.Black, marginLeft, posY);
             posY += lineHeight;
 
-            // Data order
             e.Graphics.DrawString("ID Order: #" + selectedOrderId, font, Brushes.Black, marginLeft, posY);
             posY += lineHeight;
 
@@ -502,11 +500,10 @@ namespace WashinqV2.Pages.Views.Admin
             e.Graphics.DrawString("  " + selectedServiceName, font, Brushes.Black, marginLeft, posY);
             posY += lineHeight;
 
-            // Garis pemisah
             e.Graphics.DrawString("-----------------------------------------------", smallFont, Brushes.Black, marginLeft, posY);
             posY += lineHeight;
 
-            e.Graphics.DrawString("Berat: " + selectedTotalKg, font, Brushes.Black, marginLeft, posY);
+            e.Graphics.DrawString("Kuantitas: " + selectedTotalQty, font, Brushes.Black, marginLeft, posY);
             posY += lineHeight;
 
             e.Graphics.DrawString("Harga: " + selectedTotalPrice, font, Brushes.Black, marginLeft, posY);
@@ -521,7 +518,6 @@ namespace WashinqV2.Pages.Views.Admin
             e.Graphics.DrawString("Metode: " + selectedPayment, font, Brushes.Black, marginLeft, posY);
             posY += lineHeight;
 
-            // Garis pemisah
             e.Graphics.DrawString("-----------------------------------------------", smallFont, Brushes.Black, marginLeft, posY);
             posY += lineHeight;
 
@@ -531,15 +527,29 @@ namespace WashinqV2.Pages.Views.Admin
             e.Graphics.DrawString("Diambil: " + selectedTakenAt, smallFont, Brushes.Black, marginLeft, posY);
             posY += lineHeight + 10;
 
-            // Footer - Center aligned
             string footer = "Terima Kasih";
             SizeF footerSize = e.Graphics.MeasureString(footer, font);
             float footerX = (paperWidth - footerSize.Width) / 2;
             e.Graphics.DrawString(footer, font, Brushes.Black, footerX, posY);
             posY += lineHeight;
 
-            // Garis penutup
             e.Graphics.DrawString("===============================================", smallFont, Brushes.Black, marginLeft, posY);
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminCategoryPage register = new AdminCategoryPage();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogPage register = new AdminLogPage();
+            register.ShowDialog();
+            this.Close();
         }
     }
 }

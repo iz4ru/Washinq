@@ -29,7 +29,6 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void SetupDataGridView()
         {
-
             DataGridViewTextBoxColumn clid = new DataGridViewTextBoxColumn();
             clid.HeaderText = "ID";
             clid.Name = "id";
@@ -56,8 +55,8 @@ namespace WashinqV2.Pages.Views.Admin
             cl3.ReadOnly = true;
 
             DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
-            cl4.HeaderText = "Total Kilogram";
-            cl4.Name = "Total Kilogram";
+            cl4.HeaderText = "Total Kuantitas";
+            cl4.Name = "Total Kuantitas";
             cl4.ReadOnly = true;
 
             DataGridViewTextBoxColumn cl5 = new DataGridViewTextBoxColumn();
@@ -100,6 +99,7 @@ namespace WashinqV2.Pages.Views.Admin
             dgvBeranda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvBeranda.AllowUserToAddRows = false;
             dgvBeranda.ReadOnly = true;
+            dgvBeranda.RowHeadersVisible = false;
         }
 
         private void LoadDashboardStatistics()
@@ -131,7 +131,7 @@ namespace WashinqV2.Pages.Views.Admin
                         lblTotalLayanan.Text = totalService.ToString();
                     }
 
-                    string queryTotalUsers = "SELECT COUNT(*) FROM users";
+                    string queryTotalUsers = "SELECT COUNT(*) FROM users WHERE role = 'cashier'";
                     using (MySqlCommand cmd = new MySqlCommand(queryTotalUsers, conn))
                     {
                         int totalUsers = Convert.ToInt32(cmd.ExecuteScalar());
@@ -165,16 +165,18 @@ namespace WashinqV2.Pages.Views.Admin
                             u.name AS user_name,
                             c.name AS customer_name,
                             s.name AS service_name,
-                            o.total_kg,
+                            o.total_qty,
                             o.total_price,
                             o.paid,
                             o.payment,
                             o.submitted_at,
-                            o.taken_at
+                            o.taken_at,
+                            cat.unit_type
                         FROM orders o
                         JOIN users u ON o.user_id = u.id
                         JOIN customers c ON o.customer_id = c.id
                         JOIN services s ON o.service_id = s.id
+                        JOIN categories cat ON s.category_id = cat.id
                         ORDER BY o.id DESC
                         LIMIT 10";
 
@@ -194,9 +196,9 @@ namespace WashinqV2.Pages.Views.Admin
                                     reader["user_name"],
                                     reader["customer_name"],
                                     reader["service_name"],
-                                    Convert.ToDouble(reader["total_kg"]).ToString("N1") + " kg",
-                                    "Rp " + Convert.ToInt32(reader["total_price"]).ToString("N0"),
-                                    "Rp " + Convert.ToInt32(reader["paid"]).ToString("N0"),
+                                    Convert.ToDecimal(reader["total_qty"]).ToString("N2") + " " + reader["unit_type"],
+                                    "Rp " + Convert.ToDecimal(reader["total_price"]).ToString("N0"),
+                                    "Rp " + Convert.ToDecimal(reader["paid"]).ToString("N0"),
                                     reader["payment"],
                                     Convert.ToDateTime(reader["submitted_at"]).ToString("dd MMM yyyy HH:mm"),
                                     reader["taken_at"] == DBNull.Value ? "-" :
@@ -260,6 +262,22 @@ namespace WashinqV2.Pages.Views.Admin
         {
             this.Hide();
             AdminServicePage register = new AdminServicePage();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminCategoryPage register = new AdminCategoryPage();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            AdminLogPage register = new AdminLogPage();
             register.ShowDialog();
             this.Close();
         }
