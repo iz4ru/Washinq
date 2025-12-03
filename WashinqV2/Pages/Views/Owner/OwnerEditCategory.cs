@@ -7,31 +7,44 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using WashinqV2.Helpers;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Owner
 {
-    public partial class AdminAddCategory : Form
+    public partial class OwnerEditCategory : Form
     {
-        private AdminCategoryPage parentForm;
+        public int ID { get; set; }
+        public string CategoryName { get; set; }
+        public string UnitType { get; set; }
 
-        public AdminAddCategory(AdminCategoryPage parent)
+        private OwnerCategoryPage parentForm;
+
+        public OwnerEditCategory(int id, string categoryName, string unitType, OwnerCategoryPage parentForm)
         {
             InitializeComponent();
+            this.ClientSize = new Size(480, 600);
+            ID = id;
+            CategoryName = categoryName;
+            UnitType = unitType;
 
-            parentForm = parent;
+            tbCategory.Content = categoryName;
+            tbUnitType.Content = unitType;
+
+            this.parentForm = parentForm;
         }
 
-        private void AdminAddCategory_Load(object sender, EventArgs e)
+        private void OwnerEditCategory_Load(object sender, EventArgs e)
         {
-            // Lock window style
+            tbCategory.Content = CategoryName;
+            tbUnitType.Content = UnitType;
+
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnEdit_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(tbCategory.Content) ||
                 string.IsNullOrWhiteSpace(tbUnitType.Content))
@@ -40,31 +53,33 @@ namespace WashinqV2.Pages.Views.Admin
                 return;
             }
 
-            string categoryName = tbCategory.Content;
-            string unitType = tbUnitType.Content;
+            CategoryName = tbCategory.Content;
+            UnitType = tbUnitType.Content;
 
             try
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = "INSERT INTO categories (name, unit_type) VALUES (@name, @unit_type)";
+                    string query = "UPDATE categories SET name = @name, unit_type = @unit_type WHERE id = @id";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@name", categoryName);
-                        cmd.Parameters.AddWithValue("@unit_type", unitType);
+                        cmd.Parameters.AddWithValue("@name", CategoryName);
+                        cmd.Parameters.AddWithValue("@unit_type", UnitType);
+                        cmd.Parameters.AddWithValue("@id", ID);
 
                         conn.Open();
                         cmd.ExecuteNonQuery();
+                        conn.Close();
                     }
-                    MessageBox.Show("Data berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    LogActivity.Insert("Tambah Data",
-        $"Menambahkan kategori '{tbCategory.Content}' dengan unit '{tbUnitType.Content}'");
-
-                    parentForm.LoadData();
-                    this.Close();
                 }
+                MessageBox.Show("Data berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LogActivity.Insert("Edit Data",
+       $"Mengubah kategori '{tbCategory.Content} ' (ID:  {tbUnitType.Content})");
+
+                parentForm.LoadData();
+                this.Close();
             }
             catch (MySqlException ex) // Menangkap kesalahan MySQL
             {

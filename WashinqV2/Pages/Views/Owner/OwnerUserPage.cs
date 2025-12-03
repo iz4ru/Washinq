@@ -8,7 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 using WashinqV2.Models;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WashinqV2.Pages.Views.Owner
 {
@@ -197,6 +199,7 @@ namespace WashinqV2.Pages.Views.Owner
         private void btnDelete_Click(object sender, EventArgs e)
         {
             List<int> selectedUserIds = new List<int>();
+            List<(string Name, string Username, string Role)> selectedUserInfo = new List<(string, string, string)>();
             List<string> selectedUserDetails = new List<string>();
 
             foreach (DataGridViewRow row in dgvUser.Rows)
@@ -207,8 +210,10 @@ namespace WashinqV2.Pages.Views.Owner
                     int userId = Convert.ToInt32(row.Cells["id"].Value);
                     string name = row.Cells["Nama Pengguna"].Value.ToString();
                     string username = row.Cells["Username"].Value.ToString();
+                    string role = row.Cells["Role"].Value.ToString();
 
                     selectedUserIds.Add(userId);
+                    selectedUserInfo.Add((name, username, role));
                     selectedUserDetails.Add($"- {name} ({username})");
                 }
             }
@@ -242,8 +247,13 @@ namespace WashinqV2.Pages.Views.Owner
                     {
                         conn.Open();
 
-                        foreach (int userId in selectedUserIds)
+                        for (int i = 0; i < selectedUserIds.Count; i++)
                         {
+                            int userId = selectedUserIds[i];
+                            string userName = selectedUserInfo[i].Name;
+                            string username = selectedUserInfo[i].Username;
+                            string userRole = selectedUserInfo[i].Role;
+
                             string query = "DELETE FROM users WHERE id = @id";
                             using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
@@ -251,9 +261,15 @@ namespace WashinqV2.Pages.Views.Owner
                                 int rowsAffected = cmd.ExecuteNonQuery();
 
                                 if (rowsAffected > 0)
+                                {
                                     successCount++;
+                                    LogActivity.Insert("Hapus Data",
+                                        $"Menghapus {userRole.ToLower()} '{userName}' username '{username}' (ID: {userId})");
+                                }
                                 else
+                                {
                                     failCount++;
+                                }
                             }
                         }
 
@@ -307,6 +323,20 @@ namespace WashinqV2.Pages.Views.Owner
             this.Close();
         }
 
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OwnerEditProfile form = new OwnerEditProfile(UserSession.id);
+            form.ShowDialog();
+        }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OwnerCategoryPage register = new OwnerCategoryPage();
+            register.ShowDialog();
+            this.Close();
+        }
+
         private void btnLogout_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Apakah Anda yakin ingin logout?",
@@ -321,10 +351,12 @@ namespace WashinqV2.Pages.Views.Owner
             }
         }
 
-        private void btnProfile_Click(object sender, EventArgs e)
+        private void btnLog_Click(object sender, EventArgs e)
         {
-            OwnerEditProfile form = new OwnerEditProfile(UserSession.id);
-            form.ShowDialog();
+            this.Hide();
+            OwnerLogPage register = new OwnerLogPage();
+            register.ShowDialog();
+            this.Close();
         }
     }
 }

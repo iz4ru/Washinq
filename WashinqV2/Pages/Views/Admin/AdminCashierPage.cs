@@ -9,7 +9,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 using WashinqV2.Models;
+using WashinqV2.Pages.Views.Cashier;
 
 namespace WashinqV2.Pages.Views.Admin
 {
@@ -193,6 +195,8 @@ namespace WashinqV2.Pages.Views.Admin
         {
             List<int> selectedCashierIds = new List<int>();
             List<string> selectedCashierDetails = new List<string>();
+            // Store cashier info for logging
+            List<(int Id, string Name, string Username)> selectedCashierInfo = new List<(int, string, string)>();
 
             foreach (DataGridViewRow row in dgvCashier.Rows)
             {
@@ -205,6 +209,7 @@ namespace WashinqV2.Pages.Views.Admin
 
                     selectedCashierIds.Add(cashierId);
                     selectedCashierDetails.Add($"- {cashierName} ({username})");
+                    selectedCashierInfo.Add((cashierId, cashierName, username));
                 }
             }
 
@@ -213,7 +218,7 @@ namespace WashinqV2.Pages.Views.Admin
                 MessageBox.Show("Silakan pilih kasir yang ingin dihapus dengan mencentang checkbox!",
                     "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }   
 
             string detailMessage = "Kasir yang akan dihapus:\n\n" +
                 string.Join("\n", selectedCashierDetails) +
@@ -237,18 +242,24 @@ namespace WashinqV2.Pages.Views.Admin
                     {
                         conn.Open();
 
-                        foreach (int cashierId in selectedCashierIds)
+                        foreach (var cashier in selectedCashierInfo)
                         {
                             string query = "DELETE FROM users WHERE id = @id AND role = 'cashier'";
                             using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
-                                cmd.Parameters.AddWithValue("@id", cashierId);
+                                cmd.Parameters.AddWithValue("@id", cashier.Id);
                                 int rowsAffected = cmd.ExecuteNonQuery();
 
                                 if (rowsAffected > 0)
+                                {
                                     successCount++;
+                                    LogActivity.Insert("Hapus Data",
+                                        $"Menghapus kasir '{cashier.Name}' username '{cashier.Username}' (ID: {cashier.Id})");
+                                }
                                 else
+                                {
                                     failCount++;
+                                }
                             }
                         }
 

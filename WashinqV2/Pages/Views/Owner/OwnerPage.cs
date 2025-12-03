@@ -264,5 +264,21 @@ namespace WashinqV2.Pages.Views.Owner
             register.ShowDialog();
             this.Close();
         }
+
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OwnerCategoryPage register = new OwnerCategoryPage();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OwnerLogPage register = new OwnerLogPage();
+            register.ShowDialog();
+            this.Close();
+        }
     }
 }

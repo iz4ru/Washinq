@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 using WashinqV2.Pages.Views.Admin;
 
 namespace WashinqV2.Pages.Views.Owner
@@ -24,6 +25,8 @@ namespace WashinqV2.Pages.Views.Owner
         public OwnerEditService(int id, string serviceName, int price, string description, OwnerServicePage parent)
         {
             InitializeComponent();
+            this.ClientSize = new Size(480, 600);
+
 
             ID = id;
             ServiceName = serviceName;
@@ -89,6 +92,9 @@ namespace WashinqV2.Pages.Views.Owner
                     }
                 }
                 MessageBox.Show("Data berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LogActivity.Insert("Edit Data", $"Mengubah layanan '{ServiceName}' (ID: {ID})");
+
 
                 parentForm.LoadData();
                 this.Close();

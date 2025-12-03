@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 
 namespace WashinqV2.Pages.Views.Owner
 {
@@ -71,6 +72,9 @@ namespace WashinqV2.Pages.Views.Owner
                         cmd.ExecuteNonQuery();
                     }
                     MessageBox.Show("Data berhasil ditambahkan!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    LogActivity.Insert("Tambah Data",
+                        $"Menambahkan layanan '{tbService.Content}' dengan harga Rp {tbPrice.Content}");
 
                     parentForm.LoadData();
                     this.Close();

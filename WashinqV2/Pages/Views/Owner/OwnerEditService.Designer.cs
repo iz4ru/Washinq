@@ -53,13 +53,14 @@
             this.cuiPanel3.Controls.Add(this.tbService);
             this.cuiPanel3.Controls.Add(this.lbService);
             this.cuiPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel3.Location = new System.Drawing.Point(0, 57);
+            this.cuiPanel3.Location = new System.Drawing.Point(0, 71);
+            this.cuiPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel3.Name = "cuiPanel3";
             this.cuiPanel3.OutlineThickness = 1F;
             this.cuiPanel3.PanelColor = System.Drawing.SystemColors.Control;
             this.cuiPanel3.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel3.Size = new System.Drawing.Size(650, 664);
+            this.cuiPanel3.Size = new System.Drawing.Size(731, 830);
             this.cuiPanel3.TabIndex = 22;
             // 
             // btnEdit
@@ -84,7 +85,8 @@
             this.btnEdit.ImageAutoCenter = true;
             this.btnEdit.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnEdit.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnEdit.Location = new System.Drawing.Point(220, 568);
+            this.btnEdit.Location = new System.Drawing.Point(248, 710);
+            this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.NormalBackground = System.Drawing.Color.DodgerBlue;
             this.btnEdit.NormalForeColor = System.Drawing.Color.White;
@@ -96,7 +98,7 @@
             this.btnEdit.PressedImageTint = System.Drawing.Color.White;
             this.btnEdit.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnEdit.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnEdit.Size = new System.Drawing.Size(187, 50);
+            this.btnEdit.Size = new System.Drawing.Size(210, 62);
             this.btnEdit.TabIndex = 16;
             this.btnEdit.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnEdit.TextOffset = new System.Drawing.Point(0, 0);
@@ -116,18 +118,18 @@
             this.tbDescription.Image = null;
             this.tbDescription.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbDescription.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbDescription.Location = new System.Drawing.Point(114, 278);
-            this.tbDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.tbDescription.Location = new System.Drawing.Point(128, 348);
+            this.tbDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbDescription.Multiline = true;
             this.tbDescription.Name = "tbDescription";
             this.tbDescription.NormalImageTint = System.Drawing.Color.White;
             this.tbDescription.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbDescription.Padding = new System.Windows.Forms.Padding(21, 6, 21, 6);
+            this.tbDescription.Padding = new System.Windows.Forms.Padding(25, 7, 25, 7);
             this.tbDescription.PasswordChar = false;
             this.tbDescription.PlaceholderColor = System.Drawing.SystemColors.WindowText;
             this.tbDescription.PlaceholderText = "";
             this.tbDescription.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbDescription.Size = new System.Drawing.Size(400, 240);
+            this.tbDescription.Size = new System.Drawing.Size(450, 300);
             this.tbDescription.TabIndex = 13;
             this.tbDescription.TextOffset = new System.Drawing.Size(0, 0);
             this.tbDescription.UnderlinedStyle = true;
@@ -137,9 +139,9 @@
             this.lbDescription.AutoSize = true;
             this.lbDescription.BackColor = System.Drawing.Color.Transparent;
             this.lbDescription.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescription.Location = new System.Drawing.Point(110, 253);
+            this.lbDescription.Location = new System.Drawing.Point(124, 316);
             this.lbDescription.Name = "lbDescription";
-            this.lbDescription.Size = new System.Drawing.Size(79, 21);
+            this.lbDescription.Size = new System.Drawing.Size(98, 26);
             this.lbDescription.TabIndex = 12;
             this.lbDescription.Text = "Deskripsi";
             // 
@@ -157,18 +159,18 @@
             this.tbPrice.Image = null;
             this.tbPrice.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbPrice.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbPrice.Location = new System.Drawing.Point(114, 176);
-            this.tbPrice.Margin = new System.Windows.Forms.Padding(4);
+            this.tbPrice.Location = new System.Drawing.Point(128, 220);
+            this.tbPrice.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbPrice.Multiline = false;
             this.tbPrice.Name = "tbPrice";
             this.tbPrice.NormalImageTint = System.Drawing.Color.White;
             this.tbPrice.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbPrice.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbPrice.Padding = new System.Windows.Forms.Padding(25, 15, 25, 0);
             this.tbPrice.PasswordChar = false;
             this.tbPrice.PlaceholderColor = System.Drawing.SystemColors.WindowText;
             this.tbPrice.PlaceholderText = "";
             this.tbPrice.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbPrice.Size = new System.Drawing.Size(400, 44);
+            this.tbPrice.Size = new System.Drawing.Size(450, 55);
             this.tbPrice.TabIndex = 11;
             this.tbPrice.TextOffset = new System.Drawing.Size(0, 0);
             this.tbPrice.UnderlinedStyle = true;
@@ -178,11 +180,11 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(110, 151);
+            this.label1.Location = new System.Drawing.Point(124, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 21);
+            this.label1.Size = new System.Drawing.Size(150, 26);
             this.label1.TabIndex = 10;
-            this.label1.Text = "Harga per Kilogram";
+            this.label1.Text = "Harga per Unit";
             // 
             // tbService
             // 
@@ -198,18 +200,18 @@
             this.tbService.Image = null;
             this.tbService.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbService.ImageOffset = new System.Drawing.Point(0, 0);
-            this.tbService.Location = new System.Drawing.Point(114, 82);
-            this.tbService.Margin = new System.Windows.Forms.Padding(4);
+            this.tbService.Location = new System.Drawing.Point(128, 102);
+            this.tbService.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbService.Multiline = false;
             this.tbService.Name = "tbService";
             this.tbService.NormalImageTint = System.Drawing.Color.White;
             this.tbService.OutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.tbService.Padding = new System.Windows.Forms.Padding(21, 12, 21, 0);
+            this.tbService.Padding = new System.Windows.Forms.Padding(25, 15, 25, 0);
             this.tbService.PasswordChar = false;
             this.tbService.PlaceholderColor = System.Drawing.SystemColors.WindowText;
             this.tbService.PlaceholderText = "";
             this.tbService.Rounding = new System.Windows.Forms.Padding(8);
-            this.tbService.Size = new System.Drawing.Size(400, 44);
+            this.tbService.Size = new System.Drawing.Size(450, 55);
             this.tbService.TabIndex = 9;
             this.tbService.TextOffset = new System.Drawing.Size(0, 0);
             this.tbService.UnderlinedStyle = true;
@@ -219,9 +221,9 @@
             this.lbService.AutoSize = true;
             this.lbService.BackColor = System.Drawing.Color.Transparent;
             this.lbService.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbService.Location = new System.Drawing.Point(110, 57);
+            this.lbService.Location = new System.Drawing.Point(124, 71);
             this.lbService.Name = "lbService";
-            this.lbService.Size = new System.Drawing.Size(125, 21);
+            this.lbService.Size = new System.Drawing.Size(152, 26);
             this.lbService.TabIndex = 8;
             this.lbService.Text = "Nama Layanan";
             // 
@@ -230,12 +232,13 @@
             this.cuiPanel2.Controls.Add(this.llbBack);
             this.cuiPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel2.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel2.Name = "cuiPanel2";
             this.cuiPanel2.OutlineThickness = 1F;
             this.cuiPanel2.PanelColor = System.Drawing.Color.White;
             this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel2.Size = new System.Drawing.Size(650, 57);
+            this.cuiPanel2.Size = new System.Drawing.Size(731, 71);
             this.cuiPanel2.TabIndex = 21;
             // 
             // llbBack
@@ -244,9 +247,9 @@
             this.llbBack.BackColor = System.Drawing.Color.Transparent;
             this.llbBack.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold);
             this.llbBack.LinkColor = System.Drawing.Color.DodgerBlue;
-            this.llbBack.Location = new System.Drawing.Point(17, 19);
+            this.llbBack.Location = new System.Drawing.Point(19, 24);
             this.llbBack.Name = "llbBack";
-            this.llbBack.Size = new System.Drawing.Size(72, 21);
+            this.llbBack.Size = new System.Drawing.Size(88, 26);
             this.llbBack.TabIndex = 16;
             this.llbBack.TabStop = true;
             this.llbBack.Text = "Kembali";
@@ -254,12 +257,13 @@
             // 
             // OwnerEditService
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(650, 721);
+            this.ClientSize = new System.Drawing.Size(731, 901);
             this.Controls.Add(this.cuiPanel3);
             this.Controls.Add(this.cuiPanel2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "OwnerEditService";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Washinq | Edit Layanan Laundry";

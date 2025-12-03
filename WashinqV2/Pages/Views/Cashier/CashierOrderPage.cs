@@ -526,5 +526,13 @@ namespace WashinqV2.Pages.Views.Cashier
             CashierEditProfile form = new CashierEditProfile(UserSession.id);
             form.ShowDialog();
         }
+
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            CashierLogPage register = new CashierLogPage();
+            register.ShowDialog();
+            this.Close();
+        }
     }
 }

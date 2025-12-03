@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using DocumentFormat.OpenXml.Wordprocessing;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using WashinqV2.Helpers;
 
 namespace WashinqV2.Pages.Views.Owner
 {
@@ -184,6 +186,9 @@ namespace WashinqV2.Pages.Views.Owner
                         {
                             MessageBox.Show($"{selectedRole} berhasil ditambahkan!",
                                 "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            LogActivity.Insert("Tambah Data",
+                                $"Menambahkan {roleValue.ToLower()} '{tbUserName.Content}' dengan username '{tbUserUsername.Content}'");
 
                             // Clear form
                             ClearForm();

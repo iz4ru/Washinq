@@ -1,14 +1,15 @@
-﻿using MySql.Data.MySqlClient;
+﻿using ClosedXML.Excel;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ClosedXML.Excel;
 using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Owner
@@ -384,38 +385,127 @@ namespace WashinqV2.Pages.Views.Owner
                         {
                             var worksheet = workbook.Worksheets.Add("Laporan Pesanan");
 
-                            // Header
+                            int currentRow = 1;
+
+                            // Judul
+                            worksheet.Cell(currentRow, 1).Value = "LAPORAN PENJUALAN WASHINQ";
+                            worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
+                            worksheet.Cell(currentRow, 1).Style.Font.FontSize = 16;
+                            worksheet.Cell(currentRow, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                            worksheet.Range(currentRow, 1, currentRow, 10).Merge();
+                            currentRow++;
+
+                            // Periode
+                            string startDate = cdpStart.Content.ToString("dd MMMM yyyy", new CultureInfo("id-ID"));
+                            string endDate = cdpEnd.Content.ToString("dd MMMM yyyy", new CultureInfo("id-ID"));
+                            worksheet.Cell(currentRow, 1).Value = $"Periode: {startDate} - {endDate}";
+                            worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
+                            worksheet.Cell(currentRow, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                            worksheet.Range(currentRow, 1, currentRow, 10).Merge();
+                            currentRow++;
+
+                            // Hitung Total Penjualan
+                            decimal totalPenjualan = 0;
+                            foreach (DataGridViewRow row in dgvReport.Rows)
+                            {
+                                if (row.Cells["Total Harga"].Value != null)
+                                {
+                                    string valueStr = row.Cells["Total Harga"].Value.ToString()
+                                        .Replace("Rp ", "").Replace(".", "").Trim();
+                                    if (decimal.TryParse(valueStr, out decimal value))
+                                    {
+                                        totalPenjualan += value;
+                                    }
+                                }
+                            }
+
+                            // Total Penjualan
+                            worksheet.Cell(currentRow, 1).Value = $"Total Penjualan: Rp {totalPenjualan:N0}";
+                            worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
+                            worksheet.Cell(currentRow, 1).Style.Font.FontColor = XLColor.DarkGreen;
+                            worksheet.Cell(currentRow, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
+                            worksheet.Range(currentRow, 1, currentRow, 10).Merge();
+                            currentRow++;
+
+                            // Spacing
+                            currentRow++;
+
                             int col = 1;
                             for (int i = 1; i < dgvReport.Columns.Count; i++) // Skip kolom ID
                             {
                                 if (dgvReport.Columns[i].Visible)
                                 {
-                                    worksheet.Cell(1, col).Value = dgvReport.Columns[i].HeaderText;
-                                    worksheet.Cell(1, col).Style.Font.Bold = true;
-                                    worksheet.Cell(1, col).Style.Fill.BackgroundColor = XLColor.LightGray;
+                                    worksheet.Cell(currentRow, col).Value = dgvReport.Columns[i].HeaderText;
+                                    worksheet.Cell(currentRow, col).Style.Font.Bold = true;
+                                    worksheet.Cell(currentRow, col).Style.Fill.BackgroundColor = XLColor.LightBlue;
+                                    worksheet.Cell(currentRow, col).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+                                    worksheet.Cell(currentRow, col).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                                     col++;
                                 }
                             }
+                            currentRow++;
 
-                            // Data
+                            int startDataRow = currentRow; 
+
                             for (int i = 0; i < dgvReport.Rows.Count; i++)
                             {
                                 col = 1;
-                                for (int j = 1; j < dgvReport.Columns.Count; j++) // Skip kolom ID
+                                for (int j = 1; j < dgvReport.Columns.Count; j++)
                                 {
                                     if (dgvReport.Columns[j].Visible)
                                     {
                                         var cellValue = dgvReport.Rows[i].Cells[j].Value;
-                                        worksheet.Cell(i + 2, col).Value = cellValue?.ToString() ?? "";
+                                        worksheet.Cell(currentRow, col).Value = cellValue?.ToString() ?? "-";
+                                        worksheet.Cell(currentRow, col).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
+
+                                        if (dgvReport.Columns[j].HeaderText.Contains("Harga") ||
+                                            dgvReport.Columns[j].HeaderText.Contains("Dibayar"))
+                                        {
+                                            worksheet.Cell(currentRow, col).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+                                        }
+
                                         col++;
                                     }
                                 }
+                                currentRow++;
                             }
+
+                            currentRow++;
+
+                            worksheet.Cell(currentRow, 1).Value = "TOTAL KESELURUHAN";
+                            worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
+                            worksheet.Cell(currentRow, 1).Style.Fill.BackgroundColor = XLColor.LightGray;
+
+                            // Cari kolom "Total Harga" untuk taruh total
+                            int totalHargaColIndex = 1;
+                            for (int i = 1; i < dgvReport.Columns.Count; i++)
+                            {
+                                if (dgvReport.Columns[i].HeaderText == "Total Harga" && dgvReport.Columns[i].Visible)
+                                {
+                                    break;
+                                }
+                                if (dgvReport.Columns[i].Visible)
+                                {
+                                    totalHargaColIndex++;
+                                }
+                            }
+
+                            worksheet.Cell(currentRow, totalHargaColIndex).Value = $"Rp {totalPenjualan:N0}";
+                            worksheet.Cell(currentRow, totalHargaColIndex).Style.Font.Bold = true;
+                            worksheet.Cell(currentRow, totalHargaColIndex).Style.Fill.BackgroundColor = XLColor.LightGray;
+                            worksheet.Cell(currentRow, totalHargaColIndex).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+
 
                             // Auto-fit kolom
                             worksheet.Columns().AdjustToContents();
 
-                            // Save file
+                            // Set minimum width untuk kolom tertentu
+                            foreach (var column in worksheet.ColumnsUsed())
+                            {
+                                if (column.Width < 12)
+                                    column.Width = 12;
+                            }
+
                             workbook.SaveAs(sfd.FileName);
 
                             MessageBox.Show($"Data berhasil di-export ke:\n{sfd.FileName}",
@@ -426,7 +516,11 @@ namespace WashinqV2.Pages.Views.Owner
                                 "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (result == DialogResult.Yes)
                             {
-                                System.Diagnostics.Process.Start(sfd.FileName);
+                                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                                {
+                                    FileName = sfd.FileName,
+                                    UseShellExecute = true
+                                });
                             }
                         }
                     }
@@ -438,6 +532,7 @@ namespace WashinqV2.Pages.Views.Owner
                     "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -482,6 +577,20 @@ namespace WashinqV2.Pages.Views.Owner
             this.Close();
         }
 
+        private void btnCategory_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OwnerCategoryPage register = new OwnerCategoryPage();
+            register.ShowDialog();
+            this.Close();
+        }
 
+        private void btnLog_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OwnerLogPage register = new OwnerLogPage();
+            register.ShowDialog();
+            this.Close();
+        }
     }
 }

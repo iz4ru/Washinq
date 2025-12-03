@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
@@ -294,6 +295,10 @@ VALUES
                             MessageBoxIcon.Information
                         );
 
+                        string serviceName = cbxService.SelectedItem.ToString();
+                        LogActivity.Insert("Tambah Data",
+                            $"Menambahkan order layanan '{serviceName}' untuk customer '{lbCustName.Text}' sebesar Rp {totalPrice:N0}");
+
                         var payForm = new AdminCustomerPay(customerId, totalPrice);
                         payForm.ShowDialog();
 
@@ -335,7 +340,7 @@ VALUES
                     MessageBox.Show("Data customer telah dihapus.",
                         "Dibatalkan", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    this.Close();
+                    this.Close();   
                 }
                 catch (MySqlException ex)
                 {

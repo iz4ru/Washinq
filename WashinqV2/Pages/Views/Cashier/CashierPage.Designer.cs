@@ -64,6 +64,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cuiPanel1 = new CuoreUI.Controls.cuiPanel();
             this.cuiPanel3 = new CuoreUI.Controls.cuiPanel();
+            this.btnLog = new CuoreUI.Controls.cuiButton();
             this.btnOrder = new CuoreUI.Controls.cuiButton();
             this.btnDashboard = new CuoreUI.Controls.cuiButton();
             this.cuiPanel4 = new CuoreUI.Controls.cuiPanel();
@@ -114,27 +115,29 @@
             this.cuiPanel5.Controls.Add(this.cuiPanel20);
             this.cuiPanel5.Controls.Add(this.tableLayoutPanel1);
             this.cuiPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel5.Location = new System.Drawing.Point(94, 193);
+            this.cuiPanel5.Location = new System.Drawing.Point(106, 241);
+            this.cuiPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel5.Name = "cuiPanel5";
             this.cuiPanel5.OutlineThickness = 1F;
             this.cuiPanel5.PanelColor = System.Drawing.Color.White;
             this.cuiPanel5.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel5.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel5.Size = new System.Drawing.Size(1254, 528);
+            this.cuiPanel5.Size = new System.Drawing.Size(1410, 660);
             this.cuiPanel5.TabIndex = 9;
             // 
             // cuiPanel21
             // 
             this.cuiPanel21.Controls.Add(this.dgvBeranda);
             this.cuiPanel21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel21.Location = new System.Drawing.Point(0, 311);
+            this.cuiPanel21.Location = new System.Drawing.Point(0, 389);
+            this.cuiPanel21.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel21.Name = "cuiPanel21";
             this.cuiPanel21.OutlineThickness = 0F;
-            this.cuiPanel21.Padding = new System.Windows.Forms.Padding(30);
+            this.cuiPanel21.Padding = new System.Windows.Forms.Padding(34, 38, 34, 38);
             this.cuiPanel21.PanelColor = System.Drawing.Color.White;
             this.cuiPanel21.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel21.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel21.Size = new System.Drawing.Size(1254, 217);
+            this.cuiPanel21.Size = new System.Drawing.Size(1410, 271);
             this.cuiPanel21.TabIndex = 18;
             // 
             // dgvBeranda
@@ -142,24 +145,26 @@
             this.dgvBeranda.BackgroundColor = System.Drawing.Color.White;
             this.dgvBeranda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBeranda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvBeranda.Location = new System.Drawing.Point(30, 30);
+            this.dgvBeranda.Location = new System.Drawing.Point(34, 38);
+            this.dgvBeranda.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvBeranda.Name = "dgvBeranda";
             this.dgvBeranda.RowHeadersWidth = 51;
             this.dgvBeranda.RowTemplate.Height = 24;
-            this.dgvBeranda.Size = new System.Drawing.Size(1194, 157);
+            this.dgvBeranda.Size = new System.Drawing.Size(1342, 195);
             this.dgvBeranda.TabIndex = 1;
             // 
             // cuiPanel20
             // 
             this.cuiPanel20.Controls.Add(this.label10);
             this.cuiPanel20.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel20.Location = new System.Drawing.Point(0, 243);
+            this.cuiPanel20.Location = new System.Drawing.Point(0, 304);
+            this.cuiPanel20.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel20.Name = "cuiPanel20";
             this.cuiPanel20.OutlineThickness = 0F;
             this.cuiPanel20.PanelColor = System.Drawing.Color.White;
             this.cuiPanel20.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel20.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel20.Size = new System.Drawing.Size(1254, 68);
+            this.cuiPanel20.Size = new System.Drawing.Size(1410, 85);
             this.cuiPanel20.TabIndex = 17;
             // 
             // label10
@@ -167,9 +172,9 @@
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(34, 15);
+            this.label10.Location = new System.Drawing.Point(38, 19);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(199, 36);
+            this.label10.Size = new System.Drawing.Size(237, 43);
             this.label10.TabIndex = 7;
             this.label10.Text = "Pesanan baru";
             // 
@@ -187,11 +192,12 @@
             this.tableLayoutPanel1.Controls.Add(this.cuiPanel11, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(30);
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(34, 38, 34, 38);
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1254, 243);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1410, 304);
             this.tableLayoutPanel1.TabIndex = 16;
             // 
             // cuiPanel8
@@ -199,14 +205,14 @@
             this.cuiPanel8.Controls.Add(this.cuiPanel13);
             this.cuiPanel8.Controls.Add(this.cuiPanel12);
             this.cuiPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel8.Location = new System.Drawing.Point(40, 40);
-            this.cuiPanel8.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel8.Location = new System.Drawing.Point(45, 50);
+            this.cuiPanel8.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel8.Name = "cuiPanel8";
             this.cuiPanel8.OutlineThickness = 1F;
             this.cuiPanel8.PanelColor = System.Drawing.Color.White;
             this.cuiPanel8.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
             this.cuiPanel8.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel8.Size = new System.Drawing.Size(278, 163);
+            this.cuiPanel8.Size = new System.Drawing.Size(313, 204);
             this.cuiPanel8.TabIndex = 1;
             // 
             // cuiPanel13
@@ -216,14 +222,14 @@
             this.cuiPanel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel13.ForeColor = System.Drawing.Color.Transparent;
             this.cuiPanel13.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel13.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel13.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel13.Name = "cuiPanel13";
             this.cuiPanel13.OutlineThickness = 1F;
-            this.cuiPanel13.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel13.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel13.PanelColor = System.Drawing.Color.White;
             this.cuiPanel13.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel13.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.cuiPanel13.Size = new System.Drawing.Size(278, 80);
+            this.cuiPanel13.Size = new System.Drawing.Size(313, 100);
             this.cuiPanel13.TabIndex = 9;
             // 
             // label14
@@ -232,9 +238,9 @@
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.DimGray;
-            this.label14.Location = new System.Drawing.Point(72, 33);
+            this.label14.Location = new System.Drawing.Point(81, 41);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(118, 21);
+            this.label14.Size = new System.Drawing.Size(144, 26);
             this.label14.TabIndex = 7;
             this.label14.Text = "Total Pesanan";
             // 
@@ -243,9 +249,10 @@
             this.guna2PictureBox5.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox5.Image")));
             this.guna2PictureBox5.ImageRotate = 0F;
-            this.guna2PictureBox5.Location = new System.Drawing.Point(17, 23);
+            this.guna2PictureBox5.Location = new System.Drawing.Point(19, 29);
+            this.guna2PictureBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox5.Name = "guna2PictureBox5";
-            this.guna2PictureBox5.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox5.Size = new System.Drawing.Size(45, 50);
             this.guna2PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox5.TabIndex = 0;
             this.guna2PictureBox5.TabStop = false;
@@ -255,15 +262,15 @@
             this.cuiPanel12.Controls.Add(this.lblTotalOrder);
             this.cuiPanel12.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cuiPanel12.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel12.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel12.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel12.Location = new System.Drawing.Point(0, 89);
+            this.cuiPanel12.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel12.Name = "cuiPanel12";
             this.cuiPanel12.OutlineThickness = 1F;
-            this.cuiPanel12.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel12.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel12.PanelColor = System.Drawing.Color.White;
             this.cuiPanel12.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel12.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.cuiPanel12.Size = new System.Drawing.Size(278, 92);
+            this.cuiPanel12.Size = new System.Drawing.Size(313, 115);
             this.cuiPanel12.TabIndex = 8;
             // 
             // lblTotalOrder
@@ -273,9 +280,9 @@
             this.lblTotalOrder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalOrder.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalOrder.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblTotalOrder.Location = new System.Drawing.Point(5, 5);
+            this.lblTotalOrder.Location = new System.Drawing.Point(6, 6);
             this.lblTotalOrder.Name = "lblTotalOrder";
-            this.lblTotalOrder.Size = new System.Drawing.Size(106, 72);
+            this.lblTotalOrder.Size = new System.Drawing.Size(128, 86);
             this.lblTotalOrder.TabIndex = 7;
             this.lblTotalOrder.Text = "80";
             // 
@@ -284,14 +291,14 @@
             this.cuiPanel9.Controls.Add(this.cuiPanel18);
             this.cuiPanel9.Controls.Add(this.cuiPanel19);
             this.cuiPanel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel9.Location = new System.Drawing.Point(934, 40);
-            this.cuiPanel9.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel9.Location = new System.Drawing.Point(1050, 50);
+            this.cuiPanel9.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel9.Name = "cuiPanel9";
             this.cuiPanel9.OutlineThickness = 1F;
             this.cuiPanel9.PanelColor = System.Drawing.Color.White;
             this.cuiPanel9.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
             this.cuiPanel9.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel9.Size = new System.Drawing.Size(280, 163);
+            this.cuiPanel9.Size = new System.Drawing.Size(315, 204);
             this.cuiPanel9.TabIndex = 2;
             // 
             // cuiPanel18
@@ -301,14 +308,14 @@
             this.cuiPanel18.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel18.ForeColor = System.Drawing.Color.Transparent;
             this.cuiPanel18.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel18.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel18.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel18.Name = "cuiPanel18";
             this.cuiPanel18.OutlineThickness = 1F;
-            this.cuiPanel18.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel18.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel18.PanelColor = System.Drawing.Color.White;
             this.cuiPanel18.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel18.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.cuiPanel18.Size = new System.Drawing.Size(280, 80);
+            this.cuiPanel18.Size = new System.Drawing.Size(315, 100);
             this.cuiPanel18.TabIndex = 11;
             // 
             // label8
@@ -317,9 +324,9 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.DimGray;
-            this.label8.Location = new System.Drawing.Point(72, 33);
+            this.label8.Location = new System.Drawing.Point(81, 41);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(131, 21);
+            this.label8.Size = new System.Drawing.Size(161, 26);
             this.label8.TabIndex = 7;
             this.label8.Text = "Total Pengguna";
             // 
@@ -328,9 +335,10 @@
             this.guna2PictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox3.Image")));
             this.guna2PictureBox3.ImageRotate = 0F;
-            this.guna2PictureBox3.Location = new System.Drawing.Point(17, 23);
+            this.guna2PictureBox3.Location = new System.Drawing.Point(19, 29);
+            this.guna2PictureBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox3.Name = "guna2PictureBox3";
-            this.guna2PictureBox3.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox3.Size = new System.Drawing.Size(45, 50);
             this.guna2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox3.TabIndex = 0;
             this.guna2PictureBox3.TabStop = false;
@@ -340,15 +348,15 @@
             this.cuiPanel19.Controls.Add(this.lblTotalPengguna);
             this.cuiPanel19.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cuiPanel19.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel19.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel19.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel19.Location = new System.Drawing.Point(0, 89);
+            this.cuiPanel19.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel19.Name = "cuiPanel19";
             this.cuiPanel19.OutlineThickness = 1F;
-            this.cuiPanel19.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel19.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel19.PanelColor = System.Drawing.Color.White;
             this.cuiPanel19.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel19.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.cuiPanel19.Size = new System.Drawing.Size(280, 92);
+            this.cuiPanel19.Size = new System.Drawing.Size(315, 115);
             this.cuiPanel19.TabIndex = 10;
             // 
             // lblTotalPengguna
@@ -358,9 +366,9 @@
             this.lblTotalPengguna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalPengguna.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalPengguna.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblTotalPengguna.Location = new System.Drawing.Point(5, 5);
+            this.lblTotalPengguna.Location = new System.Drawing.Point(6, 6);
             this.lblTotalPengguna.Name = "lblTotalPengguna";
-            this.lblTotalPengguna.Size = new System.Drawing.Size(65, 72);
+            this.lblTotalPengguna.Size = new System.Drawing.Size(79, 86);
             this.lblTotalPengguna.TabIndex = 7;
             this.lblTotalPengguna.Text = "5";
             // 
@@ -369,14 +377,14 @@
             this.cuiPanel10.Controls.Add(this.cuiPanel16);
             this.cuiPanel10.Controls.Add(this.cuiPanel17);
             this.cuiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel10.Location = new System.Drawing.Point(636, 40);
-            this.cuiPanel10.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel10.Location = new System.Drawing.Point(715, 50);
+            this.cuiPanel10.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel10.Name = "cuiPanel10";
             this.cuiPanel10.OutlineThickness = 1F;
             this.cuiPanel10.PanelColor = System.Drawing.Color.White;
             this.cuiPanel10.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
             this.cuiPanel10.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel10.Size = new System.Drawing.Size(278, 163);
+            this.cuiPanel10.Size = new System.Drawing.Size(313, 204);
             this.cuiPanel10.TabIndex = 3;
             // 
             // cuiPanel16
@@ -386,14 +394,14 @@
             this.cuiPanel16.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel16.ForeColor = System.Drawing.Color.Transparent;
             this.cuiPanel16.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel16.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel16.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel16.Name = "cuiPanel16";
             this.cuiPanel16.OutlineThickness = 1F;
-            this.cuiPanel16.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel16.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel16.PanelColor = System.Drawing.Color.White;
             this.cuiPanel16.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel16.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.cuiPanel16.Size = new System.Drawing.Size(278, 80);
+            this.cuiPanel16.Size = new System.Drawing.Size(313, 100);
             this.cuiPanel16.TabIndex = 11;
             // 
             // label6
@@ -402,9 +410,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(72, 33);
+            this.label6.Location = new System.Drawing.Point(81, 41);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 21);
+            this.label6.Size = new System.Drawing.Size(144, 26);
             this.label6.TabIndex = 7;
             this.label6.Text = "Total Layanan";
             // 
@@ -413,9 +421,10 @@
             this.guna2PictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox2.Image")));
             this.guna2PictureBox2.ImageRotate = 0F;
-            this.guna2PictureBox2.Location = new System.Drawing.Point(17, 23);
+            this.guna2PictureBox2.Location = new System.Drawing.Point(19, 29);
+            this.guna2PictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox2.Name = "guna2PictureBox2";
-            this.guna2PictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox2.Size = new System.Drawing.Size(45, 50);
             this.guna2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox2.TabIndex = 0;
             this.guna2PictureBox2.TabStop = false;
@@ -425,15 +434,15 @@
             this.cuiPanel17.Controls.Add(this.lblTotalLayanan);
             this.cuiPanel17.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cuiPanel17.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel17.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel17.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel17.Location = new System.Drawing.Point(0, 89);
+            this.cuiPanel17.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel17.Name = "cuiPanel17";
             this.cuiPanel17.OutlineThickness = 1F;
-            this.cuiPanel17.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel17.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel17.PanelColor = System.Drawing.Color.White;
             this.cuiPanel17.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel17.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.cuiPanel17.Size = new System.Drawing.Size(278, 92);
+            this.cuiPanel17.Size = new System.Drawing.Size(313, 115);
             this.cuiPanel17.TabIndex = 10;
             // 
             // lblTotalLayanan
@@ -443,9 +452,9 @@
             this.lblTotalLayanan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblTotalLayanan.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalLayanan.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblTotalLayanan.Location = new System.Drawing.Point(5, 5);
+            this.lblTotalLayanan.Location = new System.Drawing.Point(6, 6);
             this.lblTotalLayanan.Name = "lblTotalLayanan";
-            this.lblTotalLayanan.Size = new System.Drawing.Size(95, 72);
+            this.lblTotalLayanan.Size = new System.Drawing.Size(115, 86);
             this.lblTotalLayanan.TabIndex = 7;
             this.lblTotalLayanan.Text = "10";
             // 
@@ -454,14 +463,14 @@
             this.cuiPanel11.Controls.Add(this.cuiPanel14);
             this.cuiPanel11.Controls.Add(this.cuiPanel15);
             this.cuiPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel11.Location = new System.Drawing.Point(338, 40);
-            this.cuiPanel11.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel11.Location = new System.Drawing.Point(380, 50);
+            this.cuiPanel11.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel11.Name = "cuiPanel11";
             this.cuiPanel11.OutlineThickness = 1F;
             this.cuiPanel11.PanelColor = System.Drawing.Color.White;
             this.cuiPanel11.PanelOutlineColor = System.Drawing.Color.DodgerBlue;
             this.cuiPanel11.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel11.Size = new System.Drawing.Size(278, 163);
+            this.cuiPanel11.Size = new System.Drawing.Size(313, 204);
             this.cuiPanel11.TabIndex = 4;
             // 
             // cuiPanel14
@@ -471,14 +480,14 @@
             this.cuiPanel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel14.ForeColor = System.Drawing.Color.Transparent;
             this.cuiPanel14.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel14.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel14.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel14.Name = "cuiPanel14";
             this.cuiPanel14.OutlineThickness = 1F;
-            this.cuiPanel14.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel14.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel14.PanelColor = System.Drawing.Color.White;
             this.cuiPanel14.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel14.Rounding = new System.Windows.Forms.Padding(8, 8, 0, 0);
-            this.cuiPanel14.Size = new System.Drawing.Size(278, 80);
+            this.cuiPanel14.Size = new System.Drawing.Size(313, 100);
             this.cuiPanel14.TabIndex = 11;
             // 
             // label1
@@ -487,9 +496,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Figtree SemiBold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(72, 33);
+            this.label1.Location = new System.Drawing.Point(81, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(175, 21);
+            this.label1.Size = new System.Drawing.Size(217, 26);
             this.label1.TabIndex = 7;
             this.label1.Text = "Total Pesanan Selesai";
             // 
@@ -498,9 +507,10 @@
             this.guna2PictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
             this.guna2PictureBox1.ImageRotate = 0F;
-            this.guna2PictureBox1.Location = new System.Drawing.Point(17, 23);
+            this.guna2PictureBox1.Location = new System.Drawing.Point(19, 29);
+            this.guna2PictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2PictureBox1.Name = "guna2PictureBox1";
-            this.guna2PictureBox1.Size = new System.Drawing.Size(40, 40);
+            this.guna2PictureBox1.Size = new System.Drawing.Size(45, 50);
             this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.guna2PictureBox1.TabIndex = 0;
             this.guna2PictureBox1.TabStop = false;
@@ -510,15 +520,15 @@
             this.cuiPanel15.Controls.Add(this.lblPesananSelesai);
             this.cuiPanel15.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.cuiPanel15.ForeColor = System.Drawing.Color.Transparent;
-            this.cuiPanel15.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel15.Margin = new System.Windows.Forms.Padding(10);
+            this.cuiPanel15.Location = new System.Drawing.Point(0, 89);
+            this.cuiPanel15.Margin = new System.Windows.Forms.Padding(11, 12, 11, 12);
             this.cuiPanel15.Name = "cuiPanel15";
             this.cuiPanel15.OutlineThickness = 1F;
-            this.cuiPanel15.Padding = new System.Windows.Forms.Padding(5);
+            this.cuiPanel15.Padding = new System.Windows.Forms.Padding(6);
             this.cuiPanel15.PanelColor = System.Drawing.Color.White;
             this.cuiPanel15.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel15.Rounding = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.cuiPanel15.Size = new System.Drawing.Size(278, 92);
+            this.cuiPanel15.Size = new System.Drawing.Size(313, 115);
             this.cuiPanel15.TabIndex = 10;
             // 
             // lblPesananSelesai
@@ -528,9 +538,9 @@
             this.lblPesananSelesai.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblPesananSelesai.Font = new System.Drawing.Font("Figtree ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPesananSelesai.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblPesananSelesai.Location = new System.Drawing.Point(5, 5);
+            this.lblPesananSelesai.Location = new System.Drawing.Point(6, 6);
             this.lblPesananSelesai.Name = "lblPesananSelesai";
-            this.lblPesananSelesai.Size = new System.Drawing.Size(91, 72);
+            this.lblPesananSelesai.Size = new System.Drawing.Size(110, 86);
             this.lblPesananSelesai.TabIndex = 7;
             this.lblPesananSelesai.Text = "51";
             // 
@@ -540,11 +550,11 @@
             this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1254, 0);
-            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1410, 0);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(94, 71);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(106, 89);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
@@ -556,10 +566,10 @@
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
             this.guna2CirclePictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.guna2CirclePictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.guna2CirclePictureBox2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(94, 71);
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(106, 89);
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.guna2CirclePictureBox2.TabIndex = 2;
             this.guna2CirclePictureBox2.TabStop = false;
@@ -569,9 +579,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(128, 20);
+            this.label4.Location = new System.Drawing.Point(144, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(163, 36);
+            this.label4.Size = new System.Drawing.Size(195, 43);
             this.label4.TabIndex = 7;
             this.label4.Text = "Dashboard\r\n";
             // 
@@ -582,29 +592,71 @@
             this.cuiPanel1.Controls.Add(this.guna2CirclePictureBox1);
             this.cuiPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel1.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cuiPanel1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cuiPanel1.Name = "cuiPanel1";
             this.cuiPanel1.OutlineThickness = 1F;
             this.cuiPanel1.PanelColor = System.Drawing.Color.White;
             this.cuiPanel1.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel1.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel1.Size = new System.Drawing.Size(1348, 71);
+            this.cuiPanel1.Size = new System.Drawing.Size(1516, 89);
             this.cuiPanel1.TabIndex = 1;
             // 
             // cuiPanel3
             // 
+            this.cuiPanel3.Controls.Add(this.btnLog);
             this.cuiPanel3.Controls.Add(this.btnOrder);
             this.cuiPanel3.Controls.Add(this.btnDashboard);
             this.cuiPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel3.Location = new System.Drawing.Point(0, 0);
-            this.cuiPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cuiPanel3.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cuiPanel3.Name = "cuiPanel3";
             this.cuiPanel3.OutlineThickness = 1F;
             this.cuiPanel3.PanelColor = System.Drawing.Color.White;
             this.cuiPanel3.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel3.Size = new System.Drawing.Size(94, 172);
+            this.cuiPanel3.Size = new System.Drawing.Size(106, 302);
             this.cuiPanel3.TabIndex = 5;
+            // 
+            // btnLog
+            // 
+            this.btnLog.BackColor = System.Drawing.Color.Transparent;
+            this.btnLog.CheckButton = false;
+            this.btnLog.Checked = false;
+            this.btnLog.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLog.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLog.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLog.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLog.Content = "";
+            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLog.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnLog.ForeColor = System.Drawing.Color.Black;
+            this.btnLog.HoverBackground = System.Drawing.Color.White;
+            this.btnLog.HoverForeColor = System.Drawing.Color.Black;
+            this.btnLog.HoverImageTint = System.Drawing.Color.White;
+            this.btnLog.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.Image = ((System.Drawing.Image)(resources.GetObject("btnLog.Image")));
+            this.btnLog.ImageAutoCenter = true;
+            this.btnLog.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnLog.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLog.Location = new System.Drawing.Point(18, 205);
+            this.btnLog.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.NormalBackground = System.Drawing.Color.White;
+            this.btnLog.NormalForeColor = System.Drawing.Color.Black;
+            this.btnLog.NormalImageTint = System.Drawing.Color.White;
+            this.btnLog.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.OutlineThickness = 1F;
+            this.btnLog.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnLog.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnLog.PressedImageTint = System.Drawing.Color.White;
+            this.btnLog.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnLog.Size = new System.Drawing.Size(70, 69);
+            this.btnLog.TabIndex = 6;
+            this.btnLog.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLog.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
             // 
             // btnOrder
             // 
@@ -628,8 +680,8 @@
             this.btnOrder.ImageAutoCenter = true;
             this.btnOrder.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnOrder.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnOrder.Location = new System.Drawing.Point(16, 92);
-            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnOrder.Location = new System.Drawing.Point(18, 115);
+            this.btnOrder.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnOrder.Name = "btnOrder";
             this.btnOrder.NormalBackground = System.Drawing.Color.White;
             this.btnOrder.NormalForeColor = System.Drawing.Color.Black;
@@ -641,7 +693,7 @@
             this.btnOrder.PressedImageTint = System.Drawing.Color.White;
             this.btnOrder.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnOrder.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnOrder.Size = new System.Drawing.Size(62, 55);
+            this.btnOrder.Size = new System.Drawing.Size(70, 69);
             this.btnOrder.TabIndex = 2;
             this.btnOrder.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnOrder.TextOffset = new System.Drawing.Point(0, 0);
@@ -669,8 +721,8 @@
             this.btnDashboard.ImageAutoCenter = true;
             this.btnDashboard.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnDashboard.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDashboard.Location = new System.Drawing.Point(16, 20);
-            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDashboard.Location = new System.Drawing.Point(18, 25);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.NormalBackground = System.Drawing.Color.White;
             this.btnDashboard.NormalForeColor = System.Drawing.Color.Black;
@@ -682,7 +734,7 @@
             this.btnDashboard.PressedImageTint = System.Drawing.Color.White;
             this.btnDashboard.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDashboard.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnDashboard.Size = new System.Drawing.Size(62, 55);
+            this.btnDashboard.Size = new System.Drawing.Size(70, 69);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnDashboard.TextOffset = new System.Drawing.Point(0, 0);
@@ -692,14 +744,14 @@
             this.cuiPanel4.Controls.Add(this.btnProfile);
             this.cuiPanel4.Controls.Add(this.btnLogout);
             this.cuiPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel4.Location = new System.Drawing.Point(0, 478);
-            this.cuiPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cuiPanel4.Location = new System.Drawing.Point(0, 597);
+            this.cuiPanel4.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cuiPanel4.Name = "cuiPanel4";
             this.cuiPanel4.OutlineThickness = 1F;
             this.cuiPanel4.PanelColor = System.Drawing.Color.White;
             this.cuiPanel4.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel4.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel4.Size = new System.Drawing.Size(94, 172);
+            this.cuiPanel4.Size = new System.Drawing.Size(106, 215);
             this.cuiPanel4.TabIndex = 5;
             // 
             // btnProfile
@@ -724,8 +776,8 @@
             this.btnProfile.ImageAutoCenter = true;
             this.btnProfile.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnProfile.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnProfile.Location = new System.Drawing.Point(16, 23);
-            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnProfile.Location = new System.Drawing.Point(18, 29);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.NormalBackground = System.Drawing.Color.White;
             this.btnProfile.NormalForeColor = System.Drawing.Color.Black;
@@ -737,7 +789,7 @@
             this.btnProfile.PressedImageTint = System.Drawing.Color.White;
             this.btnProfile.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnProfile.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnProfile.Size = new System.Drawing.Size(62, 55);
+            this.btnProfile.Size = new System.Drawing.Size(70, 69);
             this.btnProfile.TabIndex = 4;
             this.btnProfile.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnProfile.TextOffset = new System.Drawing.Point(0, 0);
@@ -765,8 +817,8 @@
             this.btnLogout.ImageAutoCenter = true;
             this.btnLogout.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnLogout.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLogout.Location = new System.Drawing.Point(16, 94);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLogout.Location = new System.Drawing.Point(18, 118);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.NormalBackground = System.Drawing.Color.White;
             this.btnLogout.NormalForeColor = System.Drawing.Color.Black;
@@ -778,7 +830,7 @@
             this.btnLogout.PressedImageTint = System.Drawing.Color.White;
             this.btnLogout.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnLogout.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnLogout.Size = new System.Drawing.Size(62, 55);
+            this.btnLogout.Size = new System.Drawing.Size(70, 69);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnLogout.TextOffset = new System.Drawing.Point(0, 0);
@@ -789,14 +841,14 @@
             this.cuiPanel2.Controls.Add(this.cuiPanel4);
             this.cuiPanel2.Controls.Add(this.cuiPanel3);
             this.cuiPanel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cuiPanel2.Location = new System.Drawing.Point(0, 71);
-            this.cuiPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cuiPanel2.Location = new System.Drawing.Point(0, 89);
+            this.cuiPanel2.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cuiPanel2.Name = "cuiPanel2";
             this.cuiPanel2.OutlineThickness = 1F;
             this.cuiPanel2.PanelColor = System.Drawing.Color.White;
             this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel2.Size = new System.Drawing.Size(94, 650);
+            this.cuiPanel2.Size = new System.Drawing.Size(106, 812);
             this.cuiPanel2.TabIndex = 2;
             // 
             // cuiPanel7
@@ -805,12 +857,13 @@
             this.cuiPanel7.Controls.Add(this.label3);
             this.cuiPanel7.Dock = System.Windows.Forms.DockStyle.Left;
             this.cuiPanel7.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel7.Name = "cuiPanel7";
             this.cuiPanel7.OutlineThickness = 1F;
             this.cuiPanel7.PanelColor = System.Drawing.Color.White;
             this.cuiPanel7.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel7.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel7.Size = new System.Drawing.Size(559, 122);
+            this.cuiPanel7.Size = new System.Drawing.Size(629, 152);
             this.cuiPanel7.TabIndex = 0;
             // 
             // label2
@@ -819,9 +872,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(38, 72);
+            this.label2.Location = new System.Drawing.Point(43, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(484, 21);
+            this.label2.Size = new System.Drawing.Size(591, 26);
             this.label2.TabIndex = 8;
             this.label2.Text = "Lakukan transaksi pembelian atau lihat transaksi berlangsung.";
             // 
@@ -830,9 +883,9 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(36, 29);
+            this.label3.Location = new System.Drawing.Point(40, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(354, 36);
+            this.label3.Size = new System.Drawing.Size(421, 43);
             this.label3.TabIndex = 7;
             this.label3.Text = "Selamat datang kembali!";
             // 
@@ -840,13 +893,14 @@
             // 
             this.cuiPanel22.Controls.Add(this.btnAdd);
             this.cuiPanel22.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cuiPanel22.Location = new System.Drawing.Point(990, 0);
+            this.cuiPanel22.Location = new System.Drawing.Point(1113, 0);
+            this.cuiPanel22.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel22.Name = "cuiPanel22";
             this.cuiPanel22.OutlineThickness = 1F;
             this.cuiPanel22.PanelColor = System.Drawing.Color.White;
             this.cuiPanel22.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel22.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel22.Size = new System.Drawing.Size(264, 122);
+            this.cuiPanel22.Size = new System.Drawing.Size(297, 152);
             this.cuiPanel22.TabIndex = 9;
             // 
             // btnAdd
@@ -871,7 +925,8 @@
             this.btnAdd.ImageAutoCenter = true;
             this.btnAdd.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnAdd.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnAdd.Location = new System.Drawing.Point(32, 36);
+            this.btnAdd.Location = new System.Drawing.Point(36, 45);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.NormalBackground = System.Drawing.Color.DodgerBlue;
             this.btnAdd.NormalForeColor = System.Drawing.Color.White;
@@ -883,7 +938,7 @@
             this.btnAdd.PressedImageTint = System.Drawing.Color.White;
             this.btnAdd.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnAdd.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnAdd.Size = new System.Drawing.Size(200, 50);
+            this.btnAdd.Size = new System.Drawing.Size(225, 62);
             this.btnAdd.TabIndex = 17;
             this.btnAdd.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnAdd.TextOffset = new System.Drawing.Point(0, 0);
@@ -894,21 +949,21 @@
             this.cuiPanel6.Controls.Add(this.cuiPanel22);
             this.cuiPanel6.Controls.Add(this.cuiPanel7);
             this.cuiPanel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel6.Location = new System.Drawing.Point(94, 71);
-            this.cuiPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cuiPanel6.Location = new System.Drawing.Point(106, 89);
+            this.cuiPanel6.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.cuiPanel6.Name = "cuiPanel6";
             this.cuiPanel6.OutlineThickness = 0F;
             this.cuiPanel6.PanelColor = System.Drawing.Color.White;
             this.cuiPanel6.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel6.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel6.Size = new System.Drawing.Size(1254, 122);
+            this.cuiPanel6.Size = new System.Drawing.Size(1410, 152);
             this.cuiPanel6.TabIndex = 8;
             // 
             // CashierPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1516, 901);
             this.Controls.Add(this.cuiPanel5);
             this.Controls.Add(this.cuiPanel6);
             this.Controls.Add(this.cuiPanel2);
@@ -1011,5 +1066,6 @@
         private CuoreUI.Controls.cuiPanel cuiPanel22;
         private CuoreUI.Controls.cuiButton btnAdd;
         private CuoreUI.Controls.cuiPanel cuiPanel6;
+        private CuoreUI.Controls.cuiButton btnLog;
     }
 }

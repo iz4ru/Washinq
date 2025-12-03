@@ -7,24 +7,23 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.UI.WebControls;
 using System.Windows.Forms;
 using WashinqV2.Helpers;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Owner
 {
-    public partial class AdminAddCategory : Form
+    public partial class OwnerAddCategory : Form
     {
-        private AdminCategoryPage parentForm;
+        private OwnerCategoryPage parentForm;
 
-        public AdminAddCategory(AdminCategoryPage parent)
+        public OwnerAddCategory(OwnerCategoryPage parent)
         {
             InitializeComponent();
-
+            this.ClientSize = new Size(480, 600);
             parentForm = parent;
         }
 
-        private void AdminAddCategory_Load(object sender, EventArgs e)
+        private void OwnerAddCategory_Load(object sender, EventArgs e)
         {
             // Lock window style
             this.FormBorderStyle = FormBorderStyle.FixedSingle;

@@ -10,6 +10,7 @@ using System.Security.Authentication.ExtendedProtection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
@@ -25,6 +26,8 @@ namespace WashinqV2.Pages.Views.Admin
         public AdminEditService(int id, string serviceName, int price, string description, AdminServicePage parent)
         {
             InitializeComponent();
+            this.ClientSize = new Size(480, 600);
+
 
             ID = id;
             ServiceName = serviceName;
@@ -91,6 +94,8 @@ namespace WashinqV2.Pages.Views.Admin
                     }
                 }
                 MessageBox.Show("Data berhasil diperbarui!", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LogActivity.Insert("Edit Data", $"Mengubah layanan '{ServiceName}' (ID: {ID})");
 
                 parentForm.LoadData();
                 this.Close();

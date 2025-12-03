@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WashinqV2.Models;
 
-namespace WashinqV2.Pages.Views.Admin
+namespace WashinqV2.Pages.Views.Cashier
 {
-    public partial class AdminLogPage : Form
+    public partial class CashierLogPage : Form
     {
-        public AdminLogPage()
+        public CashierLogPage()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
 
-        private void AdminLogPage_Load(object sender, EventArgs e)
+        private void CashierLogPage_Load(object sender, EventArgs e)
         {
             SetupDataGridView();
             LoadData();
@@ -128,39 +128,10 @@ namespace WashinqV2.Pages.Views.Admin
             }
         }
 
-
         private void btnDashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminPage register = new AdminPage();
-            register.ShowDialog();
-            this.Close();
-        }
-
-        private void btnLogout_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Apakah Anda yakin ingin logout?",
-                "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (result == DialogResult.Yes)
-            {
-                this.Hide();
-                LoginPage LoginPage = new LoginPage();
-                LoginPage.ShowDialog();
-                this.Close();
-            }
-        }
-
-        private void btnProfile_Click(object sender, EventArgs e)
-        {
-            AdminEditProfile form = new AdminEditProfile(UserSession.id);
-            form.ShowDialog();
-        }
-
-        private void btnCashier_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminCashierPage register = new AdminCashierPage();
+            CashierPage register = new CashierPage();
             register.ShowDialog();
             this.Close();
         }
@@ -168,23 +139,7 @@ namespace WashinqV2.Pages.Views.Admin
         private void btnOrder_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminOrderPage register = new AdminOrderPage();
-            register.ShowDialog();
-            this.Close();
-        }
-
-        private void btnService_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminServicePage register = new AdminServicePage();
-            register.ShowDialog();
-            this.Close();
-        }
-
-        private void btnCategory_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            AdminCategoryPage register = new AdminCategoryPage();
+            CashierOrderPage register = new CashierOrderPage();
             register.ShowDialog();
             this.Close();
         }

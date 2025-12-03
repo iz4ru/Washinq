@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 
 namespace WashinqV2.Pages.Views.Admin
 {
@@ -252,6 +253,9 @@ namespace WashinqV2.Pages.Views.Admin
                         {
                             MessageBox.Show("Data kasir berhasil diupdate!",
                                 "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            LogActivity.Insert("Edit Data",
+        $"Mengubah data kasir '{tbCashName.Content}' (ID: {cashierId})");
 
                             this.DialogResult = DialogResult.OK;
                             this.Close();

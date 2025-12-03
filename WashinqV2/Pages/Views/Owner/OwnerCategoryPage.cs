@@ -13,9 +13,9 @@ using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Owner
 {
-    public partial class OwnerServicePage : Form
+    public partial class OwnerCategoryPage : Form
     {
-        public OwnerServicePage()
+        public OwnerCategoryPage()
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
@@ -27,23 +27,22 @@ namespace WashinqV2.Pages.Views.Owner
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = "SELECT id, name, price, description FROM services ORDER BY id DESC";
+                    string query = "SELECT id, name, unit_type FROM categories ORDER BY id DESC";
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         conn.Open();
                         using (MySqlDataReader reader = cmd.ExecuteReader())
                         {
                             int i = 1;
-                            dgvService.Rows.Clear();
+                            dgvCategory.Rows.Clear();
 
                             while (reader.Read())
                             {
-                                dgvService.Rows.Add(
+                                dgvCategory.Rows.Add(
                                     reader["id"],
                                     i++,
                                     reader["name"],
-                                    "Rp " + Convert.ToInt32(reader["price"]).ToString("N0"),
-                                    reader["description"]);
+                                    reader["unit_type"]);
                             }
                         }
                         conn.Close();
@@ -64,7 +63,7 @@ namespace WashinqV2.Pages.Views.Owner
             }
         }
 
-        private void OwnerServicePage_Load(object sender, EventArgs e)
+        private void OwnerCategoryPage_Load(object sender, EventArgs e)
         {
             DataGridViewTextBoxColumn clid = new DataGridViewTextBoxColumn();
             clid.HeaderText = "ID";
@@ -78,24 +77,20 @@ namespace WashinqV2.Pages.Views.Owner
             cl1.HeaderText = "Nama";
             cl1.Name = "Nama";
             DataGridViewTextBoxColumn cl2 = new DataGridViewTextBoxColumn();
-            cl2.HeaderText = "Harga per Unit";
-            cl2.Name = "Harga per Unit";
-            DataGridViewTextBoxColumn cl3 = new DataGridViewTextBoxColumn();
-            cl3.HeaderText = "Deskripsi";
-            cl3.Name = "Deskripsi";
-            DataGridViewCheckBoxColumn cl4 = new DataGridViewCheckBoxColumn();
-            cl4.HeaderText = "Pilih Aksi";
-            cl4.Name = "Pilih Aksi";
+            cl2.HeaderText = "Jenis Unit";
+            cl2.Name = "Jenis Unit";
+            DataGridViewCheckBoxColumn cl3 = new DataGridViewCheckBoxColumn();
+            cl3.HeaderText = "Pilih Aksi";
+            cl3.Name = "Pilih Aksi";
 
-            dgvService.Columns.Add(clid);
-            dgvService.Columns.Add(clnum);
-            dgvService.Columns.Add(cl1);
-            dgvService.Columns.Add(cl2);
-            dgvService.Columns.Add(cl3);
-            dgvService.Columns.Add(cl4);
+            dgvCategory.Columns.Add(clid);
+            dgvCategory.Columns.Add(clnum);
+            dgvCategory.Columns.Add(cl1);
+            dgvCategory.Columns.Add(cl2);
+            dgvCategory.Columns.Add(cl3);
 
-            dgvService.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvService.AllowUserToAddRows = false;
+            dgvCategory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvCategory.AllowUserToAddRows = false;
 
             LoadData();
 
@@ -122,14 +117,14 @@ namespace WashinqV2.Pages.Views.Owner
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            OwnerAddService form = new OwnerAddService(this);
+            OwnerAddCategory form = new OwnerAddCategory(this);
             form.ShowDialog();
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             // Pilih baris yang dicentang pada DataGridView
-            var selectedRows = dgvService.Rows
+            var selectedRows = dgvCategory.Rows
                 .Cast<DataGridViewRow>()
                 .Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value))
                 .ToList();
@@ -145,32 +140,28 @@ namespace WashinqV2.Pages.Views.Owner
 
             // Ambil data dari data grid view
             int id = Convert.ToInt32(selectedRow.Cells["id"].Value);
-            string serviceName = selectedRow.Cells["Nama"].Value.ToString();
-            string hargaText = selectedRow.Cells["Harga per Unit"].Value.ToString().Replace("Rp", "").Replace(".", "").Trim();
-            int price = Convert.ToInt32(hargaText);
-            string description = selectedRow.Cells["Deskripsi"].Value.ToString();
+            string categoryName = selectedRow.Cells["Nama"].Value.ToString();
+            string unitType = selectedRow.Cells["Jenis Unit"].Value.ToString();
 
-            var OwnerEditService = new OwnerEditService(id, serviceName, price, description, this);
+            var OwnerEditCategory = new OwnerEditCategory(id, categoryName, unitType, this);
 
-            if (OwnerEditService.ShowDialog() == DialogResult.OK)
+            if (OwnerEditCategory.ShowDialog() == DialogResult.OK)
             {
-                selectedRow.Cells["Nama"].Value = OwnerEditService.ServiceName;
-                selectedRow.Cells["Harga per Unit"].Value = OwnerEditService.Price;
-                selectedRow.Cells["Deskripsi"].Value = OwnerEditService.Description;
+                selectedRow.Cells["Nama"].Value = OwnerEditCategory.CategoryName;
+                selectedRow.Cells["Harga per Kilogram"].Value = OwnerEditCategory.UnitType;
 
                 try
                 {
                     using (var conn = Database.Database.GetConnection())
                     {
-                        string query = "UPDATE services SET name = @name, price = @price, description = @description WHERE id = @id";
+                        string query = "UPDATE categories SET name = @name, unit_type = @unit_type WHERE id = @id";
 
                         using (MySqlCommand cmd = new MySqlCommand(query, conn))
                         {
                             // Benerin syntax AddWithValue
                             cmd.Parameters.AddWithValue("@id", id);
-                            cmd.Parameters.AddWithValue("@name", OwnerEditService.ServiceName);
-                            cmd.Parameters.AddWithValue("@price", OwnerEditService.Price);
-                            cmd.Parameters.AddWithValue("@description", OwnerEditService.Description);
+                            cmd.Parameters.AddWithValue("@name", OwnerEditCategory.CategoryName);
+                            cmd.Parameters.AddWithValue("@unit_type", OwnerEditCategory.UnitType);
 
                             conn.Open();
                             cmd.ExecuteNonQuery();
@@ -193,19 +184,16 @@ namespace WashinqV2.Pages.Views.Owner
                 }
             }
         }
+
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selectedRows = dgvService.Rows.Cast<DataGridViewRow>().Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value)).ToList();
+            var selectedRows = dgvCategory.Rows.Cast<DataGridViewRow>().Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value)).ToList();
 
             if (selectedRows.Count == 0)
             {
                 MessageBox.Show("Pilih satu atau lebih baris untuk dihapus!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            int serviceId = Convert.ToInt32(dgvService.SelectedRows[0].Cells["id"].Value);
-            string serviceName = dgvService.SelectedRows[0].Cells["Nama Layanan"].Value.ToString();
-            string categoryName = dgvService.SelectedRows[0].Cells["Kategori"].Value.ToString();
 
             var result = MessageBox.Show("Apakah Anda yakin ingin menghapus data yang dipilih?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -214,12 +202,14 @@ namespace WashinqV2.Pages.Views.Owner
                 foreach (var row in selectedRows)
                 {
                     string id = row.Cells["id"].Value.ToString();
+                    string categoryName = row.Cells["Nama"].Value?.ToString() ?? "";
+                    string categoryId = id;
 
                     try
                     {
                         using (var conn = Database.Database.GetConnection())
                         {
-                            string query = "DELETE FROM services WHERE id =  @id";
+                            string query = "DELETE FROM categories WHERE id =  @id";
 
                             using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
@@ -230,11 +220,10 @@ namespace WashinqV2.Pages.Views.Owner
                                 conn.Close();
                             }
                         }
-                        dgvService.Rows.Remove(row);
+                        dgvCategory.Rows.Remove(row);
 
                         LogActivity.Insert("Hapus Data",
-                $"Menghapus layanan '{serviceName}' kategori {categoryName} (ID: {serviceId})");
-
+                            $"Menghapus kategori '{categoryName}' (ID: {categoryId})");
                     }
                     catch (MySqlException ex) // Menangkap kesalahan MySQL
                     {
@@ -272,14 +261,6 @@ namespace WashinqV2.Pages.Views.Owner
             form.ShowDialog();
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            OwnerPage register = new OwnerPage();
-            register.ShowDialog();
-            this.Close();
-        }
-
         private void btnUser_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -296,10 +277,18 @@ namespace WashinqV2.Pages.Views.Owner
             this.Close();
         }
 
-        private void btnCategory_Click(object sender, EventArgs e)
+        private void btnService_Click(object sender, EventArgs e)
         {
             this.Hide();
-            OwnerCategoryPage register = new OwnerCategoryPage();
+            OwnerServicePage register = new OwnerServicePage();
+            register.ShowDialog();
+            this.Close();
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            OwnerPage register = new OwnerPage();
             register.ShowDialog();
             this.Close();
         }

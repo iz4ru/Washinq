@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 
 namespace WashinqV2.Pages.Views.Admin
 {
@@ -81,6 +82,10 @@ namespace WashinqV2.Pages.Views.Admin
                             decimal change = paymentAmount - totalPrice;
                             AdminSuccessPay successForm = new AdminSuccessPay(change);
                             successForm.ShowDialog();
+
+                            LogActivity.Insert("Update Data",
+        $"Update pembayaran order untuk customer ID {customerId} sebesar Rp {paymentAmount:N0} ({paymentMethod})");
+
                             this.Close();
                         }
                         else

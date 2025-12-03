@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 
 namespace WashinqV2.Pages.Views.Admin
 {
@@ -192,6 +193,10 @@ namespace WashinqV2.Pages.Views.Admin
 
                     MessageBox.Show("Layanan berhasil ditambahkan!",
                         "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    string categoryName = cbxCategory.SelectedItem.ToString();
+                    LogActivity.Insert("Tambah Data",
+                        $"Menambahkan layanan '{tbService.Content}' kategori {categoryName} dengan harga Rp {tbPrice.Content}");
 
                     parentForm.LoadData(); // refresh table di AdminServicePage
                     this.Close();

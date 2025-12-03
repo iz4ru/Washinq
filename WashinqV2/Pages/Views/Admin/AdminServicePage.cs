@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Guna.UI2.WinForms.Suite;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,8 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Guna.UI2.WinForms.Suite;
-using MySql.Data.MySqlClient;
+using WashinqV2.Helpers;
 using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
@@ -92,8 +93,8 @@ namespace WashinqV2.Pages.Views.Admin
             cl2.HeaderText = "Tipe";
             cl2.Name = "Tipe";
             DataGridViewTextBoxColumn cl3 = new DataGridViewTextBoxColumn();
-            cl3.HeaderText = "Harga per Kilogram";
-            cl3.Name = "Harga per Kilogram";
+            cl3.HeaderText = "Harga per Unit";
+            cl3.Name = "Harga per Unit";
             DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
             cl4.HeaderText = "Deskripsi";
             cl4.Name = "Deskripsi";
@@ -161,7 +162,7 @@ namespace WashinqV2.Pages.Views.Admin
             // Ambil data dari data grid view
             int id = Convert.ToInt32(selectedRow.Cells["id"].Value);
             string serviceName = selectedRow.Cells["Nama"].Value.ToString();
-            string hargaText = selectedRow.Cells["Harga per Kilogram"].Value.ToString().Replace("Rp", "").Replace(".", "").Trim();
+            string hargaText = selectedRow.Cells["Harga per Unit"].Value.ToString().Replace("Rp", "").Replace(".", "").Trim();
             int price = Convert.ToInt32(hargaText);
             string description = selectedRow.Cells["Deskripsi"].Value.ToString();
 
@@ -170,7 +171,7 @@ namespace WashinqV2.Pages.Views.Admin
             if (AdminEditService.ShowDialog() == DialogResult.OK)
             {
                 selectedRow.Cells["Nama"].Value = AdminEditService.ServiceName;
-                selectedRow.Cells["Harga per Kilogram"].Value = AdminEditService.Price;
+                selectedRow.Cells["Harga per Unit"].Value = AdminEditService.Price;
                 selectedRow.Cells["Deskripsi"].Value = AdminEditService.Description;
 
                 try
@@ -219,6 +220,10 @@ namespace WashinqV2.Pages.Views.Admin
                 return;
             }
 
+            int serviceId = Convert.ToInt32(dgvService.SelectedRows[0].Cells["id"].Value);
+            string serviceName = dgvService.SelectedRows[0].Cells["Nama Layanan"].Value.ToString();
+            string categoryName = dgvService.SelectedRows[0].Cells["Kategori"].Value.ToString();
+
             var result = MessageBox.Show("Apakah Anda yakin ingin menghapus data yang dipilih?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
@@ -243,6 +248,9 @@ namespace WashinqV2.Pages.Views.Admin
                             }
                         }
                         dgvService.Rows.Remove(row);
+
+                        LogActivity.Insert("Hapus Data",
+                $"Menghapus layanan '{serviceName}' kategori {categoryName} (ID: {serviceId})");
                     }
                     catch (MySqlException ex) // Menangkap kesalahan MySQL
                     {

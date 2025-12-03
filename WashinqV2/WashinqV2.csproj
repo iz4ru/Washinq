@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\Database.cs" />
+    <Compile Include="Helpers\LogActivity.cs" />
     <Compile Include="Models\UserSession.cs" />
     <Compile Include="Pages\Auth\LoginPage.cs">
       <SubType>Form</SubType>
@@ -265,6 +266,12 @@
     <Compile Include="Pages\Views\Cashier\CashierEditProfile.Designer.cs">
       <DependentUpon>CashierEditProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierLogPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Cashier\CashierLogPage.Designer.cs">
+      <DependentUpon>CashierLogPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Cashier\CashierOrderPage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -283,6 +290,12 @@
     <Compile Include="Pages\Views\Cashier\CashierSuccessPay.Designer.cs">
       <DependentUpon>CashierSuccessPay.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerAddCategory.Designer.cs">
+      <DependentUpon>OwnerAddCategory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Views\Owner\OwnerAddService.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +307,18 @@
     </Compile>
     <Compile Include="Pages\Views\Owner\OwnerAddUser.Designer.cs">
       <DependentUpon>OwnerAddUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerCategoryPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerCategoryPage.Designer.cs">
+      <DependentUpon>OwnerCategoryPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerEditCategory.Designer.cs">
+      <DependentUpon>OwnerEditCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\Owner\OwnerEditProfile.cs">
       <SubType>Form</SubType>
@@ -312,6 +337,12 @@
     </Compile>
     <Compile Include="Pages\Views\Owner\OwnerEditUser.Designer.cs">
       <DependentUpon>OwnerEditUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerLogPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Views\Owner\OwnerLogPage.Designer.cs">
+      <DependentUpon>OwnerLogPage.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\Views\Owner\OwnerPage.cs">
       <SubType>Form</SubType>
@@ -405,6 +436,9 @@
     <EmbeddedResource Include="Pages\Views\Cashier\CashierEditProfile.resx">
       <DependentUpon>CashierEditProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Cashier\CashierLogPage.resx">
+      <DependentUpon>CashierLogPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Cashier\CashierOrderPage.resx">
       <DependentUpon>CashierOrderPage.cs</DependentUpon>
     </EmbeddedResource>
@@ -414,11 +448,20 @@
     <EmbeddedResource Include="Pages\Views\Cashier\CashierSuccessPay.resx">
       <DependentUpon>CashierSuccessPay.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerAddCategory.resx">
+      <DependentUpon>OwnerAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerAddService.resx">
       <DependentUpon>OwnerAddService.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerAddUser.resx">
       <DependentUpon>OwnerAddUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerCategoryPage.resx">
+      <DependentUpon>OwnerCategoryPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerEditCategory.resx">
+      <DependentUpon>OwnerEditCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerEditProfile.resx">
       <DependentUpon>OwnerEditProfile.cs</DependentUpon>
@@ -428,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerEditUser.resx">
       <DependentUpon>OwnerEditUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Views\Owner\OwnerLogPage.resx">
+      <DependentUpon>OwnerLogPage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Views\Owner\OwnerPage.resx">
       <DependentUpon>OwnerPage.cs</DependentUpon>

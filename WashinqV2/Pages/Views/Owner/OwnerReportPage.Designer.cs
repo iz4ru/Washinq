@@ -62,6 +62,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.btnCategory = new CuoreUI.Controls.cuiButton();
+            this.btnLog = new CuoreUI.Controls.cuiButton();
             this.cuiPanel1.SuspendLayout();
             this.cuiPanel6.SuspendLayout();
             this.cuiPanel11.SuspendLayout();
@@ -88,12 +90,13 @@
             this.cuiPanel1.Controls.Add(this.cuiPanel2);
             this.cuiPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cuiPanel1.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel1.Name = "cuiPanel1";
             this.cuiPanel1.OutlineThickness = 1F;
             this.cuiPanel1.PanelColor = System.Drawing.Color.White;
             this.cuiPanel1.PanelOutlineColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cuiPanel1.Rounding = new System.Windows.Forms.Padding(8);
-            this.cuiPanel1.Size = new System.Drawing.Size(1348, 721);
+            this.cuiPanel1.Size = new System.Drawing.Size(1516, 901);
             this.cuiPanel1.TabIndex = 0;
             // 
             // cuiPanel6
@@ -101,13 +104,14 @@
             this.cuiPanel6.Controls.Add(this.cuiPanel11);
             this.cuiPanel6.Controls.Add(this.cuiPanel7);
             this.cuiPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel6.Location = new System.Drawing.Point(94, 293);
+            this.cuiPanel6.Location = new System.Drawing.Point(106, 366);
+            this.cuiPanel6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel6.Name = "cuiPanel6";
             this.cuiPanel6.OutlineThickness = 1F;
             this.cuiPanel6.PanelColor = System.Drawing.Color.White;
             this.cuiPanel6.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel6.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel6.Size = new System.Drawing.Size(1254, 428);
+            this.cuiPanel6.Size = new System.Drawing.Size(1410, 535);
             this.cuiPanel6.TabIndex = 14;
             // 
             // cuiPanel11
@@ -115,13 +119,14 @@
             this.cuiPanel11.Controls.Add(this.dgvReport);
             this.cuiPanel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cuiPanel11.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel11.Name = "cuiPanel11";
             this.cuiPanel11.OutlineThickness = 1F;
-            this.cuiPanel11.Padding = new System.Windows.Forms.Padding(30);
+            this.cuiPanel11.Padding = new System.Windows.Forms.Padding(34, 38, 34, 38);
             this.cuiPanel11.PanelColor = System.Drawing.Color.White;
             this.cuiPanel11.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel11.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel11.Size = new System.Drawing.Size(904, 428);
+            this.cuiPanel11.Size = new System.Drawing.Size(1016, 535);
             this.cuiPanel11.TabIndex = 1;
             // 
             // dgvReport
@@ -129,11 +134,12 @@
             this.dgvReport.BackgroundColor = System.Drawing.Color.White;
             this.dgvReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReport.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvReport.Location = new System.Drawing.Point(30, 30);
+            this.dgvReport.Location = new System.Drawing.Point(34, 38);
+            this.dgvReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvReport.Name = "dgvReport";
             this.dgvReport.RowHeadersWidth = 51;
             this.dgvReport.RowTemplate.Height = 24;
-            this.dgvReport.Size = new System.Drawing.Size(844, 368);
+            this.dgvReport.Size = new System.Drawing.Size(948, 459);
             this.dgvReport.TabIndex = 3;
             // 
             // cuiPanel7
@@ -141,27 +147,29 @@
             this.cuiPanel7.Controls.Add(this.cuiPanel10);
             this.cuiPanel7.Controls.Add(this.cuiPanel9);
             this.cuiPanel7.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cuiPanel7.Location = new System.Drawing.Point(904, 0);
+            this.cuiPanel7.Location = new System.Drawing.Point(1016, 0);
+            this.cuiPanel7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel7.Name = "cuiPanel7";
             this.cuiPanel7.OutlineThickness = 1F;
             this.cuiPanel7.PanelColor = System.Drawing.Color.White;
             this.cuiPanel7.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel7.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel7.Size = new System.Drawing.Size(350, 428);
+            this.cuiPanel7.Size = new System.Drawing.Size(394, 535);
             this.cuiPanel7.TabIndex = 0;
             // 
             // cuiPanel10
             // 
             this.cuiPanel10.Controls.Add(this.dgvTotal);
             this.cuiPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cuiPanel10.Location = new System.Drawing.Point(0, 224);
+            this.cuiPanel10.Location = new System.Drawing.Point(0, 280);
+            this.cuiPanel10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel10.Name = "cuiPanel10";
             this.cuiPanel10.OutlineThickness = 1F;
-            this.cuiPanel10.Padding = new System.Windows.Forms.Padding(30);
+            this.cuiPanel10.Padding = new System.Windows.Forms.Padding(34, 38, 34, 38);
             this.cuiPanel10.PanelColor = System.Drawing.Color.White;
             this.cuiPanel10.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel10.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel10.Size = new System.Drawing.Size(350, 204);
+            this.cuiPanel10.Size = new System.Drawing.Size(394, 255);
             this.cuiPanel10.TabIndex = 3;
             // 
             // dgvTotal
@@ -169,11 +177,12 @@
             this.dgvTotal.BackgroundColor = System.Drawing.Color.White;
             this.dgvTotal.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTotal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvTotal.Location = new System.Drawing.Point(30, 30);
+            this.dgvTotal.Location = new System.Drawing.Point(34, 38);
+            this.dgvTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvTotal.Name = "dgvTotal";
             this.dgvTotal.RowHeadersWidth = 51;
             this.dgvTotal.RowTemplate.Height = 24;
-            this.dgvTotal.Size = new System.Drawing.Size(290, 144);
+            this.dgvTotal.Size = new System.Drawing.Size(326, 179);
             this.dgvTotal.TabIndex = 4;
             // 
             // cuiPanel9
@@ -181,13 +190,14 @@
             this.cuiPanel9.Controls.Add(this.dgvIncome);
             this.cuiPanel9.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel9.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel9.Name = "cuiPanel9";
             this.cuiPanel9.OutlineThickness = 1F;
-            this.cuiPanel9.Padding = new System.Windows.Forms.Padding(30);
+            this.cuiPanel9.Padding = new System.Windows.Forms.Padding(34, 38, 34, 38);
             this.cuiPanel9.PanelColor = System.Drawing.Color.White;
             this.cuiPanel9.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel9.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel9.Size = new System.Drawing.Size(350, 224);
+            this.cuiPanel9.Size = new System.Drawing.Size(394, 280);
             this.cuiPanel9.TabIndex = 2;
             // 
             // dgvIncome
@@ -195,11 +205,12 @@
             this.dgvIncome.BackgroundColor = System.Drawing.Color.White;
             this.dgvIncome.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvIncome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvIncome.Location = new System.Drawing.Point(30, 30);
+            this.dgvIncome.Location = new System.Drawing.Point(34, 38);
+            this.dgvIncome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvIncome.Name = "dgvIncome";
             this.dgvIncome.RowHeadersWidth = 51;
             this.dgvIncome.RowTemplate.Height = 24;
-            this.dgvIncome.Size = new System.Drawing.Size(290, 164);
+            this.dgvIncome.Size = new System.Drawing.Size(326, 204);
             this.dgvIncome.TabIndex = 4;
             // 
             // cuiPanel8
@@ -215,13 +226,14 @@
             this.cuiPanel8.Controls.Add(this.label1);
             this.cuiPanel8.Controls.Add(this.label5);
             this.cuiPanel8.Dock = System.Windows.Forms.DockStyle.Top;
-            this.cuiPanel8.Location = new System.Drawing.Point(94, 72);
+            this.cuiPanel8.Location = new System.Drawing.Point(106, 90);
+            this.cuiPanel8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel8.Name = "cuiPanel8";
             this.cuiPanel8.OutlineThickness = 1F;
             this.cuiPanel8.PanelColor = System.Drawing.Color.White;
             this.cuiPanel8.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel8.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel8.Size = new System.Drawing.Size(1254, 221);
+            this.cuiPanel8.Size = new System.Drawing.Size(1410, 276);
             this.cuiPanel8.TabIndex = 13;
             // 
             // label7
@@ -230,9 +242,9 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Figtree SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label7.Location = new System.Drawing.Point(705, 154);
+            this.label7.Location = new System.Drawing.Point(793, 192);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(22, 33);
+            this.label7.Size = new System.Drawing.Size(25, 39);
             this.label7.TabIndex = 22;
             this.label7.Text = "|";
             // 
@@ -258,7 +270,8 @@
             this.btnExport.ImageAutoCenter = true;
             this.btnExport.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnExport.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnExport.Location = new System.Drawing.Point(744, 145);
+            this.btnExport.Location = new System.Drawing.Point(837, 181);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExport.Name = "btnExport";
             this.btnExport.NormalBackground = System.Drawing.Color.DodgerBlue;
             this.btnExport.NormalForeColor = System.Drawing.Color.White;
@@ -270,7 +283,7 @@
             this.btnExport.PressedImageTint = System.Drawing.Color.White;
             this.btnExport.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnExport.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnExport.Size = new System.Drawing.Size(222, 50);
+            this.btnExport.Size = new System.Drawing.Size(250, 62);
             this.btnExport.TabIndex = 21;
             this.btnExport.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnExport.TextOffset = new System.Drawing.Point(0, 0);
@@ -282,9 +295,9 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Figtree SemiBold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label6.Location = new System.Drawing.Point(231, 154);
+            this.label6.Location = new System.Drawing.Point(260, 192);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 33);
+            this.label6.Size = new System.Drawing.Size(56, 39);
             this.label6.TabIndex = 20;
             this.label6.Text = "➡";
             // 
@@ -298,8 +311,8 @@
             this.cdpEnd.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cdpEnd.Icon = ((System.Drawing.Image)(resources.GetObject("cdpEnd.Icon")));
             this.cdpEnd.IconTint = System.Drawing.Color.DodgerBlue;
-            this.cdpEnd.Location = new System.Drawing.Point(286, 145);
-            this.cdpEnd.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.cdpEnd.Location = new System.Drawing.Point(322, 181);
+            this.cdpEnd.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.cdpEnd.Name = "cdpEnd";
             this.cdpEnd.NormalBackground = System.Drawing.Color.White;
             this.cdpEnd.NormalOutline = System.Drawing.Color.DodgerBlue;
@@ -309,7 +322,7 @@
             this.cdpEnd.PressedOutline = System.Drawing.Color.DodgerBlue;
             this.cdpEnd.Rounding = 8;
             this.cdpEnd.ShowIcon = true;
-            this.cdpEnd.Size = new System.Drawing.Size(183, 50);
+            this.cdpEnd.Size = new System.Drawing.Size(206, 62);
             this.cdpEnd.TabIndex = 19;
             this.cdpEnd.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
             // 
@@ -319,9 +332,9 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(282, 118);
+            this.label3.Location = new System.Drawing.Point(317, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(88, 21);
+            this.label3.Size = new System.Drawing.Size(109, 26);
             this.label3.TabIndex = 18;
             this.label3.Text = "Sampai ke";
             // 
@@ -331,9 +344,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(36, 118);
+            this.label2.Location = new System.Drawing.Point(40, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 21);
+            this.label2.Size = new System.Drawing.Size(103, 26);
             this.label2.TabIndex = 17;
             this.label2.Text = "Mulai dari";
             // 
@@ -347,8 +360,8 @@
             this.cdpStart.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.cdpStart.Icon = ((System.Drawing.Image)(resources.GetObject("cdpStart.Icon")));
             this.cdpStart.IconTint = System.Drawing.Color.DodgerBlue;
-            this.cdpStart.Location = new System.Drawing.Point(40, 145);
-            this.cdpStart.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.cdpStart.Location = new System.Drawing.Point(45, 181);
+            this.cdpStart.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.cdpStart.Name = "cdpStart";
             this.cdpStart.NormalBackground = System.Drawing.Color.White;
             this.cdpStart.NormalOutline = System.Drawing.Color.DodgerBlue;
@@ -358,7 +371,7 @@
             this.cdpStart.PressedOutline = System.Drawing.Color.DodgerBlue;
             this.cdpStart.Rounding = 8;
             this.cdpStart.ShowIcon = true;
-            this.cdpStart.Size = new System.Drawing.Size(183, 50);
+            this.cdpStart.Size = new System.Drawing.Size(206, 62);
             this.cdpStart.TabIndex = 16;
             this.cdpStart.Theme = CuoreUI.Controls.Forms.DatePicker.Themes.Light;
             // 
@@ -384,7 +397,8 @@
             this.btnApply.ImageAutoCenter = true;
             this.btnApply.ImageExpand = new System.Drawing.Point(0, 0);
             this.btnApply.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnApply.Location = new System.Drawing.Point(487, 145);
+            this.btnApply.Location = new System.Drawing.Point(548, 181);
+            this.btnApply.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnApply.Name = "btnApply";
             this.btnApply.NormalBackground = System.Drawing.Color.DodgerBlue;
             this.btnApply.NormalForeColor = System.Drawing.Color.White;
@@ -396,7 +410,7 @@
             this.btnApply.PressedImageTint = System.Drawing.Color.White;
             this.btnApply.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnApply.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnApply.Size = new System.Drawing.Size(200, 50);
+            this.btnApply.Size = new System.Drawing.Size(225, 62);
             this.btnApply.TabIndex = 15;
             this.btnApply.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnApply.TextOffset = new System.Drawing.Point(0, 0);
@@ -408,9 +422,9 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Figtree Medium", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(36, 72);
+            this.label1.Location = new System.Drawing.Point(40, 90);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(804, 21);
+            this.label1.Size = new System.Drawing.Size(980, 26);
             this.label1.TabIndex = 14;
             this.label1.Text = "Pantau performa penjualan kamu dalam periode tertentu. Data tampil dalam bentuk r" +
     "ingkas dan akurat.";
@@ -420,9 +434,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(34, 30);
+            this.label5.Location = new System.Drawing.Point(38, 38);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(537, 36);
+            this.label5.Size = new System.Drawing.Size(641, 43);
             this.label5.TabIndex = 13;
             this.label5.Text = "Lihat laporan penjualan masa ke masa.\r\n";
             // 
@@ -431,13 +445,14 @@
             this.cuiPanel3.Controls.Add(this.cuiPanel4);
             this.cuiPanel3.Controls.Add(this.cuiPanel5);
             this.cuiPanel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cuiPanel3.Location = new System.Drawing.Point(0, 72);
+            this.cuiPanel3.Location = new System.Drawing.Point(0, 90);
+            this.cuiPanel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel3.Name = "cuiPanel3";
             this.cuiPanel3.OutlineThickness = 1F;
             this.cuiPanel3.PanelColor = System.Drawing.Color.White;
             this.cuiPanel3.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel3.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel3.Size = new System.Drawing.Size(94, 649);
+            this.cuiPanel3.Size = new System.Drawing.Size(106, 811);
             this.cuiPanel3.TabIndex = 7;
             // 
             // cuiPanel4
@@ -445,13 +460,14 @@
             this.cuiPanel4.Controls.Add(this.btnProfile);
             this.cuiPanel4.Controls.Add(this.btnLogout);
             this.cuiPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.cuiPanel4.Location = new System.Drawing.Point(0, 477);
+            this.cuiPanel4.Location = new System.Drawing.Point(0, 596);
+            this.cuiPanel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel4.Name = "cuiPanel4";
             this.cuiPanel4.OutlineThickness = 1F;
             this.cuiPanel4.PanelColor = System.Drawing.Color.White;
             this.cuiPanel4.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel4.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel4.Size = new System.Drawing.Size(94, 172);
+            this.cuiPanel4.Size = new System.Drawing.Size(106, 215);
             this.cuiPanel4.TabIndex = 5;
             // 
             // btnProfile
@@ -476,7 +492,8 @@
             this.btnProfile.ImageAutoCenter = true;
             this.btnProfile.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnProfile.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnProfile.Location = new System.Drawing.Point(16, 23);
+            this.btnProfile.Location = new System.Drawing.Point(18, 29);
+            this.btnProfile.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnProfile.Name = "btnProfile";
             this.btnProfile.NormalBackground = System.Drawing.Color.White;
             this.btnProfile.NormalForeColor = System.Drawing.Color.Black;
@@ -488,7 +505,7 @@
             this.btnProfile.PressedImageTint = System.Drawing.Color.White;
             this.btnProfile.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnProfile.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnProfile.Size = new System.Drawing.Size(62, 55);
+            this.btnProfile.Size = new System.Drawing.Size(70, 69);
             this.btnProfile.TabIndex = 4;
             this.btnProfile.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnProfile.TextOffset = new System.Drawing.Point(0, 0);
@@ -516,7 +533,8 @@
             this.btnLogout.ImageAutoCenter = true;
             this.btnLogout.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnLogout.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnLogout.Location = new System.Drawing.Point(16, 95);
+            this.btnLogout.Location = new System.Drawing.Point(18, 119);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.NormalBackground = System.Drawing.Color.White;
             this.btnLogout.NormalForeColor = System.Drawing.Color.Black;
@@ -528,7 +546,7 @@
             this.btnLogout.PressedImageTint = System.Drawing.Color.White;
             this.btnLogout.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnLogout.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnLogout.Size = new System.Drawing.Size(62, 55);
+            this.btnLogout.Size = new System.Drawing.Size(70, 69);
             this.btnLogout.TabIndex = 4;
             this.btnLogout.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnLogout.TextOffset = new System.Drawing.Point(0, 0);
@@ -536,18 +554,21 @@
             // 
             // cuiPanel5
             // 
+            this.cuiPanel5.Controls.Add(this.btnLog);
+            this.cuiPanel5.Controls.Add(this.btnCategory);
             this.cuiPanel5.Controls.Add(this.btnService);
             this.cuiPanel5.Controls.Add(this.btnReport);
             this.cuiPanel5.Controls.Add(this.btnUser);
             this.cuiPanel5.Controls.Add(this.btnDashboard);
             this.cuiPanel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel5.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel5.Name = "cuiPanel5";
             this.cuiPanel5.OutlineThickness = 1F;
             this.cuiPanel5.PanelColor = System.Drawing.Color.White;
             this.cuiPanel5.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel5.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel5.Size = new System.Drawing.Size(94, 316);
+            this.cuiPanel5.Size = new System.Drawing.Size(106, 570);
             this.cuiPanel5.TabIndex = 5;
             // 
             // btnService
@@ -572,7 +593,8 @@
             this.btnService.ImageAutoCenter = true;
             this.btnService.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnService.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnService.Location = new System.Drawing.Point(16, 241);
+            this.btnService.Location = new System.Drawing.Point(18, 389);
+            this.btnService.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnService.Name = "btnService";
             this.btnService.NormalBackground = System.Drawing.Color.White;
             this.btnService.NormalForeColor = System.Drawing.Color.Black;
@@ -584,7 +606,7 @@
             this.btnService.PressedImageTint = System.Drawing.Color.White;
             this.btnService.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnService.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnService.Size = new System.Drawing.Size(62, 55);
+            this.btnService.Size = new System.Drawing.Size(70, 69);
             this.btnService.TabIndex = 3;
             this.btnService.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnService.TextOffset = new System.Drawing.Point(0, 0);
@@ -612,7 +634,8 @@
             this.btnReport.ImageAutoCenter = true;
             this.btnReport.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnReport.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnReport.Location = new System.Drawing.Point(16, 166);
+            this.btnReport.Location = new System.Drawing.Point(18, 208);
+            this.btnReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnReport.Name = "btnReport";
             this.btnReport.NormalBackground = System.Drawing.Color.White;
             this.btnReport.NormalForeColor = System.Drawing.Color.Black;
@@ -624,7 +647,7 @@
             this.btnReport.PressedImageTint = System.Drawing.Color.White;
             this.btnReport.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnReport.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnReport.Size = new System.Drawing.Size(62, 55);
+            this.btnReport.Size = new System.Drawing.Size(70, 69);
             this.btnReport.TabIndex = 2;
             this.btnReport.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnReport.TextOffset = new System.Drawing.Point(0, 0);
@@ -651,7 +674,8 @@
             this.btnUser.ImageAutoCenter = true;
             this.btnUser.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnUser.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnUser.Location = new System.Drawing.Point(16, 93);
+            this.btnUser.Location = new System.Drawing.Point(18, 116);
+            this.btnUser.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUser.Name = "btnUser";
             this.btnUser.NormalBackground = System.Drawing.Color.White;
             this.btnUser.NormalForeColor = System.Drawing.Color.Black;
@@ -663,7 +687,7 @@
             this.btnUser.PressedImageTint = System.Drawing.Color.White;
             this.btnUser.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnUser.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnUser.Size = new System.Drawing.Size(62, 55);
+            this.btnUser.Size = new System.Drawing.Size(70, 69);
             this.btnUser.TabIndex = 1;
             this.btnUser.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnUser.TextOffset = new System.Drawing.Point(0, 0);
@@ -691,7 +715,8 @@
             this.btnDashboard.ImageAutoCenter = true;
             this.btnDashboard.ImageExpand = new System.Drawing.Point(8, 8);
             this.btnDashboard.ImageOffset = new System.Drawing.Point(0, 0);
-            this.btnDashboard.Location = new System.Drawing.Point(16, 20);
+            this.btnDashboard.Location = new System.Drawing.Point(18, 25);
+            this.btnDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.NormalBackground = System.Drawing.Color.White;
             this.btnDashboard.NormalForeColor = System.Drawing.Color.Black;
@@ -703,7 +728,7 @@
             this.btnDashboard.PressedImageTint = System.Drawing.Color.White;
             this.btnDashboard.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnDashboard.Rounding = new System.Windows.Forms.Padding(8);
-            this.btnDashboard.Size = new System.Drawing.Size(62, 55);
+            this.btnDashboard.Size = new System.Drawing.Size(70, 69);
             this.btnDashboard.TabIndex = 0;
             this.btnDashboard.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnDashboard.TextOffset = new System.Drawing.Point(0, 0);
@@ -716,12 +741,13 @@
             this.cuiPanel2.Controls.Add(this.guna2CirclePictureBox1);
             this.cuiPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.cuiPanel2.Location = new System.Drawing.Point(0, 0);
+            this.cuiPanel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cuiPanel2.Name = "cuiPanel2";
             this.cuiPanel2.OutlineThickness = 1F;
             this.cuiPanel2.PanelColor = System.Drawing.Color.White;
             this.cuiPanel2.PanelOutlineColor = System.Drawing.Color.Transparent;
             this.cuiPanel2.Rounding = new System.Windows.Forms.Padding(0);
-            this.cuiPanel2.Size = new System.Drawing.Size(1348, 72);
+            this.cuiPanel2.Size = new System.Drawing.Size(1516, 90);
             this.cuiPanel2.TabIndex = 5;
             // 
             // label4
@@ -729,9 +755,9 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Figtree SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(128, 19);
+            this.label4.Location = new System.Drawing.Point(144, 24);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(266, 36);
+            this.label4.Size = new System.Drawing.Size(317, 43);
             this.label4.TabIndex = 7;
             this.label4.Text = "Laporan Penjualan";
             // 
@@ -742,9 +768,10 @@
             this.guna2CirclePictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox2.Image")));
             this.guna2CirclePictureBox2.ImageRotate = 0F;
             this.guna2CirclePictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.guna2CirclePictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
             this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(94, 72);
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(106, 90);
             this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.guna2CirclePictureBox2.TabIndex = 2;
             this.guna2CirclePictureBox2.TabStop = false;
@@ -755,21 +782,105 @@
             this.guna2CirclePictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2CirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2CirclePictureBox1.Image")));
             this.guna2CirclePictureBox1.ImageRotate = 0F;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1254, 0);
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(1410, 0);
+            this.guna2CirclePictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
             this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(94, 72);
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(106, 90);
             this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.guna2CirclePictureBox1.TabIndex = 1;
             this.guna2CirclePictureBox1.TabStop = false;
             // 
+            // btnCategory
+            // 
+            this.btnCategory.BackColor = System.Drawing.Color.Transparent;
+            this.btnCategory.CheckButton = false;
+            this.btnCategory.Checked = false;
+            this.btnCategory.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCategory.CheckedForeColor = System.Drawing.Color.White;
+            this.btnCategory.CheckedImageTint = System.Drawing.Color.White;
+            this.btnCategory.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnCategory.Content = "";
+            this.btnCategory.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCategory.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnCategory.ForeColor = System.Drawing.Color.Black;
+            this.btnCategory.HoverBackground = System.Drawing.Color.White;
+            this.btnCategory.HoverForeColor = System.Drawing.Color.Black;
+            this.btnCategory.HoverImageTint = System.Drawing.Color.White;
+            this.btnCategory.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCategory.Image = ((System.Drawing.Image)(resources.GetObject("btnCategory.Image")));
+            this.btnCategory.ImageAutoCenter = true;
+            this.btnCategory.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnCategory.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnCategory.Location = new System.Drawing.Point(18, 297);
+            this.btnCategory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCategory.Name = "btnCategory";
+            this.btnCategory.NormalBackground = System.Drawing.Color.White;
+            this.btnCategory.NormalForeColor = System.Drawing.Color.Black;
+            this.btnCategory.NormalImageTint = System.Drawing.Color.White;
+            this.btnCategory.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCategory.OutlineThickness = 1F;
+            this.btnCategory.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnCategory.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnCategory.PressedImageTint = System.Drawing.Color.White;
+            this.btnCategory.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCategory.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnCategory.Size = new System.Drawing.Size(70, 69);
+            this.btnCategory.TabIndex = 7;
+            this.btnCategory.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnCategory.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnCategory.Click += new System.EventHandler(this.btnCategory_Click);
+            // 
+            // btnLog
+            // 
+            this.btnLog.BackColor = System.Drawing.Color.Transparent;
+            this.btnLog.CheckButton = false;
+            this.btnLog.Checked = false;
+            this.btnLog.CheckedBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLog.CheckedForeColor = System.Drawing.Color.White;
+            this.btnLog.CheckedImageTint = System.Drawing.Color.White;
+            this.btnLog.CheckedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(106)))), ((int)(((byte)(0)))));
+            this.btnLog.Content = "";
+            this.btnLog.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLog.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.btnLog.ForeColor = System.Drawing.Color.Black;
+            this.btnLog.HoverBackground = System.Drawing.Color.White;
+            this.btnLog.HoverForeColor = System.Drawing.Color.Black;
+            this.btnLog.HoverImageTint = System.Drawing.Color.White;
+            this.btnLog.HoverOutline = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.Image = ((System.Drawing.Image)(resources.GetObject("btnLog.Image")));
+            this.btnLog.ImageAutoCenter = true;
+            this.btnLog.ImageExpand = new System.Drawing.Point(8, 8);
+            this.btnLog.ImageOffset = new System.Drawing.Point(0, 0);
+            this.btnLog.Location = new System.Drawing.Point(18, 477);
+            this.btnLog.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnLog.Name = "btnLog";
+            this.btnLog.NormalBackground = System.Drawing.Color.White;
+            this.btnLog.NormalForeColor = System.Drawing.Color.Black;
+            this.btnLog.NormalImageTint = System.Drawing.Color.White;
+            this.btnLog.NormalOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.OutlineThickness = 1F;
+            this.btnLog.PressedBackground = System.Drawing.Color.WhiteSmoke;
+            this.btnLog.PressedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
+            this.btnLog.PressedImageTint = System.Drawing.Color.White;
+            this.btnLog.PressedOutline = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnLog.Rounding = new System.Windows.Forms.Padding(8);
+            this.btnLog.Size = new System.Drawing.Size(70, 69);
+            this.btnLog.TabIndex = 8;
+            this.btnLog.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.btnLog.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnLog.Click += new System.EventHandler(this.btnLog_Click);
+            // 
             // OwnerReportPage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1348, 721);
+            this.ClientSize = new System.Drawing.Size(1516, 901);
             this.Controls.Add(this.cuiPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "OwnerReportPage";
             this.Text = "Washinq | Laporan Penjualan";
             this.Load += new System.EventHandler(this.OwnerReportPage_Load);
@@ -830,5 +941,7 @@
         private System.Windows.Forms.DataGridView dgvTotal;
         private CuoreUI.Controls.cuiPanel cuiPanel9;
         private System.Windows.Forms.DataGridView dgvIncome;
+        private CuoreUI.Controls.cuiButton btnCategory;
+        private CuoreUI.Controls.cuiButton btnLog;
     }
 }

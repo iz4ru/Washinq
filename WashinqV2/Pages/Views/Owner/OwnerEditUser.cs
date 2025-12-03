@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 
 namespace WashinqV2.Pages.Views.Owner
 {
@@ -17,6 +18,7 @@ namespace WashinqV2.Pages.Views.Owner
         private int userId;
         private string originalUsername;
         private string originalEmail;
+        private string originalName;
 
         public OwnerEditUser(int id)
         {
@@ -62,6 +64,7 @@ namespace WashinqV2.Pages.Views.Owner
                                 tbUserName.Content = reader["name"].ToString();
                                 tbUserUsername.Content = reader["username"].ToString();
                                 tbUserEmail.Content = reader["email"].ToString();
+                                originalName = reader["name"].ToString();
 
                                 // ✅ PERBAIKAN: Load role ke ComboBox
                                 string role = reader["role"].ToString();
@@ -290,6 +293,12 @@ namespace WashinqV2.Pages.Views.Owner
                                 "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                             this.DialogResult = DialogResult.OK;
+                            string passwordChanged = string.IsNullOrWhiteSpace(tbUserPassword.Content)
+                ? ""
+                : " (password diubah)";
+
+                            LogActivity.Insert("Edit Data",
+                                $"Mengubah data {selectedRole.ToLower()} '{tbUserName.Content}' (ID: {userId}){passwordChanged}");
                             this.Close();
                         }
                         else

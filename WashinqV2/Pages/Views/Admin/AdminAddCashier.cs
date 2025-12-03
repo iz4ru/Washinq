@@ -9,6 +9,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WashinqV2.Helpers;
 
 namespace WashinqV2.Pages.Views.Admin
 {
@@ -160,6 +161,9 @@ namespace WashinqV2.Pages.Views.Admin
                         {
                             MessageBox.Show("Kasir berhasil ditambahkan!",
                                 "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            LogActivity.Insert("Tambah Data",
+        $"Menambahkan kasir '{tbCashName.Content}' dengan username '{tbCashUsername.Content}'");
 
                             ClearForm();
 

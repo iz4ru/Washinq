@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using WashinqV2.Helpers;
 using WashinqV2.Models;
 
 namespace WashinqV2.Pages.Views.Admin
@@ -201,6 +202,8 @@ namespace WashinqV2.Pages.Views.Admin
                 foreach (var row in selectedRows)
                 {
                     string id = row.Cells["id"].Value.ToString();
+                    string categoryName = row.Cells["Nama"].Value?.ToString() ?? "";
+                    int categoryId = int.TryParse(id, out int parsedId) ? parsedId : 0;
 
                     try
                     {
@@ -218,6 +221,11 @@ namespace WashinqV2.Pages.Views.Admin
                             }
                         }
                         dgvCategory.Rows.Remove(row);
+
+                        MessageBox.Show("Kategori berhasil dihapus!", "Sukses");
+
+                        LogActivity.Insert("Hapus Data",
+                            $"Menghapus kategori '{categoryName}' (ID: {categoryId})");
                     }
                     catch (MySqlException ex) // Menangkap kesalahan MySQL
                     {
