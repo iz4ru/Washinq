@@ -37,26 +37,31 @@ namespace WashinqV2.Pages.Views.Cashier
             clnum.HeaderText = "No";
             clnum.Name = "Nomor";
             clnum.ReadOnly = true;
+            clnum.Width = 60;
 
             DataGridViewTextBoxColumn cl1 = new DataGridViewTextBoxColumn();
             cl1.HeaderText = "User";
             cl1.Name = "User";
             cl1.ReadOnly = true;
+            cl1.Width = 150;
 
             DataGridViewTextBoxColumn cl2 = new DataGridViewTextBoxColumn();
             cl2.HeaderText = "Aksi";
             cl2.Name = "Aksi";
             cl2.ReadOnly = true;
+            cl2.Width = 100;
 
             DataGridViewTextBoxColumn cl3 = new DataGridViewTextBoxColumn();
             cl3.HeaderText = "Deskripsi";
             cl3.Name = "Deskripsi";
             cl3.ReadOnly = true;
+            cl3.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
             DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
             cl4.HeaderText = "Dibuat Pada";
             cl4.Name = "Dibuat Pada";
             cl4.ReadOnly = true;
+            cl4.Width = 150;
 
 
             dgvLog.Columns.Add(clid);
@@ -66,10 +71,11 @@ namespace WashinqV2.Pages.Views.Cashier
             dgvLog.Columns.Add(cl3);
             dgvLog.Columns.Add(cl4);
 
-            dgvLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvLog.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.None;
             dgvLog.AllowUserToAddRows = false;
             dgvLog.ReadOnly = true;
             dgvLog.RowHeadersVisible = false;
+            dgvLog.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private void LoadData()
@@ -142,6 +148,20 @@ namespace WashinqV2.Pages.Views.Cashier
             CashierOrderPage register = new CashierOrderPage();
             register.ShowDialog();
             this.Close();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Apakah Anda yakin ingin logout?",
+                "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                LoginPage LoginPage = new LoginPage();
+                LoginPage.ShowDialog();
+                this.Close();
+            }
         }
     }
 }

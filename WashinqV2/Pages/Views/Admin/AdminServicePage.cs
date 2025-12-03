@@ -212,62 +212,90 @@ namespace WashinqV2.Pages.Views.Admin
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selectedRows = dgvService.Rows.Cast<DataGridViewRow>().Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value)).ToList();
+            // Ambil baris yang dicentang checkbox nya
+            var selectedRows = dgvService.Rows
+                .Cast<DataGridViewRow>()
+                .Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value))
+                .ToList();
 
             if (selectedRows.Count == 0)
             {
-                MessageBox.Show("Pilih satu atau lebih baris untuk dihapus!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Pilih satu atau lebih baris untuk dihapus!",
+                    "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int serviceId = Convert.ToInt32(dgvService.SelectedRows[0].Cells["id"].Value);
-            string serviceName = dgvService.SelectedRows[0].Cells["Nama Layanan"].Value.ToString();
-            string categoryName = dgvService.SelectedRows[0].Cells["Kategori"].Value.ToString();
-
-            var result = MessageBox.Show("Apakah Anda yakin ingin menghapus data yang dipilih?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // Konfirmasi delete
+            var result = MessageBox.Show(
+                $"Apakah Anda yakin ingin menghapus {selectedRows.Count} layanan yang dipilih?",
+                "Hapus",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                int successCount = 0;
+                int failCount = 0;
+
                 foreach (var row in selectedRows)
                 {
-                    string id = row.Cells["id"].Value.ToString();
-
                     try
                     {
+                        // Ambil data dari ROW yang sedang di-loop (bukan SelectedRows[0]!)
+                        int serviceId = Convert.ToInt32(row.Cells["id"].Value);
+                        string serviceName = row.Cells["Nama"].Value.ToString(); // ✅ Nama kolom yang benar
+                        string categoryName = row.Cells["Tipe"].Value.ToString(); // ✅ Nama kolom yang benar (Tipe bukan Kategori)
+
                         using (var conn = Database.Database.GetConnection())
                         {
-                            string query = "DELETE FROM services WHERE id =  @id";
+                            string query = "DELETE FROM services WHERE id = @id";
 
                             using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
-                                cmd.Parameters.AddWithValue("@id", id);
+                                cmd.Parameters.AddWithValue("@id", serviceId);
 
                                 conn.Open();
                                 cmd.ExecuteNonQuery();
-                                conn.Close();
                             }
                         }
-                        dgvService.Rows.Remove(row);
 
+                        // Insert log setelah berhasil delete
                         LogActivity.Insert("Hapus Data",
-                $"Menghapus layanan '{serviceName}' kategori {categoryName} (ID: {serviceId})");
+                            $"Menghapus layanan '{serviceName}' kategori {categoryName} (ID: {serviceId})");
+
+                        successCount++;
                     }
-                    catch (MySqlException ex) // Menangkap kesalahan MySQL
+                    catch (MySqlException ex)
                     {
-                        MessageBox.Show("Koneksi ke database gagal: " + ex.Message, "Kesalahan Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Application.Exit(); // Menutup aplikasi jika tidak dapat terhubung
-                        return; // Keluar dari metode jika koneksi gagal
+                        MessageBox.Show($"Koneksi ke database gagal: {ex.Message}",
+                            "Kesalahan Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        failCount++;
                     }
-                    catch (Exception ex) // Menangkap kesalahan umum lainnya
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Application.Exit(); // Menutup aplikasi jika terjadi kesalahan
-                        return; // Keluar dari metode jika terjadi kesalahan
+                        MessageBox.Show($"Terjadi kesalahan saat menghapus data: {ex.Message}",
+                            "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        failCount++;
                     }
                 }
+
+                // Tampilkan hasil delete
+                if (successCount > 0)
+                {
+                    string message = $"Berhasil menghapus {successCount} layanan";
+                    if (failCount > 0)
+                    {
+                        message += $"\nGagal menghapus {failCount} layanan";
+                    }
+                    MessageBox.Show(message, "Informasi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Reload data setelah delete
+                LoadData();
             }
-            LoadData();
         }
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {

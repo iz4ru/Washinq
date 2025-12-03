@@ -222,5 +222,19 @@ namespace WashinqV2.Pages.Views.Owner
             register.ShowDialog();
             this.Close();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Apakah Anda yakin ingin logout?",
+                "Logout", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Hide();
+                LoginPage LoginPage = new LoginPage();
+                LoginPage.ShowDialog();
+                this.Close();
+            }
+        }
     }
 }

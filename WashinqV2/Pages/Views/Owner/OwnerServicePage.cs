@@ -27,7 +27,17 @@ namespace WashinqV2.Pages.Views.Owner
             {
                 using (var conn = Database.Database.GetConnection())
                 {
-                    string query = "SELECT id, name, price, description FROM services ORDER BY id DESC";
+                    string query = @"
+                SELECT 
+                    s.id,
+                    s.name,
+                    c.name AS type_name,
+                    s.price,
+                    s.description
+                FROM services s
+                JOIN categories c ON s.category_id = c.id
+                ORDER BY id DESC";
+
                     using (MySqlCommand cmd = new MySqlCommand(query, conn))
                     {
                         conn.Open();
@@ -42,6 +52,7 @@ namespace WashinqV2.Pages.Views.Owner
                                     reader["id"],
                                     i++,
                                     reader["name"],
+                                    reader["type_name"],
                                     "Rp " + Convert.ToInt32(reader["price"]).ToString("N0"),
                                     reader["description"]);
                             }
@@ -78,14 +89,17 @@ namespace WashinqV2.Pages.Views.Owner
             cl1.HeaderText = "Nama";
             cl1.Name = "Nama";
             DataGridViewTextBoxColumn cl2 = new DataGridViewTextBoxColumn();
-            cl2.HeaderText = "Harga per Unit";
-            cl2.Name = "Harga per Unit";
+            cl2.HeaderText = "Tipe";
+            cl2.Name = "Tipe";
             DataGridViewTextBoxColumn cl3 = new DataGridViewTextBoxColumn();
-            cl3.HeaderText = "Deskripsi";
-            cl3.Name = "Deskripsi";
-            DataGridViewCheckBoxColumn cl4 = new DataGridViewCheckBoxColumn();
-            cl4.HeaderText = "Pilih Aksi";
-            cl4.Name = "Pilih Aksi";
+            cl3.HeaderText = "Harga per Unit";
+            cl3.Name = "Harga per Unit";
+            DataGridViewTextBoxColumn cl4 = new DataGridViewTextBoxColumn();
+            cl4.HeaderText = "Deskripsi";
+            cl4.Name = "Deskripsi";
+            DataGridViewCheckBoxColumn cl5 = new DataGridViewCheckBoxColumn();
+            cl5.HeaderText = "Pilih Aksi";
+            cl5.Name = "Pilih Aksi";
 
             dgvService.Columns.Add(clid);
             dgvService.Columns.Add(clnum);
@@ -93,6 +107,7 @@ namespace WashinqV2.Pages.Views.Owner
             dgvService.Columns.Add(cl2);
             dgvService.Columns.Add(cl3);
             dgvService.Columns.Add(cl4);
+            dgvService.Columns.Add(cl5);
 
             dgvService.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvService.AllowUserToAddRows = false;
@@ -195,62 +210,88 @@ namespace WashinqV2.Pages.Views.Owner
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            var selectedRows = dgvService.Rows.Cast<DataGridViewRow>().Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value)).ToList();
+            // Ambil baris yang dicentang checkbox nya
+            var selectedRows = dgvService.Rows
+                .Cast<DataGridViewRow>()
+                .Where(row => Convert.ToBoolean(row.Cells["Pilih Aksi"].Value))
+                .ToList();
 
             if (selectedRows.Count == 0)
             {
-                MessageBox.Show("Pilih satu atau lebih baris untuk dihapus!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Pilih satu atau lebih baris untuk dihapus!",
+                    "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int serviceId = Convert.ToInt32(dgvService.SelectedRows[0].Cells["id"].Value);
-            string serviceName = dgvService.SelectedRows[0].Cells["Nama Layanan"].Value.ToString();
-            string categoryName = dgvService.SelectedRows[0].Cells["Kategori"].Value.ToString();
-
-            var result = MessageBox.Show("Apakah Anda yakin ingin menghapus data yang dipilih?", "Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            // Konfirmasi delete
+            var result = MessageBox.Show(
+                $"Apakah Anda yakin ingin menghapus {selectedRows.Count} layanan yang dipilih?",
+                "Hapus",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
 
             if (result == DialogResult.Yes)
             {
+                int successCount = 0;
+                int failCount = 0;
+
                 foreach (var row in selectedRows)
                 {
-                    string id = row.Cells["id"].Value.ToString();
-
                     try
                     {
+                        // Ambil data dari ROW yang sedang di-loop (bukan SelectedRows[0]!)
+                        int serviceId = Convert.ToInt32(row.Cells["id"].Value);
+                        string serviceName = row.Cells["Nama"].Value.ToString(); // ✅ Nama kolom yang benar
+                        string categoryName = row.Cells["Tipe"].Value.ToString(); // ✅ Nama kolom yang benar (Tipe bukan Kategori)
+
                         using (var conn = Database.Database.GetConnection())
                         {
-                            string query = "DELETE FROM services WHERE id =  @id";
+                            string query = "DELETE FROM services WHERE id = @id";
 
                             using (MySqlCommand cmd = new MySqlCommand(query, conn))
                             {
-                                cmd.Parameters.AddWithValue("@id", id);
+                                cmd.Parameters.AddWithValue("@id", serviceId);
 
                                 conn.Open();
                                 cmd.ExecuteNonQuery();
-                                conn.Close();
                             }
                         }
-                        dgvService.Rows.Remove(row);
 
+                        // Insert log setelah berhasil delete
                         LogActivity.Insert("Hapus Data",
-                $"Menghapus layanan '{serviceName}' kategori {categoryName} (ID: {serviceId})");
+                            $"Menghapus layanan '{serviceName}' kategori {categoryName} (ID: {serviceId})");
 
+                        successCount++;
                     }
-                    catch (MySqlException ex) // Menangkap kesalahan MySQL
+                    catch (MySqlException ex)
                     {
-                        MessageBox.Show("Koneksi ke database gagal: " + ex.Message, "Kesalahan Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Application.Exit(); // Menutup aplikasi jika tidak dapat terhubung
-                        return; // Keluar dari metode jika koneksi gagal
+                        MessageBox.Show($"Koneksi ke database gagal: {ex.Message}",
+                            "Kesalahan Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        failCount++;
                     }
-                    catch (Exception ex) // Menangkap kesalahan umum lainnya
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Terjadi kesalahan: " + ex.Message, "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        Application.Exit(); // Menutup aplikasi jika terjadi kesalahan
-                        return; // Keluar dari metode jika terjadi kesalahan
+                        MessageBox.Show($"Terjadi kesalahan saat menghapus data: {ex.Message}",
+                            "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        failCount++;
                     }
                 }
+
+                // Tampilkan hasil delete
+                if (successCount > 0)
+                {
+                    string message = $"Berhasil menghapus {successCount} layanan";
+                    if (failCount > 0)
+                    {
+                        message += $"\nGagal menghapus {failCount} layanan";
+                    }
+                    MessageBox.Show(message, "Informasi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                // Reload data setelah delete
+                LoadData();
             }
-            LoadData();
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
