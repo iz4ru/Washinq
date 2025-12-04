@@ -387,6 +387,8 @@ namespace WashinqV2.Pages.Views.Owner
 
                             int currentRow = 1;
 
+                            // ==================== HEADER LAPORAN ====================
+
                             // Judul
                             worksheet.Cell(currentRow, 1).Value = "LAPORAN PENJUALAN WASHINQ";
                             worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
@@ -395,41 +397,33 @@ namespace WashinqV2.Pages.Views.Owner
                             worksheet.Range(currentRow, 1, currentRow, 10).Merge();
                             currentRow++;
 
-                            // Periode
-                            string startDate = cdpStart.Content.ToString("dd MMMM yyyy", new CultureInfo("id-ID"));
-                            string endDate = cdpEnd.Content.ToString("dd MMMM yyyy", new CultureInfo("id-ID"));
-                            worksheet.Cell(currentRow, 1).Value = $"Periode: {startDate} - {endDate}";
-                            worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
-                            worksheet.Cell(currentRow, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
-                            worksheet.Range(currentRow, 1, currentRow, 10).Merge();
-                            currentRow++;
+                            // ✅ FIX: Periode - Cek apakah tanggal sama atau beda
+                            DateTime startDate = cdpStart.Content;
+                            DateTime endDate = cdpEnd.Content;
+                            string periodeText = "";
 
-                            // Hitung Total Penjualan
-                            decimal totalPenjualan = 0;
-                            foreach (DataGridViewRow row in dgvReport.Rows)
+                            if (startDate.Date == endDate.Date)
                             {
-                                if (row.Cells["Total Harga"].Value != null)
-                                {
-                                    string valueStr = row.Cells["Total Harga"].Value.ToString()
-                                        .Replace("Rp ", "").Replace(".", "").Trim();
-                                    if (decimal.TryParse(valueStr, out decimal value))
-                                    {
-                                        totalPenjualan += value;
-                                    }
-                                }
+                                // ✅ Kalau tanggal sama, tampil satu aja
+                                periodeText = $"Periode: {startDate.ToString("dd MMMM yyyy", new CultureInfo("id-ID"))}";
+                            }
+                            else
+                            {
+                                // ✅ Kalau tanggal beda, tampil range
+                                periodeText = $"Periode: {startDate.ToString("dd MMMM yyyy", new CultureInfo("id-ID"))} - {endDate.ToString("dd MMMM yyyy", new CultureInfo("id-ID"))}";
                             }
 
-                            // Total Penjualan
-                            worksheet.Cell(currentRow, 1).Value = $"Total Penjualan: Rp {totalPenjualan:N0}";
+                            worksheet.Cell(currentRow, 1).Value = periodeText;
                             worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
-                            worksheet.Cell(currentRow, 1).Style.Font.FontColor = XLColor.DarkGreen;
                             worksheet.Cell(currentRow, 1).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Center;
                             worksheet.Range(currentRow, 1, currentRow, 10).Merge();
                             currentRow++;
 
-                            // Spacing
+                            // ❌ HAPUS: Total Penjualan di header (pindah ke footer aja)
+                            // Spacing sebelum table
                             currentRow++;
 
+                            // ==================== HEADER TABLE ====================
                             int col = 1;
                             for (int i = 1; i < dgvReport.Columns.Count; i++) // Skip kolom ID
                             {
@@ -445,7 +439,9 @@ namespace WashinqV2.Pages.Views.Owner
                             }
                             currentRow++;
 
-                            int startDataRow = currentRow; 
+                            // ==================== DATA ROWS ====================
+                            int startDataRow = currentRow;
+                            decimal totalPenjualan = 0; // ✅ Hitung total di sini aja
 
                             for (int i = 0; i < dgvReport.Rows.Count; i++)
                             {
@@ -458,10 +454,22 @@ namespace WashinqV2.Pages.Views.Owner
                                         worksheet.Cell(currentRow, col).Value = cellValue?.ToString() ?? "-";
                                         worksheet.Cell(currentRow, col).Style.Border.OutsideBorder = XLBorderStyleValues.Thin;
 
+                                        // Right align untuk kolom angka/harga
                                         if (dgvReport.Columns[j].HeaderText.Contains("Harga") ||
                                             dgvReport.Columns[j].HeaderText.Contains("Dibayar"))
                                         {
                                             worksheet.Cell(currentRow, col).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
+                                        }
+
+                                        // ✅ Hitung total penjualan di sini
+                                        if (dgvReport.Columns[j].HeaderText == "Total Harga" && cellValue != null)
+                                        {
+                                            string valueStr = cellValue.ToString()
+                                                .Replace("Rp ", "").Replace(".", "").Trim();
+                                            if (decimal.TryParse(valueStr, out decimal value))
+                                            {
+                                                totalPenjualan += value;
+                                            }
                                         }
 
                                         col++;
@@ -470,7 +478,8 @@ namespace WashinqV2.Pages.Views.Owner
                                 currentRow++;
                             }
 
-                            currentRow++;
+                            // ==================== FOOTER / SUMMARY ====================
+                            currentRow++; // Spacing
 
                             worksheet.Cell(currentRow, 1).Value = "TOTAL KESELURUHAN";
                             worksheet.Cell(currentRow, 1).Style.Font.Bold = true;
@@ -495,6 +504,7 @@ namespace WashinqV2.Pages.Views.Owner
                             worksheet.Cell(currentRow, totalHargaColIndex).Style.Fill.BackgroundColor = XLColor.LightGray;
                             worksheet.Cell(currentRow, totalHargaColIndex).Style.Alignment.Horizontal = XLAlignmentHorizontalValues.Right;
 
+                            // ==================== STYLING ====================
 
                             // Auto-fit kolom
                             worksheet.Columns().AdjustToContents();
@@ -506,6 +516,7 @@ namespace WashinqV2.Pages.Views.Owner
                                     column.Width = 12;
                             }
 
+                            // ==================== SAVE FILE ====================
                             workbook.SaveAs(sfd.FileName);
 
                             MessageBox.Show($"Data berhasil di-export ke:\n{sfd.FileName}",
@@ -532,6 +543,7 @@ namespace WashinqV2.Pages.Views.Owner
                     "Kesalahan", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
 
         private void btnLogout_Click(object sender, EventArgs e)
