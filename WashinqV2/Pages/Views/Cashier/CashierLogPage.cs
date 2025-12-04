@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WashinqV2.Models;
+using WashinqV2.Pages.Views.Admin;
 
 namespace WashinqV2.Pages.Views.Cashier
 {
@@ -162,6 +163,12 @@ namespace WashinqV2.Pages.Views.Cashier
                 LoginPage.ShowDialog();
                 this.Close();
             }
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            CashierEditProfile form = new CashierEditProfile(UserSession.id);
+            form.ShowDialog();
         }
     }
 }

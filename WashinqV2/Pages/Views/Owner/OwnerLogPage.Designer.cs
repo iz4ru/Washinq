@@ -190,6 +190,7 @@
             this.btnProfile.TabIndex = 4;
             this.btnProfile.TextAlignment = System.Drawing.StringAlignment.Center;
             this.btnProfile.TextOffset = new System.Drawing.Point(0, 0);
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // btnLogout
             // 
@@ -529,7 +530,7 @@
             this.tbSearch.ImageExpand = new System.Drawing.Point(0, 0);
             this.tbSearch.ImageOffset = new System.Drawing.Point(0, 0);
             this.tbSearch.Location = new System.Drawing.Point(45, 181);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(4);
             this.tbSearch.Multiline = false;
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.NormalImageTint = System.Drawing.Color.White;

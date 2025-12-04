@@ -288,18 +288,18 @@ namespace WashinqV2.Pages.Views.Cashier
 
             if (!hasSelected)
             {
-                MessageBox.Show("Silakan pilih order yang ingin dihapus!",
+                MessageBox.Show("Silakan pilih order yang ingin dibatalkan!",
                     "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             // Konfirmasi dengan detail
-            string detailMessage = "Order yang akan dihapus:\n\n" +
+            string detailMessage = "Order yang akan dibatalkan:\n\n" +
                 string.Join("\n", orderDetails) +
-                "\n\nApakah Anda yakin ingin menghapus " + selectedOrderIds.Count + " order ini?";
+                "\n\nApakah Anda yakin ingin membatalkan " + selectedOrderIds.Count + " order ini?";
 
             var result = MessageBox.Show(detailMessage,
-                "Konfirmasi Hapus",
+                "Konfirmasi Batalkan",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
 
@@ -324,15 +324,15 @@ namespace WashinqV2.Pages.Views.Cashier
                         conn.Close();
                     }
 
-                    MessageBox.Show("Order berhasil dihapus!",
+                    MessageBox.Show("Order berhasil dibatalkan!",
                         "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     LoadData(); // Refresh data
                 }
                 catch (MySqlException ex)
                 {
-                    MessageBox.Show("Gagal menghapus order: " + ex.Message +
-                        "\n\nPastikan tidak ada data terkait yang menghalangi penghapusan.",
+                    MessageBox.Show("Gagal membatalkan order: " + ex.Message +
+                        "\n\nPastikan tidak ada data terkait yang menghalangi pembatalan.",
                         "Kesalahan Database", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
